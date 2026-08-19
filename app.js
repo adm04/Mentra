@@ -1,362 +1,567 @@
 /**
- * MENTRA — AI Learning Companion Mobile App Prototype
- * Application Logic, Screen Routing & Interactive Handlers
+ * MENTRA — CAREER READINESS APPLICATION
+ * Interactive State Management, Discovery Quiz, Readiness Calculations & Action Flows
  */
 
-// Selected state
-let userProfile = {
-  goal: 'Study & Academics 🎓',
-  learningStyle: 'Bite-sized & Interactive ⚡',
-  currentConcept: 'Feedback & Retention',
-  assignmentSubmitted: false,
-  readinessPct: 63
+// Core Application State
+const appState = {
+  user: {
+    name: 'Arka',
+    role: 'Product Designer',
+    experience: '3+ years',
+    goal: 'Get a new job',
+    streakDays: 5
+  },
+  readiness: {
+    overall: 72,
+    categories: {
+      resume: 90,
+      portfolio: 75,
+      interview: 60,
+      profile: 80,
+      jobSearch: 55
+    }
+  },
+  quizCurrentIndex: 0,
+  selectedQuizOption: null,
+  inactivitySimulated: false,
+  activeTaskId: null,
+  tasks: [
+    {
+      id: 'task-1',
+      title: 'Improve resume headline & summary',
+      category: 'Resume',
+      duration: '15 min',
+      priority: 'high',
+      boost: 8,
+      completed: false,
+      why: 'Recruiters spend ~6 seconds scanning. A strong headline clearly communicates your specialty as a Product Designer.',
+      checklist: [
+        'Rewrite headline to match target role',
+        'Mention core expertise & design systems',
+        'Add measurable business impact',
+        'Review final version against ATS keywords'
+      ]
+    },
+    {
+      id: 'task-2',
+      title: 'Complete portfolio case study impact section',
+      category: 'Portfolio',
+      duration: '30 min',
+      priority: 'high',
+      boost: 7,
+      completed: false,
+      why: 'Case studies with quantified outcomes increase interview callback rates by over 40%.',
+      checklist: [
+        'Document the initial baseline problem',
+        'Show user research synthesis artifacts',
+        'Highlight final measurable metrics (e.g. +22% conversion)',
+        'Add live prototype walkthrough link'
+      ]
+    },
+    {
+      id: 'task-3',
+      title: 'Practice 10 core behavioral interview questions',
+      category: 'Interview',
+      duration: '20 min',
+      priority: 'high',
+      boost: 6,
+      completed: false,
+      why: 'Practicing out loud improves delivery and reduces anxiety under pressure.',
+      checklist: [
+        'Answer "Tell me about yourself"',
+        'Prepare 2 conflict-resolution stories (STAR method)',
+        'Structure a response around a design compromise',
+        'Time answers under 2.5 minutes'
+      ]
+    },
+    {
+      id: 'task-4',
+      title: 'Update LinkedIn experience highlights',
+      category: 'Profile',
+      duration: '15 min',
+      priority: 'medium',
+      boost: 4,
+      completed: false,
+      why: 'Keeping your LinkedIn headline and featured projects synchronized boosts recruiter inbound reach.',
+      checklist: [
+        'Sync headline with resume title',
+        'Pin top 2 design case studies to Featured section',
+        'Update skills list with Figma and Design Systems'
+      ]
+    },
+    {
+      id: 'task-5',
+      title: 'Create target company application tracker',
+      category: 'Job Search',
+      duration: '10 min',
+      priority: 'medium',
+      boost: 3,
+      completed: false,
+      why: 'Systematic tracking helps prioritize warm referrals over cold submissions.',
+      checklist: [
+        'List top 10 target design teams',
+        'Identify 1 alumni or 2nd-degree connection per company',
+        'Set weekly application cadence goals'
+      ]
+    }
+  ]
 };
 
-// AI Knowledge Base responses for live tutor simulation
-const AI_RESPONSES = {
-  'explain about ultra-learning': {
-    title: 'Ultra-Learning Breakdown 🚀',
-    body: `<strong>Ultra-Learning</strong> is a strategy for aggressive, self-directed skill acquisition.
-    <br><br>
-    <strong>3 Core Principles:</strong>
-    <ol style="margin-left: 18px; margin-top: 6px;">
-      <li><strong>Meta-Learning:</strong> First map out <em>how</em> to learn the subject.</li>
-      <li><strong>Directness:</strong> Practice by actually executing the real task.</li>
-      <li><strong>Feedback:</strong> Seek rapid, unvarnished feedback loops.</li>
-    </ol>`,
-    actionText: 'Explore Ultra-Learning Module →',
-    actionScreen: 's-topic-detail'
+// 8 Discovery Quiz Questions
+const QUIZ_QUESTIONS = [
+  {
+    title: 'What are you preparing for?',
+    subtitle: 'Select what best matches your current focus.',
+    options: ['Getting a new job', 'Switching careers', 'Getting promoted', 'Preparing for interviews']
   },
-  'explain this topic simply': {
-    title: 'Ultra-Learning in Plain English 💡',
-    body: `Think of Ultra-Learning like training for a marathon: instead of just reading books about running, you put on your shoes, track your split times on day 1, and isolate your weakest muscle groups to improve faster.`,
-    actionText: 'Review Key Concepts →',
-    actionScreen: 's-topic-detail'
+  {
+    title: 'How confident are you in your current resume?',
+    subtitle: 'Evaluate your structure, impact bullets, and ATS readiness.',
+    options: ['Not confident', 'Somewhat confident', 'Confident', 'Very confident']
   },
-  'create a learning plan': {
-    title: 'Personalized 7-Day Ultra-Learning Plan 📅',
-    body: `<strong>Day 1–2:</strong> Deconstruct the domain into core concepts.<br>
-           <strong>Day 3–5:</strong> 90-minute deep-work drills on your biggest bottleneck.<br>
-           <strong>Day 6:</strong> Build a real-world synthesis project.<br>
-           <strong>Day 7:</strong> AI retention quiz & feedback review.`,
-    actionText: 'Start Day 1 Module →',
-    actionScreen: 's-topic-detail'
+  {
+    title: 'How ready is your portfolio?',
+    subtitle: 'Consider case study depth, live links, and problem-solving narrative.',
+    options: ["I don't have one", 'Needs major work', 'Mostly ready', 'Ready to share']
   },
-  'summarize key concepts': {
-    title: 'Key Concepts Summary 📌',
-    body: `1. <strong>Meta-Learning:</strong> Drawing the knowledge map.<br>
-           2. <strong>Focus:</strong> Eliminating cognitive drag.<br>
-           3. <strong>Directness:</strong> Real-world execution.<br>
-           4. <strong>Drill:</strong> Isolating the rate-limiting step.<br>
-           5. <strong>Retention:</strong> Spaced active recall.`,
-    actionText: 'Take Practice Drill →',
-    actionScreen: 's-assignment'
+  {
+    title: 'How comfortable are you with interviews?',
+    subtitle: 'Think about behavioral questions and live portfolio walkthroughs.',
+    options: ['Very uncomfortable', 'Somewhat uncomfortable', 'Comfortable', 'Very comfortable']
+  },
+  {
+    title: 'How often do you practice interview questions?',
+    subtitle: 'Regular practice builds articulate STAR responses.',
+    options: ['Never', 'Rarely', 'Sometimes', 'Regularly']
+  },
+  {
+    title: 'How prepared are you for job applications?',
+    subtitle: 'Tracking pipeline, tailored cover letters, and outreach strategy.',
+    options: ['Just starting', 'Somewhat prepared', 'Mostly prepared', 'Fully prepared']
+  },
+  {
+    title: 'How strong is your professional profile?',
+    subtitle: 'LinkedIn, personal domain, and design community presence.',
+    options: ['Needs work', 'Improving', 'Strong', 'Very strong']
+  },
+  {
+    title: 'When do you want to be ready?',
+    subtitle: 'This determines your daily plan pacing and priority sequencing.',
+    options: ['This week', 'Within 2 weeks', 'Within a month', 'No specific deadline']
   }
-};
+];
+
+// Predefined Mock Interview Questions
+const MOCK_QUESTIONS = [
+  'Tell me about a difficult product design trade-off you had to make and how you handled stakeholder alignment.',
+  'Walk me through a project in your portfolio where your initial user assumption was proven wrong.',
+  'How do you collaborate with engineering teams when technical constraints require simplifying your design?'
+];
+let currentMockQIndex = 0;
 
 /**
  * Screen Navigation Router
  * @param {string} screenId 
  */
-function navigateToScreen(screenId) {
+function goToScreen(screenId) {
   // Hide all screens
-  document.querySelectorAll('.screen-view').forEach(view => {
-    view.classList.remove('active');
-  });
+  document.querySelectorAll('.screen-view').forEach(s => s.classList.remove('active'));
 
-  // Activate selected screen
-  const targetScreen = document.getElementById(screenId);
-  if (targetScreen) {
-    targetScreen.classList.add('active');
-    // Scroll container back to top
+  // Show target screen
+  const target = document.getElementById(screenId);
+  if (target) {
+    target.classList.add('active');
     const container = document.getElementById('screenContentArea');
     if (container) container.scrollTop = 0;
   }
 
-  // Update top quick nav bar
-  document.querySelectorAll('.quick-nav-btn').forEach(btn => {
-    const onclickAttr = btn.getAttribute('onclick') || '';
-    if (onclickAttr.includes(`'${screenId}'`)) {
-      btn.classList.add('active');
+  // Update top reviewer toolbar
+  document.querySelectorAll('.flow-btn').forEach(btn => {
+    const attr = btn.getAttribute('onclick') || '';
+    btn.classList.toggle('active', attr.includes(`'${screenId}'`));
+  });
+
+  // Manage persistent bottom navigation visibility
+  const bottomNav = document.getElementById('appBottomNav');
+  const mainScreens = ['s-home', 's-plan', 's-progress', 's-profile'];
+  if (bottomNav) {
+    if (mainScreens.includes(screenId)) {
+      bottomNav.style.display = 'flex';
     } else {
-      btn.classList.remove('active');
+      bottomNav.style.display = 'none';
+    }
+  }
+
+  // Update active bottom nav tab
+  document.querySelectorAll('.nav-tab-item').forEach(tab => tab.classList.remove('active'));
+  if (screenId === 's-home') document.getElementById('tab-home')?.classList.add('active');
+  if (screenId === 's-plan') document.getElementById('tab-plan')?.classList.add('active');
+  if (screenId === 's-progress') document.getElementById('tab-progress')?.classList.add('active');
+  if (screenId === 's-profile') document.getElementById('tab-profile')?.classList.add('active');
+
+  // Render UI updates if entering dashboard/plans
+  if (screenId === 's-home' || screenId === 's-plan') {
+    renderTasks();
+  }
+  updateReadinessDisplays();
+}
+
+/**
+ * Start Discovery Quiz
+ */
+function startDiscoveryQuiz() {
+  appState.quizCurrentIndex = 0;
+  goToScreen('s-quiz');
+  renderQuizQuestion();
+}
+
+/**
+ * Render Current Quiz Question
+ */
+function renderQuizQuestion() {
+  const q = QUIZ_QUESTIONS[appState.quizCurrentIndex];
+  if (!q) return;
+
+  const total = QUIZ_QUESTIONS.length;
+  const progressPct = ((appState.quizCurrentIndex + 1) / total) * 100;
+
+  document.getElementById('quizProgressBar').style.width = `${progressPct}%`;
+  document.getElementById('quizStepCounter').textContent = `${appState.quizCurrentIndex + 1} of ${total}`;
+  document.getElementById('quizQuestionTitle').textContent = q.title;
+  document.getElementById('quizQuestionSubtitle').textContent = q.subtitle;
+
+  const container = document.getElementById('quizOptionsContainer');
+  container.innerHTML = '';
+
+  q.options.forEach((opt, index) => {
+    const card = document.createElement('div');
+    card.className = `option-card ${index === 0 ? 'selected' : ''}`;
+    card.onclick = () => selectQuizOption(card, opt);
+    card.innerHTML = `
+      <span class="option-text">${opt}</span>
+      <div class="radio-circle">✓</div>
+    `;
+    container.appendChild(card);
+  });
+
+  appState.selectedQuizOption = q.options[0];
+}
+
+function selectQuizOption(cardElement, optionText) {
+  const parent = cardElement.parentElement;
+  parent.querySelectorAll('.option-card').forEach(c => c.classList.remove('selected'));
+  cardElement.classList.add('selected');
+  appState.selectedQuizOption = optionText;
+}
+
+/**
+ * Next Quiz Question or Complete
+ */
+function nextQuizQuestion() {
+  if (appState.quizCurrentIndex < QUIZ_QUESTIONS.length - 1) {
+    appState.quizCurrentIndex++;
+    renderQuizQuestion();
+  } else {
+    // Complete quiz -> Transition through calculation
+    goToScreen('s-calculating');
+    setTimeout(() => {
+      goToScreen('s-readiness-result');
+    }, 1200);
+  }
+}
+
+/**
+ * Render Task Cards in Home and Plan Screens
+ */
+function renderTasks() {
+  const homeContainer = document.getElementById('homeTasksContainer');
+  const planHighContainer = document.getElementById('planHighList');
+  const planMediumContainer = document.getElementById('planMediumList');
+
+  if (homeContainer) homeContainer.innerHTML = '';
+  if (planHighContainer) planHighContainer.innerHTML = '';
+  if (planMediumContainer) planMediumContainer.innerHTML = '';
+
+  appState.tasks.forEach(task => {
+    const card = createTaskCardElement(task);
+
+    // Add to Home if not completed or recently completed
+    if (homeContainer) {
+      homeContainer.appendChild(card.cloneNode(true));
+    }
+
+    // Add to Plan according to priority
+    if (task.priority === 'high' && planHighContainer) {
+      planHighContainer.appendChild(card.cloneNode(true));
+    } else if (task.priority === 'medium' && planMediumContainer) {
+      planMediumContainer.appendChild(card.cloneNode(true));
     }
   });
 
-  // Update bottom tab navigation
-  const bottomNav = document.getElementById('appBottomNav');
-  if (screenId === 's-welcome' || screenId === 's-goal' || screenId === 's-step2') {
-    if (bottomNav) bottomNav.style.display = 'none';
-  } else {
-    if (bottomNav) bottomNav.style.display = 'flex';
-  }
-
-  // Set active bottom tab
-  document.querySelectorAll('.nav-tab-item').forEach(tab => tab.classList.remove('active'));
-  if (screenId === 's-home') {
-    const homeTab = document.getElementById('tab-home');
-    if (homeTab) homeTab.classList.add('active');
-  } else if (screenId === 's-ai-chat') {
-    const aiTab = document.getElementById('tab-ai');
-    if (aiTab) aiTab.classList.add('active');
-  } else if (screenId === 's-topic-detail') {
-    const topicsTab = document.getElementById('tab-topics');
-    if (topicsTab) topicsTab.classList.add('active');
-  } else if (screenId === 's-progress' || screenId === 's-assignment') {
-    const profTab = document.getElementById('tab-profile');
-    if (profTab) profTab.classList.add('active');
-  }
-}
-
-/**
- * Goal Option Card Selection
- */
-function selectGoalCard(cardElement, goalName) {
-  const parent = cardElement.parentElement;
-  parent.querySelectorAll('.goal-option-card').forEach(c => c.classList.remove('selected'));
-  cardElement.classList.add('selected');
-
-  userProfile.goal = goalName;
-  const goalBadgeText = document.getElementById('currentGoalText');
-  if (goalBadgeText) {
-    goalBadgeText.textContent = goalName.replace(/[\uD800-\uDFFF].*/, '').trim();
-  }
-
-  const continueBtn = document.getElementById('goalContinueBtn');
-  if (continueBtn) {
-    continueBtn.disabled = false;
-  }
-}
-
-/**
- * Single Selection Helper
- */
-function selectCardSingle(cardElement) {
-  const parent = cardElement.parentElement;
-  parent.querySelectorAll('.goal-option-card').forEach(c => c.classList.remove('selected'));
-  cardElement.classList.add('selected');
-}
-
-/**
- * Plan Generation Simulation
- */
-function launchAIPlanGeneration() {
-  const btn = event.target;
-  btn.innerHTML = '✨ Generating AI Learning Path...';
-  btn.style.opacity = '0.85';
-
-  setTimeout(() => {
-    navigateToScreen('s-home');
-    btn.innerHTML = 'Generate My Learning Path ✨';
-    btn.style.opacity = '1';
-  }, 700);
-}
-
-/**
- * Trigger Home Search Query
- */
-function submitHomePrompt() {
-  const input = document.getElementById('homeSearchPrompt');
-  const query = input ? input.value.trim() : 'Explain about Ultra-learning';
-  if (!query) return;
-
-  triggerChatQuery(query);
-}
-
-function handleHomeSearchKeyPress(event) {
-  if (event.key === 'Enter') {
-    submitHomePrompt();
-  }
-}
-
-/**
- * Trigger Quick Prompt Chips from Hero Card
- */
-function triggerQuickPrompt(chipText) {
-  triggerChatQuery(chipText);
-}
-
-/**
- * Chat Simulation Engine
- */
-function triggerChatQuery(query) {
-  navigateToScreen('s-ai-chat');
-  const chatBox = document.getElementById('chatMessagesBox');
-  if (!chatBox) return;
-
-  // Add User message
-  const userBubble = document.createElement('div');
-  userBubble.className = 'chat-bubble user';
-  userBubble.textContent = query;
-  chatBox.appendChild(userBubble);
-
-  // Scroll to bottom
-  chatBox.scrollTop = chatBox.scrollHeight;
-
-  // AI Thinking indicator
-  const typingBubble = document.createElement('div');
-  typingBubble.className = 'chat-bubble ai';
-  typingBubble.innerHTML = '<em>Mentra is thinking... 💭</em>';
-  chatBox.appendChild(typingBubble);
-  chatBox.scrollTop = chatBox.scrollHeight;
-
-  setTimeout(() => {
-    typingBubble.remove();
-
-    const normalizedKey = query.toLowerCase().trim();
-    const responseData = AI_RESPONSES[normalizedKey] || {
-      title: `Learning Companion Insight on "${query}"`,
-      body: `Mentra AI analyzed your inquiry about <strong>${escapeHtml(query)}</strong>.
-             By connecting this to first-principles thinking and immediate practice drills, you can retain this concept with 3x higher recall.`,
-      actionText: 'Deep-dive in Detail Topics →',
-      actionScreen: 's-topic-detail'
-    };
-
-    const aiBubble = document.createElement('div');
-    aiBubble.className = 'chat-bubble ai';
-    aiBubble.innerHTML = `
-      <strong>${responseData.title}</strong><br>
-      ${responseData.body}
-      <div class="chat-interactive-card" style="margin-top:10px;">
-        <button class="btn-primary" style="height:36px; font-size:12px; width:auto; padding:0 14px;" onclick="navigateToScreen('${responseData.actionScreen}')">
-          ${responseData.actionText}
-        </button>
-      </div>
-    `;
-
-    chatBox.appendChild(aiBubble);
-    chatBox.scrollTop = chatBox.scrollHeight;
-  }, 600);
-}
-
-function sendChatMessage() {
-  const input = document.getElementById('chatInputText');
-  if (!input || !input.value.trim()) return;
-  const msg = input.value.trim();
-  input.value = '';
-  triggerChatQuery(msg);
-}
-
-function handleChatInputKeyPress(event) {
-  if (event.key === 'Enter') {
-    sendChatMessage();
-  }
-}
-
-/**
- * Ask Mentra About a Specific Concept
- */
-function askMentraAboutConcept(conceptName) {
-  triggerChatQuery(`Explain ${conceptName} in detail`);
-}
-
-/**
- * Concept Accordion Toggle
- */
-function toggleAccordion(btnElement) {
-  const item = btnElement.closest('.concept-accordion-item');
-  const body = item.querySelector('.concept-body');
-  if (!body) return;
-
-  const isCurrentlyOpen = body.style.display === 'block';
-
-  // Optional: close other accordions
-  document.querySelectorAll('.concept-accordion-item .concept-body').forEach(b => {
-    b.style.display = 'none';
+  // Re-attach event listeners on cloned cards
+  document.querySelectorAll('.task-card').forEach(c => {
+    const id = c.getAttribute('data-task-id');
+    c.onclick = () => openTaskDetail(id);
   });
-  document.querySelectorAll('.concept-accordion-item').forEach(i => {
-    i.classList.remove('active-lesson');
-  });
-
-  if (!isCurrentlyOpen) {
-    body.style.display = 'block';
-    item.classList.add('active-lesson');
-  }
 }
 
-/**
- * File Upload Simulation for Assignment
- */
-function simulateFileUpload() {
-  const container = document.getElementById('dropzoneContainer');
-  if (!container) return;
-
-  container.innerHTML = `
-    <div class="submitted-file-card">
-      <div style="display:flex; align-items:center; gap:10px;">
-        <span style="font-size:20px;">📄</span>
-        <div>
-          <div style="font-size:13.5px; font-weight:700; color:var(--neutral-900);">User_Research_Synthesis_Alex.pdf</div>
-          <div style="font-size:11px; color:var(--success-700);">Ready to submit · 1.4 MB</div>
-        </div>
+function createTaskCardElement(task) {
+  const card = document.createElement('div');
+  card.className = `task-card ${task.completed ? 'completed' : ''}`;
+  card.setAttribute('data-task-id', task.id);
+  card.innerHTML = `
+    <div class="task-check-circle">${task.completed ? '✓' : ''}</div>
+    <div class="task-content">
+      <div class="task-title">${task.title}</div>
+      <div class="task-meta-row">
+        <span>${task.duration} · ${task.category}</span>
+        <span class="task-boost-tag">+${task.boost}% readiness</span>
       </div>
-      <span style="background:#FFFFFF; color:#027A48; border:1px solid #A6F4C5; padding:3px 8px; border-radius:6px; font-size:11px;">✓ Ready</span>
     </div>
   `;
+  return card;
 }
 
 /**
- * Assignment Submission
+ * Open Task Detail Modal & Checklist
  */
-function submitAssignment() {
-  const btn = document.getElementById('submitAssignmentBtn');
-  const badge = document.getElementById('assignmentBadge');
-  const container = document.getElementById('dropzoneContainer');
+function openTaskDetail(taskId) {
+  const task = appState.tasks.find(t => t.id === taskId);
+  if (!task) return;
 
-  if (container && !container.querySelector('.submitted-file-card')) {
-    simulateFileUpload();
-  }
+  appState.activeTaskId = taskId;
+  document.getElementById('taskDetailCategory').textContent = `${task.category} · ${task.duration}`;
+  document.getElementById('taskDetailTitle').textContent = task.title;
 
-  if (badge) {
-    badge.className = 'concept-status-badge badge-completed';
-    badge.style.background = '#ECFDF3';
-    badge.style.color = '#027A48';
-    badge.textContent = '● Submitted';
-  }
-
-  if (btn) {
-    btn.textContent = 'Submitted ✓ (AI Grading)';
-    btn.style.background = 'var(--success-500)';
-    btn.style.boxShadow = 'none';
+  const btn = document.getElementById('taskMarkCompleteBtn');
+  if (task.completed) {
+    btn.textContent = 'Completed ✓';
     btn.disabled = true;
+    btn.style.background = 'var(--success-500)';
+  } else {
+    btn.textContent = `Mark Complete (+${task.boost}% Readiness) ✓`;
+    btn.disabled = false;
+    btn.style.background = 'var(--primary-600)';
   }
 
-  userProfile.assignmentSubmitted = true;
-  userProfile.readinessPct = 78;
+  // Populate checklist
+  const checkContainer = document.getElementById('taskChecklistContainer');
+  checkContainer.innerHTML = '';
+  task.checklist.forEach(item => {
+    const label = document.createElement('label');
+    label.style.cssText = 'display:flex; align-items:center; gap:10px; font-size:13px; cursor:pointer;';
+    label.innerHTML = `
+      <input type="checkbox" ${task.completed ? 'checked' : ''} style="accent-color:var(--primary-600); width:18px; height:18px;">
+      <span>${item}</span>
+    `;
+    checkContainer.appendChild(label);
+  });
 
-  setTimeout(() => {
-    alert('🎉 Drill Submitted! Mentra AI has graded your synthesis: Score 94/100. Readiness boosted to 78%!');
-  }, 400);
+  openModal('modalTaskDetail');
 }
 
 /**
- * Toggle Readiness Details Box
+ * Complete Current Task & Update State Dynamically
  */
-function toggleReadinessWhy() {
-  const box = document.getElementById('readinessWhyBox');
-  if (box) {
-    box.style.display = box.style.display === 'none' ? 'block' : 'none';
+function completeCurrentTask() {
+  const task = appState.tasks.find(t => t.id === appState.activeTaskId);
+  if (!task || task.completed) return;
+
+  task.completed = true;
+  appState.readiness.overall = Math.min(100, appState.readiness.overall + task.boost);
+
+  // Boost relevant category
+  if (task.category === 'Resume') appState.readiness.categories.resume = 100;
+  if (task.category === 'Portfolio') appState.readiness.categories.portfolio = Math.min(100, appState.readiness.categories.portfolio + 15);
+  if (task.category === 'Interview') appState.readiness.categories.interview = Math.min(100, appState.readiness.categories.interview + 20);
+  if (task.category === 'Profile') appState.readiness.categories.profile = 100;
+  if (task.category === 'Job Search') appState.readiness.categories.jobSearch = Math.min(100, appState.readiness.categories.jobSearch + 25);
+
+  updateReadinessDisplays();
+  renderTasks();
+  closeModal('modalTaskDetail');
+
+  // Check if 100% reached
+  if (appState.readiness.overall >= 100) {
+    setTimeout(() => {
+      goToScreen('s-celebration');
+    }, 300);
   }
 }
 
 /**
- * Toggle Design Inspector Drawer
+ * Update Readiness Displays Across All Screens
  */
-function toggleInspector() {
-  const drawer = document.getElementById('inspectorDrawer');
-  if (drawer) {
-    drawer.classList.toggle('open');
+function updateReadinessDisplays() {
+  const score = appState.readiness.overall;
+  const toGo = Math.max(0, 100 - score);
+
+  // Result Screen
+  const resultNum = document.getElementById('resultScoreNumber');
+  const resultFill = document.getElementById('resultScoreFill');
+  if (resultNum) resultNum.textContent = `${score}%`;
+  if (resultFill) resultFill.style.width = `${score}%`;
+
+  // Home Screen
+  const homeNum = document.getElementById('homeScoreNumber');
+  const homeFill = document.getElementById('homeScoreFill');
+  const homeToGo = document.getElementById('homeScoreToGoText');
+  if (homeNum) homeNum.textContent = `${score}%`;
+  if (homeFill) homeFill.style.width = `${score}%`;
+  if (homeToGo) homeToGo.textContent = score >= 100 ? '100% Ready · All milestones achieved!' : `${toGo}% to go · Tap to view breakdown`;
+
+  // Progress Screen
+  const progNum = document.getElementById('progressOverallScore');
+  const progFill = document.getElementById('progressOverallFill');
+  if (progNum) progNum.textContent = `${score}%`;
+  if (progFill) progFill.style.width = `${score}%`;
+
+  // Sheet
+  const sheetNum = document.getElementById('sheetScorePct');
+  if (sheetNum) sheetNum.textContent = `${score}%`;
+
+  // Category percentages
+  const cats = appState.readiness.categories;
+  updateCategoryRow('catResumePct', 'catResumeFill', 'sheetResumePct', cats.resume);
+  updateCategoryRow('catPortfolioPct', 'catPortfolioFill', 'sheetPortfolioPct', cats.portfolio);
+  updateCategoryRow('catInterviewPct', 'catInterviewFill', 'sheetInterviewPct', cats.interview);
+  updateCategoryRow('catProfilePct', 'catProfileFill', 'sheetProfilePct', cats.profile);
+  updateCategoryRow('catJobSearchPct', 'catJobSearchFill', 'sheetJobSearchPct', cats.jobSearch);
+}
+
+function updateCategoryRow(pctId, fillId, sheetId, val) {
+  const p = document.getElementById(pctId);
+  const f = document.getElementById(fillId);
+  const s = document.getElementById(sheetId);
+  if (p) p.textContent = `${val}%`;
+  if (f) f.style.width = `${val}%`;
+  if (s) s.textContent = `${val}%`;
+}
+
+/**
+ * Simulate Reaching 100% Readiness
+ */
+function simulateFullReadiness() {
+  appState.tasks.forEach(t => t.completed = true);
+  appState.readiness.overall = 100;
+  appState.readiness.categories = {
+    resume: 100,
+    portfolio: 100,
+    interview: 100,
+    profile: 100,
+    jobSearch: 100
+  };
+  updateReadinessDisplays();
+  renderTasks();
+  goToScreen('s-celebration');
+}
+
+/**
+ * Inactivity Simulation Toggle
+ */
+function toggleSimulateInactivity() {
+  appState.inactivitySimulated = !appState.inactivitySimulated;
+  const banner = document.getElementById('inactivityBanner');
+  if (banner) {
+    banner.style.display = appState.inactivitySimulated ? 'flex' : 'none';
   }
 }
 
 /**
- * Helper to escape HTML characters
+ * Catch-Up & Reschedule Actions
  */
-function escapeHtml(str) {
-  return str.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+function openCatchUpModal() {
+  openModal('modalCatchUp');
 }
 
-// Initialize on page load
+function confirmCatchUp() {
+  closeModal('modalCatchUp');
+  const banner = document.getElementById('missedTaskBanner');
+  if (banner) banner.style.display = 'none';
+  const inactBanner = document.getElementById('inactivityBanner');
+  if (inactBanner) inactBanner.style.display = 'none';
+  alert('🚀 Catch-Up Mode Active: Today\'s plan condensed to 25 minutes.');
+}
+
+function openRescheduleModal() {
+  openModal('modalReschedule');
+}
+
+function confirmReschedule() {
+  closeModal('modalReschedule');
+  const banner = document.getElementById('missedTaskBanner');
+  if (banner) banner.style.display = 'none';
+  alert('📅 Task rescheduled for tomorrow. Your 5-day streak is preserved!');
+}
+
+/**
+ * Explainable Score Bottom Sheet
+ */
+function openExplainableScoreModal() {
+  openModal('modalExplainableScore');
+}
+
+/**
+ * Mock Interview Helpers
+ */
+function selectInterviewType(chipEl, typeName) {
+  chipEl.parentElement.querySelectorAll('.chip').forEach(c => {
+    c.className = 'chip';
+    c.style.background = 'var(--neutral-100)';
+    c.style.color = 'var(--neutral-700)';
+  });
+  chipEl.className = 'chip chip-primary';
+  chipEl.style.background = 'var(--primary-50)';
+  chipEl.style.color = 'var(--primary-700)';
+}
+
+function nextMockQuestion() {
+  currentMockQIndex = (currentMockQIndex + 1) % MOCK_QUESTIONS.length;
+  document.getElementById('mockQText').textContent = `"${MOCK_QUESTIONS[currentMockQIndex]}"`;
+}
+
+/**
+ * Single Selection Card Utility
+ */
+function selectCardSingle(cardElement) {
+  cardElement.parentElement.querySelectorAll('.option-card').forEach(c => c.classList.remove('selected'));
+  cardElement.classList.add('selected');
+}
+
+/**
+ * Modal Open/Close Utilities
+ */
+function openModal(modalId) {
+  const modal = document.getElementById(modalId);
+  if (modal) modal.classList.add('active');
+}
+
+function closeModal(modalId) {
+  const modal = document.getElementById(modalId);
+  if (modal) modal.classList.remove('active');
+}
+
+function closeAllModals(event) {
+  if (event.target.classList.contains('modal-backdrop')) {
+    document.querySelectorAll('.modal-backdrop').forEach(m => m.classList.remove('active'));
+  }
+}
+
+/**
+ * Reset All Assessment Data
+ */
+function resetAllData() {
+  if (confirm('Reset your assessment and progress back to initial discovery state?')) {
+    appState.readiness.overall = 72;
+    appState.readiness.categories = { resume: 90, portfolio: 75, interview: 60, profile: 80, jobSearch: 55 };
+    appState.tasks.forEach(t => t.completed = false);
+    goToScreen('s-splash');
+  }
+}
+
+// Initial setup on load
 document.addEventListener('DOMContentLoaded', () => {
-  console.log('Mentra AI Learning Companion initialized.');
+  renderTasks();
+  updateReadinessDisplays();
 });
