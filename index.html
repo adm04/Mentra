@@ -1,0 +1,864 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mentra — AI Learning Companion</title>
+  <!-- Google Fonts: Manrope (All weights 400, 500, 600, 700, 800) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- =========================================================================
+       TOP CONTROLS & QUICK NAV BAR (FOR EVALUATION & REVIEW)
+       ========================================================================= -->
+  <header class="app-topbar-controls">
+    <div class="brand-badge">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1-2.5-2.5Z"/>
+        <path d="M6 6h10"/>
+        <path d="M6 10h10"/>
+      </svg>
+      <span>Mentra Prototype</span>
+    </div>
+
+    <nav class="screen-quick-nav" aria-label="Screen Navigation">
+      <button class="quick-nav-btn active" onclick="navigateToScreen('s-welcome')">1. Onboarding</button>
+      <button class="quick-nav-btn" onclick="navigateToScreen('s-goal')">2. Goal Step 1</button>
+      <button class="quick-nav-btn" onclick="navigateToScreen('s-step2')">3. Step 2 & 3</button>
+      <button class="quick-nav-btn" onclick="navigateToScreen('s-home')">4. Homepage</button>
+      <button class="quick-nav-btn" onclick="navigateToScreen('s-ai-chat')">5. Mentra AI Chat</button>
+      <button class="quick-nav-btn" onclick="navigateToScreen('s-topic-detail')">6. Topic Detail</button>
+      <button class="quick-nav-btn" onclick="navigateToScreen('s-assignment')">7. Assignment</button>
+      <button class="quick-nav-btn" onclick="navigateToScreen('s-progress')">8. Progress</button>
+    </nav>
+  </header>
+
+  <!-- Floating Design Decisions & Color Token Inspector Trigger -->
+  <button class="inspector-toggle-btn" onclick="toggleInspector()" aria-label="View Design System & Tokens">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+      <circle cx="12" cy="12" r="10"/>
+      <path d="m4.93 4.93 4.24 4.24"/>
+      <path d="m14.83 9.17 4.24-4.24"/>
+      <path d="m14.83 14.83 4.24 4.24"/>
+      <path d="m9.17 14.83-4.24 4.24"/>
+    </svg>
+    <span>Design Tokens & Rationale →</span>
+  </button>
+
+  <!-- =========================================================================
+     DESIGN SYSTEM & RATIONALE INSPECTOR DRAWER
+     ========================================================================= -->
+  <aside class="inspector-panel" id="inspectorDrawer" aria-label="Design System Drawer">
+    <button class="inspector-close-btn" onclick="toggleInspector()" aria-label="Close">✕</button>
+    <h2>Mentra Design System</h2>
+    <p>Specification & design tokens mapped to <strong>Manrope</strong> typography and exact <strong>25–950 color ramps</strong>.</p>
+
+    <h3>1. Primary Brand Color: Indigo</h3>
+    <p>Main Tone: <code>#4C4FE0</code> (Indigo 600)</p>
+    <div class="swatch-ramp">
+      <div class="swatch-item"><div class="swatch-box" style="background:#F5F8FF"></div><span class="swatch-label">25</span></div>
+      <div class="swatch-item"><div class="swatch-box" style="background:#EEF4FF"></div><span class="swatch-label">50</span></div>
+      <div class="swatch-item"><div class="swatch-box" style="background:#E0EAFF"></div><span class="swatch-label">100</span></div>
+      <div class="swatch-item"><div class="swatch-box" style="background:#C7D7FE"></div><span class="swatch-label">200</span></div>
+      <div class="swatch-item"><div class="swatch-box" style="background:#A4BCFD"></div><span class="swatch-label">300</span></div>
+      <div class="swatch-item"><div class="swatch-box" style="background:#8098F9"></div><span class="swatch-label">400</span></div>
+      <div class="swatch-item"><div class="swatch-box" style="background:#6172F3"></div><span class="swatch-label">500</span></div>
+      <div class="swatch-item"><div class="swatch-box" style="background:#4C4FE0; outline:2px solid #000;"></div><span class="swatch-label">600★</span></div>
+      <div class="swatch-item"><div class="swatch-box" style="background:#352DB0"></div><span class="swatch-label">700</span></div>
+      <div class="swatch-item"><div class="swatch-box" style="background:#2B2580"></div><span class="swatch-label">800</span></div>
+      <div class="swatch-item"><div class="swatch-box" style="background:#1F1A58"></div><span class="swatch-label">900</span></div>
+      <div class="swatch-item"><div class="swatch-box" style="background:#14103B"></div><span class="swatch-label">950</span></div>
+    </div>
+
+    <h3>2. Secondary Brand Color: Cyan</h3>
+    <p>Main Tone: <code>#06AED4</code> (Cyan 500)</p>
+    <div class="swatch-ramp">
+      <div class="swatch-item"><div class="swatch-box" style="background:#F5FBFC"></div><span class="swatch-label">25</span></div>
+      <div class="swatch-item"><div class="swatch-box" style="background:#ECFDFF"></div><span class="swatch-label">50</span></div>
+      <div class="swatch-item"><div class="swatch-box" style="background:#CFF9FE"></div><span class="swatch-label">100</span></div>
+      <div class="swatch-item"><div class="swatch-box" style="background:#A5F0FC"></div><span class="swatch-label">200</span></div>
+      <div class="swatch-item"><div class="swatch-box" style="background:#67E3F9"></div><span class="swatch-label">300</span></div>
+      <div class="swatch-item"><div class="swatch-box" style="background:#22CCEE"></div><span class="swatch-label">400</span></div>
+      <div class="swatch-item"><div class="swatch-box" style="background:#06AED4; outline:2px solid #000;"></div><span class="swatch-label">500★</span></div>
+      <div class="swatch-item"><div class="swatch-box" style="background:#088AB2"></div><span class="swatch-label">600</span></div>
+      <div class="swatch-item"><div class="swatch-box" style="background:#0E7090"></div><span class="swatch-label">700</span></div>
+      <div class="swatch-item"><div class="swatch-box" style="background:#155B75"></div><span class="swatch-label">800</span></div>
+      <div class="swatch-item"><div class="swatch-box" style="background:#164C63"></div><span class="swatch-label">900</span></div>
+      <div class="swatch-item"><div class="swatch-box" style="background:#093344"></div><span class="swatch-label">950</span></div>
+    </div>
+
+    <h3>3. Neutral Gray Scale</h3>
+    <p>Main Tone: <code>#717680</code> (Neutral 500)</p>
+    <div class="swatch-ramp">
+      <div class="swatch-item"><div class="swatch-box" style="background:#FCFCFD"></div><span class="swatch-label">25</span></div>
+      <div class="swatch-item"><div class="swatch-box" style="background:#F9FAFB"></div><span class="swatch-label">50</span></div>
+      <div class="swatch-item"><div class="swatch-box" style="background:#F2F4F7"></div><span class="swatch-label">100</span></div>
+      <div class="swatch-item"><div class="swatch-box" style="background:#E4E7EC"></div><span class="swatch-label">200</span></div>
+      <div class="swatch-item"><div class="swatch-box" style="background:#D0D5DD"></div><span class="swatch-label">300</span></div>
+      <div class="swatch-item"><div class="swatch-box" style="background:#98A2B3"></div><span class="swatch-label">400</span></div>
+      <div class="swatch-item"><div class="swatch-box" style="background:#717680; outline:2px solid #000;"></div><span class="swatch-label">500★</span></div>
+      <div class="swatch-item"><div class="swatch-box" style="background:#535862"></div><span class="swatch-label">600</span></div>
+      <div class="swatch-item"><div class="swatch-box" style="background:#344054"></div><span class="swatch-label">700</span></div>
+      <div class="swatch-item"><div class="swatch-box" style="background:#252B37"></div><span class="swatch-label">800</span></div>
+      <div class="swatch-item"><div class="swatch-box" style="background:#181D27"></div><span class="swatch-label">900</span></div>
+      <div class="swatch-item"><div class="swatch-box" style="background:#0A0D12"></div><span class="swatch-label">950</span></div>
+    </div>
+
+    <h3>4. Functional Colors</h3>
+    <div style="display:flex; gap:10px; margin-bottom:14px;">
+      <div style="flex:1; background:#FEF3F2; border:1px solid #FECDCA; padding:8px; border-radius:8px;">
+        <strong style="color:#F04438; font-size:12px;">Error #F04438</strong>
+      </div>
+      <div style="flex:1; background:#ECFDF3; border:1px solid #A6F4C5; padding:8px; border-radius:8px;">
+        <strong style="color:#12B76A; font-size:12px;">Success #12B76A</strong>
+      </div>
+      <div style="flex:1; background:#FFFAEB; border:1px solid #FEDF89; padding:8px; border-radius:8px;">
+        <strong style="color:#F79009; font-size:12px;">Warning #F79009</strong>
+      </div>
+      <div style="flex:1; background:#EFF8FF; border:1px solid #B2DDFF; padding:8px; border-radius:8px;">
+        <strong style="color:#2E90FA; font-size:12px;">Info #2E90FA</strong>
+      </div>
+    </div>
+
+    <h3>5. Typography: Manrope Scale</h3>
+    <p>Font Family: <code>Manrope, -apple-system, sans-serif</code></p>
+    <ul style="padding-left:18px; font-size:12.5px; line-height:1.8; color:var(--neutral-700);">
+      <li><strong>Display 1–5:</strong> 56px, 48px, 40px, 36px, 32px (Weights: 700 / 800)</li>
+      <li><strong>Heading 1–6:</strong> 26px, 22px, 18px, 16px, 15px, 13px (Weights: 600 / 700 / 800)</li>
+      <li><strong>Body Large / Medium / Small:</strong> 16px, 14px, 13px (Weights: 400 / 500)</li>
+      <li><strong>Body XSmall / XXSmall:</strong> 12px, 11px (Weights: 500 / 600)</li>
+    </ul>
+
+    <h3>6. Key Experience Decisions</h3>
+    <p>• <strong>Rebranding to Mentra:</strong> Seamless replacement of all former logos, hero cards, prompt triggers ("Ask MENTRA"), and navigation items.<br>
+       • <strong>Direct Alignment with Reference Screens:</strong> Exact replication of Onboarding 1 hero floating chips, Goal Selection step 1 segmented bar, and Homepage gradient AI search card.<br>
+       • <strong>Interactive Simulation:</strong> Dynamic AI questions, accordion lesson expansion, file upload simulation, and live progress calculations.</p>
+  </aside>
+
+  <!-- =========================================================================
+       MOBILE DEVICE CONTAINER (IPHONE FRAME)
+       ========================================================================= -->
+  <main class="phone-container" id="phoneContainer">
+    
+    <!-- iPhone Top Status Bar & Dynamic Island -->
+    <div class="phone-notch-bar" id="notchBar">
+      <span class="status-time">9:41</span>
+      <div class="dynamic-island-pill">
+        <div class="island-camera-dot"></div>
+      </div>
+      <div class="status-icons">
+        <!-- Cellular Icon -->
+        <svg viewBox="0 0 24 24">
+          <rect x="2" y="16" width="3" height="6" rx="1"/>
+          <rect x="7" y="12" width="3" height="10" rx="1"/>
+          <rect x="12" y="8" width="3" height="14" rx="1"/>
+          <rect x="17" y="4" width="3" height="18" rx="1"/>
+        </svg>
+        <!-- Wifi Icon -->
+        <svg viewBox="0 0 24 24">
+          <path d="M12 18h.01M5 12.5a10.5 10.5 0 0 1 14 0M8.5 15.5a6 6 0 0 1 7 0M1.5 9a15.5 15.5 0 0 1 21 0"/>
+        </svg>
+        <!-- Battery Icon -->
+        <svg viewBox="0 0 24 24">
+          <rect x="2" y="6" width="17" height="12" rx="3" fill="none" stroke="currentColor" stroke-width="2"/>
+          <path d="M21 10v4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+          <rect x="4" y="8" width="11" height="8" rx="1.5" fill="currentColor"/>
+        </svg>
+      </div>
+    </div>
+
+    <!-- Screen Content Wrapper -->
+    <div class="screen-content-area" id="screenContentArea">
+
+      <!-- =====================================================================
+           SCREEN 1: ONBOARDING / WELCOME (Reference: Onboarding_1.png)
+           ===================================================================== -->
+      <section class="screen-view active" id="s-welcome">
+        <div class="welcome-hero-container">
+          <!-- Central phone illustration -->
+          <div class="hero-phone-mockup">
+            <div class="mockup-inner-header">
+              <span class="mockup-back-arrow">‹</span>
+              <span class="mockup-title">Detail Topics</span>
+            </div>
+            <div class="mockup-topic-card">
+              <div class="mockup-topic-h">Ultra-Learning Fundamentals</div>
+              <div class="mockup-topic-sub">Key Concepts · Est. time: 20–30 min</div>
+              <div class="mockup-progress-bar">
+                <div class="mockup-progress-fill"></div>
+              </div>
+            </div>
+            <div class="mockup-concept-list">
+              <div class="mockup-concept-item">
+                <span>1. Meta-Learning</span>
+                <span class="mockup-tag-completed">● Completed</span>
+              </div>
+              <div class="mockup-concept-item">
+                <span>2. Focus</span>
+                <span class="mockup-tag-completed">● Completed</span>
+              </div>
+              <div class="mockup-concept-item">
+                <span>3. Directness</span>
+                <span class="mockup-tag-completed">● Completed</span>
+              </div>
+              <div class="mockup-concept-item">
+                <span>4. Drill</span>
+                <span class="mockup-tag-completed">● Completed</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Floating card 1: Learning -->
+          <div class="floating-feature-card card-learning">
+            <div class="floating-icon-bubble" style="background:#4C4FE0;">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+              </svg>
+            </div>
+            <div class="floating-card-title">Learning 🎓</div>
+            <div class="floating-card-desc">Step-by-step explanations with structured concepts.</div>
+          </div>
+
+          <!-- Floating card 2: Exam Prep -->
+          <div class="floating-feature-card card-exam">
+            <div class="floating-icon-bubble" style="background:#2E90FA;">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor">
+                <rect x="4" y="4" width="16" height="16" rx="2"/>
+              </svg>
+            </div>
+            <div class="floating-card-title">Exam Prep 📝</div>
+            <div class="floating-card-desc">Practice questions, drills, and exam-oriented feedback.</div>
+          </div>
+
+          <!-- Floating card 3: Quick Exp -->
+          <div class="floating-feature-card card-quick">
+            <div class="floating-icon-bubble" style="background:#06AED4;">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                <line x1="4" y1="6" x2="20" y2="6"/>
+                <line x1="4" y1="12" x2="16" y2="12"/>
+                <line x1="4" y1="18" x2="12" y2="18"/>
+              </svg>
+            </div>
+            <div class="floating-card-title">Quick Exp ⚡</div>
+            <div class="floating-card-desc">Short, focused answers without unnecessary details.</div>
+          </div>
+
+          <!-- Floating card 4: Feedback & Retention Preview -->
+          <div class="floating-feature-card card-feedback-preview">
+            <div style="display:flex; justify-content:space-between; align-items:center;">
+              <span style="font-size:10px; font-weight:700; color:var(--color-black);">5. Feedback & Retention</span>
+              <span style="background:#EEF4FF; color:#4C4FE0; font-size:8px; font-weight:700; padding:1px 5px; border-radius:6px;">● Active</span>
+            </div>
+            <div style="font-size:8px; color:var(--neutral-600); margin-top:2px;">Frequent testing accelerates retention and mastery.</div>
+            <div style="margin-top:4px; font-size:7.5px; color:var(--neutral-500);">
+              <strong>What you will learn:</strong>
+              <div>• Deep work blocks</div>
+              <div>• Reducing cognitive load</div>
+            </div>
+            <button class="card-btn-mini" onclick="navigateToScreen('s-topic-detail')">View Detail</button>
+          </div>
+        </div>
+
+        <!-- 3-Dot Carousel Indicator -->
+        <div class="carousel-dots" aria-label="Page Indicator">
+          <span class="carousel-dot active"></span>
+          <span class="carousel-dot"></span>
+          <span class="carousel-dot"></span>
+        </div>
+
+        <!-- Onboarding Typography & Copy -->
+        <div class="onboarding-text-wrap">
+          <h1 class="onboarding-title">Welcome to MENTRA, Your AI Learning Companion</h1>
+          <p class="onboarding-subtitle">An intelligent learning companion designed to help you understand topics faster, think clearer, and learn smarter with AI assistance.</p>
+        </div>
+
+        <!-- Buttons -->
+        <div class="btn-container">
+          <button class="btn-primary" onclick="navigateToScreen('s-goal')">Continue</button>
+          <button class="btn-outline" onclick="navigateToScreen('s-home')">Skip</button>
+        </div>
+      </section>
+
+
+      <!-- =====================================================================
+           SCREEN 2: PRE-PERSONALIZATION STEP 1 (Reference: Pre-Personalization_Step_1.png)
+           ===================================================================== -->
+      <section class="screen-view" id="s-goal">
+        <!-- Top bar: Segmented progress & step counter -->
+        <div class="pre-step-header">
+          <div class="progress-header-row">
+            <div class="segmented-progress-track">
+              <div class="progress-segment active"></div>
+              <div class="progress-segment"></div>
+              <div class="progress-segment"></div>
+            </div>
+            <span class="progress-step-counter">1 of 3</span>
+          </div>
+
+          <!-- Mentra Logo -->
+          <div class="mentra-logo">
+            <svg class="mentra-icon" viewBox="0 0 32 32" fill="none">
+              <path d="M6 10C6 7.79 7.79 6 10 6H16C19.31 6 22 8.69 22 12C22 13.9 21.1 15.6 19.7 16.7L19 17.2C17.7 18.2 17 19.7 17 21.3V22H13V21.3C13 18.5 14.2 15.9 16.3 14.3L17 13.8C17.6 13.3 18 12.6 18 11.8C18 10.8 17.2 10 16.2 10H10C8.9 10 8 10.9 8 12V26H4V12C4 10.9 4.9 10 6 10Z" fill="currentColor"/>
+              <path d="M26 12H22V16H26C27.1 16 28 16.9 28 18V22C28 23.1 27.1 24 26 24H20C18.9 24 18 23.1 18 22V20H14V22C14 25.31 16.69 28 20 28H26C29.31 28 32 25.31 32 22V18C32 14.69 29.31 12 26 12Z" fill="currentColor"/>
+            </svg>
+            <span>Mentra</span>
+          </div>
+
+          <div>
+            <h2 class="step-page-title">What's your main learning goal?</h2>
+            <p class="step-page-subtitle">This helps MENTRA tailor explanations and insights that fit your needs.</p>
+          </div>
+        </div>
+
+        <!-- Selectable Goal Option Cards -->
+        <div class="selection-cards-list" id="goalOptionsList">
+          <div class="goal-option-card selected" onclick="selectGoalCard(this, 'Study & Academics 🎓')">
+            <div class="goal-card-content">
+              <span>Study & Academics</span>
+              <span class="goal-card-emoji">🎓</span>
+            </div>
+            <div class="goal-check-icon">✓</div>
+          </div>
+
+          <div class="goal-option-card" onclick="selectGoalCard(this, 'Work & Career 💼')">
+            <div class="goal-card-content">
+              <span>Work & Career</span>
+              <span class="goal-card-emoji">💼</span>
+            </div>
+            <div class="goal-check-icon">✓</div>
+          </div>
+
+          <div class="goal-option-card" onclick="selectGoalCard(this, 'Skill & Self-Improvement 🚀')">
+            <div class="goal-card-content">
+              <span>Skill & Self-Improvement</span>
+              <span class="goal-card-emoji">🚀</span>
+            </div>
+            <div class="goal-check-icon">✓</div>
+          </div>
+
+          <div class="goal-option-card" onclick="selectGoalCard(this, 'Personal Growth 🌱')">
+            <div class="goal-card-content">
+              <span>Personal Growth</span>
+              <span class="goal-card-emoji">🌱</span>
+            </div>
+            <div class="goal-check-icon">✓</div>
+          </div>
+        </div>
+
+        <!-- Sticky Bottom Continue Button -->
+        <div class="btn-container" style="margin-top:auto; padding-bottom:14px;">
+          <button class="btn-primary" id="goalContinueBtn" onclick="navigateToScreen('s-step2')">Continue</button>
+        </div>
+      </section>
+
+
+      <!-- =====================================================================
+           SCREEN 3: PRE-PERSONALIZATION STEP 2 & 3 (Interactive Personalization)
+           ===================================================================== -->
+      <section class="screen-view" id="s-step2">
+        <div class="pre-step-header">
+          <div class="progress-header-row">
+            <div class="segmented-progress-track">
+              <div class="progress-segment active"></div>
+              <div class="progress-segment active"></div>
+              <div class="progress-segment"></div>
+            </div>
+            <span class="progress-step-counter">2 of 3</span>
+          </div>
+
+          <div class="mentra-logo">
+            <svg class="mentra-icon" viewBox="0 0 32 32" fill="none">
+              <path d="M6 10C6 7.79 7.79 6 10 6H16C19.31 6 22 8.69 22 12C22 13.9 21.1 15.6 19.7 16.7L19 17.2C17.7 18.2 17 19.7 17 21.3V22H13V21.3C13 18.5 14.2 15.9 16.3 14.3L17 13.8C17.6 13.3 18 12.6 18 11.8C18 10.8 17.2 10 16.2 10H10C8.9 10 8 10.9 8 12V26H4V12C4 10.9 4.9 10 6 10Z" fill="currentColor"/>
+              <path d="M26 12H22V16H26C27.1 16 28 16.9 28 18V22C28 23.1 27.1 24 26 24H20C18.9 24 18 23.1 18 22V20H14V22C14 25.31 16.69 28 20 28H26C29.31 28 32 25.31 32 22V18C32 14.69 29.31 12 26 12Z" fill="currentColor"/>
+            </svg>
+            <span>Mentra</span>
+          </div>
+
+          <div>
+            <h2 class="step-page-title">How do you prefer to learn?</h2>
+            <p class="step-page-subtitle">Mentra customizes the AI depth and explanations to match your pace.</p>
+          </div>
+        </div>
+
+        <div class="selection-cards-list">
+          <div class="goal-option-card selected" onclick="selectCardSingle(this)">
+            <div class="goal-card-content">
+              <span>Bite-sized & Interactive</span>
+              <span class="goal-card-emoji">⚡</span>
+            </div>
+            <div class="goal-check-icon">✓</div>
+          </div>
+
+          <div class="goal-option-card" onclick="selectCardSingle(this)">
+            <div class="goal-card-content">
+              <span>Deep-dive & First Principles</span>
+              <span class="goal-card-emoji">🔬</span>
+            </div>
+            <div class="goal-check-icon">✓</div>
+          </div>
+
+          <div class="goal-option-card" onclick="selectCardSingle(this)">
+            <div class="goal-card-content">
+              <span>Practical Drills & Problem Solving</span>
+              <span class="goal-card-emoji">🎯</span>
+            </div>
+            <div class="goal-check-icon">✓</div>
+          </div>
+
+          <div class="goal-option-card" onclick="selectCardSingle(this)">
+            <div class="goal-card-content">
+              <span>Visual Frameworks & Analogies</span>
+              <span class="goal-card-emoji">💡</span>
+            </div>
+            <div class="goal-check-icon">✓</div>
+          </div>
+        </div>
+
+        <div class="btn-container" style="margin-top:auto; padding-bottom:14px;">
+          <button class="btn-primary" onclick="launchAIPlanGeneration()">Generate My Learning Path ✨</button>
+        </div>
+      </section>
+
+
+      <!-- =====================================================================
+           SCREEN 4: HOMEPAGE / DASHBOARD (Reference: Homepage.png)
+           ===================================================================== -->
+      <section class="screen-view" id="s-home">
+        <!-- Top Bar Header -->
+        <div class="home-header">
+          <div class="mentra-logo">
+            <svg class="mentra-icon" viewBox="0 0 32 32" fill="none">
+              <path d="M6 10C6 7.79 7.79 6 10 6H16C19.31 6 22 8.69 22 12C22 13.9 21.1 15.6 19.7 16.7L19 17.2C17.7 18.2 17 19.7 17 21.3V22H13V21.3C13 18.5 14.2 15.9 16.3 14.3L17 13.8C17.6 13.3 18 12.6 18 11.8C18 10.8 17.2 10 16.2 10H10C8.9 10 8 10.9 8 12V26H4V12C4 10.9 4.9 10 6 10Z" fill="currentColor"/>
+              <path d="M26 12H22V16H26C27.1 16 28 16.9 28 18V22C28 23.1 27.1 24 26 24H20C18.9 24 18 23.1 18 22V20H14V22C14 25.31 16.69 28 20 28H26C29.31 28 32 25.31 32 22V18C32 14.69 29.31 12 26 12Z" fill="currentColor"/>
+            </svg>
+            <span>Mentra</span>
+          </div>
+
+          <button class="notification-bell-btn" onclick="alert('You have 99+ notifications from your AI Study Coach!')" aria-label="Notifications">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/>
+              <path d="M13.73 21a2 2 0 0 1-3.46 0"/>
+            </svg>
+            <span class="notification-badge-count">99+</span>
+          </button>
+        </div>
+
+        <!-- Greeting Section -->
+        <div class="user-greeting-section">
+          <h2 class="user-greeting-title">Good morning, Alex <span>👋</span></h2>
+          <p class="user-greeting-sub">Let's continue learning based on your goals</p>
+          <div class="user-goal-pill" id="currentGoalBadge" onclick="navigateToScreen('s-goal')">
+            <span id="currentGoalText">Study & Academics</span> 🎓
+          </div>
+        </div>
+
+        <!-- ASK MENTRA HERO CARD (Exact gradient & layout from Homepage.png) -->
+        <div class="ask-mentra-card">
+          <div class="ask-mentra-tag">Ask MENTRA</div>
+          <h3 class="ask-mentra-title">What would you like to learn today?</h3>
+
+          <!-- Search / Prompt Input Bar -->
+          <div class="ask-input-container">
+            <input type="text" class="ask-input-field" id="homeSearchPrompt" placeholder="Explain about Ultra-learning" value="Explain about Ultra-learning" onkeypress="handleHomeSearchKeyPress(event)">
+            <button class="ask-send-btn" onclick="submitHomePrompt()" aria-label="Send to Mentra AI">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="22" y1="2" x2="11" y2="13"/>
+                <polygon points="22 2 15 22 11 13 2 9 22 2"/>
+              </svg>
+            </button>
+          </div>
+
+          <!-- Suggested prompt chips -->
+          <div class="prompt-chips-row">
+            <button class="prompt-chip" onclick="triggerQuickPrompt('Explain this topic simply')">Explain this topic simply</button>
+            <button class="prompt-chip" onclick="triggerQuickPrompt('Create a learning plan')">Create a learning plan</button>
+            <button class="prompt-chip" onclick="triggerQuickPrompt('Summarize key concepts')">Summarize key concepts</button>
+          </div>
+
+          <!-- Tip Banner -->
+          <div class="mentra-tip-banner">
+            <span class="tip-sparkle">✨</span>
+            <div><strong>Tip :</strong> Ask MENTRA to explain topics using examples you already know.</div>
+          </div>
+        </div>
+
+        <!-- TODAY'S FOCUS SECTION -->
+        <div class="section-header-row">
+          <h3 class="section-h">Today's Focus</h3>
+          <span class="section-view-all" onclick="navigateToScreen('s-topic-detail')">View all</span>
+        </div>
+
+        <div class="focus-card" onclick="navigateToScreen('s-topic-detail')">
+          <div class="focus-card-title">Ultra-Learning Fundamentals</div>
+          <div class="focus-progress-wrapper">
+            <div class="focus-progress-track">
+              <div class="focus-progress-fill" style="width: 80%;"></div>
+            </div>
+            <span class="focus-progress-pct">80%</span>
+          </div>
+          <div class="focus-card-meta">
+            <span>5 Key Concepts</span>
+            <span class="focus-meta-divider"></span>
+            <span>Last activity : 1 hours ago</span>
+          </div>
+        </div>
+
+        <!-- RECENT LEARNING TOPICS SECTION -->
+        <div class="section-header-row">
+          <h3 class="section-h">Recent Learning Topics</h3>
+          <span class="section-view-all" onclick="navigateToScreen('s-topic-detail')">View all</span>
+        </div>
+
+        <div class="recent-topic-card" onclick="navigateToScreen('s-topic-detail')">
+          <div class="recent-topic-info">
+            <div class="recent-topic-title">Introduction to English Business</div>
+            <div class="recent-topic-sub">3 of 8 modules completed · 35%</div>
+          </div>
+          <div class="recent-topic-action">Continue →</div>
+        </div>
+
+        <div class="recent-topic-card" onclick="navigateToScreen('s-assignment')">
+          <div class="recent-topic-info">
+            <div class="recent-topic-title">User Research Synthesis Drill</div>
+            <div class="recent-topic-sub" style="color:var(--warning-500); font-weight:600;">Due tomorrow · 18h left</div>
+          </div>
+          <div class="recent-topic-action" style="color:var(--warning-500);">Review →</div>
+        </div>
+
+        <div class="recent-topic-card" onclick="navigateToScreen('s-progress')">
+          <div class="recent-topic-info">
+            <div class="recent-topic-title">Mental Models & First Principles</div>
+            <div class="recent-topic-sub">Completed · Mastery level: 92%</div>
+          </div>
+          <div class="recent-topic-action" style="color:var(--success-500);">Review ✓</div>
+        </div>
+      </section>
+
+
+      <!-- =====================================================================
+           SCREEN 5: MENTRA AI CONVERSATIONAL TUTOR STUDIO
+           ===================================================================== -->
+      <section class="screen-view" id="s-ai-chat">
+        <div class="chat-screen-header">
+          <div class="chat-partner-info">
+            <div class="ai-avatar">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/>
+              </svg>
+            </div>
+            <div>
+              <div style="font-weight:800; font-size:15px;">Mentra AI Tutor</div>
+              <div class="ai-status-text"><span class="ai-status-dot"></span> Ready to explain & test</div>
+            </div>
+          </div>
+          <button class="back-btn" onclick="navigateToScreen('s-home')" aria-label="Close Chat">✕</button>
+        </div>
+
+        <div class="chat-messages-container" id="chatMessagesBox">
+          <div class="chat-bubble ai">
+            <strong>Hello Alex! 🌟</strong> I'm Mentra, your AI learning companion. Ask me anything, or choose a concept below to break down into simple mental models!
+          </div>
+
+          <div class="chat-bubble user" id="sampleUserPrompt">
+            Explain about Ultra-learning
+          </div>
+
+          <div class="chat-bubble ai" id="sampleAiResponse">
+            <strong>Ultra-Learning in 3 Steps:</strong><br>
+            It's an aggressive, self-directed strategy for acquiring skills rapidly through deep focus and direct practice.
+            <div class="chat-interactive-card">
+              <div style="font-weight:700; font-size:13px; color:var(--primary-600); margin-bottom:4px;">Core Rule: Directness</div>
+              <p style="font-size:12px; line-height:1.4; color:var(--neutral-700);">Always learn by doing the actual thing you want to become good at, rather than passive reading.</p>
+              <button class="btn-primary" style="height:36px; font-size:12px; margin-top:8px; width:auto; padding:0 14px;" onclick="navigateToScreen('s-topic-detail')">Open Topic Modules →</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="chat-input-bar">
+          <input type="text" class="chat-input" id="chatInputText" placeholder="Ask Mentra any concept..." onkeypress="handleChatInputKeyPress(event)">
+          <button class="ask-send-btn" onclick="sendChatMessage()">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="22" y1="2" x2="11" y2="13"/>
+              <polygon points="22 2 15 22 11 13 2 9 22 2"/>
+            </svg>
+          </button>
+        </div>
+      </section>
+
+
+      <!-- =====================================================================
+           SCREEN 6: TOPIC DETAIL & LESSON ACCORDION (Reference Mockup)
+           ===================================================================== -->
+      <section class="screen-view" id="s-topic-detail">
+        <div class="topic-detail-header">
+          <button class="back-btn" onclick="navigateToScreen('s-home')" aria-label="Back">‹</button>
+          <div style="font-weight:800; font-size:16px;">Detail Topics</div>
+          <div style="width:34px;"></div>
+        </div>
+
+        <div class="focus-card" style="margin-top:14px;">
+          <div class="focus-card-title">Ultra-Learning Fundamentals</div>
+          <div class="focus-card-meta" style="margin-bottom:10px;">
+            <span>5 Key Concepts</span>
+            <span class="focus-meta-divider"></span>
+            <span>Estimated time: 20–30 min</span>
+          </div>
+          <div class="focus-progress-wrapper">
+            <div class="focus-progress-track">
+              <div class="focus-progress-fill" style="width: 80%;"></div>
+            </div>
+            <span class="focus-progress-pct">80%</span>
+          </div>
+          <div style="font-size:12px; color:var(--neutral-500); margin-top:4px;">4 of 5 concepts completed</div>
+        </div>
+
+        <div class="section-header-row">
+          <h3 class="section-h">Key Concepts</h3>
+        </div>
+
+        <!-- Concept 1 -->
+        <div class="concept-accordion-item">
+          <button class="concept-header-btn" onclick="toggleAccordion(this)">
+            <div class="concept-name-tag">
+              <span>1. Meta-Learning</span>
+            </div>
+            <div class="concept-status-badge badge-completed">● Completed</div>
+          </button>
+          <div class="concept-body" style="display:none;">
+            Understand how knowledge in this domain is structured. Draw a map of concepts, facts, and procedures before diving in.
+          </div>
+        </div>
+
+        <!-- Concept 2 -->
+        <div class="concept-accordion-item">
+          <button class="concept-header-btn" onclick="toggleAccordion(this)">
+            <div class="concept-name-tag">
+              <span>2. Focus</span>
+            </div>
+            <div class="concept-status-badge badge-completed">● Completed</div>
+          </button>
+          <div class="concept-body" style="display:none;">
+            Carve out unfragmented chunks of time. Overcome procrastination using the 5-minute immersion rule.
+          </div>
+        </div>
+
+        <!-- Concept 3 -->
+        <div class="concept-accordion-item">
+          <button class="concept-header-btn" onclick="toggleAccordion(this)">
+            <div class="concept-name-tag">
+              <span>3. Directness</span>
+            </div>
+            <div class="concept-status-badge badge-completed">● Completed</div>
+          </button>
+          <div class="concept-body" style="display:none;">
+            Tether your learning directly to real-world context instead of sanitized classroom exercises.
+          </div>
+        </div>
+
+        <!-- Concept 4 -->
+        <div class="concept-accordion-item">
+          <button class="concept-header-btn" onclick="toggleAccordion(this)">
+            <div class="concept-name-tag">
+              <span>4. Drill</span>
+            </div>
+            <div class="concept-status-badge badge-completed">● Completed</div>
+          </button>
+          <div class="concept-body" style="display:none;">
+            Isolate your bottleneck sub-skill and attack it systematically through repeated, intentional practice.
+          </div>
+        </div>
+
+        <!-- Concept 5: Active (Matches Screenshot Floating Card) -->
+        <div class="concept-accordion-item active-lesson">
+          <button class="concept-header-btn" onclick="toggleAccordion(this)">
+            <div class="concept-name-tag">
+              <span style="color:var(--primary-700);">5. Feedback & Retention</span>
+            </div>
+            <div class="concept-status-badge badge-active">● Active</div>
+          </button>
+          <div class="concept-body" style="display:block;">
+            <p>Frequent testing and honest feedback accelerate retention and mastery.</p>
+            <div style="margin-top:8px; font-weight:700; color:var(--color-black); font-size:12px;">What you will learn:</div>
+            <ul style="padding-left:18px; margin-top:4px; font-size:12px; color:var(--neutral-700);">
+              <li>Deep work blocks</li>
+              <li>Reducing cognitive load</li>
+              <li>Managing mental energy</li>
+            </ul>
+            <div style="display:flex; gap:8px; margin-top:12px;">
+              <button class="btn-primary" style="height:38px; font-size:12px; flex:1;" onclick="navigateToScreen('s-assignment')">Start Practical Drill →</button>
+              <button class="btn-outline" style="height:38px; font-size:12px; flex:1;" onclick="askMentraAboutConcept('Feedback & Retention')">Ask Mentra AI 🤖</button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+
+      <!-- =====================================================================
+           SCREEN 7: ASSIGNMENT & DRILL SUBMISSION
+           ===================================================================== -->
+      <section class="screen-view" id="s-assignment">
+        <div class="topic-detail-header">
+          <button class="back-btn" onclick="navigateToScreen('s-home')" aria-label="Back">‹</button>
+          <div style="font-weight:800; font-size:16px;">Week 3 Assignment</div>
+          <div style="width:34px;"></div>
+        </div>
+
+        <div class="assignment-banner">
+          <div style="display:flex; justify-content:space-between; align-items:flex-start;">
+            <div>
+              <div style="font-size:11px; font-weight:700; color:var(--primary-600); text-transform:uppercase; letter-spacing:0.04em;">Practical Drill</div>
+              <h2 style="font-size:18px; font-weight:800; color:var(--color-black); margin-top:2px;">User Research Synthesis</h2>
+            </div>
+            <span class="concept-status-badge badge-active" id="assignmentBadge" style="background:#FFFAEB; color:#DC6803;">Not submitted</span>
+          </div>
+
+          <p style="font-size:13px; color:var(--neutral-700); line-height:1.5; margin-top:12px;">
+            Review the attached interview transcripts from the Week 3 field study. Group findings into themes, and write a one-page synthesis identifying top user needs and recommendations.
+          </p>
+
+          <div class="deadline-row">
+            <div>
+              <div style="font-size:11px; color:var(--neutral-500);">Deadline</div>
+              <div style="font-size:13px; font-weight:700; color:var(--color-black);">Tomorrow, 6:00 PM</div>
+            </div>
+            <div style="font-size:12px; font-weight:700; color:var(--warning-600); background:#FFFAEB; padding:4px 8px; border-radius:6px;">18h left</div>
+          </div>
+        </div>
+
+        <!-- Interactive Dropzone -->
+        <div id="dropzoneContainer">
+          <div class="dropzone-upload-box" onclick="simulateFileUpload()">
+            <div style="font-size:28px; margin-bottom:6px;">📄</div>
+            <div style="font-weight:700; font-size:14px; color:var(--primary-600);">Tap to upload synthesis file</div>
+            <div style="font-size:11.5px; color:var(--neutral-500); margin-top:4px;">PDF, DOCX, or Figma link · Max 10MB</div>
+          </div>
+        </div>
+
+        <div class="btn-container" style="margin-top:auto; padding-bottom:14px;">
+          <button class="btn-primary" id="submitAssignmentBtn" onclick="submitAssignment()">Submit Assignment</button>
+        </div>
+      </section>
+
+
+      <!-- =====================================================================
+           SCREEN 8: CAREER READINESS & MASTERY PROGRESS
+           ===================================================================== -->
+      <section class="screen-view" id="s-progress">
+        <div class="home-header">
+          <div class="mentra-logo">
+            <svg class="mentra-icon" viewBox="0 0 32 32" fill="none">
+              <path d="M6 10C6 7.79 7.79 6 10 6H16C19.31 6 22 8.69 22 12C22 13.9 21.1 15.6 19.7 16.7L19 17.2C17.7 18.2 17 19.7 17 21.3V22H13V21.3C13 18.5 14.2 15.9 16.3 14.3L17 13.8C17.6 13.3 18 12.6 18 11.8C18 10.8 17.2 10 16.2 10H10C8.9 10 8 10.9 8 12V26H4V12C4 10.9 4.9 10 6 10Z" fill="currentColor"/>
+              <path d="M26 12H22V16H26C27.1 16 28 16.9 28 18V22C28 23.1 27.1 24 26 24H20C18.9 24 18 23.1 18 22V20H14V22C14 25.31 16.69 28 20 28H26C29.31 28 32 25.31 32 22V18C32 14.69 29.31 12 26 12Z" fill="currentColor"/>
+            </svg>
+            <span>Mentra</span>
+          </div>
+          <span style="font-weight:800; font-size:14px; color:var(--primary-600);">Analytics</span>
+        </div>
+
+        <div style="padding:4px 20px 10px;">
+          <h2 style="font-size:22px; font-weight:800;">Your Learning Journey</h2>
+          <p style="font-size:13px; color:var(--neutral-600);">Track skill mastery and AI readiness metrics.</p>
+        </div>
+
+        <!-- Conic Gradient Progress Rings -->
+        <div class="readiness-ring-grid">
+          <div class="ring-stat-card" onclick="toggleReadinessWhy()" style="cursor:pointer;">
+            <div class="conic-ring" style="background: conic-gradient(var(--primary-600) 0% 63%, var(--neutral-200) 63% 100%);">
+              <div class="conic-ring-inner">63%</div>
+            </div>
+            <div class="ring-label">Readiness ⓘ</div>
+          </div>
+
+          <div class="ring-stat-card">
+            <div class="conic-ring" style="background: conic-gradient(var(--success-500) 0% 80%, var(--neutral-200) 80% 100%);">
+              <div class="conic-ring-inner">80%</div>
+            </div>
+            <div class="ring-label">Curriculum</div>
+          </div>
+
+          <div class="ring-stat-card">
+            <div class="conic-ring" style="background: conic-gradient(var(--warning-500) 0% 85%, var(--neutral-200) 85% 100%);">
+              <div class="conic-ring-inner">85%</div>
+            </div>
+            <div class="ring-label">Profile</div>
+          </div>
+        </div>
+
+        <div id="readinessWhyBox" style="display:none; margin:12px 20px 0; background:var(--neutral-50); border:1px solid var(--neutral-200); border-radius:12px; padding:12px 14px; font-size:12px; color:var(--neutral-700); line-height:1.5;">
+          <strong>Why 63% Readiness?</strong><br>
+          Based on 4 completed concepts, 1 pending drill, and verified retention quizzes.
+        </div>
+
+        <div class="section-header-row" style="margin-top:14px;">
+          <h3 class="section-h">Skills Verified by Mentra AI</h3>
+        </div>
+
+        <div style="padding:0 20px; display:flex; flex-direction:column; gap:8px;">
+          <div class="recent-topic-card" style="margin:0;">
+            <span style="font-weight:700; font-size:13.5px;">User Interview Techniques</span>
+            <span style="color:var(--success-500); font-weight:800;">✓ 96%</span>
+          </div>
+          <div class="recent-topic-card" style="margin:0;">
+            <span style="font-weight:700; font-size:13.5px;">Directness & Deep Practice</span>
+            <span style="color:var(--success-500); font-weight:800;">✓ 90%</span>
+          </div>
+          <div class="recent-topic-card" style="margin:0;">
+            <span style="font-weight:700; font-size:13.5px;">Feedback & Retention Loop</span>
+            <span style="color:var(--warning-500); font-weight:700;">In Progress</span>
+          </div>
+        </div>
+      </section>
+
+    </div>
+
+    <!-- =========================================================================
+         PERSISTENT BOTTOM NAVIGATION BAR (Exact reference icons & layout)
+         ========================================================================= -->
+    <nav class="bottom-nav-bar" id="appBottomNav" aria-label="Main Navigation">
+      <!-- Tab 1: Home -->
+      <button class="nav-tab-item active" id="tab-home" onclick="navigateToScreen('s-home')">
+        <svg viewBox="0 0 24 24">
+          <path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
+          <polyline points="9 22 9 12 15 12 15 22"/>
+        </svg>
+        <span class="nav-tab-label">Home</span>
+      </button>
+
+      <!-- Tab 2: Mentra AI -->
+      <button class="nav-tab-item" id="tab-ai" onclick="navigateToScreen('s-ai-chat')">
+        <svg viewBox="0 0 24 24">
+          <path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/>
+        </svg>
+        <span class="nav-tab-label">Mentra AI</span>
+      </button>
+
+      <!-- Tab 3: Topics -->
+      <button class="nav-tab-item" id="tab-topics" onclick="navigateToScreen('s-topic-detail')">
+        <svg viewBox="0 0 24 24">
+          <path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1-2.5-2.5Z"/>
+          <polyline points="10 2 10 10 13 7 16 10 16 2"/>
+        </svg>
+        <span class="nav-tab-label">Topics</span>
+      </button>
+
+      <!-- Tab 4: Profile / Progress -->
+      <button class="nav-tab-item" id="tab-profile" onclick="navigateToScreen('s-progress')">
+        <svg viewBox="0 0 24 24">
+          <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
+          <circle cx="12" cy="7" r="4"/>
+        </svg>
+        <span class="nav-tab-label">Profile</span>
+      </button>
+    </nav>
+
+    <!-- iOS Home Indicator Swipe Bar -->
+    <div class="phone-home-indicator"></div>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
