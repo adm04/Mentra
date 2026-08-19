@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Mentra — Career Readiness Application</title>
+  <title>Mentra — Career Restart & Learning</title>
   <!-- Google Font: Manrope -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -13,34 +13,36 @@
 <body>
 
   <!-- =========================================================================
-       TOP REVIEWER TOOLBAR & STATE PRESET CONTROLS
+       TOP REVIEWER CONTROLS & FLOW SELECTOR
        ========================================================================= -->
   <header class="reviewer-toolbar">
     <div class="brand-badge">
       <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-        <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
-        <polyline points="22 4 12 14.01 9 11.01"/>
+        <path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1-2.5-2.5Z"/>
+        <polyline points="10 2 10 10 13 7 16 10 16 2"/>
       </svg>
       <span>Mentra</span>
     </div>
 
-    <!-- Quick Flow Scroller for Reviewing All States -->
+    <!-- Quick Flow Scroller for Reviewing All Steps -->
     <nav class="quick-flow-scroller" aria-label="Reviewer Flow Switcher">
       <button class="flow-btn active" onclick="goToScreen('s-splash')">Splash</button>
       <button class="flow-btn" onclick="goToScreen('s-onboarding-1')">Onboarding</button>
-      <button class="flow-btn" onclick="goToScreen('s-pre-personalize')">Pre-Personalization</button>
-      <button class="flow-btn" onclick="goToScreen('s-quiz')">Discovery Quiz</button>
-      <button class="flow-btn" onclick="goToScreen('s-readiness-result')">Readiness (72%)</button>
-      <button class="flow-btn" onclick="goToScreen('s-action-plan')">Action Plan</button>
-      <button class="flow-btn" onclick="goToScreen('s-home')">Home Dashboard</button>
-      <button class="flow-btn" onclick="goToScreen('s-plan')">Plan</button>
-      <button class="flow-btn" onclick="goToScreen('s-progress')">Progress</button>
-      <button class="flow-btn" onclick="goToScreen('s-celebration')">100% Ready</button>
-      <button class="flow-btn" onclick="goToScreen('s-whats-next')">What's Next?</button>
+      <button class="flow-btn" onclick="goToScreen('s-goal')">1. Career Goal</button>
+      <button class="flow-btn" onclick="goToScreen('s-experience')">2. Experience</button>
+      <button class="flow-btn" onclick="goToScreen('s-interest')">3. Interest</button>
+      <button class="flow-btn" onclick="goToScreen('s-recommendations')">4. Recommendations</button>
+      <button class="flow-btn" onclick="goToScreen('s-programme-details')">5. Programme Details</button>
+      <button class="flow-btn" onclick="goToScreen('s-home')">6. Dashboard</button>
+      <button class="flow-btn" onclick="goToScreen('s-live-session')">7. Live Session</button>
+      <button class="flow-btn" onclick="goToScreen('s-assignment-detail')">8. Assignment</button>
+      <button class="flow-btn" onclick="goToScreen('s-learn')">9. Learn Plan</button>
+      <button class="flow-btn" onclick="goToScreen('s-progress')">10. Career Progress</button>
+      <button class="flow-btn" onclick="goToScreen('s-celebration')">11. 100% Ready</button>
+      <button class="flow-btn" onclick="goToScreen('s-whats-next')">12. What's Next?</button>
       <button class="flow-btn" onclick="goToScreen('s-resume-help')">Resume Help</button>
       <button class="flow-btn" onclick="goToScreen('s-mock-interview')">Mock Interview</button>
       <button class="flow-btn" onclick="goToScreen('s-referrals')">Opportunities</button>
-      <button class="flow-btn" onclick="goToScreen('s-profile')">Profile</button>
     </nav>
   </header>
 
@@ -76,359 +78,354 @@
           </svg>
         </div>
         <h1 style="font-size:36px; font-weight:800; letter-spacing:-0.03em;">Mentra</h1>
-        <p style="font-size:14px; opacity:0.85; margin-top:6px; max-width:240px;">Your Career Readiness Companion</p>
+        <p style="font-size:14px; opacity:0.85; margin-top:6px; max-width:240px;">Career Restart & Learning</p>
         <button class="btn-primary" style="background:white; color:var(--primary-700); margin-top:40px; box-shadow:0 8px 24px rgba(0,0,0,0.25);" onclick="goToScreen('s-onboarding-1')">
-          Get Started →
+          Explore Mentra →
         </button>
       </section>
 
       <!-- =====================================================================
-           2. ONBOARDING SEQUENCE (3 Screens)
+           2. ONBOARDING (3 Screens)
            ===================================================================== -->
       <!-- Screen 1 -->
       <section class="screen-view" id="s-onboarding-1">
-        <div class="step-header" style="margin-top:20px;">
-          <div class="mentra-logo">
-            <span>Mentra</span>
-          </div>
+        <div class="step-header" style="margin-top:16px;">
+          <div class="mentra-logo"><span>Mentra</span></div>
           <div class="step-progress-row">
-            <div class="step-progress-track">
-              <div class="step-progress-fill" style="width:33%;"></div>
-            </div>
+            <div class="step-progress-track"><div class="step-progress-fill" style="width:33%;"></div></div>
             <span class="step-counter-badge">1 of 3</span>
           </div>
         </div>
-
         <div style="padding:24px; display:flex; flex-direction:column; align-items:center; text-align:center; flex:1; justify-content:center;">
-          <div style="width:160px; height:160px; background:var(--primary-50); border:2px solid var(--primary-100); border-radius:50%; display:flex; align-items:center; justify-content:center; margin-bottom:28px;">
-            <span style="font-size:58px;">🎯</span>
+          <div style="width:150px; height:150px; background:var(--primary-50); border:2px solid var(--primary-100); border-radius:50%; display:flex; align-items:center; justify-content:center; margin-bottom:24px;">
+            <span style="font-size:54px;">🎯</span>
           </div>
-          <h2 class="page-headline">Know where you stand.</h2>
-          <p class="page-subtext" style="max-width:280px; margin-top:10px;">Understand how ready you are for your next career move.</p>
+          <h2 class="page-headline">Restart your career with clarity.</h2>
+          <p class="page-subtext" style="max-width:280px; margin-top:10px;">Find the right learning path and build the skills you need for your next move.</p>
         </div>
-
-        <div style="padding:0 24px 24px;">
+        <div style="padding:0 20px 24px;">
           <button class="btn-primary" onclick="goToScreen('s-onboarding-2')">Continue</button>
         </div>
       </section>
 
       <!-- Screen 2 -->
       <section class="screen-view" id="s-onboarding-2">
-        <div class="step-header" style="margin-top:20px;">
-          <div class="mentra-logo">
-            <span>Mentra</span>
-          </div>
+        <div class="step-header" style="margin-top:16px;">
+          <div class="mentra-logo"><span>Mentra</span></div>
           <div class="step-progress-row">
-            <div class="step-progress-track">
-              <div class="step-progress-fill" style="width:66%;"></div>
-            </div>
+            <div class="step-progress-track"><div class="step-progress-fill" style="width:66%;"></div></div>
             <span class="step-counter-badge">2 of 3</span>
           </div>
         </div>
-
         <div style="padding:24px; display:flex; flex-direction:column; align-items:center; text-align:center; flex:1; justify-content:center;">
-          <div style="width:160px; height:160px; background:var(--cyan-50); border:2px solid var(--cyan-100); border-radius:50%; display:flex; align-items:center; justify-content:center; margin-bottom:28px;">
-            <span style="font-size:58px;">📈</span>
+          <div style="width:150px; height:150px; background:var(--cyan-50); border:2px solid var(--cyan-100); border-radius:50%; display:flex; align-items:center; justify-content:center; margin-bottom:24px;">
+            <span style="font-size:54px;">📚</span>
           </div>
-          <h2 class="page-headline">Build your readiness.</h2>
-          <p class="page-subtext" style="max-width:280px; margin-top:10px;">Identify your gaps and follow a clear plan to improve them.</p>
+          <h2 class="page-headline">Learn with a plan.</h2>
+          <p class="page-subtext" style="max-width:280px; margin-top:10px;">Know what to learn, what to complete, and what to do next.</p>
         </div>
-
-        <div style="padding:0 24px 24px;">
+        <div style="padding:0 20px 24px;">
           <button class="btn-primary" onclick="goToScreen('s-onboarding-3')">Continue</button>
         </div>
       </section>
 
       <!-- Screen 3 -->
       <section class="screen-view" id="s-onboarding-3">
-        <div class="step-header" style="margin-top:20px;">
-          <div class="mentra-logo">
-            <span>Mentra</span>
-          </div>
+        <div class="step-header" style="margin-top:16px;">
+          <div class="mentra-logo"><span>Mentra</span></div>
           <div class="step-progress-row">
-            <div class="step-progress-track">
-              <div class="step-progress-fill" style="width:100%;"></div>
-            </div>
+            <div class="step-progress-track"><div class="step-progress-fill" style="width:100%;"></div></div>
             <span class="step-counter-badge">3 of 3</span>
           </div>
         </div>
-
         <div style="padding:24px; display:flex; flex-direction:column; align-items:center; text-align:center; flex:1; justify-content:center;">
-          <div style="width:160px; height:160px; background:var(--success-50); border:2px solid var(--success-100); border-radius:50%; display:flex; align-items:center; justify-content:center; margin-bottom:28px;">
-            <span style="font-size:58px;">🚀</span>
+          <div style="width:150px; height:150px; background:var(--success-50); border:2px solid var(--success-100); border-radius:50%; display:flex; align-items:center; justify-content:center; margin-bottom:24px;">
+            <span style="font-size:54px;">🚀</span>
           </div>
-          <h2 class="page-headline">Turn preparation into action.</h2>
-          <p class="page-subtext" style="max-width:280px; margin-top:10px;">Get ready, then take the next step toward your goal.</p>
+          <h2 class="page-headline">Turn learning into career progress.</h2>
+          <p class="page-subtext" style="max-width:280px; margin-top:10px;">Track your skills, readiness, and progress from learning to your next opportunity.</p>
         </div>
-
-        <div style="padding:0 24px 24px;">
-          <button class="btn-primary" onclick="goToScreen('s-pre-personalize')">Get Started</button>
+        <div style="padding:0 20px 24px;">
+          <button class="btn-primary" onclick="goToScreen('s-goal')">Get Started</button>
         </div>
       </section>
 
       <!-- =====================================================================
-           3. PRE-PERSONALIZATION
+           3. CAREER GOAL SCREEN
            ===================================================================== -->
-      <section class="screen-view" id="s-pre-personalize">
-        <div class="step-header" style="margin-top:20px;">
-          <div class="mentra-logo">
-            <span>Mentra</span>
-          </div>
-          <h2 class="page-headline" style="margin-top:8px;">Let's understand your goal.</h2>
-          <p class="page-subtext">Answer a few questions so we can build your readiness plan.</p>
-        </div>
-
-        <div style="padding:24px; flex:1; display:flex; flex-direction:column; justify-content:center;">
-          <div style="background:var(--neutral-50); border:1px solid var(--neutral-200); border-radius:var(--radius-lg); padding:20px; margin-bottom:16px;">
-            <div style="font-weight:800; font-size:15px; margin-bottom:6px;">Target Profile Setup</div>
-            <div style="font-size:13px; color:var(--neutral-600); line-height:1.5;">
-              👤 <strong>User:</strong> Arka<br>
-              🎯 <strong>Target Role:</strong> Product Designer<br>
-              💼 <strong>Experience:</strong> 3+ years<br>
-              ⏱ <strong>Daily Commitment:</strong> 30 minutes
-            </div>
-          </div>
-        </div>
-
-        <div style="padding:0 24px 24px;">
-          <button class="btn-primary" onclick="startDiscoveryQuiz()">Start Assessment →</button>
-        </div>
-      </section>
-
-      <!-- =====================================================================
-           4. DISCOVERY QUIZ (8 Questions with "X of 8" Progress)
-           ===================================================================== -->
-      <section class="screen-view" id="s-quiz">
+      <section class="screen-view" id="s-goal">
         <div class="step-header">
+          <div class="mentra-logo"><span>Mentra</span></div>
           <div class="step-progress-row">
-            <div class="step-progress-track">
-              <div class="step-progress-fill" id="quizProgressBar" style="width:12.5%;"></div>
-            </div>
-            <span class="step-counter-badge" id="quizStepCounter">1 of 8</span>
+            <div class="step-progress-track"><div class="step-progress-fill" style="width:33%;"></div></div>
+            <span class="step-counter-badge">Step 1 of 3</span>
           </div>
-          <div class="mentra-logo">
-            <span>Mentra</span>
-          </div>
-          <h2 class="page-headline" id="quizQuestionTitle">What are you preparing for?</h2>
-          <p class="page-subtext" id="quizQuestionSubtitle">Select what best matches your current focus.</p>
+          <h2 class="page-headline">What are you looking to achieve?</h2>
+          <p class="page-subtext">This helps us match the most relevant learning programmes.</p>
         </div>
 
-        <div class="options-list" id="quizOptionsContainer">
-          <!-- Dynamically populated options -->
+        <div class="options-list">
+          <div class="option-card" onclick="selectGoalOption(this, 'Start a new career')">
+            <span class="option-title">Start a new career 🌟</span>
+            <div class="radio-circle">✓</div>
+          </div>
+          <div class="option-card selected" onclick="selectGoalOption(this, 'Switch careers')">
+            <span class="option-title">Switch careers 🔄</span>
+            <div class="radio-circle">✓</div>
+          </div>
+          <div class="option-card" onclick="selectGoalOption(this, 'Grow in my current career')">
+            <span class="option-title">Grow in my current career 📈</span>
+            <div class="radio-circle">✓</div>
+          </div>
+          <div class="option-card" onclick="selectGoalOption(this, 'Return to work')">
+            <span class="option-title">Return to work 💼</span>
+            <div class="radio-circle">✓</div>
+          </div>
+          <div class="option-card" onclick="selectGoalOption(this, 'Get promoted')">
+            <span class="option-title">Get promoted 🏆</span>
+            <div class="radio-circle">✓</div>
+          </div>
+          <div class="option-card" onclick="selectGoalOption(this, 'Build a new skill')">
+            <span class="option-title">Build a new skill 💡</span>
+            <div class="radio-circle">✓</div>
+          </div>
         </div>
 
-        <div style="padding:0 24px 24px; margin-top:auto;">
-          <button class="btn-primary" id="quizNextBtn" onclick="nextQuizQuestion()">Continue</button>
-        </div>
-      </section>
-
-      <!-- =====================================================================
-           5. READINESS CALCULATION (Transition)
-           ===================================================================== -->
-      <section class="screen-view" id="s-calculating" style="justify-content:center; align-items:center; padding:32px; text-align:center;">
-        <div style="width:80px; height:80px; border-radius:50%; border:4px solid var(--primary-200); border-top-color:var(--primary-600); animation:spin 1s linear infinite; margin-bottom:24px;"></div>
-        <h2 class="page-headline">Analyzing your readiness</h2>
-        <p class="page-subtext" style="margin-top:8px;">Evaluating your response across 5 core career dimensions...</p>
-
-        <div style="width:100%; max-width:280px; margin-top:28px; display:flex; flex-direction:column; gap:10px; text-align:left;">
-          <div style="display:flex; justify-content:space-between; font-size:12.5px; font-weight:700;">
-            <span>Resume & Structure</span>
-            <span style="color:var(--success-600);">✓ Calculated</span>
-          </div>
-          <div style="display:flex; justify-content:space-between; font-size:12.5px; font-weight:700;">
-            <span>Portfolio Case Studies</span>
-            <span style="color:var(--success-600);">✓ Calculated</span>
-          </div>
-          <div style="display:flex; justify-content:space-between; font-size:12.5px; font-weight:700;">
-            <span>Interview Confidence</span>
-            <span style="color:var(--success-600);">✓ Calculated</span>
-          </div>
-          <div style="display:flex; justify-content:space-between; font-size:12.5px; font-weight:700;">
-            <span>Job Search & Applications</span>
-            <span style="color:var(--primary-600);">Calculating...</span>
-          </div>
+        <div style="padding:0 20px 24px; margin-top:auto;">
+          <button class="btn-primary" onclick="goToScreen('s-experience')">Continue</button>
         </div>
       </section>
 
       <!-- =====================================================================
-           6. READINESS RESULT SCREEN (Initial 72% Readiness)
+           4. EXPERIENCE LEVEL SCREEN
            ===================================================================== -->
-      <section class="screen-view" id="s-readiness-result">
+      <section class="screen-view" id="s-experience">
         <div class="step-header">
-          <div class="mentra-logo">
-            <span>Mentra</span>
+          <div class="mentra-logo"><span>Mentra</span></div>
+          <div class="step-progress-row">
+            <div class="step-progress-track"><div class="step-progress-fill" style="width:66%;"></div></div>
+            <span class="step-counter-badge">Step 2 of 3</span>
           </div>
-          <h2 class="page-headline">You're getting there.</h2>
-          <p class="page-subtext">You have a strong foundation, but a few areas need attention before you're fully ready.</p>
+          <h2 class="page-headline">What's your current experience level?</h2>
+          <p class="page-subtext">We'll calibrate programme depth to your background.</p>
         </div>
 
-        <!-- Tappable Readiness Score Card -->
-        <div class="hero-readiness-card" onclick="openExplainableScoreModal()">
-          <div class="hero-top-tag">
-            <span>Career Readiness Score</span>
-            <span>ⓘ Tap to explain</span>
+        <div class="options-list">
+          <div class="option-card" onclick="selectExperienceOption(this, 'Beginner')">
+            <div>
+              <div class="option-title">Beginner 🌱</div>
+              <div class="option-desc">"I'm starting from the basics."</div>
+            </div>
+            <div class="radio-circle">✓</div>
           </div>
-          <div class="hero-score-display">
-            <span class="hero-score-number" id="resultScoreNumber">72%</span>
-            <span class="hero-score-label">Ready</span>
+          <div class="option-card selected" onclick="selectExperienceOption(this, 'Intermediate')">
+            <div>
+              <div class="option-title">Intermediate ⚡</div>
+              <div class="option-desc">"I have some experience and want to grow."</div>
+            </div>
+            <div class="radio-circle">✓</div>
           </div>
-          <div class="hero-progress-track">
-            <div class="hero-progress-fill" id="resultScoreFill" style="width:72%;"></div>
-          </div>
-          <div class="hero-card-footer">
-            <span>28% to go</span>
-            <span class="hero-view-cta">View breakdown →</span>
+          <div class="option-card" onclick="selectExperienceOption(this, 'Advanced')">
+            <div>
+              <div class="option-title">Advanced 🚀</div>
+              <div class="option-desc">"I want to deepen my expertise."</div>
+            </div>
+            <div class="radio-circle">✓</div>
           </div>
         </div>
 
-        <!-- Category Breakdown -->
+        <div style="padding:0 20px 24px; margin-top:auto;">
+          <button class="btn-primary" onclick="goToScreen('s-interest')">Continue</button>
+        </div>
+      </section>
+
+      <!-- =====================================================================
+           5. AREA OF INTEREST SCREEN
+           ===================================================================== -->
+      <section class="screen-view" id="s-interest">
+        <div class="step-header">
+          <div class="mentra-logo"><span>Mentra</span></div>
+          <div class="step-progress-row">
+            <div class="step-progress-track"><div class="step-progress-fill" style="width:100%;"></div></div>
+            <span class="step-counter-badge">Step 3 of 3</span>
+          </div>
+          <h2 class="page-headline">What area are you interested in?</h2>
+          <p class="page-subtext">Select the domain you want to learn.</p>
+        </div>
+
+        <div class="options-list">
+          <div class="option-card selected" onclick="selectInterestOption(this, 'Product Design')">
+            <span class="option-title">Product Design 🎨</span>
+            <div class="radio-circle">✓</div>
+          </div>
+          <div class="option-card" onclick="selectInterestOption(this, 'UX/UI Design')">
+            <span class="option-title">UX/UI Design ✨</span>
+            <div class="radio-circle">✓</div>
+          </div>
+          <div class="option-card" onclick="selectInterestOption(this, 'Data Analytics')">
+            <span class="option-title">Data Analytics 📊</span>
+            <div class="radio-circle">✓</div>
+          </div>
+          <div class="option-card" onclick="selectInterestOption(this, 'Product Management')">
+            <span class="option-title">Product Management 🧭</span>
+            <div class="radio-circle">✓</div>
+          </div>
+          <div class="option-card" onclick="selectInterestOption(this, 'Digital Marketing')">
+            <span class="option-title">Digital Marketing 📣</span>
+            <div class="radio-circle">✓</div>
+          </div>
+          <div class="option-card" onclick="selectInterestOption(this, 'Leadership')">
+            <span class="option-title">Leadership & Management 👥</span>
+            <div class="radio-circle">✓</div>
+          </div>
+        </div>
+
+        <div style="padding:0 20px 24px; margin-top:auto;">
+          <button class="btn-primary" onclick="goToScreen('s-recommendations')">See Programmes →</button>
+        </div>
+      </section>
+
+      <!-- =====================================================================
+           6. PROGRAMME RECOMMENDATIONS SCREEN
+           ===================================================================== -->
+      <section class="screen-view" id="s-recommendations">
+        <div class="step-header">
+          <div class="mentra-logo"><span>Mentra</span></div>
+          <h2 class="page-headline">Programmes recommended for you</h2>
+          <p class="page-subtext">Based on your goal to <strong>Switch careers</strong> in <strong>Product Design</strong>.</p>
+        </div>
+
+        <!-- Best Match Programme Card -->
+        <div class="prog-card best-match" onclick="goToScreen('s-programme-details')">
+          <div class="prog-top-row">
+            <span style="font-size:12px; font-weight:800; color:var(--primary-700); text-transform:uppercase;">Top Recommendation</span>
+            <span class="match-tag">92% match</span>
+          </div>
+          <div class="prog-title">Product Design Career Accelerator</div>
+          <div class="prog-meta-strip">
+            <span>⏱ 12 weeks</span>
+            <span>⚡ Intermediate</span>
+            <span>📦 8 modules</span>
+            <span>🎥 4 live sessions</span>
+          </div>
+          <p style="font-size:13px; color:var(--neutral-700); line-height:1.45;">
+            Build the real-world skills, case studies, and portfolio needed to transition into product design roles.
+          </p>
+
+          <!-- Why this fits you box -->
+          <div class="prog-why-box">
+            <strong style="color:var(--color-black); margin-bottom:2px;">Why this fits you:</strong>
+            <div class="prog-why-item">✓ Matches your career switch goal</div>
+            <div class="prog-why-item">✓ Calibrated for 3+ yrs adjacent experience</div>
+            <div class="prog-why-item">✓ Focuses on your target Product Design path</div>
+          </div>
+
+          <button class="btn-primary" style="height:42px; margin-top:6px;">View Programme Details →</button>
+        </div>
+
+        <!-- Alternative Programme 2 -->
+        <div class="prog-card" onclick="goToScreen('s-programme-details')">
+          <div class="prog-top-row">
+            <span style="font-size:12px; font-weight:800; color:var(--neutral-500); text-transform:uppercase;">Specialization</span>
+            <span class="match-tag" style="background:var(--neutral-200);">86% match</span>
+          </div>
+          <div class="prog-title">Applied UX Research & Strategy</div>
+          <div class="prog-meta-strip">
+            <span>⏱ 8 weeks</span>
+            <span>📦 6 modules</span>
+            <span>🎥 3 live sessions</span>
+          </div>
+          <p style="font-size:12.5px; color:var(--neutral-600);">
+            Master qualitative user research, synthesis, and evidence-based design strategy.
+          </p>
+        </div>
+
+        <!-- Alternative Programme 3 -->
+        <div class="prog-card" onclick="goToScreen('s-programme-details')">
+          <div class="prog-top-row">
+            <span style="font-size:12px; font-weight:800; color:var(--neutral-500); text-transform:uppercase;">Adjacent Track</span>
+            <span class="match-tag" style="background:var(--neutral-200);">81% match</span>
+          </div>
+          <div class="prog-title">Product Management Foundations</div>
+          <div class="prog-meta-strip">
+            <span>⏱ 8 weeks</span>
+            <span>📦 6 modules</span>
+            <span>🎥 3 live sessions</span>
+          </div>
+          <p style="font-size:12.5px; color:var(--neutral-600);">
+            Cross-functional strategy, product roadmaps, and stakeholder alignment.
+          </p>
+        </div>
+      </section>
+
+      <!-- =====================================================================
+           7. PROGRAMME DETAILS SCREEN
+           ===================================================================== -->
+      <section class="screen-view" id="s-programme-details">
+        <div class="step-header">
+          <button class="btn-ghost" style="align-self:flex-start; padding-left:0;" onclick="goToScreen('s-recommendations')">‹ Back to Recommendations</button>
+          <div class="chip chip-primary" style="align-self:flex-start;">92% Match for Arka</div>
+          <h2 class="page-headline">Product Design Career Accelerator</h2>
+          <p class="page-subtext">A complete structured track to build job-ready product design portfolio and readiness.</p>
+        </div>
+
+        <div style="padding:0 20px 14px;">
+          <div style="background:var(--neutral-50); border:1px solid var(--neutral-200); border-radius:var(--radius-md); padding:14px; display:grid; grid-template-columns:1fr 1fr; gap:10px; font-size:12.5px;">
+            <div><strong>Duration:</strong> 12 weeks</div>
+            <div><strong>Level:</strong> Intermediate</div>
+            <div><strong>Structure:</strong> 8 Modules</div>
+            <div><strong>Live Coaching:</strong> 4 Sessions</div>
+          </div>
+        </div>
+
         <div class="section-header">
-          <h3 class="section-title">Category Breakdown</h3>
+          <h3 class="section-title">Programme Curriculum</h3>
         </div>
 
-        <div class="category-grid">
-          <div class="category-card" onclick="openExplainableScoreModal()">
-            <div class="category-card-header">
-              <span class="category-title">Resume</span>
-              <span class="category-pct" id="catResumePct">90%</span>
-            </div>
-            <div class="category-track"><div class="category-fill" id="catResumeFill" style="width:90%;"></div></div>
+        <div style="padding:0 20px 20px; display:flex; flex-direction:column; gap:8px;">
+          <div class="category-card" style="padding:12px;">
+            <div style="font-weight:800; font-size:13.5px;">Module 01: Design Foundations & Systems</div>
+            <div style="font-size:12px; color:var(--neutral-500);">Typography, grids, component architecture</div>
           </div>
-
-          <div class="category-card" onclick="openExplainableScoreModal()">
-            <div class="category-card-header">
-              <span class="category-title">Portfolio</span>
-              <span class="category-pct" id="catPortfolioPct">75%</span>
-            </div>
-            <div class="category-track"><div class="category-fill" id="catPortfolioFill" style="width:75%;"></div></div>
+          <div class="category-card" style="padding:12px;">
+            <div style="font-weight:800; font-size:13.5px;">Module 02: User Research & Synthesis</div>
+            <div style="font-size:12px; color:var(--neutral-500);">Field interviews, affinity mapping, insights</div>
           </div>
-
-          <div class="category-card" onclick="openExplainableScoreModal()">
-            <div class="category-card-header">
-              <span class="category-title">Interview</span>
-              <span class="category-pct" id="catInterviewPct">60%</span>
-            </div>
-            <div class="category-track"><div class="category-fill" id="catInterviewFill" style="width:60%;"></div></div>
+          <div class="category-card" style="padding:12px;">
+            <div style="font-weight:800; font-size:13.5px;">Module 03: Information Architecture & Flows</div>
+            <div style="font-size:12px; color:var(--neutral-500);">Site maps, task flows, wireframes</div>
           </div>
-
-          <div class="category-card" onclick="openExplainableScoreModal()">
-            <div class="category-card-header">
-              <span class="category-title">Professional Profile</span>
-              <span class="category-pct" id="catProfilePct">80%</span>
-            </div>
-            <div class="category-track"><div class="category-fill" id="catProfileFill" style="width:80%;"></div></div>
+          <div class="category-card" style="padding:12px;">
+            <div style="font-weight:800; font-size:13.5px;">Module 04: Interaction & Prototyping</div>
+            <div style="font-size:12px; color:var(--neutral-500);">High-fidelity prototypes, state transitions</div>
           </div>
-
-          <div class="category-card" onclick="openExplainableScoreModal()">
-            <div class="category-card-header">
-              <span class="category-title">Job Search</span>
-              <span class="category-pct" id="catJobSearchPct">55%</span>
-            </div>
-            <div class="category-track"><div class="category-fill" id="catJobSearchFill" style="width:55%;"></div></div>
+          <div class="category-card" style="padding:12px;">
+            <div style="font-weight:800; font-size:13.5px;">Module 05: Visual Design Polish & Usability</div>
+            <div style="font-size:12px; color:var(--neutral-500);">Micro-interactions, accessibility testing</div>
+          </div>
+          <div class="category-card" style="padding:12px;">
+            <div style="font-weight:800; font-size:13.5px;">Module 06: Portfolio Case Study & Career Launch</div>
+            <div style="font-size:12px; color:var(--neutral-500);">End-to-end case study packaging</div>
           </div>
         </div>
 
         <div style="padding:0 20px 24px;">
-          <button class="btn-primary" onclick="goToScreen('s-action-plan')">View Personalized Action Plan →</button>
+          <button class="btn-primary" onclick="enrollInProgramme()">Select Programme & Enrol →</button>
         </div>
       </section>
 
       <!-- =====================================================================
-           7. PERSONALIZED ACTION PLAN SCREEN
-           ===================================================================== -->
-      <section class="screen-view" id="s-action-plan">
-        <div class="step-header">
-          <div class="mentra-logo">
-            <span>Mentra</span>
-          </div>
-          <h2 class="page-headline">Here's what to work on next.</h2>
-          <p class="page-subtext">A prioritized plan to systematically close your 28% gap.</p>
-        </div>
-
-        <div style="padding:0 20px 8px;">
-          <div style="font-size:12px; font-weight:800; color:var(--error-600); text-transform:uppercase; letter-spacing:0.04em; margin-bottom:8px;">High Priority</div>
-        </div>
-
-        <div class="tasks-list">
-          <div class="task-card" onclick="openTaskDetail('task-1')">
-            <div class="task-check-circle">✓</div>
-            <div class="task-content">
-              <div class="task-title">Improve resume headline & summary</div>
-              <div class="task-meta-row">
-                <span>15 min · Resume</span>
-                <span class="task-boost-tag">+8% readiness</span>
-              </div>
-            </div>
-          </div>
-
-          <div class="task-card" onclick="openTaskDetail('task-2')">
-            <div class="task-check-circle">✓</div>
-            <div class="task-content">
-              <div class="task-title">Complete portfolio case study impact section</div>
-              <div class="task-meta-row">
-                <span>30 min · Portfolio</span>
-                <span class="task-boost-tag">+7% readiness</span>
-              </div>
-            </div>
-          </div>
-
-          <div class="task-card" onclick="openTaskDetail('task-3')">
-            <div class="task-check-circle">✓</div>
-            <div class="task-content">
-              <div class="task-title">Practice 10 core behavioral interview questions</div>
-              <div class="task-meta-row">
-                <span>20 min · Interview</span>
-                <span class="task-boost-tag">+6% readiness</span>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div style="padding:0 20px 8px;">
-          <div style="font-size:12px; font-weight:800; color:var(--warning-600); text-transform:uppercase; letter-spacing:0.04em; margin-bottom:8px;">Medium Priority</div>
-        </div>
-
-        <div class="tasks-list">
-          <div class="task-card" onclick="openTaskDetail('task-4')">
-            <div class="task-check-circle">✓</div>
-            <div class="task-content">
-              <div class="task-title">Update LinkedIn experience highlights</div>
-              <div class="task-meta-row">
-                <span>15 min · Profile</span>
-                <span class="task-boost-tag">+4% readiness</span>
-              </div>
-            </div>
-          </div>
-
-          <div class="task-card" onclick="openTaskDetail('task-5')">
-            <div class="task-check-circle">✓</div>
-            <div class="task-content">
-              <div class="task-title">Create target company application tracker</div>
-              <div class="task-meta-row">
-                <span>10 min · Job Search</span>
-                <span class="task-boost-tag">+3% readiness</span>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div style="padding:0 20px 24px;">
-          <button class="btn-primary" onclick="goToScreen('s-home')">Go to Dashboard →</button>
-        </div>
-      </section>
-
-      <!-- =====================================================================
-           8. HOME DASHBOARD
+           8. LEARNING DASHBOARD (Primary App Screen)
            ===================================================================== -->
       <section class="screen-view" id="s-home">
-        <!-- Top Bar Header -->
-        <div style="padding:14px 20px 10px; display:flex; justify-content:space-between; align-items:center;">
+        <!-- Top Header -->
+        <div style="padding:14px 20px 8px; display:flex; justify-content:space-between; align-items:center;">
           <div>
             <div style="font-size:12px; font-weight:700; color:var(--neutral-500);">Good morning,</div>
             <h2 style="font-size:22px; font-weight:800; color:var(--color-black);">Arka 👋</h2>
           </div>
           <div style="display:flex; align-items:center; gap:8px;">
-            <button class="btn-ghost" onclick="toggleSimulateInactivity()" style="font-size:11px; padding:4px 8px; border:1px solid var(--neutral-200); border-radius:6px;">
+            <button class="btn-ghost" onclick="toggleSimulateInactivity()" style="font-size:11px; border:1px solid var(--neutral-200); border-radius:6px;">
               ⚡ Sim Inactivity
             </button>
             <div style="width:36px; height:36px; border-radius:50%; background:var(--primary-100); color:var(--primary-700); font-weight:800; display:flex; align-items:center; justify-content:center; font-size:14px;">
@@ -437,187 +434,314 @@
           </div>
         </div>
 
-        <!-- RE-ENGAGEMENT INACTIVITY BANNER (Shown when inactive) -->
-        <div class="re-engagement-banner" id="inactivityBanner" style="display:none;">
-          <div class="banner-header">
-            <span>👋 Ready when you are.</span>
+        <!-- RE-ENGAGEMENT INACTIVITY BANNER (Shown if inactive) -->
+        <div class="re-engagement-banner" id="inactivityBanner" style="display:none; margin:0 20px 14px; background:var(--neutral-50); border:1.5px solid var(--primary-200); border-radius:var(--radius-lg); padding:16px;">
+          <div style="font-size:14px; font-weight:800; color:var(--primary-700); margin-bottom:4px;">
+            👋 Welcome back, Arka.
           </div>
           <p style="font-size:13px; color:var(--neutral-700); line-height:1.45;">
-            You've been away for 4 days. You have 3 unfinished tasks waiting. Let's get you back on track.
+            You've been away for a few days. You have 3 unfinished tasks waiting. Let's get you back on track.
           </p>
-          <div style="display:flex; gap:8px;">
-            <button class="btn-primary" style="height:38px; font-size:12.5px; flex:1;" onclick="openCatchUpModal()">Continue where I left off</button>
-            <button class="btn-outline" style="height:38px; font-size:12.5px; flex:1;" onclick="goToScreen('s-plan')">Review plan</button>
+          <div style="display:flex; gap:8px; margin-top:10px;">
+            <button class="btn-primary" style="height:38px; font-size:12.5px; flex:1;" onclick="openCatchUpModal()">Get Back on Track</button>
+            <button class="btn-outline" style="height:38px; font-size:12.5px; flex:1;" onclick="goToScreen('s-learn')">Review My Plan</button>
           </div>
         </div>
 
-        <!-- MISSED TASK BANNER -->
-        <div class="missed-deadline-banner" id="missedTaskBanner">
+        <!-- MISSED DEADLINE BANNER -->
+        <div class="missed-deadline-banner" id="missedDeadlineBanner" style="margin:0 20px 14px; background:var(--warning-50); border:1.5px solid var(--warning-300); border-radius:var(--radius-lg); padding:14px;">
           <div style="display:flex; justify-content:space-between; align-items:center;">
             <strong style="color:var(--warning-700); font-size:13.5px;">Plans changed?</strong>
-            <span style="font-size:11px; background:var(--warning-100); color:var(--warning-800); padding:2px 6px; border-radius:4px; font-weight:700;">Missed Task</span>
+            <span style="font-size:10.5px; background:var(--warning-100); color:var(--warning-800); padding:2px 6px; border-radius:4px; font-weight:700;">Missed Task</span>
           </div>
-          <p style="font-size:12.5px; color:var(--neutral-700); line-height:1.45;">
-            You missed yesterday's portfolio session, but you're still on track.
+          <p style="font-size:12.5px; color:var(--neutral-700); margin-top:4px;">
+            You missed yesterday's task, but you're still on track.
           </p>
-          <div style="display:flex; gap:6px;">
+          <div style="display:flex; gap:6px; margin-top:8px;">
             <button class="btn-secondary" style="height:34px; font-size:11.5px; flex:1;" onclick="openCatchUpModal()">Catch up today</button>
             <button class="btn-outline" style="height:34px; font-size:11.5px; flex:1;" onclick="openRescheduleModal()">Move to tomorrow</button>
           </div>
         </div>
 
-        <!-- HERO READINESS CARD -->
-        <div class="hero-readiness-card" onclick="openExplainableScoreModal()">
-          <div class="hero-top-tag">
-            <span>Career Readiness</span>
-            <span id="heroTargetRoleTag">Product Designer</span>
+        <!-- CURRENT PROGRAMME CARD (42% Complete) -->
+        <div class="current-prog-hero" onclick="goToScreen('s-learn')">
+          <div style="font-size:11.5px; font-weight:800; opacity:0.85; text-transform:uppercase; letter-spacing:0.04em;">Enrolled Programme</div>
+          <div style="font-size:18px; font-weight:800; margin:4px 0 10px;" id="dashProgTitle">Product Design Career Accelerator</div>
+          <div style="height:8px; background:rgba(255,255,255,0.25); border-radius:4px; overflow:hidden; margin-bottom:8px;">
+            <div style="width:42%; height:100%; background:white; border-radius:4px;" id="dashProgFill"></div>
           </div>
-          <div class="hero-score-display">
-            <span class="hero-score-number" id="homeScoreNumber">72%</span>
-            <span class="hero-score-label">Ready</span>
-          </div>
-          <div class="hero-progress-track">
-            <div class="hero-progress-fill" id="homeScoreFill" style="width:72%;"></div>
-          </div>
-          <div class="hero-card-footer">
-            <span id="homeScoreToGoText">28% to go · Tap to view breakdown</span>
-            <span class="hero-view-cta">View →</span>
+          <div style="display:flex; justify-content:space-between; font-size:12.5px; opacity:0.95;">
+            <span id="dashProgPct">42% complete</span>
+            <span>4 of 10 modules</span>
           </div>
         </div>
 
-        <!-- TODAY'S PLAN SECTION -->
+        <!-- YOUR NEXT ACTION (Highest Priority & Prominent) -->
+        <div class="next-action-card" id="nextActionCard">
+          <div class="next-action-eyebrow">
+            <span>⚡ Next Action</span>
+            <span style="color:var(--error-600); font-weight:800;">Due Today</span>
+          </div>
+          <div class="next-action-title" id="nextActionTitle">Complete your portfolio case study</div>
+          <div style="font-size:12.5px; color:var(--neutral-700);">
+            Estimated 30 min · Module 02: User Research Synthesis
+          </div>
+          <button class="btn-primary" style="height:42px; margin-top:6px;" id="nextActionBtn" onclick="goToScreen('s-assignment-detail')">
+            Start Task →
+          </button>
+        </div>
+
+        <!-- UPCOMING LIVE SESSION -->
         <div class="section-header">
-          <h3 class="section-title">Today's plan</h3>
-          <span class="section-link" onclick="goToScreen('s-plan')">View all (5)</span>
+          <h3 class="section-title">Upcoming Live Session</h3>
         </div>
-
-        <div class="tasks-list" id="homeTasksContainer">
-          <!-- Populated dynamically with tasks -->
-        </div>
-
-        <!-- WEEKLY PROGRESS RUNWAY -->
-        <div class="section-header">
-          <h3 class="section-title">You're making progress</h3>
-          <span style="font-size:12px; font-weight:700; color:var(--success-600);">5 day streak 🔥</span>
-        </div>
-
-        <div style="margin:0 20px 20px; background:var(--neutral-50); border:1px solid var(--neutral-200); border-radius:var(--radius-md); padding:14px 16px;">
-          <div style="display:flex; justify-content:space-between; margin-bottom:8px; font-size:12px; font-weight:700; color:var(--neutral-600);">
-            <span>Mon ✓</span><span>Tue ✓</span><span>Wed ✓</span><span>Thu ✓</span><span>Fri ✓</span><span>Sat</span><span>Sun</span>
+        <div class="live-session-card">
+          <div style="display:flex; justify-content:space-between; align-items:flex-start;">
+            <div>
+              <span class="chip chip-primary" style="padding:2px 8px; font-size:11px;">Thursday · 7:00 PM</span>
+              <h4 style="font-size:15px; font-weight:800; color:var(--color-black); margin-top:4px;">Portfolio Review Workshop</h4>
+            </div>
+            <span style="font-size:11px; font-weight:700; color:var(--neutral-500);">45 min</span>
           </div>
-          <div style="height:6px; background:var(--neutral-200); border-radius:3px; overflow:hidden;">
-            <div style="width:71%; height:100%; background:var(--primary-600); border-radius:3px;"></div>
+          <div style="font-size:12.5px; color:var(--neutral-600);">
+            Instructor: <strong>Sarah Johnson</strong> (Staff Designer @ Linear)
+          </div>
+          <div style="display:flex; gap:8px; margin-top:4px;">
+            <button class="btn-primary" style="height:36px; font-size:12px; flex:1;" onclick="goToScreen('s-live-session')">View Session →</button>
+            <button class="btn-outline" style="height:36px; font-size:12px; flex:1;" onclick="alert('📅 Added to Calendar: Thursday 7:00 PM')">Add to Calendar</button>
+          </div>
+        </div>
+
+        <!-- PENDING TASK / ASSIGNMENT -->
+        <div class="section-header">
+          <h3 class="section-title">Pending Tasks</h3>
+          <span class="section-link" onclick="goToScreen('s-learn')">View all (3)</span>
+        </div>
+
+        <div class="assignment-card" onclick="goToScreen('s-assignment-detail')">
+          <div style="display:flex; justify-content:space-between; align-items:flex-start;">
+            <div>
+              <div style="font-size:14px; font-weight:800; color:var(--color-black);">Portfolio Case Study Synthesis</div>
+              <div style="font-size:12px; color:var(--neutral-500); margin-top:2px;">Due: Friday, Aug 28 · 45 min</div>
+            </div>
+            <span class="chip chip-warning" id="dashAssignmentBadge">Not started</span>
           </div>
         </div>
 
         <!-- Quick 100% Simulator CTA -->
         <div style="padding:0 20px 20px;">
           <button class="btn-outline" style="border-style:dashed; color:var(--primary-600);" onclick="simulateFullReadiness()">
-            🎯 Complete All Tasks & Reach 100% Readiness
+            🎯 Complete All Requirements & Reach 100% Readiness
           </button>
         </div>
       </section>
 
       <!-- =====================================================================
-           9. PLAN TAB SCREEN
+           9. LIVE SESSION DETAIL SCREEN
            ===================================================================== -->
-      <section class="screen-view" id="s-plan">
+      <section class="screen-view" id="s-live-session">
         <div class="step-header">
-          <div class="mentra-logo"><span>Mentra</span></div>
-          <h2 class="page-headline">Your Preparation Plan</h2>
-          <p class="page-subtext">Follow these targeted actions to move from preparation to readiness.</p>
+          <button class="btn-ghost" style="align-self:flex-start; padding-left:0;" onclick="goToScreen('s-home')">‹ Back to Dashboard</button>
+          <div class="chip chip-primary" style="align-self:flex-start;">Live Cohort Workshop</div>
+          <h2 class="page-headline">Portfolio Review Workshop</h2>
+          <p class="page-subtext">Live critique and structure walkthrough for transitioning designers.</p>
         </div>
 
-        <div class="section-header">
-          <h3 class="section-title">High Priority Gaps</h3>
-        </div>
-        <div class="tasks-list" id="planHighList">
-          <!-- Populated dynamically -->
+        <div style="padding:0 20px 14px;">
+          <div style="background:var(--neutral-50); border:1px solid var(--neutral-200); border-radius:var(--radius-md); padding:14px; font-size:13px; line-height:1.5; color:var(--neutral-700);">
+            📅 <strong>Date & Time:</strong> Thursday, 7:00 PM – 7:45 PM<br>
+            👤 <strong>Instructor:</strong> Sarah Johnson (Staff Product Designer)<br>
+            🎯 <strong>What you'll learn:</strong> Case study storytelling, avoiding common portfolio traps, presenting technical trade-offs.<br>
+            📋 <strong>Preparation:</strong> Have your draft Figma or PDF link ready.
+          </div>
         </div>
 
-        <div class="section-header">
-          <h3 class="section-title">Medium Priority Refinements</h3>
-        </div>
-        <div class="tasks-list" id="planMediumList">
-          <!-- Populated dynamically -->
+        <div style="padding:0 20px 24px; margin-top:auto;">
+          <button class="btn-primary" onclick="alert('🎥 Entering Live Video Room with Sarah Johnson and 18 peers...')">
+            Join Live Session Room →
+          </button>
         </div>
       </section>
 
       <!-- =====================================================================
-           10. PROGRESS TAB SCREEN (Milestones & Category Progress)
+           10. ASSIGNMENT DETAIL SCREEN
+           ===================================================================== -->
+      <section class="screen-view" id="s-assignment-detail">
+        <div class="step-header">
+          <button class="btn-ghost" style="align-self:flex-start; padding-left:0;" onclick="goToScreen('s-home')">‹ Back to Dashboard</button>
+          <div style="display:flex; justify-content:space-between; align-items:center;">
+            <span class="chip chip-warning" id="assignDetailBadge">Not started</span>
+            <span style="font-size:12px; font-weight:700; color:var(--neutral-500);">Est: 45 min</span>
+          </div>
+          <h2 class="page-headline">Portfolio Case Study: User Research Synthesis</h2>
+        </div>
+
+        <div style="padding:0 20px 14px; display:flex; flex-direction:column; gap:12px; font-size:13px; color:var(--neutral-700); line-height:1.5;">
+          <div>
+            <strong>Task Instructions:</strong><br>
+            Review the provided interview transcripts. Group user quotes into 3 core theme clusters, create an affinity diagram, and summarize the primary user friction point.
+          </div>
+          <div style="background:var(--neutral-50); border:1px solid var(--neutral-200); border-radius:var(--radius-md); padding:12px;">
+            <strong>Deliverable Format:</strong><br>
+            PDF document, Notion link, or Figma board containing the synthesized findings and recommended design direction.
+          </div>
+        </div>
+
+        <!-- Submission Form Simulator -->
+        <div style="padding:0 20px 20px; display:flex; flex-direction:column; gap:10px;">
+          <div style="border:2px dashed var(--neutral-300); border-radius:var(--radius-md); padding:20px; text-align:center; cursor:pointer;" onclick="simulateAssignmentFile()">
+            <div style="font-size:24px;">📄</div>
+            <div style="font-weight:700; font-size:13.5px; color:var(--primary-600); margin-top:4px;" id="fileUploadPrompt">Tap to attach Portfolio_CaseStudy.pdf</div>
+            <div style="font-size:11px; color:var(--neutral-500);">PDF, Figma URL, or ZIP · Max 25MB</div>
+          </div>
+        </div>
+
+        <div style="padding:0 20px 24px; margin-top:auto;">
+          <button class="btn-primary" id="submitWorkBtn" onclick="submitAssignmentWork()">
+            Submit Work for Review →
+          </button>
+        </div>
+      </section>
+
+      <!-- =====================================================================
+           11. LEARNING PLAN TAB SCREEN
+           ===================================================================== -->
+      <section class="screen-view" id="s-learn">
+        <div class="step-header">
+          <div class="mentra-logo"><span>Mentra</span></div>
+          <h2 class="page-headline">Learning Plan</h2>
+          <p class="page-subtext">Product Design Career Accelerator · 8 Modules</p>
+        </div>
+
+        <div style="padding:0 20px 20px; display:flex; flex-direction:column; gap:10px;">
+          <!-- Module 1 -->
+          <div class="category-card" style="border-left:4px solid var(--success-500);">
+            <div style="display:flex; justify-content:space-between; align-items:center;">
+              <span style="font-weight:800; font-size:14px;">Week 1: Design Foundations</span>
+              <span style="color:var(--success-600); font-weight:800; font-size:12px;">✓ Completed</span>
+            </div>
+            <div style="font-size:12px; color:var(--neutral-500);">Typography, layout systems, component tokens</div>
+          </div>
+
+          <!-- Module 2 (Current) -->
+          <div class="category-card" style="border-left:4px solid var(--primary-600); background:var(--primary-25);" onclick="goToScreen('s-assignment-detail')">
+            <div style="display:flex; justify-content:space-between; align-items:center;">
+              <span style="font-weight:800; font-size:14px; color:var(--primary-700);">Week 2: User Research (Current)</span>
+              <span class="chip chip-primary" style="padding:2px 8px; font-size:11px;">In Progress</span>
+            </div>
+            <div style="font-size:12px; color:var(--neutral-700); margin-top:2px;">
+              Includes: Portfolio Case Study Assignment & Live Workshop
+            </div>
+          </div>
+
+          <!-- Module 3 -->
+          <div class="category-card">
+            <div style="display:flex; justify-content:space-between; align-items:center;">
+              <span style="font-weight:800; font-size:14px;">Week 3: Information Architecture</span>
+              <span style="color:var(--neutral-400); font-size:12px; font-weight:700;">🔒 Next</span>
+            </div>
+            <div style="font-size:12px; color:var(--neutral-500);">Task flows, wireframes, hierarchical navigation</div>
+          </div>
+
+          <!-- Module 4 -->
+          <div class="category-card">
+            <div style="display:flex; justify-content:space-between; align-items:center;">
+              <span style="font-weight:800; font-size:14px;">Week 4: Interaction Design</span>
+              <span style="color:var(--neutral-400); font-size:12px; font-weight:700;">🔒 Locked</span>
+            </div>
+            <div style="font-size:12px; color:var(--neutral-500);">Micro-interactions, state transitions, usability testing</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- =====================================================================
+           12. CAREER PROGRESS SCREEN (Readiness, Skills & Categories)
            ===================================================================== -->
       <section class="screen-view" id="s-progress">
         <div class="step-header">
           <div class="mentra-logo"><span>Mentra</span></div>
-          <h2 class="page-headline">Readiness Analytics</h2>
-          <p class="page-subtext">Real-time metrics tracking your path toward 100% readiness.</p>
+          <h2 class="page-headline">Career Progress</h2>
+          <p class="page-subtext">Track your skills and progress toward becoming career-ready.</p>
         </div>
 
-        <div class="hero-readiness-card" onclick="openExplainableScoreModal()">
-          <div class="hero-top-tag">
-            <span>Overall Readiness</span>
-            <span>Tap for Details ⓘ</span>
+        <!-- 3 Progress Rings -->
+        <div class="ring-row">
+          <div class="ring-card" onclick="openExplainableReadinessModal()">
+            <div class="ring-circle" style="background:conic-gradient(var(--primary-600) 0% 72%, var(--neutral-200) 72% 100%);">
+              <div class="ring-circle-inner" id="progRingReadiness">72%</div>
+            </div>
+            <div class="ring-label">Career Readiness ⓘ</div>
           </div>
-          <div class="hero-score-display">
-            <span class="hero-score-number" id="progressOverallScore">72%</span>
-            <span class="hero-score-label">Ready</span>
+
+          <div class="ring-card" onclick="goToScreen('s-learn')">
+            <div class="ring-circle" style="background:conic-gradient(var(--success-500) 0% 42%, var(--neutral-200) 42% 100%);">
+              <div class="ring-circle-inner" id="progRingProgramme">42%</div>
+            </div>
+            <div class="ring-label">Programme Progress</div>
           </div>
-          <div class="hero-progress-track">
-            <div class="hero-progress-fill" id="progressOverallFill" style="width:72%;"></div>
+
+          <div class="ring-card" onclick="openExplainableReadinessModal()">
+            <div class="ring-circle" style="background:conic-gradient(var(--warning-500) 0% 82%, var(--neutral-200) 82% 100%);">
+              <div class="ring-circle-inner">82%</div>
+            </div>
+            <div class="ring-label">Profile Complete</div>
           </div>
         </div>
 
+        <!-- Skills Completed Checklist -->
         <div class="section-header">
-          <h3 class="section-title">Milestones</h3>
+          <h3 class="section-title">Skills Verified</h3>
         </div>
-        <div style="padding:0 20px; display:flex; flex-direction:column; gap:10px; margin-bottom:20px;">
-          <div class="category-card" style="border-left:4px solid var(--success-500);">
-            <div style="display:flex; justify-content:space-between;">
-              <span style="font-weight:800; font-size:14px;">Resume Ready (80%+)</span>
-              <span style="color:var(--success-600); font-weight:800; font-size:12px;">✓ Unlocked</span>
-            </div>
+        <div style="padding:0 20px 14px; display:flex; flex-direction:column; gap:8px;">
+          <div class="category-card" style="padding:10px 14px; flex-direction:row; justify-content:space-between; align-items:center;">
+            <span style="font-weight:700; font-size:13px;">User Research & Synthesis</span>
+            <span style="color:var(--success-600); font-weight:800;">✓ Verified</span>
           </div>
-          <div class="category-card" style="border-left:4px solid var(--warning-500);">
-            <div style="display:flex; justify-content:space-between;">
-              <span style="font-weight:800; font-size:14px;">Portfolio Ready (85%+)</span>
-              <span style="color:var(--warning-600); font-weight:800; font-size:12px;">75% / 85%</span>
-            </div>
+          <div class="category-card" style="padding:10px 14px; flex-direction:row; justify-content:space-between; align-items:center;">
+            <span style="font-weight:700; font-size:13px;">Wireframing & Layout Grids</span>
+            <span style="color:var(--success-600); font-weight:800;">✓ Verified</span>
           </div>
-          <div class="category-card" style="border-left:4px solid var(--neutral-300);">
-            <div style="display:flex; justify-content:space-between;">
-              <span style="font-weight:800; font-size:14px;">Interview Ready (90%+)</span>
-              <span style="color:var(--neutral-500); font-weight:800; font-size:12px;">60% / 90%</span>
-            </div>
+          <div class="category-card" style="padding:10px 14px; flex-direction:row; justify-content:space-between; align-items:center;">
+            <span style="font-weight:700; font-size:13px;">Visual Design Tokens</span>
+            <span style="color:var(--success-600); font-weight:800;">✓ Verified</span>
           </div>
-          <div class="category-card" style="border-left:4px solid var(--neutral-300);">
-            <div style="display:flex; justify-content:space-between;">
-              <span style="font-weight:800; font-size:14px;">Career Ready (100%)</span>
-              <span style="color:var(--neutral-500); font-weight:800; font-size:12px;">Next Goal</span>
-            </div>
+          <div class="category-card" style="padding:10px 14px; flex-direction:row; justify-content:space-between; align-items:center;">
+            <span style="font-weight:700; font-size:13px;">Interaction Prototyping</span>
+            <span style="color:var(--primary-600); font-weight:800;">60%</span>
           </div>
+          <div class="category-card" style="padding:10px 14px; flex-direction:row; justify-content:space-between; align-items:center;">
+            <span style="font-weight:700; font-size:13px;">Portfolio Case Studies</span>
+            <span style="color:var(--warning-600); font-weight:800;">40% (In Progress)</span>
+          </div>
+        </div>
+
+        <div style="padding:0 20px 24px;">
+          <button class="btn-primary" onclick="openExplainableReadinessModal()">
+            View Full Readiness Breakdown →
+          </button>
         </div>
       </section>
 
       <!-- =====================================================================
-           11. 100% READINESS CELEBRATION
+           13. 100% READINESS CELEBRATION
            ===================================================================== -->
       <section class="screen-view" id="s-celebration" style="text-align:center; padding:32px 24px; justify-content:center; align-items:center;">
         <div style="width:96px; height:96px; border-radius:50%; background:var(--success-50); border:3px solid var(--success-200); display:flex; align-items:center; justify-content:center; margin-bottom:24px;">
           <span style="font-size:48px;">🏆</span>
         </div>
-        <div style="font-size:14px; font-weight:800; color:var(--success-600); text-transform:uppercase; letter-spacing:0.06em;">100% Prepared</div>
+        <div style="font-size:14px; font-weight:800; color:var(--success-600); text-transform:uppercase; letter-spacing:0.06em;">100% Career Ready</div>
         <h2 class="page-headline" style="font-size:28px; margin-top:6px;">You're ready.</h2>
         <p class="page-subtext" style="max-width:280px; margin-top:10px;">
-          You've completed your readiness plan. Now it's time to put it into action.
+          You've completed your learning and preparation plan. Now it's time to take your next step.
         </p>
 
         <div style="width:100%; margin-top:36px;">
-          <button class="btn-primary" onclick="goToScreen('s-whats-next')">See what's next →</button>
+          <button class="btn-primary" onclick="goToScreen('s-whats-next')">See What's Next →</button>
         </div>
       </section>
 
       <!-- =====================================================================
-           12. "WHAT'S NEXT?" SCREEN (3 Core Real-World Actions)
+           14. "WHAT'S NEXT?" ACTION HUB (3 Core Options)
            ===================================================================== -->
       <section class="screen-view" id="s-whats-next">
         <div class="step-header">
@@ -629,163 +753,106 @@
         <div style="padding:0 20px 24px; display:flex; flex-direction:column; gap:14px;">
           <!-- Option 1: Resume Help -->
           <div class="category-card" style="padding:18px; border:1.5px solid var(--primary-200);" onclick="goToScreen('s-resume-help')">
-            <div style="font-size:11.5px; font-weight:800; color:var(--primary-600); text-transform:uppercase;">Option 1 · Resume Help</div>
+            <div style="font-size:11.5px; font-weight:800; color:var(--primary-600); text-transform:uppercase;">1. Resume Help</div>
             <div style="font-size:17px; font-weight:800; color:var(--color-black); margin-top:4px;">Polish your resume</div>
-            <p style="font-size:13px; color:var(--neutral-600); margin-top:4px;">Make your resume application-ready with final structural checks.</p>
+            <p style="font-size:13px; color:var(--neutral-600); margin-top:4px;">Make your resume application-ready for Product Designer roles.</p>
             <button class="btn-secondary" style="height:42px; margin-top:12px;">Improve Resume →</button>
           </div>
 
           <!-- Option 2: Mock Interview -->
           <div class="category-card" style="padding:18px; border:1.5px solid var(--cyan-200);" onclick="goToScreen('s-mock-interview')">
-            <div style="font-size:11.5px; font-weight:800; color:var(--cyan-700); text-transform:uppercase;">Option 2 · Mock Interview</div>
-            <div style="font-size:17px; font-weight:800; color:var(--color-black); margin-top:4px;">Practice an interview</div>
-            <p style="font-size:13px; color:var(--neutral-600); margin-top:4px;">Test your confidence before the real thing with targeted questions.</p>
+            <div style="font-size:11.5px; font-weight:800; color:var(--cyan-700); text-transform:uppercase;">2. Mock Interview</div>
+            <div style="font-size:17px; font-weight:800; color:var(--color-black); margin-top:4px;">Practice a mock interview</div>
+            <p style="font-size:13px; color:var(--neutral-600); margin-top:4px;">Build confidence before your next interview with structured questions.</p>
             <button class="btn-secondary" style="height:42px; margin-top:12px; background:var(--cyan-50); color:var(--cyan-800); border-color:var(--cyan-200);">Start Mock Interview →</button>
           </div>
 
-          <!-- Option 3: Referral & Opportunities -->
+          <!-- Option 3: Opportunities / Referral -->
           <div class="category-card" style="padding:18px; border:1.5px solid var(--success-200);" onclick="goToScreen('s-referrals')">
-            <div style="font-size:11.5px; font-weight:800; color:var(--success-700); text-transform:uppercase;">Option 3 · Referral</div>
+            <div style="font-size:11.5px; font-weight:800; color:var(--success-700); text-transform:uppercase;">3. Referral & Opportunities</div>
             <div style="font-size:17px; font-weight:800; color:var(--color-black); margin-top:4px;">Find opportunities</div>
-            <p style="font-size:13px; color:var(--neutral-600); margin-top:4px;">Start reaching out and put your preparation to work.</p>
+            <p style="font-size:13px; color:var(--neutral-600); margin-top:4px;">Explore roles and start reaching out to alumni mentors.</p>
             <button class="btn-secondary" style="height:42px; margin-top:12px; background:var(--success-50); color:var(--success-800); border-color:var(--success-200);">Explore Opportunities →</button>
           </div>
         </div>
       </section>
 
       <!-- =====================================================================
-           13. RESUME HELP FLOW
+           15. RESUME HELP SCREEN
            ===================================================================== -->
       <section class="screen-view" id="s-resume-help">
         <div class="step-header">
           <button class="btn-ghost" style="align-self:flex-start; padding-left:0;" onclick="goToScreen('s-whats-next')">‹ Back to What's Next</button>
           <h2 class="page-headline">Resume Readiness</h2>
-          <p class="page-subtext">Verification checklist for your target Product Designer role.</p>
+          <p class="page-subtext">Product Designer ATS Checklist</p>
         </div>
 
-        <div style="padding:0 20px 20px; display:flex; flex-direction:column; gap:10px;">
-          <div class="option-card selected">
-            <span class="option-text">Structure & Layout</span>
-            <span style="color:var(--success-600); font-weight:800;">✓ Ready (100%)</span>
-          </div>
-          <div class="option-card selected">
-            <span class="option-text">Headline & Summary</span>
-            <span style="color:var(--success-600); font-weight:800;">✓ Optimized (95%)</span>
-          </div>
-          <div class="option-card selected">
-            <span class="option-text">Measurable Impact & Metrics</span>
-            <span style="color:var(--success-600); font-weight:800;">✓ Added (90%)</span>
-          </div>
-          <div class="option-card selected">
-            <span class="option-text">Core Skills & Tooling</span>
-            <span style="color:var(--success-600); font-weight:800;">✓ Aligned (95%)</span>
-          </div>
-          <div class="option-card selected">
-            <span class="option-text">Formatting & ATS Export</span>
-            <span style="color:var(--success-600); font-weight:800;">✓ Clean PDF</span>
-          </div>
+        <div style="padding:0 20px 20px; display:flex; flex-direction:column; gap:8px;">
+          <div class="option-card selected"><span class="option-title">✓ Structure & Formatting</span></div>
+          <div class="option-card selected"><span class="option-title">✓ Experience & Metrics</span></div>
+          <div class="option-card selected"><span class="option-title">✓ Core Skills (Figma, Systems)</span></div>
+          <div class="option-card selected"><span class="option-title">✓ Measurable Impact Statements</span></div>
         </div>
 
         <div style="padding:0 20px 24px;">
-          <button class="btn-primary" onclick="alert('✅ Resume marked Application-Ready! You can now apply directly or ask for referrals.')">
-            Download Optimized Resume PDF
-          </button>
+          <button class="btn-primary" onclick="alert('📄 Resume exported and verified!')">Download Ready PDF</button>
         </div>
       </section>
 
       <!-- =====================================================================
-           14. MOCK INTERVIEW FLOW
+           16. MOCK INTERVIEW SCREEN
            ===================================================================== -->
       <section class="screen-view" id="s-mock-interview">
         <div class="step-header">
           <button class="btn-ghost" style="align-self:flex-start; padding-left:0;" onclick="goToScreen('s-whats-next')">‹ Back to What's Next</button>
-          <h2 class="page-headline">Practice an Interview</h2>
-          <p class="page-subtext">Select interview focus and test your readiness.</p>
+          <h2 class="page-headline">Practice a Mock Interview</h2>
+          <p class="page-subtext">Predefined question rehearsal for Product Design.</p>
         </div>
 
         <div style="padding:0 20px 14px;">
-          <div style="font-size:12px; font-weight:800; color:var(--neutral-500); text-transform:uppercase; margin-bottom:8px;">1. Choose Interview Type</div>
-          <div style="display:grid; grid-template-columns:1fr 1fr; gap:8px;">
-            <div class="chip chip-primary" style="justify-content:center; padding:10px; cursor:pointer;" onclick="selectInterviewType(this, 'Product / UX')">Product / UX</div>
-            <div class="chip" style="justify-content:center; padding:10px; background:var(--neutral-100); color:var(--neutral-700); cursor:pointer;" onclick="selectInterviewType(this, 'Behavioral')">Behavioral</div>
-            <div class="chip" style="justify-content:center; padding:10px; background:var(--neutral-100); color:var(--neutral-700); cursor:pointer;" onclick="selectInterviewType(this, 'General')">General</div>
-            <div class="chip" style="justify-content:center; padding:10px; background:var(--neutral-100); color:var(--neutral-700); cursor:pointer;" onclick="selectInterviewType(this, 'Leadership')">Leadership</div>
-          </div>
-        </div>
-
-        <!-- Predefined Question Card -->
-        <div class="interview-q-card" id="mockInterviewBox">
-          <div style="font-size:11px; font-weight:800; color:var(--primary-600); text-transform:uppercase;">Question 1 of 3 · Medium</div>
-          <h3 style="font-size:16px; font-weight:800; color:var(--color-black); margin-top:6px;" id="mockQText">
-            "Tell me about a difficult product design trade-off you had to make and how you handled stakeholder alignment."
-          </h3>
-          <p style="font-size:12px; color:var(--neutral-600); margin-top:8px; line-height:1.45;">
-            <strong>Framework Tip:</strong> Use the STAR method (Situation, Task, Action, Result) focusing on business constraints and user empathy.
-          </p>
-
-          <div style="display:flex; gap:8px; margin-top:16px;">
-            <button class="btn-primary" style="height:40px; font-size:12.5px;" onclick="nextMockQuestion()">Next Question →</button>
+          <div style="background:var(--neutral-50); border:1.5px solid var(--primary-200); border-radius:var(--radius-lg); padding:16px;">
+            <div style="font-size:11px; font-weight:800; color:var(--primary-600); text-transform:uppercase;">Question 1 of 3 · Behavioral</div>
+            <h4 style="font-size:15px; font-weight:800; color:var(--color-black); margin-top:6px;" id="interviewQText">
+              "Tell me about a difficult product design decision you had to make and how you handled stakeholder pushback."
+            </h4>
+            <button class="btn-primary" style="height:38px; font-size:12px; margin-top:14px;" onclick="nextInterviewQ()">Next Question →</button>
           </div>
         </div>
       </section>
 
       <!-- =====================================================================
-           15. REFERRAL / OPPORTUNITY BOARD
+           17. OPPORTUNITIES & REFERRAL BOARD
            ===================================================================== -->
       <section class="screen-view" id="s-referrals">
         <div class="step-header">
           <button class="btn-ghost" style="align-self:flex-start; padding-left:0;" onclick="goToScreen('s-whats-next')">‹ Back to What's Next</button>
-          <h2 class="page-headline">Your profile is ready to share.</h2>
-          <p class="page-subtext">Matched opportunities for Product Designer roles.</p>
+          <h2 class="page-headline">Find Opportunities</h2>
+          <p class="page-subtext">Matched Product Designer openings with referral intros.</p>
         </div>
 
-        <div style="padding:0 20px 14px;">
-          <div style="background:var(--success-50); border:1px solid var(--success-200); border-radius:var(--radius-md); padding:12px 14px; font-size:12.5px; color:var(--success-800);">
-            ✓ <strong>Readiness Status:</strong> 100% Ready · Portfolio & Resume Verified
-          </div>
-        </div>
-
-        <div style="padding:0 20px 20px;">
-          <!-- Card 1 -->
-          <div class="opportunity-card">
-            <div class="opp-top-row">
-              <div>
-                <div class="opp-company">Figma</div>
-                <div class="opp-role">Product Designer, Core Systems</div>
-              </div>
-              <span class="opp-match-badge">98% Match</span>
+        <div style="padding:0 20px 20px; display:flex; flex-direction:column; gap:12px;">
+          <div class="category-card" style="padding:16px;">
+            <div style="display:flex; justify-content:space-between;">
+              <span style="font-weight:800; font-size:15px;">Figma · Product Designer</span>
+              <span class="match-tag" style="padding:2px 8px; font-size:10.5px;">98% Match</span>
             </div>
-            <div style="font-size:12.5px; color:var(--neutral-600);">San Francisco / Remote · 3+ yrs exp</div>
-            <div style="display:flex; gap:8px; margin-top:6px;">
-              <button class="btn-primary" style="height:36px; font-size:12px; flex:1;" onclick="alert('🤝 Referral request sent to your Mentra alumni network at Figma!')">
-                Ask for a referral
-              </button>
-              <button class="btn-outline" style="height:36px; font-size:12px; flex:1;">View Role</button>
-            </div>
+            <div style="font-size:12px; color:var(--neutral-500); margin-top:4px;">San Francisco / Remote · 3+ yrs exp</div>
+            <button class="btn-primary" style="height:36px; font-size:12px; margin-top:10px;" onclick="alert('🤝 Referral request submitted to Mentra mentor network!')">Ask for a Referral</button>
           </div>
 
-          <!-- Card 2 -->
-          <div class="opportunity-card">
-            <div class="opp-top-row">
-              <div>
-                <div class="opp-company">Linear</div>
-                <div class="opp-role">Senior Product Designer</div>
-              </div>
-              <span class="opp-match-badge">95% Match</span>
+          <div class="category-card" style="padding:16px;">
+            <div style="display:flex; justify-content:space-between;">
+              <span style="font-weight:800; font-size:15px;">Linear · Senior Designer</span>
+              <span class="match-tag" style="padding:2px 8px; font-size:10.5px;">95% Match</span>
             </div>
-            <div style="font-size:12.5px; color:var(--neutral-600);">Remote · 3+ yrs exp</div>
-            <div style="display:flex; gap:8px; margin-top:6px;">
-              <button class="btn-primary" style="height:36px; font-size:12px; flex:1;" onclick="alert('🤝 Referral request sent for Linear!')">
-                Ask for a referral
-              </button>
-              <button class="btn-outline" style="height:36px; font-size:12px; flex:1;">View Role</button>
-            </div>
+            <div style="font-size:12px; color:var(--neutral-500); margin-top:4px;">Remote · 3+ yrs exp</div>
+            <button class="btn-primary" style="height:36px; font-size:12px; margin-top:10px;" onclick="alert('🤝 Referral request submitted!')">Ask for a Referral</button>
           </div>
         </div>
       </section>
 
       <!-- =====================================================================
-           16. PROFILE & SETTINGS TAB
+           18. PROFILE & SETTINGS TAB
            ===================================================================== -->
       <section class="screen-view" id="s-profile">
         <div class="step-header">
@@ -800,23 +867,18 @@
             </div>
             <div>
               <div style="font-size:17px; font-weight:800; color:var(--color-black);">Arka</div>
-              <div style="font-size:13px; color:var(--neutral-600);">Product Designer · 3+ yrs exp</div>
-              <div style="font-size:12px; font-weight:700; color:var(--primary-600); margin-top:2px;">Target: Get a new job</div>
+              <div style="font-size:13px; color:var(--neutral-600);">Switching to Product Design · 3+ yrs exp</div>
+              <div style="font-size:12px; font-weight:700; color:var(--primary-600); margin-top:2px;">Programme: Accelerator (42%)</div>
             </div>
           </div>
 
           <div class="category-card">
-            <div style="font-weight:700; font-size:14px; margin-bottom:4px;">Daily Commitment</div>
+            <div style="font-weight:700; font-size:14px; margin-bottom:2px;">Daily Commitment</div>
             <div style="font-size:13px; color:var(--neutral-600);">30 minutes per day · 5 day streak</div>
           </div>
 
-          <div class="category-card">
-            <div style="font-weight:700; font-size:14px; margin-bottom:4px;">Notification Preferences</div>
-            <div style="font-size:13px; color:var(--neutral-600);">Daily action reminders enabled (9:00 AM)</div>
-          </div>
-
-          <button class="btn-outline" style="color:var(--error-600); border-color:var(--error-200);" onclick="resetAllData()">
-            Reset Assessment & Progress
+          <button class="btn-outline" style="color:var(--error-600); border-color:var(--error-200); margin-top:10px;" onclick="resetAllProgress()">
+            Reset Onboarding & Progress
           </button>
         </div>
       </section>
@@ -824,7 +886,7 @@
     </div>
 
     <!-- =========================================================================
-         PERSISTENT BOTTOM NAVIGATION BAR (Home, Plan, Progress, Profile)
+         PERSISTENT BOTTOM NAVIGATION (Home, Learn, Progress, Profile)
          ========================================================================= -->
     <nav class="bottom-nav-bar" id="appBottomNav" aria-label="Main Navigation">
       <button class="nav-tab-item active" id="tab-home" onclick="goToScreen('s-home')">
@@ -832,9 +894,9 @@
         <span class="nav-tab-label">Home</span>
       </button>
 
-      <button class="nav-tab-item" id="tab-plan" onclick="goToScreen('s-plan')">
+      <button class="nav-tab-item" id="tab-learn" onclick="goToScreen('s-learn')">
         <svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
-        <span class="nav-tab-label">Plan</span>
+        <span class="nav-tab-label">Learn</span>
       </button>
 
       <button class="nav-tab-item" id="tab-progress" onclick="goToScreen('s-progress')">
@@ -848,156 +910,95 @@
       </button>
     </nav>
 
-    <!-- iOS Home Indicator Swipe Bar -->
+    <!-- iOS Home Indicator -->
     <div class="phone-home-indicator"></div>
 
     <!-- =========================================================================
-         MODALS & BOTTOM SHEETS
+         BOTTOM SHEETS & MODALS (Explainable Readiness, Catchup, Reschedule)
          ========================================================================= -->
-    <!-- 1. Explainable Readiness Score Modal -->
-    <div class="modal-backdrop" id="modalExplainableScore" onclick="closeAllModals(event)">
+    <!-- 1. Explainable Readiness Modal -->
+    <div class="modal-backdrop" id="modalExplainableReadiness" onclick="closeAllModals(event)">
       <div class="bottom-sheet" onclick="event.stopPropagation()">
         <div class="sheet-handle"></div>
         <div style="display:flex; justify-content:space-between; align-items:center;">
-          <h3 style="font-size:18px; font-weight:800;">Your <span id="sheetScorePct">72%</span> Readiness Breakdown</h3>
-          <button class="btn-ghost" onclick="closeModal('modalExplainableScore')">✕</button>
+          <h3 style="font-size:18px; font-weight:800;">How Your <span id="sheetScoreNum">72%</span> Readiness is Calculated</h3>
+          <button class="btn-ghost" onclick="closeModal('modalExplainableReadiness')">✕</button>
         </div>
         <p style="font-size:13px; color:var(--neutral-600);">
-          Here is exactly what drives your readiness score and where your biggest gains are:
+          Your readiness is driven by verified learning coursework, skills, and portfolio milestones:
         </p>
 
-        <div style="display:flex; flex-direction:column; gap:10px; margin-top:6px;">
+        <div style="display:flex; flex-direction:column; gap:10px;">
           <div style="background:var(--neutral-50); border-radius:10px; padding:12px;">
             <div style="display:flex; justify-content:space-between; font-weight:800; font-size:13.5px;">
-              <span>Resume</span><span style="color:var(--primary-600);" id="sheetResumePct">90%</span>
+              <span>Resume</span><span style="color:var(--primary-600);">90%</span>
             </div>
-            <p style="font-size:12px; color:var(--neutral-600); margin-top:2px;">Strong structure and experience. Minor headline optimization needed.</p>
+            <p style="font-size:12px; color:var(--neutral-600); margin-top:2px;">✓ Complete structure and experience highlights.</p>
           </div>
 
           <div style="background:var(--neutral-50); border-radius:10px; padding:12px;">
             <div style="display:flex; justify-content:space-between; font-weight:800; font-size:13.5px;">
-              <span>Portfolio</span><span style="color:var(--primary-600);" id="sheetPortfolioPct">75%</span>
+              <span>Portfolio</span><span style="color:var(--warning-600);">75%</span>
             </div>
-            <p style="font-size:12px; color:var(--neutral-600); margin-top:2px;">Core projects present. Needs stronger measurable outcome sections.</p>
+            <p style="font-size:12px; color:var(--neutral-600); margin-top:2px;">2 case studies completed, 1 needs synthesis impact.</p>
+            <button class="btn-secondary" style="height:34px; font-size:11.5px; margin-top:6px;" onclick="closeModal('modalExplainableReadiness'); goToScreen('s-assignment-detail')">Improve Portfolio →</button>
           </div>
 
           <div style="background:var(--neutral-50); border-radius:10px; padding:12px;">
             <div style="display:flex; justify-content:space-between; font-weight:800; font-size:13.5px;">
-              <span>Interview</span><span style="color:var(--primary-600);" id="sheetInterviewPct">60%</span>
+              <span>Interview</span><span style="color:var(--primary-600);">60%</span>
             </div>
-            <p style="font-size:12px; color:var(--neutral-600); margin-top:2px;">More behavioral and design trade-off practice is recommended.</p>
+            <p style="font-size:12px; color:var(--neutral-600); margin-top:2px;">4 of 10 practice sessions completed.</p>
+            <button class="btn-secondary" style="height:34px; font-size:11.5px; margin-top:6px;" onclick="closeModal('modalExplainableReadiness'); goToScreen('s-mock-interview')">Practice Interview →</button>
           </div>
 
           <div style="background:var(--neutral-50); border-radius:10px; padding:12px;">
             <div style="display:flex; justify-content:space-between; font-weight:800; font-size:13.5px;">
-              <span>Professional Profile</span><span style="color:var(--primary-600);" id="sheetProfilePct">80%</span>
+              <span>Profile</span><span style="color:var(--primary-600);">82%</span>
             </div>
-            <p style="font-size:12px; color:var(--neutral-600); margin-top:2px;">Mostly ready. Headline matches target Product Designer role.</p>
+            <p style="font-size:12px; color:var(--neutral-600); margin-top:2px;">LinkedIn sync incomplete.</p>
           </div>
 
           <div style="background:var(--neutral-50); border-radius:10px; padding:12px;">
             <div style="display:flex; justify-content:space-between; font-weight:800; font-size:13.5px;">
-              <span>Job Search & Applications</span><span style="color:var(--primary-600);" id="sheetJobSearchPct">55%</span>
+              <span>Applications</span><span style="color:var(--neutral-600);">55%</span>
             </div>
-            <p style="font-size:12px; color:var(--neutral-600); margin-top:2px;">Application tracker and referral strategy still need setup.</p>
+            <p style="font-size:12px; color:var(--neutral-600); margin-top:2px;">Application tracker setup pending.</p>
           </div>
         </div>
-
-        <button class="btn-primary" style="margin-top:8px;" onclick="closeModal('modalExplainableScore'); goToScreen('s-plan')">
-          Work on Priority Gaps →
-        </button>
       </div>
     </div>
 
-    <!-- 2. Preparation Task Detail Modal -->
-    <div class="modal-backdrop" id="modalTaskDetail" onclick="closeAllModals(event)">
-      <div class="bottom-sheet" onclick="event.stopPropagation()">
-        <div class="sheet-handle"></div>
-        <div style="display:flex; justify-content:space-between; align-items:flex-start;">
-          <div>
-            <span class="chip chip-primary" id="taskDetailCategory">Resume · 15 min</span>
-            <h3 style="font-size:18px; font-weight:800; margin-top:6px;" id="taskDetailTitle">Improve resume headline & summary</h3>
-          </div>
-          <button class="btn-ghost" onclick="closeModal('modalTaskDetail')">✕</button>
-        </div>
-
-        <div style="font-size:13px; color:var(--neutral-700); line-height:1.5;">
-          <strong>Why it matters:</strong> Recruiters spend ~6 seconds scanning. A strong headline clearly communicates your specialty as a Product Designer.
-        </div>
-
-        <div style="font-weight:800; font-size:14px; margin-top:4px;">Checklist:</div>
-        <div style="display:flex; flex-direction:column; gap:8px;" id="taskChecklistContainer">
-          <label style="display:flex; align-items:center; gap:10px; font-size:13px; cursor:pointer;">
-            <input type="checkbox" checked style="accent-color:var(--primary-600); width:18px; height:18px;">
-            <span>Rewrite headline to match target role</span>
-          </label>
-          <label style="display:flex; align-items:center; gap:10px; font-size:13px; cursor:pointer;">
-            <input type="checkbox" checked style="accent-color:var(--primary-600); width:18px; height:18px;">
-            <span>Mention core expertise & design systems</span>
-          </label>
-          <label style="display:flex; align-items:center; gap:10px; font-size:13px; cursor:pointer;">
-            <input type="checkbox" checked style="accent-color:var(--primary-600); width:18px; height:18px;">
-            <span>Add measurable business impact</span>
-          </label>
-          <label style="display:flex; align-items:center; gap:10px; font-size:13px; cursor:pointer;">
-            <input type="checkbox" checked style="accent-color:var(--primary-600); width:18px; height:18px;">
-            <span>Review final version against ATS keywords</span>
-          </label>
-        </div>
-
-        <button class="btn-primary" style="margin-top:10px;" id="taskMarkCompleteBtn" onclick="completeCurrentTask()">
-          Mark Complete (+8% Readiness) ✓
-        </button>
-      </div>
-    </div>
-
-    <!-- 3. Catch-Up Modal -->
+    <!-- 2. Catch-Up Modal -->
     <div class="modal-backdrop" id="modalCatchUp" onclick="closeAllModals(event)">
       <div class="bottom-sheet" onclick="event.stopPropagation()">
         <div class="sheet-handle"></div>
         <h3 style="font-size:18px; font-weight:800;">Let's make a smaller plan.</h3>
         <p style="font-size:13px; color:var(--neutral-600);">
-          We reduced your session from 60 min to <strong>25 min</strong> so you can easily catch up without feeling overwhelmed.
+          We reduced your 60 min session to <strong>25 min</strong> so you can easily catch up.
         </p>
 
-        <div style="background:var(--neutral-50); border-radius:12px; padding:14px; display:flex; flex-direction:column; gap:8px;">
-          <div style="display:flex; justify-content:space-between; font-size:13px; font-weight:700;">
-            <span>• Resume headline review</span><span>10 min</span>
-          </div>
-          <div style="display:flex; justify-content:space-between; font-size:13px; font-weight:700;">
-            <span>• Interview practice (3 questions)</span><span>10 min</span>
-          </div>
-          <div style="display:flex; justify-content:space-between; font-size:13px; font-weight:700;">
-            <span>• Portfolio quick pass</span><span>5 min</span>
-          </div>
+        <div style="background:var(--neutral-50); border-radius:12px; padding:14px; display:flex; flex-direction:column; gap:6px; font-size:12.5px;">
+          <div>• Resume review — 10 min</div>
+          <div>• Assignment update — 10 min</div>
+          <div>• Interview practice — 5 min</div>
         </div>
 
-        <button class="btn-primary" onclick="confirmCatchUp()">Start Catch-Up (25 min) →</button>
+        <button class="btn-primary" onclick="confirmCatchUp()">Start Catch-up (25 min) →</button>
       </div>
     </div>
 
-    <!-- 4. Reschedule Modal -->
+    <!-- 3. Reschedule Modal -->
     <div class="modal-backdrop" id="modalReschedule" onclick="closeAllModals(event)">
       <div class="bottom-sheet" onclick="event.stopPropagation()">
         <div class="sheet-handle"></div>
         <h3 style="font-size:18px; font-weight:800;">Reschedule Missed Task</h3>
-        <p style="font-size:13px; color:var(--neutral-600);">
-          Move this task to a better time. Your existing progress remains completely intact.
-        </p>
+        <p style="font-size:13px; color:var(--neutral-600);">Move this task without losing your streak.</p>
 
-        <div style="display:flex; flex-direction:column; gap:8px; margin:6px 0;">
-          <div class="option-card selected" onclick="selectCardSingle(this)">
-            <span class="option-text">Tomorrow morning</span>
-            <div class="radio-circle">✓</div>
-          </div>
-          <div class="option-card" onclick="selectCardSingle(this)">
-            <span class="option-text">This weekend</span>
-            <div class="radio-circle">✓</div>
-          </div>
-          <div class="option-card" onclick="selectCardSingle(this)">
-            <span class="option-text">Next week</span>
-            <div class="radio-circle">✓</div>
-          </div>
+        <div style="display:flex; flex-direction:column; gap:8px;">
+          <div class="option-card selected" onclick="selectCardSingle(this)"><span class="option-title">Tomorrow morning</span><div class="radio-circle">✓</div></div>
+          <div class="option-card" onclick="selectCardSingle(this)"><span class="option-title">This weekend</span><div class="radio-circle">✓</div></div>
+          <div class="option-card" onclick="selectCardSingle(this)"><span class="option-title">Next week</span><div class="radio-circle">✓</div></div>
         </div>
 
         <button class="btn-primary" onclick="confirmReschedule()">Confirm New Date ✓</button>

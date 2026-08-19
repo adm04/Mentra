@@ -1,6 +1,6 @@
 /* ==========================================================================
-   MENTRA — CAREER READINESS APPLICATION
-   Design System & Mobile-First Component Styles
+   MENTRA — CAREER RESTART & LEARNING MOBILE APPLICATION
+   Design System, Mobile Frame & Pixel-Accurate Component Styles
    ========================================================================== */
 
 @import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;600;700&display=swap');
@@ -74,47 +74,34 @@
   /* --------------------------------------------------------------------------
      FUNCTIONAL COLOR SYSTEM
      -------------------------------------------------------------------------- */
-  /* Error (Main Tone: #F04438) */
   --error-25: #FFFBFA;
   --error-50: #FEF3F2;
   --error-100: #FEE4E2;
   --error-200: #FECDCA;
-  --error-300: #FDA29B;
-  --error-400: #F97066;
   --error-500: #F04438;
   --error-600: #D92D20;
   --error-700: #B42318;
-  --error-800: #912018;
 
-  /* Warning (Main Tone: #F79009 / #F2A93B) */
   --warning-25: #FFFCF5;
   --warning-50: #FFFAEB;
   --warning-100: #FEF0C7;
   --warning-200: #FEDF89;
-  --warning-300: #FEC84B;
-  --warning-400: #FDB022;
   --warning-500: #F79009;
   --warning-600: #DC6803;
   --warning-700: #B54708;
 
-  /* Success (Main Tone: #12B76A) */
   --success-25: #F6FEF9;
   --success-50: #ECFDF3;
   --success-100: #D1FADF;
   --success-200: #A6F4C5;
-  --success-300: #6CE9A6;
-  --success-400: #32D583;
   --success-500: #12B76A;
   --success-600: #039855;
   --success-700: #027A48;
 
-  /* Info (Main Tone: #2E90FA) */
   --info-25: #F5FAFF;
   --info-50: #EFF8FF;
   --info-100: #D1E9FF;
   --info-200: #B2DDFF;
-  --info-300: #84CAFF;
-  --info-400: #53B1FD;
   --info-500: #2E90FA;
   --info-600: #1570EF;
 
@@ -133,7 +120,8 @@
   --space-6: 48px;
 
   /* Radii */
-  --radius-sm: 8px;
+  --radius-xs: 6px;
+  --radius-sm: 10px;
   --radius-md: 14px;
   --radius-lg: 18px;
   --radius-xl: 24px;
@@ -165,13 +153,13 @@ body {
   display: flex;
   justify-content: center;
   align-items: flex-start;
-  padding: 24px 16px 80px;
+  padding: 20px 16px 80px;
 }
 
-/* Top Reviewer Controls / Flow Quick Switcher */
+/* Top Reviewer Controls & Navigation Toolbar */
 .reviewer-toolbar {
   position: fixed;
-  top: 12px;
+  top: 10px;
   left: 16px;
   right: 16px;
   display: flex;
@@ -210,7 +198,7 @@ body {
   gap: 4px;
   box-shadow: var(--shadow-sm);
   overflow-x: auto;
-  max-width: 60vw;
+  max-width: 65vw;
 }
 
 .flow-btn {
@@ -237,20 +225,6 @@ body {
   color: var(--color-white);
 }
 
-.dev-state-btn {
-  background: var(--color-dark);
-  color: var(--color-white);
-  border: none;
-  font-family: var(--font-family);
-  font-size: 12px;
-  font-weight: 700;
-  border-radius: var(--radius-full);
-  padding: 8px 14px;
-  cursor: pointer;
-  box-shadow: var(--shadow-md);
-  white-space: nowrap;
-}
-
 /* ==========================================================================
    PHONE MOCKUP FRAME (390px iPhone Mobile Container)
    ========================================================================== */
@@ -263,7 +237,7 @@ body {
   overflow: hidden;
   box-shadow: 0 25px 60px rgba(0, 0, 0, 0.35);
   position: relative;
-  margin-top: 48px;
+  margin-top: 44px;
   display: flex;
   flex-direction: column;
   min-height: 844px;
@@ -347,7 +321,7 @@ body {
   position: relative;
   overflow-y: auto;
   overflow-x: hidden;
-  padding-bottom: 74px;
+  padding-bottom: 76px;
   background: var(--color-white);
 }
 
@@ -426,12 +400,12 @@ body {
 
 .btn-secondary {
   width: 100%;
-  height: 50px;
+  height: 48px;
   background: var(--primary-50);
   color: var(--primary-700);
   border: 1.5px solid var(--primary-200);
   font-family: var(--font-family);
-  font-size: 15px;
+  font-size: 14.5px;
   font-weight: 700;
   border-radius: var(--radius-md);
   cursor: pointer;
@@ -448,12 +422,12 @@ body {
 
 .btn-outline {
   width: 100%;
-  height: 50px;
+  height: 48px;
   background: transparent;
   color: var(--neutral-700);
   border: 1.5px solid var(--neutral-200);
   font-family: var(--font-family);
-  font-size: 14.5px;
+  font-size: 14px;
   font-weight: 700;
   border-radius: var(--radius-md);
   cursor: pointer;
@@ -475,21 +449,24 @@ body {
   font-family: var(--font-family);
   font-size: 13.5px;
   font-weight: 600;
-  padding: 8px 12px;
+  padding: 6px 10px;
   cursor: pointer;
   text-align: center;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
 }
 
 .btn-ghost:hover {
   color: var(--color-black);
 }
 
-/* Header & Progress Bars */
+/* Headers & Progress */
 .step-header {
-  padding: 12px 24px 8px;
+  padding: 12px 20px 8px;
   display: flex;
   flex-direction: column;
-  gap: 14px;
+  gap: 12px;
 }
 
 .step-progress-row {
@@ -505,7 +482,6 @@ body {
   background: var(--neutral-100);
   border-radius: 3px;
   overflow: hidden;
-  position: relative;
 }
 
 .step-progress-fill {
@@ -530,15 +506,15 @@ body {
 }
 
 .page-subtext {
-  font-size: 14px;
+  font-size: 13.5px;
   line-height: 1.5;
   color: var(--neutral-600);
   margin-top: 4px;
 }
 
-/* Quiz Option Card (Radio Selection) */
+/* Selectable Cards (Radio / Check) */
 .options-list {
-  padding: 16px 24px;
+  padding: 14px 20px;
   display: flex;
   flex-direction: column;
   gap: 10px;
@@ -568,14 +544,20 @@ body {
   box-shadow: 0 4px 12px rgba(76, 79, 224, 0.1);
 }
 
-.option-text {
+.option-title {
   font-size: 15px;
   font-weight: 700;
   color: var(--color-black);
 }
 
-.option-card.selected .option-text {
+.option-card.selected .option-title {
   color: var(--primary-700);
+}
+
+.option-desc {
+  font-size: 12px;
+  color: var(--neutral-500);
+  margin-top: 2px;
 }
 
 .radio-circle {
@@ -597,196 +579,171 @@ body {
   color: var(--color-white);
 }
 
-/* Chips & Tags */
-.chip {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  padding: 6px 12px;
-  border-radius: var(--radius-full);
-  font-size: 12px;
-  font-weight: 700;
-}
-
-.chip-primary {
-  background: var(--primary-50);
-  color: var(--primary-700);
-  border: 1px solid var(--primary-200);
-}
-
-.chip-success {
-  background: var(--success-50);
-  color: var(--success-700);
-  border: 1px solid var(--success-200);
-}
-
-.chip-warning {
-  background: var(--warning-50);
-  color: var(--warning-700);
-  border: 1px solid var(--warning-200);
-}
-
 /* ==========================================================================
-   HERO READINESS SCORE CARD (Home Dashboard)
+   PROGRAMME RECOMMENDATION CARDS
    ========================================================================== */
-.hero-readiness-card {
-  margin: 0 20px 16px;
-  background: linear-gradient(135deg, #5757E8 0%, #4640DE 55%, #352DB0 100%);
-  border-radius: var(--radius-xl);
-  padding: 22px 20px;
-  color: var(--color-white);
-  box-shadow: 0 12px 28px rgba(70, 64, 222, 0.32);
-  position: relative;
-  overflow: hidden;
-  cursor: pointer;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-
-.hero-readiness-card:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 16px 36px rgba(70, 64, 222, 0.4);
-}
-
-.hero-readiness-card::before {
-  content: '';
-  position: absolute;
-  top: -40px;
-  right: -40px;
-  width: 140px;
-  height: 140px;
-  background: radial-gradient(circle, rgba(255, 255, 255, 0.22) 0%, rgba(255, 255, 255, 0) 70%);
-  border-radius: 50%;
-}
-
-.hero-top-tag {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  font-size: 12px;
-  font-weight: 700;
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
-  color: rgba(255, 255, 255, 0.85);
-  margin-bottom: 8px;
-}
-
-.hero-score-display {
-  display: flex;
-  align-items: baseline;
-  gap: 8px;
-  margin-bottom: 12px;
-}
-
-.hero-score-number {
-  font-size: 48px;
-  font-weight: 800;
-  line-height: 1;
-  letter-spacing: -0.03em;
-}
-
-.hero-score-label {
-  font-size: 20px;
-  font-weight: 700;
-  opacity: 0.95;
-}
-
-.hero-progress-track {
-  height: 8px;
-  background: rgba(255, 255, 255, 0.24);
-  border-radius: 4px;
-  overflow: hidden;
-  margin-bottom: 10px;
-}
-
-.hero-progress-fill {
-  height: 100%;
+.prog-card {
   background: var(--color-white);
-  border-radius: 4px;
-  transition: width 0.8s cubic-bezier(0.16, 1, 0.3, 1);
-}
-
-.hero-card-footer {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  font-size: 13px;
-  color: rgba(255, 255, 255, 0.9);
-}
-
-.hero-view-cta {
-  font-weight: 800;
-  text-decoration: underline;
-  display: flex;
-  align-items: center;
-  gap: 4px;
-}
-
-/* ==========================================================================
-   CATEGORY BREAKDOWN CARDS & RUNWAY
-   ========================================================================== */
-.category-grid {
-  padding: 0 20px;
+  border: 1.5px solid var(--neutral-200);
+  border-radius: var(--radius-lg);
+  padding: 18px 18px 16px;
+  margin: 0 20px 14px;
+  box-shadow: var(--shadow-sm);
   display: flex;
   flex-direction: column;
   gap: 10px;
-  margin-bottom: 20px;
-}
-
-.category-card {
-  background: var(--color-white);
-  border: 1px solid var(--neutral-200);
-  border-radius: var(--radius-md);
-  padding: 14px 16px;
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
   cursor: pointer;
-  transition: all 0.15s ease;
+  transition: all 0.2s ease;
+  position: relative;
 }
 
-.category-card:hover {
-  border-color: var(--primary-300);
-  background: var(--neutral-25);
+.prog-card:hover {
+  border-color: var(--primary-400);
+  box-shadow: var(--shadow-md);
+  transform: translateY(-1px);
 }
 
-.category-card-header {
+.prog-card.best-match {
+  border-color: var(--primary-600);
+  background: linear-gradient(180deg, var(--primary-25) 0%, var(--color-white) 100%);
+  box-shadow: 0 6px 20px rgba(76, 79, 224, 0.14);
+}
+
+.prog-top-row {
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  align-items: flex-start;
 }
 
-.category-title {
-  font-size: 14px;
-  font-weight: 700;
+.match-tag {
+  background: var(--warning-500);
   color: var(--color-black);
-}
-
-.category-pct {
   font-family: var(--font-mono);
-  font-size: 14px;
+  font-size: 11px;
   font-weight: 800;
-  color: var(--primary-600);
+  padding: 4px 10px;
+  border-radius: var(--radius-full);
 }
 
-.category-track {
-  height: 6px;
-  background: var(--neutral-100);
-  border-radius: 3px;
-  overflow: hidden;
+.prog-title {
+  font-size: 17px;
+  font-weight: 800;
+  color: var(--color-black);
+  line-height: 1.25;
 }
 
-.category-fill {
-  height: 100%;
-  background: var(--primary-600);
-  border-radius: 3px;
-  transition: width 0.6s ease;
+.prog-meta-strip {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  font-size: 12px;
+  color: var(--neutral-600);
+  font-weight: 600;
+}
+
+.prog-why-box {
+  background: var(--neutral-50);
+  border-radius: var(--radius-sm);
+  padding: 10px 12px;
+  font-size: 12px;
+  color: var(--neutral-700);
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.prog-why-item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--success-700);
+  font-weight: 600;
 }
 
 /* ==========================================================================
-   TASK CARDS & CHECKLISTS
+   DASHBOARD HERO & NEXT ACTION CARDS
    ========================================================================== */
+.current-prog-hero {
+  margin: 0 20px 14px;
+  background: linear-gradient(135deg, #5757E8 0%, #4640DE 55%, #352DB0 100%);
+  border-radius: var(--radius-xl);
+  padding: 20px;
+  color: var(--color-white);
+  box-shadow: 0 10px 26px rgba(70, 64, 222, 0.3);
+  position: relative;
+  overflow: hidden;
+}
+
+.current-prog-hero::before {
+  content: '';
+  position: absolute;
+  top: -30px;
+  right: -30px;
+  width: 120px;
+  height: 120px;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0) 70%);
+  border-radius: 50%;
+}
+
+.next-action-card {
+  margin: 0 20px 16px;
+  background: var(--warning-50);
+  border: 2px solid var(--warning-400);
+  border-radius: var(--radius-lg);
+  padding: 16px 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  box-shadow: var(--shadow-sm);
+}
+
+.next-action-eyebrow {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #946412;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.next-action-title {
+  font-size: 16px;
+  font-weight: 800;
+  color: var(--color-black);
+}
+
+/* ==========================================================================
+   LIVE SESSION & ASSIGNMENT CARDS
+   ========================================================================== */
+.live-session-card {
+  margin: 0 20px 14px;
+  background: var(--color-white);
+  border: 1.5px solid var(--primary-200);
+  border-radius: var(--radius-lg);
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  box-shadow: var(--shadow-sm);
+}
+
+.assignment-card {
+  margin: 0 20px 14px;
+  background: var(--color-white);
+  border: 1px solid var(--neutral-200);
+  border-radius: var(--radius-lg);
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+/* Section Header */
 .section-header {
-  padding: 8px 20px 10px;
+  padding: 6px 20px 10px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -805,7 +762,62 @@ body {
   cursor: pointer;
 }
 
-.tasks-list {
+/* ==========================================================================
+   READINESS & CAREER PROGRESS CARDS
+   ========================================================================== */
+.ring-row {
+  display: flex;
+  gap: 8px;
+  padding: 0 20px;
+  margin-bottom: 16px;
+}
+
+.ring-card {
+  flex: 1;
+  background: var(--color-white);
+  border: 1px solid var(--neutral-200);
+  border-radius: var(--radius-md);
+  padding: 14px 8px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: var(--shadow-sm);
+  cursor: pointer;
+}
+
+.ring-circle {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 6px;
+}
+
+.ring-circle-inner {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: var(--color-white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  font-weight: 800;
+  color: var(--color-black);
+}
+
+.ring-label {
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--neutral-600);
+  line-height: 1.2;
+}
+
+/* Category Progress Bars */
+.cat-progress-row {
   padding: 0 20px;
   display: flex;
   flex-direction: column;
@@ -813,171 +825,18 @@ body {
   margin-bottom: 20px;
 }
 
-.task-card {
+.cat-progress-card {
   background: var(--color-white);
   border: 1px solid var(--neutral-200);
   border-radius: var(--radius-md);
-  padding: 14px 16px;
+  padding: 12px 14px;
   display: flex;
-  align-items: flex-start;
-  gap: 12px;
-  cursor: pointer;
-  transition: all 0.2s ease;
-  position: relative;
-}
-
-.task-card:hover {
-  border-color: var(--primary-400);
-  box-shadow: var(--shadow-sm);
-}
-
-.task-card.completed {
-  background: var(--neutral-50);
-  opacity: 0.7;
-}
-
-.task-card.completed .task-title {
-  text-decoration: line-through;
-  color: var(--neutral-500);
-}
-
-.task-check-circle {
-  width: 22px;
-  height: 22px;
-  border-radius: 6px;
-  border: 1.5px solid var(--neutral-300);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: transparent;
-  flex-shrink: 0;
-  margin-top: 2px;
-  transition: all 0.15s ease;
-}
-
-.task-card.completed .task-check-circle {
-  background: var(--success-500);
-  border-color: var(--success-500);
-  color: var(--color-white);
-  font-size: 12px;
-  font-weight: 800;
-}
-
-.task-content {
-  flex: 1;
-}
-
-.task-title {
-  font-size: 14px;
-  font-weight: 700;
-  color: var(--color-black);
-  line-height: 1.3;
-}
-
-.task-meta-row {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  margin-top: 6px;
-  font-size: 12px;
-  color: var(--neutral-500);
-}
-
-.task-boost-tag {
-  font-size: 11.5px;
-  font-weight: 800;
-  color: var(--primary-600);
-  background: var(--primary-50);
-  padding: 2px 6px;
-  border-radius: 4px;
+  flex-direction: column;
+  gap: 6px;
 }
 
 /* ==========================================================================
-   RE-ENGAGEMENT & MISSED SESSION BANNERS
-   ========================================================================== */
-.re-engagement-banner {
-  margin: 0 20px 14px;
-  background: var(--neutral-50);
-  border: 1.5px solid var(--primary-200);
-  border-radius: var(--radius-lg);
-  padding: 16px;
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-}
-
-.banner-header {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  font-size: 14px;
-  font-weight: 800;
-  color: var(--primary-700);
-}
-
-.missed-deadline-banner {
-  margin: 0 20px 14px;
-  background: var(--warning-50);
-  border: 1.5px solid var(--warning-300);
-  border-radius: var(--radius-lg);
-  padding: 16px;
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-}
-
-/* ==========================================================================
-   BOTTOM SHEETS & MODALS
-   ========================================================================== */
-.modal-backdrop {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: rgba(10, 13, 18, 0.6);
-  backdrop-filter: blur(4px);
-  z-index: 200;
-  display: none;
-  align-items: flex-end;
-  justify-content: center;
-  animation: fadeIn 0.2s ease;
-}
-
-.modal-backdrop.active {
-  display: flex;
-}
-
-.bottom-sheet {
-  width: 100%;
-  max-height: 85%;
-  background: var(--color-white);
-  border-top-left-radius: var(--radius-xl);
-  border-top-right-radius: var(--radius-xl);
-  padding: 20px 24px 34px;
-  overflow-y: auto;
-  animation: slideUp 0.25s cubic-bezier(0.16, 1, 0.3, 1);
-  display: flex;
-  flex-direction: column;
-  gap: 14px;
-}
-
-@keyframes slideUp {
-  from { transform: translateY(100%); }
-  to { transform: translateY(0); }
-}
-
-.sheet-handle {
-  width: 38px;
-  height: 4px;
-  background: var(--neutral-300);
-  border-radius: 2px;
-  align-self: center;
-  margin-bottom: 4px;
-}
-
-/* ==========================================================================
-   PERSISTENT BOTTOM NAVIGATION BAR
+   BOTTOM NAVIGATION BAR
    ========================================================================== */
 .bottom-nav-bar {
   position: absolute;
@@ -1030,58 +889,53 @@ body {
 }
 
 /* ==========================================================================
-   OPPORTUNITY CARDS (WHAT'S NEXT: REFERRAL BOARD)
+   BOTTOM SHEETS & MODALS
    ========================================================================== */
-.opportunity-card {
+.modal-backdrop {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(10, 13, 18, 0.6);
+  backdrop-filter: blur(4px);
+  z-index: 200;
+  display: none;
+  align-items: flex-end;
+  justify-content: center;
+  animation: fadeIn 0.2s ease;
+}
+
+.modal-backdrop.active {
+  display: flex;
+}
+
+.bottom-sheet {
+  width: 100%;
+  max-height: 88%;
   background: var(--color-white);
-  border: 1px solid var(--neutral-200);
-  border-radius: var(--radius-lg);
-  padding: 16px;
+  border-top-left-radius: var(--radius-xl);
+  border-top-right-radius: var(--radius-xl);
+  padding: 20px 24px 34px;
+  overflow-y: auto;
+  animation: slideUp 0.25s cubic-bezier(0.16, 1, 0.3, 1);
   display: flex;
   flex-direction: column;
-  gap: 10px;
-  margin-bottom: 12px;
-  box-shadow: var(--shadow-sm);
+  gap: 14px;
 }
 
-.opp-top-row {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
+@keyframes slideUp {
+  from { transform: translateY(100%); }
+  to { transform: translateY(0); }
 }
 
-.opp-company {
-  font-size: 12px;
-  font-weight: 700;
-  color: var(--neutral-500);
-  text-transform: uppercase;
-}
-
-.opp-role {
-  font-size: 16px;
-  font-weight: 800;
-  color: var(--color-black);
-  margin-top: 2px;
-}
-
-.opp-match-badge {
-  background: var(--success-50);
-  color: var(--success-700);
-  border: 1px solid var(--success-200);
-  padding: 3px 8px;
-  border-radius: var(--radius-full);
-  font-size: 11px;
-  font-weight: 800;
-}
-
-/* Mock Interview Card */
-.interview-q-card {
-  background: var(--color-white);
-  border: 1.5px solid var(--primary-200);
-  border-radius: var(--radius-lg);
-  padding: 20px;
-  margin: 16px 20px;
-  box-shadow: var(--shadow-sm);
+.sheet-handle {
+  width: 38px;
+  height: 4px;
+  background: var(--neutral-300);
+  border-radius: 2px;
+  align-self: center;
+  margin-bottom: 4px;
 }
 
 /* Responsive */
