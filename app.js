@@ -954,4 +954,12 @@ document.addEventListener('DOMContentLoaded', () => {
   filterProgrammes('All', null);
   renderDashboardPersonalization();
   updateUIElements();
+
+  // Explicitly ensure the discovery quiz is opened on load
+  const hash = window.location.hash.replace('#', '');
+  if (hash && document.getElementById(hash)) {
+    goToScreen(hash);
+  } else {
+    goToScreen('s-quiz-1-situation');
+  }
 });
