@@ -165,10 +165,25 @@ const appState = {
 };
 
 /**
+ * Side Navigation Drawer Controllers
+ */
+function openSideNav() {
+  const backdrop = document.getElementById('sideNavBackdrop');
+  if (backdrop) backdrop.classList.add('open');
+}
+
+function closeSideNav() {
+  const backdrop = document.getElementById('sideNavBackdrop');
+  if (backdrop) backdrop.classList.remove('open');
+}
+
+/**
  * Screen Navigation Router
  * @param {string} screenId 
  */
 function goToScreen(screenId) {
+  closeSideNav();
+
   // Hide all screen views
   document.querySelectorAll('.screen-view').forEach(s => s.classList.remove('active'));
 
@@ -186,21 +201,19 @@ function goToScreen(screenId) {
     btn.classList.toggle('active', attr.includes(`'${screenId}'`));
   });
 
-  // Persistent bottom navigation visibility (Home, Learn, Leaderboard, Community, Progress, Profile)
+  // Persistent bottom navigation visibility (4 items: Home, Learn, Leaderboard, Community)
   const bottomNav = document.getElementById('appBottomNav');
-  const mainTabs = ['s-home', 's-learn-dashboard', 's-leaderboard', 's-community', 's-progress', 's-profile'];
+  const mainTabs = ['s-home', 's-learn-dashboard', 's-leaderboard', 's-community'];
   if (bottomNav) {
     bottomNav.style.display = mainTabs.includes(screenId) ? 'flex' : 'none';
   }
 
-  // Active bottom nav tab state
+  // Active bottom nav tab state (4 Tabs)
   document.querySelectorAll('.nav-tab-item').forEach(tab => tab.classList.remove('active'));
   if (screenId === 's-home') document.getElementById('tab-home')?.classList.add('active');
   if (screenId === 's-learn-dashboard') document.getElementById('tab-learn')?.classList.add('active');
   if (screenId === 's-leaderboard') document.getElementById('tab-leaderboard')?.classList.add('active');
   if (screenId === 's-community') document.getElementById('tab-community')?.classList.add('active');
-  if (screenId === 's-progress') document.getElementById('tab-progress')?.classList.add('active');
-  if (screenId === 's-profile') document.getElementById('tab-profile')?.classList.add('active');
 
   // Dynamic Content Compilation on Navigation
   if (screenId === 's-quiz-7-processing') {
