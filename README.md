@@ -56,7 +56,7 @@ flowchart LR
 - **Dual Mode:** Instant toggle between **💬 Live Chats** and **📝 Discussion Feed**.
 
 ### 6. 🏆 Gamified Cohort Leaderboard Arena
-- **Top 3 Podium:** 🥇 1st Place Rohan Verma (1,240 XP), 🥈 2nd Place Alex/Minakshi (1,180 XP), 🥉 3rd Place Priya Sharma (1,050 XP).
+- **Top 3 Podium:** 🥇 1st Place Rohan Verma (1,240 XP), 🥈 2nd Place John Doe (1,180 XP), 🥉 3rd Place Priya Sharma (1,050 XP).
 - **Timeframe Toggles:** This Week, Monthly, and All-Time XP scaling.
 - **Badge Showcase:** Earned trophies for streaks, quiz mastery, and assignment completions.
 - **Direct Navigation:** Dedicated bottom nav tab and homepage widget teaser.

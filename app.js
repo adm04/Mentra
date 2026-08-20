@@ -7,7 +7,7 @@
 // Application State
 const appState = {
   user: {
-    name: 'Minakshi',
+    name: 'John Doe',
     situation: 'On a career break',
     breakDuration: '2–5 years',
     breakReason: 'Marriage / relocation',
@@ -64,8 +64,8 @@ const appState = {
     title: 'Social Media Strategy: Creating a 1-Week Content Calendar',
     status: 'In Progress',
     fileAttached: false,
-    fileName: 'SocialMedia_Strategy_Draft_Minakshi.pdf',
-    linkUrl: 'https://notion.so/minakshi-social-strategy',
+    fileName: 'SocialMedia_Strategy_Draft_JohnDoe.pdf',
+    linkUrl: 'https://notion.so/johndoe-social-strategy',
     notes: 'Drafted 5 content pillars for local brand campaign.'
   },
   community: {
@@ -78,7 +78,7 @@ const appState = {
         messages: [
           { id: 1, sender: 'Rohan Verma', role: '3-yr Break · Parenting', avatar: 'R', text: 'Hey everyone! Took me 3 weeks to overcome the fear of touching Canva and spreadsheets again. Now on Module 2!', time: '10:14 AM', reactions: { '👏': 5, '❤️': 3 }, isUser: false },
           { id: 2, sender: 'Priya Sharma', role: '4-yr Gap · Relocation', avatar: 'P', text: 'Totally relate Rohan! The first step was the hardest. Once you submit that first assignment, the imposter syndrome shrinks so fast.', time: '10:18 AM', reactions: { '💯': 6, '🔥': 2 }, isUser: false },
-          { id: 3, sender: 'Alex / Minakshi', role: 'You · Marketing Track', avatar: 'A', text: 'Has anyone finished the social media campaign calendar draft? Finding the scheduling matrix super fun!', time: '10:24 AM', reactions: { '🚀': 4 }, isUser: true },
+          { id: 3, sender: 'John Doe', role: 'You · Marketing Track', avatar: 'J', text: 'Has anyone finished the social media campaign calendar draft? Finding the scheduling matrix super fun!', time: '10:24 AM', reactions: { '🚀': 4 }, isUser: true },
           { id: 4, sender: 'Mentor Divya', role: 'Senior Growth Advisor', avatar: 'D', text: 'Great progress team! Remember, recruiters love seeing how you solve realistic briefs rather than memorizing definitions.', time: '10:30 AM', reactions: { '🙌': 8, '💡': 4 }, isUser: false }
         ]
       },
@@ -736,10 +736,12 @@ function simulateAssignmentFile() {
   appState.assignment.fileAttached = true;
   const prompt = document.getElementById('fileUploadPrompt');
   if (prompt) {
-    prompt.innerHTML = 'Attached: <strong>SocialMedia_Strategy_Draft_Minakshi.pdf</strong> (1.9 MB)';
-    prompt.style.color = 'var(--success-700)';
+    prompt.innerHTML = 'Attached: <strong>SocialMedia_Strategy_Draft_JohnDoe.pdf</strong> (1.9 MB)';
+    statusChip.textContent = 'Submitted';
+    statusChip.className = 'chip chip-success';
   }
-  showToast('Document attached: SocialMedia_Strategy_Draft_Minakshi.pdf');
+
+  showToast('Document attached: SocialMedia_Strategy_Draft_JohnDoe.pdf');
 }
 
 function submitAssignmentWork() {
@@ -867,9 +869,9 @@ function sendChatMessage() {
 
   const newMsg = {
     id: Date.now(),
-    sender: 'Alex / Minakshi (You)',
+    sender: 'John Doe (You)',
     role: 'Marketing Cohort',
-    avatar: 'A',
+    avatar: 'J',
     text: text,
     time: 'Just now',
     reactions: { '👍': 1 },
@@ -944,7 +946,7 @@ function switchLeaderboardTab(tab, btnEl) {
 
   const list = [
     { rank: 1, name: 'Rohan Verma', desc: '3 modules · 8-day streak', xp: Math.round(1240 * multiplier), isUser: false },
-    { rank: 2, name: 'Alex / Minakshi (You)', desc: '2 modules · 5-day streak', xp: Math.round(1180 * multiplier), isUser: true },
+    { rank: 2, name: 'John Doe (You)', desc: '2 modules · 5-day streak', xp: Math.round(1180 * multiplier), isUser: true },
     { rank: 3, name: 'Priya Sharma', desc: '2 modules · 4-day streak', xp: Math.round(1050 * multiplier), isUser: false },
     { rank: 4, name: 'Arjun Mehta', desc: '2 modules · 3-day streak', xp: Math.round(920 * multiplier), isUser: false },
     { rank: 5, name: 'Sneha Patel', desc: '1 module · 6-day streak', xp: Math.round(840 * multiplier), isUser: false }
