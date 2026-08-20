@@ -1,5 +1,5 @@
 /**
- * MENTRA — CAREER RESTART & LEARNING MOBILE APPLICATION
+ * SHE STARTS — CAREER RESTART & GUIDED LEARNING PLATFORM
  * Application State, 7-Step Quiz Logic, Personalized Dashboard, LMS & Community
  * Tailwind Heroicons System Integration (No emojis)
  */
@@ -110,7 +110,7 @@ const appState = {
         title: '#wfh-jobs',
         onlineCount: '45 online now',
         messages: [
-          { id: 401, sender: 'Mentra Career Desk', role: 'Admin', avatar: 'M', text: 'New flexible opening: Remote Social Media Coordinator at Nykaa (Part-time / Full-time options). Referral links active!', time: '11:00 AM', reactions: { '💼': 18, '🙌': 10 }, isUser: false }
+          { id: 401, sender: 'SHE STARTS Career Desk', role: 'Admin', avatar: 'S', text: 'New flexible opening: Remote Social Media Coordinator at Nykaa (Part-time / Full-time options). Referral links active!', time: '11:00 AM', reactions: { '💼': 18, '🙌': 10 }, isUser: false }
         ]
       }
     },
@@ -147,7 +147,7 @@ const appState = {
       {
         type: 'Career Break & Motivation',
         q: 'Walk me through your career break and what inspired your comeback to Digital Marketing.',
-        tip: 'Focus on proactive upskilling, personal growth, and practical project application through Mentra.'
+        tip: 'Focus on proactive upskilling, personal growth, and practical project application through SHE STARTS.'
       },
       {
         type: 'Work-from-Home Discipline',
@@ -302,10 +302,10 @@ let quizClickCount = 0;
 let reassuranceTimer = null;
 
 const reassuranceMessages = [
-  "✨ 4,200+ professionals with this exact background restarted with Mentra. You're in good hands!",
+  "✨ 4,200+ professionals with this exact background restarted with SHE STARTS. You're in good hands!",
   "✨ Over 78% of our learners took 2–5 year career breaks and restarted in under 90 days.",
   "✨ Hiring demand in this role is up +28% YoY — practical skills get you noticed fast!",
-  "✨ You're already taking the hardest step. Mentra handles the roadmap & guidance."
+  "✨ You're already taking the hardest step. SHE STARTS handles the roadmap & guidance."
 ];
 
 function triggerReassurancePill(customText) {
@@ -627,7 +627,7 @@ function openCounsellorModal() {
 
 function confirmCounsellorCall() {
   closeModal('modalCounsellorCall');
-  showToast('Free Career Guidance Call booked with a Mentra Advisor for Friday 4:00 PM.');
+  showToast('Free Career Guidance Call booked with a SHE STARTS Advisor for Friday 4:00 PM.');
 }
 
 function openPurchaseModal() {

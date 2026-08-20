@@ -1,4 +1,4 @@
-# SHE STARTS (Mentra) 🚀
+# SHE STARTS 🚀
 ### *Career Restart & Guided Learning Platform for Returning Professionals*
 
 [![Live Demo](https://img.shields.io/badge/Live%20Demo-GitHub%20Pages-FA4D87?style=for-the-badge&logo=github)](https://adm04.github.io/Mentra/)
@@ -9,7 +9,7 @@
 
 ## 🌟 Overview
 
-**SHE STARTS (Mentra)** is an empathetic, gamified, mobile-first career restart and guided learning platform built for professionals returning to the workforce after career breaks (caregiving, family relocation, parental leave, health pauses, sabbaticals, or industry transitions).
+**SHE STARTS** is an empathetic, gamified, mobile-first career restart and guided learning platform built for professionals returning to the workforce after career breaks (caregiving, family relocation, parental leave, health pauses, sabbaticals, or industry transitions).
 
 The application delivers a judgment-free, structured pathway from initial diagnostic assessment to practical job-ready competency, live peer discussions, and employer referrals.
 
@@ -32,7 +32,7 @@ flowchart LR
 
 ### 1. 📋 7-Step Career Discovery Quiz
 - **Diagnostic Personalization:** Captures current career break duration (6 mos to 10+ yrs), reason, prior background, tech comfort, English fluency, and weekly commitment.
-- **Friction-Free & Reassuring:** Automatic floating reassurance pills trigger every 2–3 selections to alleviate return-to-work anxiety (*"4,200+ professionals with this background restarted with Mentra"*).
+- **Friction-Free & Reassuring:** Automatic floating reassurance pills trigger every 2–3 selections to alleviate return-to-work anxiety (*"4,200+ professionals with this background restarted with SHE STARTS"*).
 - **Simulated Diagnostic Processing:** Multi-stage animated engine compiling personalized learning paths in real time.
 
 ### 2. 📊 Personalized Comeback Dashboard
