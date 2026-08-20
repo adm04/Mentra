@@ -1013,6 +1013,27 @@
           </div>
         </div>
 
+        <!-- Inactivity / Re-engagement Banner (Part 12) -->
+        <div id="inactivityBanner" style="display:none; margin:0 20px 14px; background:var(--primary-50); border:1.5px solid var(--primary-300); border-radius:var(--radius-lg); padding:14px;">
+          <div style="font-size:11px; font-weight:800; color:var(--primary-700); text-transform:uppercase;">Welcome back, Minakshi</div>
+          <div style="font-size:13px; font-weight:800; color:var(--color-black); margin-top:2px;">You've been away for a few days. Let's get you back on track.</div>
+          <p style="font-size:11.5px; color:var(--neutral-600); margin-top:4px;">No pressure — 1 short 15-min lesson will keep your momentum going.</p>
+          <div style="display:flex; gap:8px; margin-top:8px;">
+            <button class="btn-primary" style="flex:1; height:36px; font-size:12px;" onclick="goToScreen('s-video-lesson')">Continue Learning →</button>
+            <button class="btn-outline" style="flex:1; height:36px; font-size:12px;" onclick="openCatchUpModal()">Create Catch-Up Plan</button>
+          </div>
+        </div>
+
+        <!-- Missed Deadline / Reschedule Card (Part 13) -->
+        <div id="missedDeadlineBanner" style="display:none; margin:0 20px 14px; background:var(--warning-50); border:1.5px solid var(--warning-400); border-radius:var(--radius-lg); padding:14px;">
+          <div style="font-size:11px; font-weight:800; color:var(--warning-800); text-transform:uppercase;">Plans changed?</div>
+          <div style="font-size:13.5px; font-weight:800; color:var(--color-black); margin-top:2px;">You can adjust your learning plan without losing progress.</div>
+          <div style="display:flex; gap:6px; margin-top:10px;">
+            <button class="btn-primary" style="flex:1; height:34px; font-size:11.5px;" onclick="confirmCatchUp()">Catch up today</button>
+            <button class="btn-outline" style="flex:1; height:34px; font-size:11.5px;" onclick="confirmReschedule()">Move to tomorrow</button>
+          </div>
+        </div>
+
         <!-- Current Programme Hero -->
         <div style="margin:0 20px 14px; background:linear-gradient(135deg, #5757E8 0%, #4640DE 55%, #352DB0 100%); border-radius:var(--radius-xl); padding:16px 18px; color:white;">
           <div style="font-size:11px; font-weight:800; opacity:0.85; text-transform:uppercase;">Enrolled Programme</div>

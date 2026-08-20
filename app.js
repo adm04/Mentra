@@ -154,7 +154,7 @@ function goToScreen(screenId) {
 
   // Persistent bottom navigation visibility (Home, Learn, Community, Progress, Profile)
   const bottomNav = document.getElementById('appBottomNav');
-  const mainTabs = ['s-home', 's-learn', 's-community', 's-progress', 's-profile'];
+  const mainTabs = ['s-home', 's-learn-dashboard', 's-community', 's-progress', 's-profile'];
   if (bottomNav) {
     bottomNav.style.display = mainTabs.includes(screenId) ? 'flex' : 'none';
   }
@@ -162,7 +162,7 @@ function goToScreen(screenId) {
   // Active bottom nav tab state
   document.querySelectorAll('.nav-tab-item').forEach(tab => tab.classList.remove('active'));
   if (screenId === 's-home') document.getElementById('tab-home')?.classList.add('active');
-  if (screenId === 's-learn') document.getElementById('tab-learn')?.classList.add('active');
+  if (screenId === 's-learn-dashboard') document.getElementById('tab-learn')?.classList.add('active');
   if (screenId === 's-community') document.getElementById('tab-community')?.classList.add('active');
   if (screenId === 's-progress') document.getElementById('tab-progress')?.classList.add('active');
   if (screenId === 's-profile') document.getElementById('tab-profile')?.classList.add('active');
@@ -562,7 +562,8 @@ function openPurchaseModal() {
 function confirmPurchase() {
   closeModal('modalPurchase');
   appState.enrolled = true;
-  goToScreen('s-enrol-success');
+  goToScreen('s-learn-dashboard');
+  showToast("You're enrolled! Welcome to Digital Marketing Career Restart.");
 }
 
 /**
