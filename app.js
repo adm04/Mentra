@@ -297,9 +297,49 @@ function handleQuizWorryInput(inputEl) {
   appState.user.biggestWorry = inputEl.value;
 }
 
+let quizClickCount = 0;
+let reassuranceTimer = null;
+
+const reassuranceMessages = [
+  "✨ 4,200+ professionals with this exact background restarted with Mentra. You're in good hands!",
+  "✨ Over 78% of our learners took 2–5 year career breaks and restarted in under 90 days.",
+  "✨ Hiring demand in this role is up +28% YoY — practical skills get you noticed fast!",
+  "✨ You're already taking the hardest step. Mentra handles the roadmap & guidance."
+];
+
+function triggerReassurancePill(customText) {
+  const pill = document.getElementById('reassurancePill');
+  const textEl = document.getElementById('reassurancePillText');
+  if (!pill || !textEl) return;
+
+  if (reassuranceTimer) clearTimeout(reassuranceTimer);
+
+  textEl.textContent = customText || reassuranceMessages[Math.floor(Math.random() * reassuranceMessages.length)];
+  pill.classList.add('show');
+
+  reassuranceTimer = setTimeout(() => {
+    pill.classList.remove('show');
+  }, 4500);
+}
+
+function dismissReassurancePill() {
+  const pill = document.getElementById('reassurancePill');
+  if (pill) pill.classList.remove('show');
+}
+
+function trackUserQuizClick() {
+  quizClickCount++;
+  if (quizClickCount === 2 || quizClickCount === 5 || quizClickCount === 8) {
+    setTimeout(() => {
+      triggerReassurancePill();
+    }, 350);
+  }
+}
+
 function selectSingleOption(cardEl) {
   cardEl.parentElement.querySelectorAll('.option-card').forEach(c => c.classList.remove('selected'));
   cardEl.classList.add('selected');
+  trackUserQuizClick();
 }
 
 /**

@@ -1439,10 +1439,65 @@ body {
   color: #1E293B;
 }
 
-.podium-column.third .podium-bar {
-  height: 38px;
-  background: linear-gradient(180deg, #FFEDD5 0%, #FB923C 100%);
-  color: #7C2D12;
+/* ==========================================================================
+   REASSURANCE PILL TOAST & MARKET GROWTH BANNER
+   ========================================================================== */
+.reassurance-pill-toast {
+  position: fixed;
+  bottom: 82px;
+  left: 50%;
+  transform: translateX(-50%) translateY(20px);
+  background: rgba(24, 29, 39, 0.95);
+  backdrop-filter: blur(12px);
+  color: #FFFFFF;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1.4;
+  padding: 10px 14px;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+  border: 1px solid rgba(255,255,255,0.18);
+  z-index: 999;
+  max-width: 350px;
+  width: calc(100% - 40px);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.reassurance-pill-toast.show {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateX(-50%) translateY(0);
+}
+
+.reassurance-pill-icon {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: rgba(16, 185, 129, 0.2);
+  color: #34D399;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.market-growth-banner {
+  background: linear-gradient(180deg, #F0FDF4 0%, var(--color-white) 100%);
+  border: 1.5px solid #BBF7D0;
+  border-radius: var(--radius-md);
+  padding: 12px 14px;
+  margin-bottom: 12px;
+}
+
+.market-growth-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 /* ==========================================================================
