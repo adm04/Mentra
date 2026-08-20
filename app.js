@@ -865,8 +865,8 @@ function resetAllProgress() {
   appState.assignment.status = 'In Progress';
   appState.assignment.fileAttached = false;
   appState.inactivitySimulated = false;
-  goToScreen('s-quiz-1-situation');
-  showToast('App reset to initial quiz state.');
+  goToScreen('s-splash');
+  showToast('App reset to initial intro state.');
 }
 
 /**
@@ -955,11 +955,11 @@ document.addEventListener('DOMContentLoaded', () => {
   renderDashboardPersonalization();
   updateUIElements();
 
-  // Explicitly ensure the discovery quiz is opened on load
+  // Initialize screen (respects URL hash or defaults to s-splash)
   const hash = window.location.hash.replace('#', '');
   if (hash && document.getElementById(hash)) {
     goToScreen(hash);
   } else {
-    goToScreen('s-quiz-1-situation');
+    goToScreen('s-splash');
   }
 });
