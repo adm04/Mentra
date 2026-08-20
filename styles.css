@@ -380,7 +380,6 @@ body {
   position: relative;
   overflow-y: auto;
   overflow-x: hidden;
-  padding-bottom: 76px;
   background: var(--color-white);
   scrollbar-width: thin;
 }
@@ -395,6 +394,10 @@ body {
 
 .screen-view.active {
   display: flex;
+}
+
+#s-home, #s-learn-dashboard, #s-community, #s-progress, #s-profile, #s-explore-programmes, #s-programme-details, #s-leaderboard {
+  padding-bottom: 84px;
 }
 
 @keyframes fadeIn {
