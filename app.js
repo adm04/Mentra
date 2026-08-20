@@ -865,8 +865,8 @@ function resetAllProgress() {
   appState.assignment.status = 'In Progress';
   appState.assignment.fileAttached = false;
   appState.inactivitySimulated = false;
-  goToScreen('s-splash');
-  showToast('App reset to initial onboarding state.');
+  goToScreen('s-quiz-1-situation');
+  showToast('App reset to initial quiz state.');
 }
 
 /**
