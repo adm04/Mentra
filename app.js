@@ -1237,7 +1237,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Initialize screen (respects URL hash or defaults to s-splash)
   const hash = window.location.hash.replace('#', '');
-  if (hash && document.getElementById(hash)) {
+  if (hash === 'side-nav') {
+    goToScreen('s-home');
+    openSideNav();
+  } else if (hash && document.getElementById(hash)) {
     goToScreen(hash);
   } else {
     goToScreen('s-splash');
