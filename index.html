@@ -11,7 +11,7 @@
   <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
   <meta http-equiv="Pragma" content="no-cache">
   <meta http-equiv="Expires" content="0">
-  <link rel="stylesheet" href="styles.css?v=20260820.3">
+  <link rel="stylesheet" href="styles.css?v=20260820.4">
 </head>
 <body>
 
@@ -1486,95 +1486,199 @@
            ===================================================================== -->
       <section class="screen-view" id="s-leaderboard">
         <div class="step-header">
-          <div class="mentra-logo"><span>Mentra</span></div>
-          <h2 class="page-headline">Learning leaderboard</h2>
-          <p class="page-subtext">Celebrate progress with fellow comeback learners.</p>
+          <div class="step-nav-row">
+            <div class="mentra-logo"><span>Mentra</span></div>
+            <button class="btn-ghost" onclick="goToScreen('s-learn-dashboard')">‹ Back</button>
+          </div>
+          <h2 class="page-headline">Learning Leaderboard</h2>
+          <p class="page-subtext">Compete, stay consistent, and celebrate milestones with peers.</p>
+        </div>
+
+        <!-- Leaderboard Time Filters -->
+        <div style="padding:0 20px 10px; display:flex; gap:6px;">
+          <button class="cat-tab-pill active" onclick="switchLeaderboardTab('week', this)">This Week</button>
+          <button class="cat-tab-pill" onclick="switchLeaderboardTab('month', this)">Monthly</button>
+          <button class="cat-tab-pill" onclick="switchLeaderboardTab('all', this)">All-Time</button>
+        </div>
+
+        <!-- Podium Top 3 Highlight -->
+        <div class="leaderboard-podium">
+          <!-- Rank 2 -->
+          <div class="podium-column second">
+            <div class="podium-avatar-box">
+              A
+              <div class="podium-rank-badge">#2</div>
+            </div>
+            <div class="podium-name">You (Alex)</div>
+            <div class="podium-score">1,180 XP</div>
+            <div class="podium-bar">2nd</div>
+          </div>
+
+          <!-- Rank 1 -->
+          <div class="podium-column first">
+            <div class="podium-avatar-box">
+              R
+              <div class="podium-rank-badge">#1</div>
+            </div>
+            <div class="podium-name">Rohan V.</div>
+            <div class="podium-score">1,240 XP</div>
+            <div class="podium-bar">1st</div>
+          </div>
+
+          <!-- Rank 3 -->
+          <div class="podium-column third">
+            <div class="podium-avatar-box">
+              P
+              <div class="podium-rank-badge">#3</div>
+            </div>
+            <div class="podium-name">Priya S.</div>
+            <div class="podium-score">1,050 XP</div>
+            <div class="podium-bar">3rd</div>
+          </div>
+        </div>
+
+        <!-- Full Ranking List -->
+        <div class="section-header"><h3 class="section-title">Cohort Rankings</h3></div>
+        <div class="leaderboard-list" id="leaderboardListContainer">
+          <div class="leaderboard-item">
+            <div style="display:flex; align-items:center; gap:10px;">
+              <strong style="font-size:14px; color:var(--warning-600); width:18px;">1</strong>
+              <div>
+                <div style="font-weight:800; font-size:13.5px;">Rohan Verma</div>
+                <div style="font-size:11px; color:var(--neutral-500);">3 modules completed · 8-day streak</div>
+              </div>
+            </div>
+            <span class="chip chip-primary" style="font-size:11px;">1,240 XP</span>
+          </div>
+
+          <div class="leaderboard-item current-user" style="border:1.5px solid var(--primary-500); background:var(--primary-25);">
+            <div style="display:flex; align-items:center; gap:10px;">
+              <strong style="font-size:14px; color:var(--primary-600); width:18px;">2</strong>
+              <div>
+                <div style="font-weight:800; font-size:13.5px; color:var(--primary-700);">Alex / Minakshi (You)</div>
+                <div style="font-size:11px; color:var(--neutral-600);">2 modules completed · 5-day streak</div>
+              </div>
+            </div>
+            <span class="chip chip-success" style="font-size:11px;">1,180 XP</span>
+          </div>
+
+          <div class="leaderboard-item">
+            <div style="display:flex; align-items:center; gap:10px;">
+              <strong style="font-size:14px; color:var(--neutral-500); width:18px;">3</strong>
+              <div>
+                <div style="font-weight:800; font-size:13.5px;">Priya Sharma</div>
+                <div style="font-size:11px; color:var(--neutral-500);">2 modules completed · 4-day streak</div>
+              </div>
+            </div>
+            <span class="chip chip-neutral" style="font-size:11px;">1,050 XP</span>
+          </div>
+
+          <div class="leaderboard-item">
+            <div style="display:flex; align-items:center; gap:10px;">
+              <strong style="font-size:14px; color:var(--neutral-500); width:18px;">4</strong>
+              <div>
+                <div style="font-weight:800; font-size:13.5px;">Arjun Mehta</div>
+                <div style="font-size:11px; color:var(--neutral-500);">2 modules completed · 3-day streak</div>
+              </div>
+            </div>
+            <span class="chip chip-neutral" style="font-size:11px;">920 XP</span>
+          </div>
+
+          <div class="leaderboard-item">
+            <div style="display:flex; align-items:center; gap:10px;">
+              <strong style="font-size:14px; color:var(--neutral-500); width:18px;">5</strong>
+              <div>
+                <div style="font-weight:800; font-size:13.5px;">Sneha Patel</div>
+                <div style="font-size:11px; color:var(--neutral-500);">1 module completed · 6-day streak</div>
+              </div>
+            </div>
+            <span class="chip chip-neutral" style="font-size:11px;">840 XP</span>
+          </div>
         </div>
 
         <!-- Badges Grid -->
-        <div class="section-header"><h3 class="section-title">Earned Badges</h3></div>
-        <div class="badge-grid">
+        <div class="section-header"><h3 class="section-title">Your Earned Badges</h3></div>
+        <div class="badge-grid" style="padding-bottom:24px;">
           <div class="badge-box">
             <svg class="badge-icon-svg" fill="none" viewBox="0 0 24 24" stroke-width="1.8" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6.042A8.967 8.967 0 0 0 6 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 0 1 6 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 0 1 6-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0 0 18 18a8.967 8.967 0 0 0-6 2.292m0-14.25v14.25" /></svg>
             <div class="badge-title">First Lesson</div>
           </div>
           <div class="badge-box">
             <svg class="badge-icon-svg" fill="none" viewBox="0 0 24 24" stroke-width="1.8" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="m3.75 13.5 10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75Z" /></svg>
-            <div class="badge-title">7-Day Streak</div>
+            <div class="badge-title">5-Day Streak</div>
           </div>
           <div class="badge-box">
             <svg class="badge-icon-svg" fill="none" viewBox="0 0 24 24" stroke-width="1.8" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="m21 7.5-9-5.25L3 7.5m18 0-9 5.25m9-5.25v9l-9 5.25M3 7.5l9 5.25M3 7.5v9l9 5.25m0-9v9" /></svg>
-            <div class="badge-title">Module Master</div>
+            <div class="badge-title">Quiz Ace</div>
           </div>
           <div class="badge-box">
             <svg class="badge-icon-svg" fill="none" viewBox="0 0 24 24" stroke-width="1.8" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75 11.25 15 15 9.75M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" /></svg>
             <div class="badge-title">Assignment Pro</div>
           </div>
         </div>
-
-        <!-- Leaderboard List -->
-        <div class="section-header"><h3 class="section-title">Top Learners This Week</h3></div>
-        <div class="leaderboard-list">
-          <div class="leaderboard-item">
-            <div style="display:flex; align-items:center; gap:10px;">
-              <strong style="font-size:14px; color:var(--primary-600);">1</strong>
-              <div>
-                <div style="font-weight:800; font-size:13.5px;">Rohan Verma</div>
-                <div style="font-size:11px; color:var(--neutral-500);">3 modules · 8-day streak</div>
-              </div>
-            </div>
-            <span class="chip chip-primary" style="font-size:11px;">1,240 pts</span>
-          </div>
-
-          <div class="leaderboard-item current-user">
-            <div style="display:flex; align-items:center; gap:10px;">
-              <strong style="font-size:14px; color:var(--primary-600);">2</strong>
-              <div>
-                <div style="font-weight:800; font-size:13.5px;">Alex / Minakshi (You)</div>
-                <div style="font-size:11px; color:var(--neutral-500);">2 modules · 5-day streak</div>
-              </div>
-            </div>
-            <span class="chip chip-success" style="font-size:11px;">1,180 pts</span>
-          </div>
-
-          <div class="leaderboard-item">
-            <div style="display:flex; align-items:center; gap:10px;">
-              <strong style="font-size:14px; color:var(--neutral-400);">3</strong>
-              <div>
-                <div style="font-weight:800; font-size:13.5px;">Priya Sharma</div>
-                <div style="font-size:11px; color:var(--neutral-500);">2 modules · 4-day streak</div>
-              </div>
-            </div>
-            <span class="chip chip-neutral" style="font-size:11px;">1,050 pts</span>
-          </div>
-        </div>
       </section>
 
       <!-- =====================================================================
-           PART 9 — COMMUNITY
+           PART 9 — COMMUNITY: TOPIC LIVE GROUP CHATS & DISCUSSION
            ===================================================================== -->
-      <section class="screen-view" id="s-community">
-        <div class="step-header">
+      <section class="screen-view" id="s-community" style="display:flex; flex-direction:column; padding-bottom:72px;">
+        <div class="step-header" style="padding-bottom:10px;">
           <div style="display:flex; justify-content:space-between; align-items:center;">
             <div class="mentra-logo"><span>Mentra</span></div>
-            <button class="btn-primary" style="width:auto; height:34px; padding:0 12px; font-size:11.5px;" onclick="openModal('modalCreatePost')">
-              + Post
+            <div style="display:flex; gap:6px;">
+              <button class="rev-pill-btn active" id="btnCommModeChat" onclick="setCommunityMode('chat')">💬 Live Chats</button>
+              <button class="rev-pill-btn" id="btnCommModeFeed" onclick="setCommunityMode('feed')">📝 Feed</button>
+            </div>
+          </div>
+          <h2 class="page-headline" style="margin-top:8px;">Live Community</h2>
+          <p class="page-subtext">Open topic group chats with active comeback peers and mentors.</p>
+        </div>
+
+        <!-- Topic Channels Scroller -->
+        <div class="category-filter-scroller" id="commTopicChannels" style="padding:0 16px 10px; gap:8px;">
+          <button class="cat-tab-pill comm-topic-pill active" onclick="switchChatTopic('career-comebacks', this)">#career-comebacks</button>
+          <button class="cat-tab-pill comm-topic-pill" onclick="switchChatTopic('digital-marketing', this)">#digital-marketing</button>
+          <button class="cat-tab-pill comm-topic-pill" onclick="switchChatTopic('interview-prep', this)">#interview-prep</button>
+          <button class="cat-tab-pill comm-topic-pill" onclick="switchChatTopic('daily-wins', this)">#daily-wins</button>
+          <button class="cat-tab-pill comm-topic-pill" onclick="switchChatTopic('wfh-jobs', this)">#wfh-jobs</button>
+        </div>
+
+        <!-- Live Group Chat Container -->
+        <div class="chat-room-container" id="communityLiveChatView">
+          <!-- Room Header -->
+          <div class="chat-topic-header">
+            <div class="chat-topic-title" id="chatTopicTitle">#career-comebacks</div>
+            <div class="chat-topic-online" id="chatTopicOnlineCount">18 online now</div>
+          </div>
+
+          <!-- Messages Stream -->
+          <div class="chat-messages-stream" id="chatMessagesStream">
+            <!-- Rendered dynamically -->
+          </div>
+
+          <!-- Typing Indicator -->
+          <div class="chat-typing-indicator" id="chatTypingIndicator" style="display:none;">
+            <span>Rohan is typing</span><span class="dot-flashing">...</span>
+          </div>
+
+          <!-- Chat Input Bar -->
+          <div class="chat-input-bar">
+            <input type="text" class="chat-input-field" id="chatInputMessage" placeholder="Message in #career-comebacks..." onkeypress="handleChatKeyPress(event)">
+            <button class="chat-send-btn" onclick="sendChatMessage()" title="Send Message">
+              <svg fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M6 12 3.269 3.125A59.769 59.769 0 0 1 21.485 12 59.768 59.768 0 0 1 3.27 20.875L5.999 12Zm0 0h7.5" /></svg>
             </button>
           </div>
-          <h2 class="page-headline">Community</h2>
-          <p class="page-subtext">Connect, celebrate wins, and ask fellow learners.</p>
         </div>
 
-        <!-- Community Filter Pills -->
-        <div class="category-filter-scroller">
-          <button class="cat-tab-pill comm-cat-pill active" onclick="filterCommunityCategory('All', this)">All</button>
-          <button class="cat-tab-pill comm-cat-pill" onclick="filterCommunityCategory('Wins', this)">Wins</button>
-          <button class="cat-tab-pill comm-cat-pill" onclick="filterCommunityCategory('Career Restart', this)">Career Restart</button>
-          <button class="cat-tab-pill comm-cat-pill" onclick="filterCommunityCategory('Job Search', this)">Job Search</button>
-        </div>
-
-        <div class="community-feed" id="communityFeedContainer">
-          <!-- Rendered dynamically -->
+        <!-- Alternative Discussion Feed Container -->
+        <div id="communityFeedView" style="display:none; padding:10px 0;">
+          <div style="padding:0 20px 10px; display:flex; justify-content:space-between; align-items:center;">
+            <span style="font-weight:800; font-size:13px; color:var(--neutral-700);">Discussion Board</span>
+            <button class="btn-primary" style="width:auto; height:32px; padding:0 12px; font-size:11.5px;" onclick="openModal('modalCreatePost')">+ New Post</button>
+          </div>
+          <div class="community-feed" id="communityFeedContainer">
+            <!-- Rendered dynamically -->
+          </div>
         </div>
       </section>
 
@@ -1897,6 +2001,6 @@
 
   </main>
 
-  <script src="app.js?v=20260820.3"></script>
+  <script src="app.js?v=20260820.4"></script>
 </body>
 </html>

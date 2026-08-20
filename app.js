@@ -69,12 +69,57 @@ const appState = {
     notes: 'Drafted 5 content pillars for local brand campaign.'
   },
   community: {
+    mode: 'chat',
+    activeTopic: 'career-comebacks',
+    topics: {
+      'career-comebacks': {
+        title: '#career-comebacks',
+        onlineCount: '18 online now',
+        messages: [
+          { id: 1, sender: 'Rohan Verma', role: '3-yr Break · Parenting', avatar: 'R', text: 'Hey everyone! Took me 3 weeks to overcome the fear of touching Canva and spreadsheets again. Now on Module 2!', time: '10:14 AM', reactions: { '👏': 5, '❤️': 3 }, isUser: false },
+          { id: 2, sender: 'Priya Sharma', role: '4-yr Gap · Relocation', avatar: 'P', text: 'Totally relate Rohan! The first step was the hardest. Once you submit that first assignment, the imposter syndrome shrinks so fast.', time: '10:18 AM', reactions: { '💯': 6, '🔥': 2 }, isUser: false },
+          { id: 3, sender: 'Alex / Minakshi', role: 'You · Marketing Track', avatar: 'A', text: 'Has anyone finished the social media campaign calendar draft? Finding the scheduling matrix super fun!', time: '10:24 AM', reactions: { '🚀': 4 }, isUser: true },
+          { id: 4, sender: 'Mentor Divya', role: 'Senior Growth Advisor', avatar: 'D', text: 'Great progress team! Remember, recruiters love seeing how you solve realistic briefs rather than memorizing definitions.', time: '10:30 AM', reactions: { '🙌': 8, '💡': 4 }, isUser: false }
+        ]
+      },
+      'digital-marketing': {
+        title: '#digital-marketing',
+        onlineCount: '24 online now',
+        messages: [
+          { id: 101, sender: 'Arjun Mehta', role: 'Operations to Digital', avatar: 'A', text: 'Anyone working on Meta Ads targeting for the assignment? What audience size are you picking?', time: '9:45 AM', reactions: { '👍': 3 }, isUser: false },
+          { id: 102, sender: 'Sneha Patel', role: 'VA & Content', avatar: 'S', text: 'For the boutique apparel case, I targeted broad interests with a lookalike seed of 2%. Got great simulated ROI!', time: '9:52 AM', reactions: { '🔥': 4, '💡': 2 }, isUser: false }
+        ]
+      },
+      'interview-prep': {
+        title: '#interview-prep',
+        onlineCount: '12 online now',
+        messages: [
+          { id: 201, sender: 'Kiran Rao', role: 'Comeback Candidate', avatar: 'K', text: 'How do you answer: "Why the 4-year break?" without sounding apologetic?', time: 'Yesterday', reactions: { '🤔': 7 }, isUser: false },
+          { id: 202, sender: 'Mentor Divya', role: 'Advisor', avatar: 'D', text: 'Frame it positively: "I dedicated focused time to family care/relocation, and during my transition, proactively completed certified practical modules to master modern tools."', time: 'Yesterday', reactions: { '❤️': 14, '🎯': 9 }, isUser: false }
+        ]
+      },
+      'daily-wins': {
+        title: '#daily-wins',
+        onlineCount: '31 online now',
+        messages: [
+          { id: 301, sender: 'Rohan Verma', role: 'Learner', avatar: 'R', text: 'Earned my 5-Day Consistency Streak badge today! 🎉', time: '8:30 AM', reactions: { '🔥': 9, '🎉': 12 }, isUser: false },
+          { id: 302, sender: 'Sneha Patel', role: 'Learner', avatar: 'S', text: 'Got my first client interview through the mentor referral network this morning!', time: '9:15 AM', reactions: { '🚀': 15, '❤️': 11 }, isUser: false }
+        ]
+      },
+      'wfh-jobs': {
+        title: '#wfh-jobs',
+        onlineCount: '45 online now',
+        messages: [
+          { id: 401, sender: 'Mentra Career Desk', role: 'Admin', avatar: 'M', text: 'New flexible opening: Remote Social Media Coordinator at Nykaa (Part-time / Full-time options). Referral links active!', time: '11:00 AM', reactions: { '💼': 18, '🙌': 10 }, isUser: false }
+        ]
+      }
+    },
     activeCategory: 'All',
     posts: [
       {
         id: 1,
         author: 'Rohan Verma',
-        role: 'Marketing Cohort · Restarting after 3 yrs paternity/caregiving',
+        role: 'Marketing Cohort · Restarting after 3 yrs',
         category: 'Wins',
         content: 'Completed my first portfolio project on Canva & Meta Ads today! Feeling my confidence coming back after 3 years away.',
         likes: 24,
@@ -92,28 +137,6 @@ const appState = {
         liked: false,
         commentsCount: 11,
         time: '5h ago'
-      },
-      {
-        id: 3,
-        author: 'Arjun Mehta',
-        role: 'Data Track · Sabbatical & Career Switch',
-        category: 'Job Search',
-        content: 'Attended the Thursday live doubt-clearing session. The mentor breakdown on spreadsheet formulas made things so clear!',
-        likes: 15,
-        liked: false,
-        commentsCount: 4,
-        time: '1d ago'
-      },
-      {
-        id: 4,
-        author: 'Sneha Patel',
-        role: 'Operations & VA Track · Career Comeback',
-        category: 'Wins',
-        content: 'Got my first client interview through the mentor referral network this morning. Keep pushing everyone!',
-        likes: 29,
-        liked: false,
-        commentsCount: 8,
-        time: '2d ago'
       }
     ]
   },
@@ -691,9 +714,201 @@ function submitAssignmentWork() {
 
 /**
  * -----------------------------------------------------------------------------
- * COMMUNITY FEED (Heroicons SVG integration)
+ * COMMUNITY: LIVE GROUP CHATS & TOPIC ROOMS
  * -----------------------------------------------------------------------------
  */
+
+function setCommunityMode(mode) {
+  appState.community.mode = mode;
+  const chatView = document.getElementById('communityLiveChatView');
+  const feedView = document.getElementById('communityFeedView');
+  const channels = document.getElementById('commTopicChannels');
+  const btnChat = document.getElementById('btnCommModeChat');
+  const btnFeed = document.getElementById('btnCommModeFeed');
+
+  if (mode === 'chat') {
+    if (chatView) chatView.style.display = 'flex';
+    if (feedView) feedView.style.display = 'none';
+    if (channels) channels.style.display = 'flex';
+    if (btnChat) btnChat.classList.add('active');
+    if (btnFeed) btnFeed.classList.remove('active');
+    renderChatMessages();
+  } else {
+    if (chatView) chatView.style.display = 'none';
+    if (feedView) feedView.style.display = 'block';
+    if (channels) channels.style.display = 'none';
+    if (btnChat) btnChat.classList.remove('active');
+    if (btnFeed) btnFeed.classList.add('active');
+    renderCommunityPosts();
+  }
+}
+
+function switchChatTopic(topicKey, pillEl) {
+  appState.community.activeTopic = topicKey;
+  document.querySelectorAll('.comm-topic-pill').forEach(p => p.classList.remove('active'));
+  if (pillEl) pillEl.classList.add('active');
+
+  const topicData = appState.community.topics[topicKey];
+  if (topicData) {
+    const titleEl = document.getElementById('chatTopicTitle');
+    const onlineEl = document.getElementById('chatTopicOnlineCount');
+    const inputEl = document.getElementById('chatInputMessage');
+    if (titleEl) titleEl.textContent = topicData.title;
+    if (onlineEl) onlineEl.textContent = topicData.onlineCount;
+    if (inputEl) inputEl.placeholder = `Message in ${topicData.title}...`;
+  }
+
+  renderChatMessages();
+}
+
+function renderChatMessages() {
+  const stream = document.getElementById('chatMessagesStream');
+  if (!stream) return;
+
+  const topicData = appState.community.topics[appState.community.activeTopic];
+  if (!topicData) return;
+
+  stream.innerHTML = topicData.messages.map(msg => `
+    <div class="chat-msg-row ${msg.isUser ? 'sent' : ''}">
+      <div class="chat-msg-avatar">${msg.avatar}</div>
+      <div class="chat-msg-bubble">
+        <div class="chat-msg-meta">
+          <span class="chat-msg-sender">${msg.sender}</span>
+          ${msg.role ? `<span style="opacity:0.8;">· ${msg.role}</span>` : ''}
+          <span>${msg.time}</span>
+        </div>
+        <div class="chat-msg-body">${msg.text}</div>
+        <div class="chat-msg-reactions">
+          ${Object.entries(msg.reactions || {}).map(([emoji, count]) => `
+            <button class="chat-reaction-btn" onclick="toggleChatReaction(${msg.id}, '${emoji}')">
+              <span>${emoji}</span><span>${count}</span>
+            </button>
+          `).join('')}
+          <button class="chat-reaction-btn" onclick="toggleChatReaction(${msg.id}, '👍')">
+            <span>+</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  `).join('');
+
+  // Scroll to bottom of message thread
+  stream.scrollTop = stream.scrollHeight;
+}
+
+function handleChatKeyPress(e) {
+  if (e.key === 'Enter') {
+    sendChatMessage();
+  }
+}
+
+function sendChatMessage() {
+  const inputEl = document.getElementById('chatInputMessage');
+  if (!inputEl || !inputEl.value.trim()) return;
+
+  const text = inputEl.value.trim();
+  const currentTopic = appState.community.activeTopic;
+  const topicData = appState.community.topics[currentTopic];
+  if (!topicData) return;
+
+  const newMsg = {
+    id: Date.now(),
+    sender: 'Alex / Minakshi (You)',
+    role: 'Marketing Cohort',
+    avatar: 'A',
+    text: text,
+    time: 'Just now',
+    reactions: { '👍': 1 },
+    isUser: true
+  };
+
+  topicData.messages.push(newMsg);
+  inputEl.value = '';
+  renderChatMessages();
+
+  // Trigger realistic simulated live response after 2 seconds
+  const typingIndicator = document.getElementById('chatTypingIndicator');
+  if (typingIndicator) {
+    typingIndicator.style.display = 'flex';
+  }
+
+  setTimeout(() => {
+    if (typingIndicator) typingIndicator.style.display = 'none';
+    const peerReplies = [
+      "100% agree! Let's keep supporting each other.",
+      "Great point! I found that super helpful in the last live session too.",
+      "Cheering for you! Let me know if you want to review assignments together.",
+      "Awesome momentum! Keep going!"
+    ];
+    const randomReply = peerReplies[Math.floor(Math.random() * peerReplies.length)];
+    topicData.messages.push({
+      id: Date.now() + 1,
+      sender: 'Rohan Verma',
+      role: 'Peer · 3-yr Comeback',
+      avatar: 'R',
+      text: randomReply,
+      time: 'Just now',
+      reactions: { '❤️': 2 },
+      isUser: false
+    });
+    renderChatMessages();
+  }, 2200);
+}
+
+function toggleChatReaction(msgId, emoji) {
+  const topicData = appState.community.topics[appState.community.activeTopic];
+  if (!topicData) return;
+
+  const msg = topicData.messages.find(m => m.id === msgId);
+  if (msg) {
+    if (!msg.reactions) msg.reactions = {};
+    if (msg.reactions[emoji]) {
+      msg.reactions[emoji] += 1;
+    } else {
+      msg.reactions[emoji] = 1;
+    }
+    renderChatMessages();
+  }
+}
+
+/**
+ * -----------------------------------------------------------------------------
+ * LEADERBOARD TIMEFRAME SWITCHER
+ * -----------------------------------------------------------------------------
+ */
+
+function switchLeaderboardTab(tab, btnEl) {
+  document.querySelectorAll('#s-leaderboard .cat-tab-pill').forEach(b => b.classList.remove('active'));
+  if (btnEl) btnEl.classList.add('active');
+
+  const container = document.getElementById('leaderboardListContainer');
+  if (!container) return;
+
+  let multiplier = 1;
+  if (tab === 'month') multiplier = 3.8;
+  if (tab === 'all') multiplier = 12.5;
+
+  const list = [
+    { rank: 1, name: 'Rohan Verma', desc: '3 modules · 8-day streak', xp: Math.round(1240 * multiplier), isUser: false },
+    { rank: 2, name: 'Alex / Minakshi (You)', desc: '2 modules · 5-day streak', xp: Math.round(1180 * multiplier), isUser: true },
+    { rank: 3, name: 'Priya Sharma', desc: '2 modules · 4-day streak', xp: Math.round(1050 * multiplier), isUser: false },
+    { rank: 4, name: 'Arjun Mehta', desc: '2 modules · 3-day streak', xp: Math.round(920 * multiplier), isUser: false },
+    { rank: 5, name: 'Sneha Patel', desc: '1 module · 6-day streak', xp: Math.round(840 * multiplier), isUser: false }
+  ];
+
+  container.innerHTML = list.map(item => `
+    <div class="leaderboard-item ${item.isUser ? 'current-user' : ''}" style="${item.isUser ? 'border:1.5px solid var(--primary-500); background:var(--primary-25);' : ''}">
+      <div style="display:flex; align-items:center; gap:10px;">
+        <strong style="font-size:14px; color:${item.rank === 1 ? 'var(--warning-600)' : item.isUser ? 'var(--primary-600)' : 'var(--neutral-500)'}; width:18px;">${item.rank}</strong>
+        <div>
+          <div style="font-weight:800; font-size:13.5px; ${item.isUser ? 'color:var(--primary-700);' : ''}">${item.name}</div>
+          <div style="font-size:11px; color:var(--neutral-500);">${item.desc}</div>
+        </div>
+      </div>
+      <span class="chip ${item.rank === 1 ? 'chip-primary' : item.isUser ? 'chip-success' : 'chip-neutral'}" style="font-size:11px;">${item.xp.toLocaleString()} XP</span>
+    </div>
+  `).join('');
+}
 
 function filterCommunityCategory(cat, pillEl) {
   appState.community.activeCategory = cat;
@@ -732,9 +947,6 @@ function renderCommunityPosts() {
           <svg class="h-icon h-icon-sm" fill="none" viewBox="0 0 24 24" stroke-width="1.8" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M8.625 12a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Zm0 0H8.25m4.125 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Zm0 0H12m4.125 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Zm0 0h-.375M21 12c0 4.556-4.03 8.25-9 8.25a9.764 9.764 0 0 1-2.555-.337A5.972 5.972 0 0 1 5.41 20.97a.75.75 0 0 1-.744-.658.75.75 0 0 1 .05-.417l.803-1.606A8.09 8.09 0 0 1 3 12c0-4.556 4.03-8.25 9-8.25s9 3.694 9 8.25Z" /></svg>
           <span>${post.commentsCount} comments</span>
         </button>
-        <button class="post-act-btn" style="margin-left:auto;" onclick="showToast('Post saved to your bookmarks')">
-          <svg class="h-icon h-icon-sm" fill="none" viewBox="0 0 24 24" stroke-width="1.8" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M17.593 3.322c1.1.128 1.907 1.077 1.907 2.185V21L12 17.25 4.5 21V5.507c0-1.108.806-2.057 1.907-2.185a48.507 48.507 0 0 1 11.186 0Z" /></svg>
-        </button>
       </div>
     </div>
   `).join('');
@@ -768,7 +980,7 @@ function submitNewCommunityPost() {
     textarea.value = '';
     closeModal('modalCreatePost');
     renderCommunityPosts();
-    showToast('Post published to community feed.');
+    showToast('Post published to discussion board.');
   }
 }
 
@@ -961,6 +1173,7 @@ function showToast(msg) {
 // Initializer
 document.addEventListener('DOMContentLoaded', () => {
   renderMockInterview();
+  renderChatMessages();
   renderCommunityPosts();
   filterProgrammes('All', null);
   renderDashboardPersonalization();
