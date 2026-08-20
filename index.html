@@ -13,7 +13,7 @@
 <body>
 
   <!-- =========================================================================
-       TOP REVIEWER CONTROLS & FLOW SELECTOR (For judges & reviewers)
+       TOP REVIEWER TOOLBAR & FLOW SELECTOR
        ========================================================================= -->
   <header class="reviewer-toolbar">
     <div class="brand-badge">
@@ -21,36 +21,30 @@
         <path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1-2.5-2.5Z"/>
         <polyline points="10 2 10 10 13 7 16 10 16 2"/>
       </svg>
-      <span>Mentra UX</span>
+      <span>Mentra</span>
     </div>
 
     <!-- Quick Flow Scroller for Reviewing All Steps -->
     <nav class="quick-flow-scroller" aria-label="Reviewer Flow Switcher">
       <button class="flow-btn active" onclick="goToScreen('s-splash')">Splash</button>
-      <button class="flow-btn" onclick="goToScreen('s-onboard-welcome')">Welcome</button>
-      <button class="flow-btn" onclick="goToScreen('s-onboard-q1')">Q1 Goal</button>
-      <button class="flow-btn" onclick="goToScreen('s-onboard-q2')">Q2 Role</button>
-      <button class="flow-btn" onclick="goToScreen('s-onboard-q3')">Q3 Exp & Break</button>
-      <button class="flow-btn" onclick="goToScreen('s-onboard-q4')">Q4 Break Reason</button>
-      <button class="flow-btn" onclick="goToScreen('s-onboard-q5')">Q5 Confidence</button>
-      <button class="flow-btn" onclick="goToScreen('s-onboard-q6')">Q6 Skills</button>
-      <button class="flow-btn" onclick="goToScreen('s-onboard-q7')">Q7 Challenge</button>
-      <button class="flow-btn" onclick="goToScreen('s-onboard-q8')">Q8 Success</button>
-      <button class="flow-btn" onclick="goToScreen('s-onboard-q9')">Q9 Timeline</button>
-      <button class="flow-btn" onclick="goToScreen('s-onboard-q10')">Q10 Time</button>
-      <button class="flow-btn" onclick="goToScreen('s-personalization-summary')">Where You Are</button>
-      <button class="flow-btn" onclick="goToScreen('s-reassurance-trust')">Reassurance</button>
-      <button class="flow-btn" onclick="goToScreen('s-personalized-roadmap')">8-Wk Roadmap</button>
-      <button class="flow-btn" onclick="goToScreen('s-programme-recommendation')">Programme Rec</button>
-      <button class="flow-btn" onclick="goToScreen('s-value-first-trial')">Value / Trial</button>
-      <button class="flow-btn" onclick="goToScreen('s-home')">Dashboard</button>
+      <button class="flow-btn" onclick="goToScreen('s-quiz-1-situation')">1. Situation</button>
+      <button class="flow-btn" onclick="goToScreen('s-quiz-2-story')">2. Career Story</button>
+      <button class="flow-btn" onclick="goToScreen('s-quiz-3-interests')">3. Role & Interest</button>
+      <button class="flow-btn" onclick="goToScreen('s-quiz-4-confidence')">4. Confidence</button>
+      <button class="flow-btn" onclick="goToScreen('s-quiz-5-goals')">5. Goals & Time</button>
+      <button class="flow-btn" onclick="goToScreen('s-quiz-6-context')">6. Context</button>
+      <button class="flow-btn" onclick="goToScreen('s-home')">7. Dashboard</button>
+      <button class="flow-btn" onclick="goToScreen('s-explore-programmes')">8. Explore Programmes</button>
+      <button class="flow-btn" onclick="goToScreen('s-programme-details')">9. Programme Details</button>
+      <button class="flow-btn" onclick="goToScreen('s-learn-dashboard')">10. LMS Learning</button>
+      <button class="flow-btn" onclick="goToScreen('s-module-detail')">11. Module Detail</button>
       <button class="flow-btn" onclick="goToScreen('s-video-lesson')">Video Lesson</button>
-      <button class="flow-btn" onclick="goToScreen('s-module-detail')">Module Detail</button>
-      <button class="flow-btn" onclick="goToScreen('s-pdf-lesson')">PDF Reader</button>
-      <button class="flow-btn" onclick="goToScreen('s-assignment-detail')">Assignment</button>
-      <button class="flow-btn" onclick="goToScreen('s-live-session')">Live Workshop</button>
-      <button class="flow-btn" onclick="goToScreen('s-learn')">Learn Plan</button>
-      <button class="flow-btn" onclick="goToScreen('s-progress')">Progress</button>
+      <button class="flow-btn" onclick="goToScreen('s-pdf-lesson')">PDF Notes</button>
+      <button class="flow-btn" onclick="goToScreen('s-assignment')">Assignment</button>
+      <button class="flow-btn" onclick="goToScreen('s-live-class')">Live Class</button>
+      <button class="flow-btn" onclick="goToScreen('s-community')">Community</button>
+      <button class="flow-btn" onclick="goToScreen('s-leaderboard')">Leaderboard</button>
+      <button class="flow-btn" onclick="goToScreen('s-progress')">Career Progress</button>
       <button class="flow-btn" onclick="goToScreen('s-celebration')">100% Ready</button>
       <button class="flow-btn" onclick="goToScreen('s-whats-next')">What's Next?</button>
       <button class="flow-btn" onclick="goToScreen('s-resume-help')">Resume Help</button>
@@ -88,7 +82,7 @@
     <div class="screen-content-area" id="screenContentArea">
 
       <!-- =====================================================================
-           1. SPLASH SCREEN
+           SPLASH SCREEN
            ===================================================================== -->
       <section class="screen-view active" id="s-splash" style="justify-content:center; align-items:center; background:linear-gradient(180deg, var(--primary-700) 0%, var(--primary-600) 100%); color:white; padding:32px 24px; text-align:center;">
         <div style="background:white; width:68px; height:68px; border-radius:20px; display:flex; align-items:center; justify-content:center; margin-bottom:18px; box-shadow:0 12px 30px rgba(0,0,0,0.25);">
@@ -98,1077 +92,1022 @@
           </svg>
         </div>
         <h1 style="font-size:36px; font-weight:800; letter-spacing:-0.03em;">Mentra</h1>
-        <p style="font-size:14.5px; opacity:0.9; margin-top:6px; max-width:260px; line-height:1.4;">
-          Career Restart & Guided Learning
+        <p style="font-size:14.5px; opacity:0.9; margin-top:6px; max-width:270px; line-height:1.4;">
+          Career Restart & Guided Learning for Women & Professionals
         </p>
 
-        <!-- Realistic Persona Context Callout -->
+        <!-- Persona Callout -->
         <div style="background:rgba(255,255,255,0.12); backdrop-filter:blur(8px); border:1px solid rgba(255,255,255,0.25); border-radius:var(--radius-md); padding:12px 14px; margin-top:28px; text-align:left; font-size:12px; line-height:1.45; width:100%;">
-          <div style="font-weight:800; opacity:0.8; text-transform:uppercase; font-size:10.5px; letter-spacing:0.05em; margin-bottom:2px;">User Profile Active</div>
-          <strong>Arka, 27</strong> · 3 years experience · 8-month career break · Switching to Product Design
+          <div style="font-weight:800; opacity:0.8; text-transform:uppercase; font-size:10px; letter-spacing:0.05em; margin-bottom:2px;">User Profile Active</div>
+          <strong>Minakshi</strong> · Career break (2–5 yrs, marriage/relocation) · Prior Teaching · Seeking Work-From-Home
         </div>
 
-        <button class="btn-primary" style="background:white; color:var(--primary-700); margin-top:32px; box-shadow:0 8px 24px rgba(0,0,0,0.25);" onclick="goToScreen('s-onboard-welcome')">
-          Explore Mentra Assessment →
+        <button class="btn-primary" style="background:white; color:var(--primary-700); margin-top:32px; box-shadow:0 8px 24px rgba(0,0,0,0.25);" onclick="goToScreen('s-quiz-1-situation')">
+          Start Career Discovery Quiz →
         </button>
       </section>
 
       <!-- =====================================================================
-           2. ONBOARDING WELCOME OVERVIEW (3 Pillars)
+           PART 1 — ONBOARDING QUIZ (SCREEN 1: CURRENT SITUATION)
            ===================================================================== -->
-      <section class="screen-view" id="s-onboard-welcome">
-        <div class="step-header" style="margin-top:16px;">
-          <div class="mentra-logo"><span>Mentra</span></div>
-        </div>
-        <div style="padding:20px 24px; display:flex; flex-direction:column; align-items:center; text-align:center; flex:1; justify-content:center;">
-          <div style="width:120px; height:120px; background:var(--primary-50); border:2px solid var(--primary-200); border-radius:50%; display:flex; align-items:center; justify-content:center; margin-bottom:20px;">
-            <span style="font-size:48px;">🎯</span>
-          </div>
-          <h2 class="page-headline">Restart your career with clarity & reassurance.</h2>
-          <p class="page-subtext" style="max-width:290px; margin-top:10px;">
-            Tell us about your situation. We’ll understand where you are, identify your strengths, and show you a realistic path forward.
-          </p>
-
-          <div style="background:var(--neutral-50); border:1px solid var(--neutral-200); border-radius:var(--radius-md); padding:12px; margin-top:24px; width:100%; text-align:left; font-size:12px; color:var(--neutral-700); display:flex; flex-direction:column; gap:6px;">
-            <div>✓ <strong>No generic surveys:</strong> Tailored to your career break & goals</div>
-            <div>✓ <strong>Value first:</strong> Explore roadmap & mentor sessions before paying</div>
-            <div>✓ <strong>Human mentorship:</strong> Structured learning, not AI bots</div>
-          </div>
-        </div>
-        <div style="padding:0 20px 24px;">
-          <button class="btn-primary" onclick="goToScreen('s-onboard-q1')">Start Career Assessment (10 Steps) →</button>
-        </div>
-      </section>
-
-      <!-- =====================================================================
-           3. ONBOARDING QUESTION 1: CAREER GOAL
-           ===================================================================== -->
-      <section class="screen-view" id="s-onboard-q1">
+      <section class="screen-view" id="s-quiz-1-situation">
         <div class="step-header">
           <div class="step-nav-row">
             <div class="mentra-logo"><span>Mentra</span></div>
-            <button class="btn-ghost" onclick="goToScreen('s-onboard-welcome')">‹ Back</button>
+            <span class="step-counter-badge">Step 1 of 7</span>
           </div>
           <div class="step-progress-row">
-            <div class="step-progress-track"><div class="step-progress-fill" style="width:10%;"></div></div>
-            <span class="step-counter-badge">1 of 10</span>
+            <div class="step-progress-track"><div class="step-progress-fill" style="width:14.2%;"></div></div>
           </div>
-          <h2 class="page-headline">What are you hoping to change in your career?</h2>
-          <p class="page-subtext">This helps us understand your situation and current transition focus.</p>
+          <h2 class="page-headline">Your current situation</h2>
+          <p class="page-subtext">What best describes you today?</p>
         </div>
 
         <div class="options-list">
-          <div class="option-card selected" onclick="selectOnboardGoal(this, 'Restart after a career break')">
-            <span class="option-title">Restart after a career break 🌿</span>
+          <div class="option-card selected" onclick="selectQuizSituation(this, 'On a career break')">
+            <div>
+              <div class="option-title">1. On a career break 🌿</div>
+              <div class="option-desc">"Worked before, paused for life"</div>
+            </div>
             <div class="radio-circle">✓</div>
           </div>
-          <div class="option-card" onclick="selectOnboardGoal(this, 'Switch to a new field')">
-            <span class="option-title">Switch to a new field 🔄</span>
+          <div class="option-card" onclick="selectQuizSituation(this, 'Homemaker / never worked')">
+            <div>
+              <div class="option-title">2. Homemaker / never worked 🏠</div>
+              <div class="option-desc">"Managing home, want to start earning"</div>
+            </div>
             <div class="radio-circle">✓</div>
           </div>
-          <div class="option-card" onclick="selectOnboardGoal(this, 'Grow in my current field')">
-            <span class="option-title">Grow in my current field 📈</span>
+          <div class="option-card" onclick="selectQuizSituation(this, 'Working but want change')">
+            <div>
+              <div class="option-title">3. Working but want change 💼</div>
+              <div class="option-desc">"Employed, looking for something better"</div>
+            </div>
             <div class="radio-circle">✓</div>
           </div>
-          <div class="option-card" onclick="selectOnboardGoal(this, 'Return to work')">
-            <span class="option-title">Return to work 💼</span>
-            <div class="radio-circle">✓</div>
-          </div>
-          <div class="option-card" onclick="selectOnboardGoal(this, 'Get a better-paying role')">
-            <span class="option-title">Get a better-paying role 💰</span>
-            <div class="radio-circle">✓</div>
-          </div>
-          <div class="option-card" onclick="selectOnboardGoal(this, 'Move into leadership')">
-            <span class="option-title">Move into leadership 👥</span>
-            <div class="radio-circle">✓</div>
-          </div>
-          <div class="option-card" onclick="selectOnboardGoal(this, 'I\'m still figuring it out')">
-            <span class="option-title">I'm still figuring it out 🧭</span>
-            <div class="radio-circle">✓</div>
-          </div>
-        </div>
-
-        <div style="padding:0 20px 24px; margin-top:auto;">
-          <button class="btn-primary" onclick="goToScreen('s-onboard-q2')">Continue →</button>
-        </div>
-      </section>
-
-      <!-- =====================================================================
-           4. ONBOARDING QUESTION 2: TARGET ROLE
-           ===================================================================== -->
-      <section class="screen-view" id="s-onboard-q2">
-        <div class="step-header">
-          <div class="step-nav-row">
-            <div class="mentra-logo"><span>Mentra</span></div>
-            <button class="btn-ghost" onclick="goToScreen('s-onboard-q1')">‹ Back</button>
-          </div>
-          <div class="step-progress-row">
-            <div class="step-progress-track"><div class="step-progress-fill" style="width:20%;"></div></div>
-            <span class="step-counter-badge">2 of 10</span>
-          </div>
-          <h2 class="page-headline">What kind of role are you currently interested in?</h2>
-          <p class="page-subtext">Select your target discipline or enter your custom domain.</p>
-        </div>
-
-        <div class="options-list">
-          <div class="option-card" onclick="selectOnboardRole(this, 'UX Designer')">
-            <span class="option-title">UX Designer ✨</span>
-            <div class="radio-circle">✓</div>
-          </div>
-          <div class="option-card selected" onclick="selectOnboardRole(this, 'Product Designer')">
-            <span class="option-title">Product Designer 🎨</span>
-            <div class="radio-circle">✓</div>
-          </div>
-          <div class="option-card" onclick="selectOnboardRole(this, 'UI Designer')">
-            <span class="option-title">UI Designer 📱</span>
-            <div class="radio-circle">✓</div>
-          </div>
-          <div class="option-card" onclick="selectOnboardRole(this, 'Product Manager')">
-            <span class="option-title">Product Manager 🚀</span>
-            <div class="radio-circle">✓</div>
-          </div>
-          <div class="option-card" onclick="selectOnboardRole(this, 'Data Analyst')">
-            <span class="option-title">Data Analyst 📊</span>
-            <div class="radio-circle">✓</div>
-          </div>
-          <div class="option-card" onclick="selectOnboardRole(this, 'Software Developer')">
-            <span class="option-title">Software Developer 💻</span>
-            <div class="radio-circle">✓</div>
-          </div>
-          <div class="option-card" onclick="selectOnboardRole(this, 'Digital Marketer')">
-            <span class="option-title">Digital Marketer 📣</span>
-            <div class="radio-circle">✓</div>
-          </div>
-          <div class="option-card" onclick="selectOnboardRole(this, 'Other')">
-            <span class="option-title">Other Role... ✍️</span>
+          <div class="option-card" onclick="selectQuizSituation(this, 'Just exploring')">
+            <div>
+              <div class="option-title">4. Just exploring 🧭</div>
+              <div class="option-desc">"Not sure yet, need clarity"</div>
+            </div>
             <div class="radio-circle">✓</div>
           </div>
         </div>
 
-        <div style="padding:0 20px; display:none;" id="customRoleInput">
-          <input type="text" class="input-custom-box" placeholder="e.g. Content Strategist, Brand Lead" oninput="handleCustomRoleInput(this)">
+        <!-- Conditional Question: How long has your career break been? -->
+        <div id="q1BreakDurationSection" style="padding:10px 20px 0;">
+          <div class="section-label">How long has your career break been?</div>
+          <div class="options-list" style="padding:0; gap:6px;">
+            <div class="option-card" onclick="selectQuizBreakDuration(this, 'Less than 2 years')">
+              <span class="option-title">Less than 2 years</span>
+              <div class="radio-circle">✓</div>
+            </div>
+            <div class="option-card selected" onclick="selectQuizBreakDuration(this, '2–5 years')">
+              <span class="option-title">2–5 years</span>
+              <div class="radio-circle">✓</div>
+            </div>
+            <div class="option-card" onclick="selectQuizBreakDuration(this, '5–10 years')">
+              <span class="option-title">5–10 years</span>
+              <div class="radio-circle">✓</div>
+            </div>
+            <div class="option-card" onclick="selectQuizBreakDuration(this, '10+ years')">
+              <span class="option-title">10+ years</span>
+              <div class="radio-circle">✓</div>
+            </div>
+          </div>
         </div>
 
-        <div style="padding:0 20px 24px; margin-top:auto;">
-          <button class="btn-primary" onclick="goToScreen('s-onboard-q3')">Continue →</button>
+        <div style="padding:20px 20px 24px; margin-top:auto;">
+          <button class="btn-primary" onclick="goToScreen('s-quiz-2-story')">Continue →</button>
         </div>
       </section>
 
       <!-- =====================================================================
-           5. ONBOARDING QUESTION 3: EXPERIENCE & CAREER BREAK
+           PART 1 — ONBOARDING QUIZ (SCREEN 2: YOUR CAREER STORY)
            ===================================================================== -->
-      <section class="screen-view" id="s-onboard-q3">
+      <section class="screen-view" id="s-quiz-2-story">
         <div class="step-header">
           <div class="step-nav-row">
             <div class="mentra-logo"><span>Mentra</span></div>
-            <button class="btn-ghost" onclick="goToScreen('s-onboard-q2')">‹ Back</button>
+            <button class="btn-ghost" onclick="goToScreen('s-quiz-1-situation')">‹ Back</button>
           </div>
           <div class="step-progress-row">
-            <div class="step-progress-track"><div class="step-progress-fill" style="width:30%;"></div></div>
-            <span class="step-counter-badge">3 of 10</span>
+            <div class="step-progress-track"><div class="step-progress-fill" style="width:28.5%;"></div></div>
+            <span class="step-counter-badge">Step 2 of 7</span>
           </div>
-          <h2 class="page-headline">How much professional experience do you have?</h2>
-          <p class="page-subtext">No generic labels. We calibrate to your exact years of work.</p>
+          <h2 class="page-headline">Your career story</h2>
+          <p class="page-subtext">Understanding what led to your break and your previous experience.</p>
         </div>
 
-        <!-- Experience Years Selector -->
         <div style="padding:0 20px 6px;">
-          <label style="font-size:12px; font-weight:800; color:var(--neutral-600); text-transform:uppercase;">Years in workforce:</label>
+          <div class="section-label">What led to your break or pause?</div>
         </div>
-        <div class="number-grid">
-          <button class="number-btn" onclick="selectExperienceYears(this, 0)">0</button>
-          <button class="number-btn" onclick="selectExperienceYears(this, 1)">1</button>
-          <button class="number-btn" onclick="selectExperienceYears(this, 2)">2</button>
-          <button class="number-btn selected" onclick="selectExperienceYears(this, 3)">3</button>
-          <button class="number-btn" onclick="selectExperienceYears(this, 4)">4</button>
-          <button class="number-btn" onclick="selectExperienceYears(this, 5)">5</button>
-          <button class="number-btn" onclick="selectExperienceYears(this, 6)">6</button>
-          <button class="number-btn" onclick="selectExperienceYears(this, 7)">7</button>
-          <button class="number-btn" onclick="selectExperienceYears(this, 8)">8</button>
-          <button class="number-btn" onclick="selectExperienceYears(this, 9)">9</button>
-          <button class="number-btn" onclick="selectExperienceYears(this, '10+')">10+</button>
+        <div class="options-list">
+          <div class="option-card selected" onclick="selectQuizBreakReason(this, 'Marriage / relocation')">
+            <span class="option-title">Marriage / relocation 💍</span>
+            <div class="radio-circle">✓</div>
+          </div>
+          <div class="option-card" onclick="selectQuizBreakReason(this, 'Children & family care')">
+            <span class="option-title">Children & family care 👶</span>
+            <div class="radio-circle">✓</div>
+          </div>
+          <div class="option-card" onclick="selectQuizBreakReason(this, 'Health or personal reasons')">
+            <span class="option-title">Health or personal reasons 🏥</span>
+            <div class="radio-circle">✓</div>
+          </div>
+          <div class="option-card" onclick="selectQuizBreakReason(this, 'No right opportunity')">
+            <span class="option-title">No right opportunity ⏳</span>
+            <div class="radio-circle">✓</div>
+          </div>
+          <div class="option-card" onclick="selectQuizBreakReason(this, 'Lost confidence / direction')">
+            <span class="option-title">Lost confidence / direction 💭</span>
+            <div class="radio-circle">✓</div>
+          </div>
+          <div class="option-card" onclick="selectQuizBreakReason(this, 'Other / multiple reasons')">
+            <span class="option-title">Other / multiple reasons ✨</span>
+            <div class="radio-circle">✓</div>
+          </div>
         </div>
 
         <div style="padding:10px 20px 6px;">
-          <label style="font-size:12px; font-weight:800; color:var(--neutral-600); text-transform:uppercase;">How long have you been away from this field?</label>
+          <div class="section-label">What did you do before your break? (if any)</div>
         </div>
         <div class="options-list">
-          <div class="option-card" onclick="selectBreakDuration(this, 'No career break')">
-            <span class="option-title">No career break (Currently working)</span>
+          <div class="option-card" onclick="selectQuizPreviousWork(this, 'Admin / office / coordination')">
+            <span class="option-title">Admin / office / coordination 📋</span>
             <div class="radio-circle">✓</div>
           </div>
-          <div class="option-card" onclick="selectBreakDuration(this, 'Less than 6 months')">
-            <span class="option-title">Less than 6 months</span>
+          <div class="option-card selected" onclick="selectQuizPreviousWork(this, 'Teaching / training')">
+            <span class="option-title">Teaching / training 👩‍🏫</span>
             <div class="radio-circle">✓</div>
           </div>
-          <div class="option-card selected" onclick="selectBreakDuration(this, '8 months')">
-            <span class="option-title">6–12 months (e.g. 8 months)</span>
+          <div class="option-card" onclick="selectQuizPreviousWork(this, 'Sales / customer-facing')">
+            <span class="option-title">Sales / customer-facing 🤝</span>
             <div class="radio-circle">✓</div>
           </div>
-          <div class="option-card" onclick="selectBreakDuration(this, '1–2 years')">
-            <span class="option-title">1–2 years</span>
+          <div class="option-card" onclick="selectQuizPreviousWork(this, 'IT / technical')">
+            <span class="option-title">IT / technical 💻</span>
             <div class="radio-circle">✓</div>
           </div>
-          <div class="option-card" onclick="selectBreakDuration(this, '2+ years')">
-            <span class="option-title">2+ years</span>
+          <div class="option-card" onclick="selectQuizPreviousWork(this, 'Content / creative')">
+            <span class="option-title">Content / creative 🎨</span>
+            <div class="radio-circle">✓</div>
+          </div>
+          <div class="option-card" onclick="selectQuizPreviousWork(this, 'No formal work experience')">
+            <span class="option-title">No formal work experience 🌱</span>
             <div class="radio-circle">✓</div>
           </div>
         </div>
 
-        <div style="padding:0 20px 24px; margin-top:auto;">
-          <button class="btn-primary" onclick="goToScreen('s-onboard-q4')">Continue →</button>
+        <div style="padding:16px 20px 24px; margin-top:auto;">
+          <button class="btn-primary" onclick="goToScreen('s-quiz-3-interests')">Continue →</button>
         </div>
       </section>
 
       <!-- =====================================================================
-           6. ONBOARDING QUESTION 4: REASON FOR STEPPING AWAY
+           PART 1 — ONBOARDING QUIZ (SCREEN 3: ROLE CLARITY & INTERESTS)
            ===================================================================== -->
-      <section class="screen-view" id="s-onboard-q4">
+      <section class="screen-view" id="s-quiz-3-interests">
         <div class="step-header">
           <div class="step-nav-row">
             <div class="mentra-logo"><span>Mentra</span></div>
-            <button class="btn-ghost" onclick="goToScreen('s-onboard-q3')">‹ Back</button>
+            <button class="btn-ghost" onclick="goToScreen('s-quiz-2-story')">‹ Back</button>
           </div>
           <div class="step-progress-row">
-            <div class="step-progress-track"><div class="step-progress-fill" style="width:40%;"></div></div>
-            <span class="step-counter-badge">4 of 10</span>
+            <div class="step-progress-track"><div class="step-progress-fill" style="width:42.8%;"></div></div>
+            <span class="step-counter-badge">Step 3 of 7</span>
           </div>
-          <h2 class="page-headline">What made you step away from your career?</h2>
-          <p class="page-subtext">Select all that apply. This helps us personalize support and transition pacing.</p>
+          <h2 class="page-headline">Role clarity & interests</h2>
+          <p class="page-subtext">Do you know what role you want to restart in?</p>
         </div>
 
-        <!-- Non-judgmental supportive badge -->
-        <div style="padding:0 20px 10px;">
-          <div class="supportive-callout">
-            <span>💡</span>
+        <div class="options-list">
+          <div class="option-card" onclick="selectQuizRoleClarity(this, 'Yes, I have clarity')">
+            <span class="option-title">Yes, I have clarity 🎯</span>
+            <div class="radio-circle">✓</div>
+          </div>
+          <div class="option-card" onclick="selectQuizRoleClarity(this, 'I have some idea')">
+            <span class="option-title">I have some idea 💡</span>
+            <div class="radio-circle">✓</div>
+          </div>
+          <div class="option-card selected" onclick="selectQuizRoleClarity(this, 'I am confused')">
+            <span class="option-title">I am confused ❓</span>
+            <div class="radio-circle">✓</div>
+          </div>
+          <div class="option-card" onclick="selectQuizRoleClarity(this, 'I don\'t know at all')">
+            <span class="option-title">I don't know at all 🧭</span>
+            <div class="radio-circle">✓</div>
+          </div>
+        </div>
+
+        <div style="padding:10px 20px 6px;">
+          <div class="section-label">What type of work feels most natural to you?</div>
+        </div>
+        <div class="options-list">
+          <div class="option-card" onclick="selectQuizWorkInterest(this, 'Organising & supporting others')">
             <div>
-              <strong>There's no right or wrong answer.</strong> This helps us understand how to support your return without making assumptions.
+              <div class="option-title">1. Organising & supporting others 📁</div>
+              <div class="option-desc">"VA, admin, operations"</div>
             </div>
+            <div class="radio-circle">✓</div>
+          </div>
+          <div class="option-card" onclick="selectQuizWorkInterest(this, 'Content & social media')">
+            <div>
+              <div class="option-title">2. Content & social media 📱</div>
+              <div class="option-desc">"Creative, visual, community"</div>
+            </div>
+            <div class="radio-circle">✓</div>
+          </div>
+          <div class="option-card selected" onclick="selectQuizWorkInterest(this, 'Marketing & growth')">
+            <div>
+              <div class="option-title">3. Marketing & growth 📈</div>
+              <div class="option-desc">"Campaigns, SEO, ads"</div>
+            </div>
+            <div class="radio-circle">✓</div>
+          </div>
+          <div class="option-card" onclick="selectQuizWorkInterest(this, 'People & HR')">
+            <div>
+              <div class="option-title">4. People & HR 👥</div>
+              <div class="option-desc">"Recruitment, coordination"</div>
+            </div>
+            <div class="radio-circle">✓</div>
+          </div>
+          <div class="option-card" onclick="selectQuizWorkInterest(this, 'Numbers & reports')">
+            <div>
+              <div class="option-title">5. Numbers & reports 📊</div>
+              <div class="option-desc">"Data, analytics, spreadsheets"</div>
+            </div>
+            <div class="radio-circle">✓</div>
+          </div>
+          <div class="option-card" onclick="selectQuizWorkInterest(this, 'Not sure — help me decide')">
+            <div>
+              <div class="option-title">6. Not sure — help me decide 🤔</div>
+            </div>
+            <div class="radio-circle">✓</div>
           </div>
         </div>
 
-        <div class="tags-grid">
-          <div class="tag-pill" onclick="toggleBreakReason(this, 'Personal reasons')">Personal reasons</div>
-          <div class="tag-pill" onclick="toggleBreakReason(this, 'Family responsibilities')">Family responsibilities</div>
-          <div class="tag-pill" onclick="toggleBreakReason(this, 'Education')">Education / Upskilling</div>
-          <div class="tag-pill" onclick="toggleBreakReason(this, 'Health/recovery')">Health & Recovery</div>
-          <div class="tag-pill" onclick="toggleBreakReason(this, 'Relocation')">Relocation</div>
-          <div class="tag-pill" onclick="toggleBreakReason(this, 'Layoff/job loss')">Layoff / Job Loss</div>
-          <div class="tag-pill selected" onclick="toggleBreakReason(this, 'Burnout')">Burnout & Fatigue</div>
-          <div class="tag-pill selected" onclick="toggleBreakReason(this, 'Wanted a career change')">Wanted a career change</div>
-          <div class="tag-pill" onclick="toggleBreakReason(this, 'Other')">Other</div>
+        <div style="padding:16px 20px 24px; margin-top:auto;">
+          <button class="btn-primary" onclick="goToScreen('s-quiz-4-confidence')">Continue →</button>
+        </div>
+      </section>
+
+      <!-- =====================================================================
+           PART 1 — ONBOARDING QUIZ (SCREEN 4: CONFIDENCE & SKILLS COMFORT)
+           ===================================================================== -->
+      <section class="screen-view" id="s-quiz-4-confidence">
+        <div class="step-header">
+          <div class="step-nav-row">
+            <div class="mentra-logo"><span>Mentra</span></div>
+            <button class="btn-ghost" onclick="goToScreen('s-quiz-3-interests')">‹ Back</button>
+          </div>
+          <div class="step-progress-row">
+            <div class="step-progress-track"><div class="step-progress-fill" style="width:57.1%;"></div></div>
+            <span class="step-counter-badge">Step 4 of 7</span>
+          </div>
+          <h2 class="page-headline">Confidence & skills comfort</h2>
         </div>
 
-        <!-- Free-text optional area -->
+        <div style="padding:0 20px 6px;">
+          <div class="section-label">How confident do you feel about restarting?</div>
+        </div>
+        <div class="options-list">
+          <div class="option-card selected" onclick="selectQuizConfidence(this, 'Low — I doubt myself a lot')">
+            <span class="option-title">Low — I doubt myself a lot 😟</span>
+            <div class="radio-circle">✓</div>
+          </div>
+          <div class="option-card" onclick="selectQuizConfidence(this, 'Medium — hopeful but nervous')">
+            <span class="option-title">Medium — hopeful but nervous 😐</span>
+            <div class="radio-circle">✓</div>
+          </div>
+          <div class="option-card" onclick="selectQuizConfidence(this, 'High — ready to take action')">
+            <span class="option-title">High — ready to take action 🚀</span>
+            <div class="radio-circle">✓</div>
+          </div>
+        </div>
+
+        <div style="padding:10px 20px 6px;">
+          <div class="section-label">How comfortable are you with computers & online tools?</div>
+        </div>
+        <div class="options-list">
+          <div class="option-card" onclick="selectQuizTechComfort(this, 'Beginner — need hand-holding')">
+            <span class="option-title">Beginner — need hand-holding</span>
+            <div class="radio-circle">✓</div>
+          </div>
+          <div class="option-card selected" onclick="selectQuizTechComfort(this, 'Basic — email, WhatsApp, browsing')">
+            <span class="option-title">Basic — email, WhatsApp, browsing</span>
+            <div class="radio-circle">✓</div>
+          </div>
+          <div class="option-card" onclick="selectQuizTechComfort(this, 'Comfortable — can learn new tools')">
+            <span class="option-title">Comfortable — can learn new tools</span>
+            <div class="radio-circle">✓</div>
+          </div>
+          <div class="option-card" onclick="selectQuizTechComfort(this, 'Confident — already use many apps')">
+            <span class="option-title">Confident — already use many apps</span>
+            <div class="radio-circle">✓</div>
+          </div>
+        </div>
+
+        <div style="padding:10px 20px 6px;">
+          <div class="section-label">How comfortable is your English for work?</div>
+        </div>
+        <div class="options-list">
+          <div class="option-card" onclick="selectQuizEnglishComfort(this, 'Basic — simple conversations')">
+            <span class="option-title">Basic — simple conversations</span>
+            <div class="radio-circle">✓</div>
+          </div>
+          <div class="option-card selected" onclick="selectQuizEnglishComfort(this, 'Intermediate — can write emails')">
+            <span class="option-title">Intermediate — can write emails</span>
+            <div class="radio-circle">✓</div>
+          </div>
+          <div class="option-card" onclick="selectQuizEnglishComfort(this, 'Fluent — comfortable in meetings')">
+            <span class="option-title">Fluent — comfortable in meetings</span>
+            <div class="radio-circle">✓</div>
+          </div>
+        </div>
+
+        <div style="padding:16px 20px 24px; margin-top:auto;">
+          <button class="btn-primary" onclick="goToScreen('s-quiz-5-goals')">Continue →</button>
+        </div>
+      </section>
+
+      <!-- =====================================================================
+           PART 1 — ONBOARDING QUIZ (SCREEN 5: TIME, TIMELINE & GOALS)
+           ===================================================================== -->
+      <section class="screen-view" id="s-quiz-5-goals">
+        <div class="step-header">
+          <div class="step-nav-row">
+            <div class="mentra-logo"><span>Mentra</span></div>
+            <button class="btn-ghost" onclick="goToScreen('s-quiz-4-confidence')">‹ Back</button>
+          </div>
+          <div class="step-progress-row">
+            <div class="step-progress-track"><div class="step-progress-fill" style="width:71.4%;"></div></div>
+            <span class="step-counter-badge">Step 5 of 7</span>
+          </div>
+          <h2 class="page-headline">Time, timeline & goals</h2>
+        </div>
+
+        <div style="padding:0 20px 6px;">
+          <div class="section-label">How much time can you commit to your comeback?</div>
+        </div>
+        <div class="options-list">
+          <div class="option-card" onclick="selectQuizTimeCommitment(this, '~1 hour daily')">
+            <span class="option-title">~1 hour daily ⏰</span>
+            <div class="radio-circle">✓</div>
+          </div>
+          <div class="option-card selected" onclick="selectQuizTimeCommitment(this, 'Most days, flexible hours')">
+            <span class="option-title">Most days, flexible hours ⭐</span>
+            <div class="radio-circle">✓</div>
+          </div>
+          <div class="option-card" onclick="selectQuizTimeCommitment(this, 'A few days a week')">
+            <span class="option-title">A few days a week 🗓️</span>
+            <div class="radio-circle">✓</div>
+          </div>
+          <div class="option-card" onclick="selectQuizTimeCommitment(this, 'Not sure yet')">
+            <span class="option-title">Not sure yet 🧭</span>
+            <div class="radio-circle">✓</div>
+          </div>
+        </div>
+
+        <div style="padding:10px 20px 6px;">
+          <div class="section-label">When do you want to start earning?</div>
+        </div>
+        <div class="options-list">
+          <div class="option-card" onclick="selectQuizEarningTimeline(this, 'Within 2 weeks')">
+            <span class="option-title">Within 2 weeks ⚡</span>
+            <div class="radio-circle">✓</div>
+          </div>
+          <div class="option-card" onclick="selectQuizEarningTimeline(this, 'Within a month')">
+            <span class="option-title">Within a month 🗓️</span>
+            <div class="radio-circle">✓</div>
+          </div>
+          <div class="option-card selected" onclick="selectQuizEarningTimeline(this, 'In 1–3 months')">
+            <span class="option-title">In 1–3 months 🎯</span>
+            <div class="radio-circle">✓</div>
+          </div>
+          <div class="option-card" onclick="selectQuizEarningTimeline(this, 'In 3–6 months')">
+            <span class="option-title">In 3–6 months 🌱</span>
+            <div class="radio-circle">✓</div>
+          </div>
+          <div class="option-card" onclick="selectQuizEarningTimeline(this, 'No fixed timeline')">
+            <span class="option-title">No fixed timeline</span>
+            <div class="radio-circle">✓</div>
+          </div>
+        </div>
+
+        <div style="padding:10px 20px 6px;">
+          <div class="section-label">What is your primary goal?</div>
+        </div>
+        <div class="options-list">
+          <div class="option-card selected" onclick="selectQuizPrimaryGoal(this, 'Work from home')">
+            <span class="option-title">Work from home 🏡</span>
+            <div class="radio-circle">✓</div>
+          </div>
+          <div class="option-card" onclick="selectQuizPrimaryGoal(this, 'Financial independence')">
+            <span class="option-title">Financial independence 💰</span>
+            <div class="radio-circle">✓</div>
+          </div>
+          <div class="option-card" onclick="selectQuizPrimaryGoal(this, 'Rebuild confidence & identity')">
+            <span class="option-title">Rebuild confidence & identity ✨</span>
+            <div class="radio-circle">✓</div>
+          </div>
+          <div class="option-card" onclick="selectQuizPrimaryGoal(this, 'Proper career restart with placement')">
+            <span class="option-title">Proper career restart with placement 🚀</span>
+            <div class="radio-circle">✓</div>
+          </div>
+        </div>
+
+        <div style="padding:16px 20px 24px; margin-top:auto;">
+          <button class="btn-primary" onclick="goToScreen('s-quiz-6-context')">Continue →</button>
+        </div>
+      </section>
+
+      <!-- =====================================================================
+           PART 1 — ONBOARDING QUIZ (SCREEN 6: ADDITIONAL CONTEXT)
+           ===================================================================== -->
+      <section class="screen-view" id="s-quiz-6-context">
+        <div class="step-header">
+          <div class="step-nav-row">
+            <div class="mentra-logo"><span>Mentra</span></div>
+            <button class="btn-ghost" onclick="goToScreen('s-quiz-5-goals')">‹ Back</button>
+          </div>
+          <div class="step-progress-row">
+            <div class="step-progress-track"><div class="step-progress-fill" style="width:85.7%;"></div></div>
+            <span class="step-counter-badge">Step 6 of 7</span>
+          </div>
+          <h2 class="page-headline">A little more context</h2>
+          <p class="page-subtext">Anything else helps us personalise your plan.</p>
+        </div>
+
+        <div style="padding:0 20px 6px;">
+          <div class="section-label">Do you have family support for your comeback? (Optional)</div>
+        </div>
+        <div class="options-list">
+          <div class="option-card" onclick="selectQuizFamilySupport(this, 'Yes — fully supportive')">
+            <span class="option-title">Yes — fully supportive 👨‍👩‍👧</span>
+            <div class="radio-circle">✓</div>
+          </div>
+          <div class="option-card selected" onclick="selectQuizFamilySupport(this, 'Somewhat — mixed feelings')">
+            <span class="option-title">Somewhat — mixed feelings 🤔</span>
+            <div class="radio-circle">✓</div>
+          </div>
+          <div class="option-card" onclick="selectQuizFamilySupport(this, 'No — doing this on my own')">
+            <span class="option-title">No — doing this on my own 💪</span>
+            <div class="radio-circle">✓</div>
+          </div>
+          <div class="option-card" onclick="selectQuizFamilySupport(this, 'Prefer not to say')">
+            <span class="option-title">Prefer not to say</span>
+            <div class="radio-circle">✓</div>
+          </div>
+        </div>
+
         <div style="padding:14px 20px 0;">
-          <label style="font-size:12px; font-weight:800; color:var(--neutral-600); margin-bottom:4px; display:block;">
-            Want to tell us more? (Optional)
-          </label>
-          <textarea class="input-custom-box" rows="2" placeholder="e.g. Needed time to recharge and recalibrate my focus toward digital product design..." oninput="handleBreakNoteInput(this)"></textarea>
+          <div class="section-label">Biggest worry or blocker right now? (Optional)</div>
+          <textarea class="input-custom-box" rows="2" placeholder="e.g. kids at home, age, gap, interviews, English, imposter syndrome…" oninput="handleQuizWorryInput(this)">Gap on resume, lack of confidence in modern digital tools</textarea>
         </div>
 
-        <div style="padding:0 20px 24px; margin-top:auto;">
-          <button class="btn-primary" onclick="goToScreen('s-onboard-q5')">Continue →</button>
+        <div style="padding:20px 20px 24px; margin-top:auto;">
+          <button class="btn-primary" onclick="goToScreen('s-quiz-7-processing')">Build my dashboard →</button>
         </div>
       </section>
 
       <!-- =====================================================================
-           7. ONBOARDING QUESTION 5: CONFIDENCE LEVEL (1-5 Visual Scale)
+           PART 1 — ONBOARDING QUIZ (SCREEN 7: PROCESSING / TRANSITION)
            ===================================================================== -->
-      <section class="screen-view" id="s-onboard-q5">
-        <div class="step-header">
-          <div class="step-nav-row">
-            <div class="mentra-logo"><span>Mentra</span></div>
-            <button class="btn-ghost" onclick="goToScreen('s-onboard-q4')">‹ Back</button>
-          </div>
-          <div class="step-progress-row">
-            <div class="step-progress-track"><div class="step-progress-fill" style="width:50%;"></div></div>
-            <span class="step-counter-badge">5 of 10</span>
-          </div>
-          <h2 class="page-headline">How confident do you feel about returning to your field?</h2>
-          <p class="page-subtext">Be honest with yourself. We use this to set your learning pace.</p>
+      <section class="screen-view" id="s-quiz-7-processing" style="justify-content:center; align-items:center; text-align:center; padding:32px 24px;">
+        <div style="width:72px; height:72px; border-radius:50%; background:var(--primary-50); border:3px solid var(--primary-200); display:flex; align-items:center; justify-content:center; margin-bottom:24px;">
+          <span style="font-size:32px;">🔄</span>
         </div>
+        <h2 class="page-headline" style="font-size:22px;">Building your career clarity plan...</h2>
+        <p class="page-subtext" style="max-width:280px; margin-top:6px;">Personalizing your dashboard based on your 7 answers.</p>
 
-        <div class="confidence-scale-container">
-          <div class="confidence-rating-row">
-            <div class="confidence-box" onclick="selectConfidenceLevel(1)">
-              <div class="confidence-num">1</div>
-              <div class="confidence-emoji">😟</div>
-            </div>
-            <div class="confidence-box" onclick="selectConfidenceLevel(2)">
-              <div class="confidence-num">2</div>
-              <div class="confidence-emoji">🙁</div>
-            </div>
-            <div class="confidence-box selected" onclick="selectConfidenceLevel(3)">
-              <div class="confidence-num">3</div>
-              <div class="confidence-emoji">😐</div>
-            </div>
-            <div class="confidence-box" onclick="selectConfidenceLevel(4)">
-              <div class="confidence-num">4</div>
-              <div class="confidence-emoji">🙂</div>
-            </div>
-            <div class="confidence-box" onclick="selectConfidenceLevel(5)">
-              <div class="confidence-num">5</div>
-              <div class="confidence-emoji">🚀</div>
-            </div>
-          </div>
-          <div style="display:flex; justify-content:space-between; font-size:11.5px; font-weight:700; color:var(--neutral-500);">
-            <span>Not confident</span>
-            <span>Very confident</span>
-          </div>
-
-          <!-- Dynamic Contextual Reassurance Callout -->
-          <div class="supportive-callout" style="margin-top:12px;">
-            <span style="font-size:18px;">🤝</span>
-            <div id="confidenceReassuranceText">
-              That's completely normal after a career break. We'll help you identify what has changed in modern product design and build upon what you already know.
-            </div>
-          </div>
-        </div>
-
-        <div style="padding:0 20px 24px; margin-top:auto;">
-          <button class="btn-primary" onclick="goToScreen('s-onboard-q6')">Continue →</button>
+        <div style="margin-top:28px; width:100%; display:flex; flex-direction:column; gap:10px; text-align:left; font-size:13px; color:var(--neutral-700);">
+          <div id="procStep1" style="opacity:0.3; transition:opacity 0.3s;">✓ Looking at your experience & career break</div>
+          <div id="procStep2" style="opacity:0.3; transition:opacity 0.3s;">✓ Understanding your goals & time commitment</div>
+          <div id="procStep3" style="opacity:0.3; transition:opacity 0.3s;">✓ Finding suitable career paths & recommended roles</div>
+          <div id="procStep4" style="opacity:0.3; transition:opacity 0.3s;">✓ Building your restart roadmap</div>
         </div>
       </section>
 
       <!-- =====================================================================
-           8. ONBOARDING QUESTION 6: CURRENT CONFIDENT SKILLS
+           PART 2 — PERSONALIZED CAREER DASHBOARD
            ===================================================================== -->
-      <section class="screen-view" id="s-onboard-q6">
-        <div class="step-header">
-          <div class="step-nav-row">
-            <div class="mentra-logo"><span>Mentra</span></div>
-            <button class="btn-ghost" onclick="goToScreen('s-onboard-q5')">‹ Back</button>
+      <section class="screen-view" id="s-home">
+        <!-- Header -->
+        <div style="padding:14px 20px 6px; display:flex; justify-content:space-between; align-items:flex-start;">
+          <div>
+            <h2 style="font-size:20px; font-weight:800; color:var(--color-black);">Your comeback dashboard</h2>
+            <div style="font-size:13px; font-weight:700; color:var(--primary-600);" id="dashSubtitle">Minakshi's clarity plan</div>
           </div>
-          <div class="step-progress-row">
-            <div class="step-progress-track"><div class="step-progress-fill" style="width:60%;"></div></div>
-            <span class="step-counter-badge">6 of 10</span>
-          </div>
-          <h2 class="page-headline">What do you already feel confident doing?</h2>
-          <p class="page-subtext">Select your existing strengths. Your roadmap will build on these.</p>
-        </div>
-
-        <div class="options-list">
-          <div class="option-card selected" onclick="toggleConfidentSkill(this, 'UI design')">
-            <span class="option-title">UI Design & Visual Craft 🎨</span>
-            <div class="check-box">✓</div>
-          </div>
-          <div class="option-card selected" onclick="toggleConfidentSkill(this, 'Wireframing')">
-            <span class="option-title">Wireframing & Layout Grids 📐</span>
-            <div class="check-box">✓</div>
-          </div>
-          <div class="option-card selected" onclick="toggleConfidentSkill(this, 'Prototyping')">
-            <span class="option-title">Prototyping & Micro-interactions ⚡</span>
-            <div class="check-box">✓</div>
-          </div>
-          <div class="option-card" onclick="toggleConfidentSkill(this, 'User research')">
-            <span class="option-title">User Research & Field Interviews 🔍</span>
-            <div class="check-box">✓</div>
-          </div>
-          <div class="option-card" onclick="toggleConfidentSkill(this, 'Design systems')">
-            <span class="option-title">Design Systems & Component Tokens 🧩</span>
-            <div class="check-box">✓</div>
-          </div>
-          <div class="option-card" onclick="toggleConfidentSkill(this, 'Product thinking')">
-            <span class="option-title">Product Thinking & Business Metrics 🧠</span>
-            <div class="check-box">✓</div>
-          </div>
-          <div class="option-card" onclick="toggleConfidentSkill(this, 'Presenting design work')">
-            <span class="option-title">Presenting Design Work & Stakeholders 🗣️</span>
-            <div class="check-box">✓</div>
-          </div>
-        </div>
-
-        <div style="padding:0 20px 24px; margin-top:auto;">
-          <button class="btn-primary" onclick="goToScreen('s-onboard-q7')">Continue →</button>
-        </div>
-      </section>
-
-      <!-- =====================================================================
-           9. ONBOARDING QUESTION 7: BIGGEST CHALLENGE
-           ===================================================================== -->
-      <section class="screen-view" id="s-onboard-q7">
-        <div class="step-header">
-          <div class="step-nav-row">
-            <div class="mentra-logo"><span>Mentra</span></div>
-            <button class="btn-ghost" onclick="goToScreen('s-onboard-q6')">‹ Back</button>
-          </div>
-          <div class="step-progress-row">
-            <div class="step-progress-track"><div class="step-progress-fill" style="width:70%;"></div></div>
-            <span class="step-counter-badge">7 of 10</span>
-          </div>
-          <h2 class="page-headline">What feels like your biggest challenge right now?</h2>
-          <p class="page-subtext">This is crucial. We use this to focus your project work.</p>
-        </div>
-
-        <div class="options-list">
-          <div class="option-card" onclick="selectBiggestChallenge(this, 'I don\'t know what to learn')">
-            <span class="option-title">I don't know what to learn ❓</span>
-            <div class="radio-circle">✓</div>
-          </div>
-          <div class="option-card" onclick="selectBiggestChallenge(this, 'My skills feel outdated')">
-            <span class="option-title">My skills feel outdated ⏳</span>
-            <div class="radio-circle">✓</div>
-          </div>
-          <div class="option-card selected" onclick="selectBiggestChallenge(this, 'My portfolio isn\'t strong enough')">
-            <span class="option-title">My portfolio isn't strong enough 📂</span>
-            <div class="radio-circle">✓</div>
-          </div>
-          <div class="option-card" onclick="selectBiggestChallenge(this, 'I don\'t know how to explain my career break')">
-            <span class="option-title">How to explain my career break 💬</span>
-            <div class="radio-circle">✓</div>
-          </div>
-          <div class="option-card" onclick="selectBiggestChallenge(this, 'I\'m nervous about interviews')">
-            <span class="option-title">I'm nervous about interviews 🎙️</span>
-            <div class="radio-circle">✓</div>
-          </div>
-          <div class="option-card" onclick="selectBiggestChallenge(this, 'I don\'t know what salary to expect')">
-            <span class="option-title">Salary & market expectations 💵</span>
-            <div class="radio-circle">✓</div>
-          </div>
-          <div class="option-card" onclick="selectBiggestChallenge(this, 'I don\'t know where to find relevant opportunities')">
-            <span class="option-title">Finding relevant job opportunities 🧭</span>
-            <div class="radio-circle">✓</div>
-          </div>
-        </div>
-
-        <div style="padding:0 20px 24px; margin-top:auto;">
-          <button class="btn-primary" onclick="goToScreen('s-onboard-q8')">Continue →</button>
-        </div>
-      </section>
-
-      <!-- =====================================================================
-           10. ONBOARDING QUESTION 8: SUCCESS DEFINITION
-           ===================================================================== -->
-      <section class="screen-view" id="s-onboard-q8">
-        <div class="step-header">
-          <div class="step-nav-row">
-            <div class="mentra-logo"><span>Mentra</span></div>
-            <button class="btn-ghost" onclick="goToScreen('s-onboard-q7')">‹ Back</button>
-          </div>
-          <div class="step-progress-row">
-            <div class="step-progress-track"><div class="step-progress-fill" style="width:80%;"></div></div>
-            <span class="step-counter-badge">8 of 10</span>
-          </div>
-          <h2 class="page-headline">What would make you feel successful after Mentra?</h2>
-          <p class="page-subtext">Define your milestone so we can track towards it.</p>
-        </div>
-
-        <div class="options-list">
-          <div class="option-card selected" onclick="selectSuccessMetric(this, 'Build a strong portfolio')">
-            <span class="option-title">Build a strong, job-ready portfolio 📂</span>
-            <div class="radio-circle">✓</div>
-          </div>
-          <div class="option-card" onclick="selectSuccessMetric(this, 'Get interview-ready')">
-            <span class="option-title">Become interview-ready with practice 🎙️</span>
-            <div class="radio-circle">✓</div>
-          </div>
-          <div class="option-card" onclick="selectSuccessMetric(this, 'Get my first role in this field')">
-            <span class="option-title">Get my first role in Product Design 🚀</span>
-            <div class="radio-circle">✓</div>
-          </div>
-          <div class="option-card" onclick="selectSuccessMetric(this, 'Feel confident about my skills')">
-            <span class="option-title">Feel confident about modern industry craft ✨</span>
-            <div class="radio-circle">✓</div>
-          </div>
-          <div class="option-card" onclick="selectSuccessMetric(this, 'Start applying confidently')">
-            <span class="option-title">Start applying confidently with referrals 🤝</span>
-            <div class="radio-circle">✓</div>
-          </div>
-        </div>
-
-        <div style="padding:0 20px 24px; margin-top:auto;">
-          <button class="btn-primary" onclick="goToScreen('s-onboard-q9')">Continue →</button>
-        </div>
-      </section>
-
-      <!-- =====================================================================
-           11. ONBOARDING QUESTION 9: TIMELINE
-           ===================================================================== -->
-      <section class="screen-view" id="s-onboard-q9">
-        <div class="step-header">
-          <div class="step-nav-row">
-            <div class="mentra-logo"><span>Mentra</span></div>
-            <button class="btn-ghost" onclick="goToScreen('s-onboard-q8')">‹ Back</button>
-          </div>
-          <div class="step-progress-row">
-            <div class="step-progress-track"><div class="step-progress-fill" style="width:90%;"></div></div>
-            <span class="step-counter-badge">9 of 10</span>
-          </div>
-          <h2 class="page-headline">When would you ideally like to make your next career move?</h2>
-          <p class="page-subtext">This helps us schedule your weekly milestones.</p>
-        </div>
-
-        <div class="options-list">
-          <div class="option-card" onclick="selectTimeline(this, 'As soon as possible')">
-            <span class="option-title">As soon as possible ⚡</span>
-            <div class="radio-circle">✓</div>
-          </div>
-          <div class="option-card" onclick="selectTimeline(this, 'Within 1 month')">
-            <span class="option-title">Within 1 month 🗓️</span>
-            <div class="radio-circle">✓</div>
-          </div>
-          <div class="option-card selected" onclick="selectTimeline(this, 'Within 3 months')">
-            <span class="option-title">Within 3 months (Recommended) 🎯</span>
-            <div class="radio-circle">✓</div>
-          </div>
-          <div class="option-card" onclick="selectTimeline(this, 'Within 6 months')">
-            <span class="option-title">Within 6 months 🌱</span>
-            <div class="radio-circle">✓</div>
-          </div>
-          <div class="option-card" onclick="selectTimeline(this, 'I\'m exploring for now')">
-            <span class="option-title">I'm exploring for now 🧭</span>
-            <div class="radio-circle">✓</div>
-          </div>
-        </div>
-
-        <div style="padding:0 20px 24px; margin-top:auto;">
-          <button class="btn-primary" onclick="goToScreen('s-onboard-q10')">Continue →</button>
-        </div>
-      </section>
-
-      <!-- =====================================================================
-           12. ONBOARDING QUESTION 10: WEEKLY TIME COMMITMENT
-           ===================================================================== -->
-      <section class="screen-view" id="s-onboard-q10">
-        <div class="step-header">
-          <div class="step-nav-row">
-            <div class="mentra-logo"><span>Mentra</span></div>
-            <button class="btn-ghost" onclick="goToScreen('s-onboard-q9')">‹ Back</button>
-          </div>
-          <div class="step-progress-row">
-            <div class="step-progress-track"><div class="step-progress-fill" style="width:100%;"></div></div>
-            <span class="step-counter-badge">10 of 10</span>
-          </div>
-          <h2 class="page-headline">How much time can you realistically dedicate each week?</h2>
-          <p class="page-subtext">We structure your workload to prevent burnout and ensure steady progress.</p>
-        </div>
-
-        <div class="options-list">
-          <div class="option-card" onclick="selectWeeklyCommitment(this, '2–3 hours')">
-            <span class="option-title">2–3 hours / week (Light pace)</span>
-            <div class="radio-circle">✓</div>
-          </div>
-          <div class="option-card selected" onclick="selectWeeklyCommitment(this, '4–6 hours')">
-            <span class="option-title">4–6 hours / week (~45 min/day) ⭐</span>
-            <div class="radio-circle">✓</div>
-          </div>
-          <div class="option-card" onclick="selectWeeklyCommitment(this, '7–10 hours')">
-            <span class="option-title">7–10 hours / week (Accelerated)</span>
-            <div class="radio-circle">✓</div>
-          </div>
-          <div class="option-card" onclick="selectWeeklyCommitment(this, '10+ hours')">
-            <span class="option-title">10+ hours / week (Full-time focus)</span>
-            <div class="radio-circle">✓</div>
-          </div>
-        </div>
-
-        <div style="padding:0 20px 24px; margin-top:auto;">
-          <button class="btn-primary" onclick="goToScreen('s-personalization-summary')">Generate My Career Summary →</button>
-        </div>
-      </section>
-
-      <!-- =====================================================================
-           13. PERSONALIZATION MOMENT ("Where you are today")
-           ===================================================================== -->
-      <section class="screen-view" id="s-personalization-summary">
-        <div class="step-header">
-          <div class="mentra-logo"><span>Mentra</span></div>
-          <div class="chip chip-primary" style="align-self:flex-start;">Personalized Career Assessment</div>
-          <h2 class="page-headline">Here's where you are today, Arka.</h2>
-          <p class="page-subtext">We synthesized your assessment. Here is your baseline profile.</p>
-        </div>
-
-        <!-- Dynamic Assessment Summary Card -->
-        <div class="summary-grid-card">
-          <div class="summary-stat-row">
-            <div class="summary-stat-box">
-              <div class="summary-stat-label">Career Goal</div>
-              <div class="summary-stat-value" id="sumGoal">Restart → Product Design</div>
-            </div>
-            <div class="summary-stat-box">
-              <div class="summary-stat-label">Experience</div>
-              <div class="summary-stat-value" id="sumExperience">3 years in design</div>
-            </div>
-          </div>
-
-          <div class="summary-stat-row">
-            <div class="summary-stat-box">
-              <div class="summary-stat-label">Career Break</div>
-              <div class="summary-stat-value" id="sumBreak">8 months</div>
-            </div>
-            <div class="summary-stat-box">
-              <div class="summary-stat-label">Confidence</div>
-              <div class="summary-stat-value" id="sumConfidence">3 / 5 (Moderate)</div>
-            </div>
-          </div>
-
-          <div class="summary-stat-box">
-            <div class="summary-stat-label" style="margin-bottom:6px;">Strongest Confirmed Skills</div>
-            <div id="sumSkills" style="display:flex; flex-wrap:wrap; gap:4px;">
-              <span class="chip chip-success" style="font-size:11px;">✓ UI Design</span>
-              <span class="chip chip-success" style="font-size:11px;">✓ Wireframing</span>
-              <span class="chip chip-success" style="font-size:11px;">✓ Prototyping</span>
-            </div>
-          </div>
-
-          <div class="summary-stat-box">
-            <div class="summary-stat-label" style="margin-bottom:6px;">Roadmap Focus Areas</div>
-            <div id="sumFocusAreas" style="display:flex; flex-wrap:wrap; gap:4px;">
-              <span class="chip chip-primary" style="font-size:11px;">★ 2 Case Studies</span>
-              <span class="chip chip-primary" style="font-size:11px;">★ Break Storytelling</span>
-              <span class="chip chip-primary" style="font-size:11px;">★ Design Systems</span>
+          <div style="display:flex; gap:6px;">
+            <button class="btn-ghost" onclick="goToScreen('s-quiz-1-situation')" style="font-size:11px; border:1px solid var(--neutral-200); border-radius:6px; padding:4px 8px;">
+              Retake quiz
+            </button>
+            <div style="width:34px; height:34px; border-radius:50%; background:var(--primary-100); color:var(--primary-700); font-weight:800; display:flex; align-items:center; justify-content:center; font-size:13px;">
+              M
             </div>
           </div>
         </div>
 
-        <!-- Reassurance Highlight Block -->
-        <div class="reassurance-quote-card">
-          <div style="font-size:13px; line-height:1.5; color:var(--primary-900);" id="sumReassuranceQuote">
-            <strong>You're not starting from zero.</strong> You have 3 years of background we can build upon. Because you've been away for 8 months, we'll prioritize a refresh on modern industry practices before launching into portfolio creation.
+        <!-- Supportive Intro Copy -->
+        <div style="padding:0 20px 12px;">
+          <p style="font-size:12.5px; color:var(--neutral-600); line-height:1.45;">
+            "You're taking the first step towards restarting your career. With a clear goal and the right support, you can build your next chapter one step at a time."
+          </p>
+        </div>
+
+        <!-- RESTART JOURNEY (RESET -> REBUILD -> RESTART) -->
+        <div class="restart-journey-tracker">
+          <div style="display:flex; justify-content:space-between; align-items:center;">
+            <strong style="font-size:13.5px; color:var(--color-black);">Your restart journey</strong>
+            <span class="chip chip-primary" style="font-size:10px;">Reset Phase Active</span>
+          </div>
+
+          <div class="journey-steps-row">
+            <div class="journey-step-node active">
+              <div class="journey-step-circle">1</div>
+              <span class="journey-step-label">RESET</span>
+            </div>
+            <div class="journey-step-node">
+              <div class="journey-step-circle">2</div>
+              <span class="journey-step-label">REBUILD</span>
+            </div>
+            <div class="journey-step-node">
+              <div class="journey-step-circle">3</div>
+              <span class="journey-step-label">RESTART</span>
+            </div>
+          </div>
+
+          <div style="background:var(--color-white); border:1px solid var(--neutral-200); border-radius:var(--radius-sm); padding:10px; font-size:12px; color:var(--neutral-700); line-height:1.45;" id="journeyDescText">
+            You've taken a career pause of 2–5 years due to marriage / relocation (with prior background in teaching) and are now looking to restart your career in flexible work-from-home roles.
           </div>
         </div>
 
-        <div style="padding:0 20px 24px; margin-top:auto;">
-          <button class="btn-primary" onclick="goToScreen('s-reassurance-trust')">Show Me My Roadmap →</button>
-        </div>
-      </section>
-
-      <!-- =====================================================================
-           14. REASSURANCE / TRUST & MARKET CONTEXT SCREEN
-           ===================================================================== -->
-      <section class="screen-view" id="s-reassurance-trust">
-        <div class="step-header">
-          <div class="mentra-logo"><span>Mentra</span></div>
-          <div class="chip chip-success" style="align-self:flex-start;">Industry Context & Reassurance</div>
-          <h2 class="page-headline" id="reassureRoleTitle">You chose Product Design. You're not alone.</h2>
-          <p class="page-subtext">People with career breaks, switches, and changing skill needs use structured paths to rebuild momentum.</p>
-        </div>
-
-        <!-- Trust Metric / Social Proof Mock Block -->
-        <div style="padding:0 20px 10px;">
-          <div style="background:var(--neutral-50); border:1px solid var(--neutral-200); border-radius:var(--radius-md); padding:14px; display:flex; align-items:center; gap:14px;">
-            <div style="font-size:28px;">🤝</div>
-            <div>
-              <div style="font-weight:800; font-size:14px; color:var(--color-black);">10,000+ Professionals Supported</div>
-              <div style="font-size:12px; color:var(--neutral-600); margin-top:2px;" id="reassureBreakNote">
-                Across 20+ career paths, helping career restarters rebuild clarity and interview confidence.
+        <!-- READINESS SCORE (62% - Tappable) -->
+        <div style="padding:0 20px 14px;">
+          <div class="category-card" style="border:1.5px solid var(--primary-200); background:linear-gradient(180deg, var(--primary-25) 0%, white 100%); cursor:pointer;" onclick="openModal('modalExplainableReadiness')">
+            <div style="display:flex; justify-content:space-between; align-items:center;">
+              <div>
+                <div style="font-size:11px; font-weight:800; color:var(--primary-600); text-transform:uppercase;">Readiness Score · Tap for Breakdown</div>
+                <div style="font-size:24px; font-weight:800; color:var(--color-black); margin-top:2px;">
+                  <span id="dashReadinessPct">62%</span> <span style="font-size:13px; font-weight:700; color:var(--warning-700);">(Almost ready)</span>
+                </div>
               </div>
+              <span style="font-size:24px;">📊</span>
             </div>
+            <p style="font-size:12px; color:var(--neutral-600); margin-top:4px;">
+              "You have a clear goal of working from home and some family support, which can help you stay motivated and focused."
+            </p>
           </div>
         </div>
 
-        <!-- What has changed in the field -->
+        <!-- PROFILE SNAPSHOT (Dynamic 12 cards) -->
         <div class="section-header">
-          <h3 class="section-title">What has changed in Product Design today</h3>
+          <h3 class="section-title">Profile Snapshot</h3>
+        </div>
+        <div class="snapshot-grid">
+          <div class="snapshot-card"><div class="snapshot-label">Situation</div><div class="snapshot-val" id="snapSituation">On break</div></div>
+          <div class="snapshot-card"><div class="snapshot-label">Career Gap</div><div class="snapshot-val" id="snapCareerGap">2–5 yrs</div></div>
+          <div class="snapshot-card"><div class="snapshot-label">Break Reason</div><div class="snapshot-val" id="snapBreakReason">Marriage</div></div>
+          <div class="snapshot-card"><div class="snapshot-label">Previous Work</div><div class="snapshot-val" id="snapPreviousWork">Teaching</div></div>
+          <div class="snapshot-card"><div class="snapshot-label">Role Clarity</div><div class="snapshot-val" id="snapRoleClarity">Confused</div></div>
+          <div class="snapshot-card"><div class="snapshot-label">Interest</div><div class="snapshot-val" id="snapInterest">Marketing</div></div>
+          <div class="snapshot-card"><div class="snapshot-label">Confidence</div><div class="snapshot-val" id="snapConfidence">Low</div></div>
+          <div class="snapshot-card"><div class="snapshot-label">Tech Comfort</div><div class="snapshot-val" id="snapTechComfort">Basic</div></div>
+          <div class="snapshot-card"><div class="snapshot-label">English</div><div class="snapshot-val" id="snapEnglish">Intermediate</div></div>
+          <div class="snapshot-card"><div class="snapshot-label">Commitment</div><div class="snapshot-val" id="snapTimeCommitment">Flexible</div></div>
+          <div class="snapshot-card"><div class="snapshot-label">Timeline</div><div class="snapshot-val" id="snapTimeline">1–3 mos</div></div>
+          <div class="snapshot-card"><div class="snapshot-label">Primary Goal</div><div class="snapshot-val" id="snapPrimaryGoal">Work from home</div></div>
         </div>
 
-        <div style="padding:0 20px 16px; display:flex; flex-direction:column; gap:8px; font-size:12.5px;">
-          <div class="category-card" style="padding:10px 12px;">
-            <strong>1. Product Thinking & Business Impact</strong>
-            <span style="color:var(--neutral-600); font-size:11.5px;">Designers are expected to understand metric trade-offs and user churn reduction.</span>
+        <!-- RECOMMENDED ROLES FOR YOU -->
+        <div class="section-header">
+          <h3 class="section-title">Recommended roles for you</h3>
+        </div>
+
+        <div class="role-match-card primary-match" onclick="goToScreen('s-programme-details')">
+          <div style="display:flex; justify-content:space-between;">
+            <span class="chip chip-primary" style="font-size:10px;">#1 Match</span>
+            <span class="chip chip-success" style="font-size:10px;">94% Fit</span>
           </div>
-          <div class="category-card" style="padding:10px 12px;">
-            <strong>2. Design Systems & Component Tokens</strong>
-            <span style="color:var(--neutral-600); font-size:11.5px;">Shift from static mockups to reusable atomic tokens in modern Figma workflows.</span>
+          <div style="font-size:16px; font-weight:800; color:var(--color-black); margin-top:2px;" id="recRole1Title">Digital Marketing Specialist</div>
+          <p style="font-size:12px; color:var(--neutral-600); line-height:1.4;" id="recRole1Desc">
+            Combines your interest in marketing with the flexibility to work from home.
+          </p>
+          <button class="btn-primary" style="height:36px; font-size:12px; margin-top:6px;">Explore Programme →</button>
+        </div>
+
+        <div class="role-match-card" onclick="goToScreen('s-programme-details')">
+          <div style="display:flex; justify-content:space-between;">
+            <span class="chip chip-neutral" style="font-size:10px;">#2 Match</span>
+            <span class="chip chip-neutral" style="font-size:10px;">88% Fit</span>
           </div>
-          <div class="category-card" style="padding:10px 12px;">
-            <strong>3. Storytelling in Case Studies</strong>
-            <span style="color:var(--neutral-600); font-size:11.5px;">Hiring leads value synthesis and evidence over flashy visuals alone.</span>
+          <div style="font-size:16px; font-weight:800; color:var(--color-black); margin-top:2px;" id="recRole2Title">Social Media Management</div>
+          <p style="font-size:12px; color:var(--neutral-600); line-height:1.4;" id="recRole2Desc">
+            Visual campaign scheduling, content pillars, and remote community support.
+          </p>
+          <button class="btn-outline" style="height:36px; font-size:12px; margin-top:6px;">Explore Programme →</button>
+        </div>
+
+        <!-- STRENGTHS TO LEAN ON -->
+        <div class="section-header">
+          <h3 class="section-title">Strengths to lean on</h3>
+        </div>
+        <div style="padding:0 20px 14px;">
+          <div class="category-card" id="strengthsList" style="display:flex; flex-direction:column; gap:6px;">
+            <!-- Rendered dynamically -->
           </div>
         </div>
 
-        <div style="padding:0 20px 24px; margin-top:auto;">
-          <button class="btn-primary" onclick="goToScreen('s-personalized-roadmap')">View My 8-Week Roadmap →</button>
+        <!-- FOCUS AREAS -->
+        <div class="section-header">
+          <h3 class="section-title">Focus areas</h3>
+        </div>
+        <div style="padding:0 20px 14px;">
+          <div class="category-card" id="focusAreasList" style="display:flex; flex-direction:column; gap:6px;">
+            <!-- Rendered dynamically -->
+          </div>
+        </div>
+
+        <!-- ACTION ROADMAP -->
+        <div class="section-header">
+          <h3 class="section-title">Your action roadmap</h3>
+        </div>
+        <div style="padding:0 20px 14px; display:flex; flex-direction:column; gap:8px;">
+          <div class="category-card">
+            <span class="chip chip-primary" style="align-self:flex-start; font-size:10px;">THIS WEEK</span>
+            <div style="font-size:12.5px; color:var(--neutral-800); margin-top:4px;" id="roadmapThisWeek">
+              Explore digital marketing fundamentals and review initial orientation.
+            </div>
+          </div>
+          <div class="category-card">
+            <span class="chip chip-primary" style="align-self:flex-start; font-size:10px;">NEXT 2 WEEKS</span>
+            <div style="font-size:12.5px; color:var(--neutral-800); margin-top:4px;" id="roadmapNext2Weeks">
+              Complete introductory learning modules and speak with a career advisor.
+            </div>
+          </div>
+          <div class="category-card">
+            <span class="chip chip-primary" style="align-self:flex-start; font-size:10px;">NEXT 1–3 MONTHS</span>
+            <div style="font-size:12.5px; color:var(--neutral-800); margin-top:4px;" id="roadmapNext1to3Months">
+              Build practical skills, complete portfolio deliverables, and prepare for applications.
+            </div>
+          </div>
+        </div>
+
+        <!-- HUMAN GUIDANCE (Trust Building) -->
+        <div class="section-header">
+          <h3 class="section-title">Ready for human guidance?</h3>
+        </div>
+        <div style="padding:0 20px 24px;">
+          <div style="background:var(--neutral-50); border:1.5px solid var(--primary-200); border-radius:var(--radius-lg); padding:16px;">
+            <div style="font-size:14px; font-weight:800; color:var(--color-black);">Talk to a Career Restart Advisor</div>
+            <p style="font-size:12px; color:var(--neutral-600); margin-top:2px;">
+              Not sure what to do next? Speak 1-on-1 with an experienced counsellor.
+            </p>
+            <div style="display:flex; flex-direction:column; gap:6px; margin-top:10px;">
+              <button class="btn-primary" style="height:38px; font-size:12.5px;" onclick="openCounsellorModal()">Talk to a counsellor (Free Call)</button>
+              <button class="btn-outline" style="height:38px; font-size:12.5px;" onclick="showToast('💬 WhatsApp Chat opening with Mentra Advisor...')">Chat on WhatsApp 💬</button>
+            </div>
+          </div>
         </div>
       </section>
 
       <!-- =====================================================================
-           15. PERSONALIZED ROADMAP (5 Phases)
+           PART 3 — EXPLORE PROGRAMMES
            ===================================================================== -->
-      <section class="screen-view" id="s-personalized-roadmap">
+      <section class="screen-view" id="s-explore-programmes">
         <div class="step-header">
           <div class="mentra-logo"><span>Mentra</span></div>
-          <div style="display:flex; justify-content:space-between; align-items:center;">
-            <div class="chip chip-primary">Personalized Roadmap</div>
-            <span class="chip chip-warning" id="roadmapDurationTag">8 weeks · ~5 hrs/week</span>
-          </div>
-          <h2 class="page-headline">Your Career Restart Roadmap</h2>
-          <p class="page-subtext">A structured 5-phase journey designed to take you from uncertainty to career action.</p>
+          <h2 class="page-headline">Explore programmes</h2>
+          <p class="page-subtext">Structured career restart tracks built for practical skill building.</p>
         </div>
 
-        <!-- Adaptive Personal Note -->
+        <!-- Category Filter Pills -->
+        <div class="category-filter-scroller">
+          <button class="cat-tab-pill active" onclick="filterProgrammes('All', this)">All</button>
+          <button class="cat-tab-pill" onclick="filterProgrammes('Marketing', this)">Marketing</button>
+          <button class="cat-tab-pill" onclick="filterProgrammes('Design', this)">Design</button>
+          <button class="cat-tab-pill" onclick="filterProgrammes('Technology', this)">Technology</button>
+          <button class="cat-tab-pill" onclick="filterProgrammes('HR', this)">HR</button>
+          <button class="cat-tab-pill" onclick="filterProgrammes('Data', this)">Data</button>
+          <button class="cat-tab-pill" onclick="filterProgrammes('Business', this)">Business</button>
+        </div>
+
+        <!-- Programmes Catalogue Container -->
+        <div id="programmesCatalogueList" style="padding:0 20px 24px; display:flex; flex-direction:column; gap:12px;">
+          <!-- Dynamically populated via JS -->
+        </div>
+      </section>
+
+      <!-- =====================================================================
+           PART 4 — PROGRAMME DETAILS & VALUE FIRST
+           ===================================================================== -->
+      <section class="screen-view" id="s-programme-details">
+        <div class="step-header">
+          <button class="btn-ghost" style="align-self:flex-start; padding-left:0;" onclick="goToScreen('s-explore-programmes')">‹ Back to Programmes</button>
+          <div class="chip chip-primary" style="align-self:flex-start;">Matched Career Track</div>
+          <h2 class="page-headline" id="progDetailTitle">Digital Marketing Career Restart</h2>
+          <p class="page-subtext">Build practical digital marketing skills and prepare for your return to work.</p>
+        </div>
+
+        <!-- Hero Stats -->
         <div style="padding:0 20px 10px;">
-          <div class="supportive-callout" id="roadmapPersonalNote">
-            <strong>Tailored for Arka:</strong> Calibrated for your <strong>8-month</strong> break and focused on addressing your challenge: <em>"My portfolio isn't strong enough"</em>.
+          <div style="background:var(--neutral-50); border:1px solid var(--neutral-200); border-radius:var(--radius-md); padding:12px; display:grid; grid-template-columns:1fr 1fr; gap:8px; font-size:12px;">
+            <div><strong>Duration:</strong> 8 weeks</div>
+            <div><strong>Difficulty:</strong> Beginner friendly</div>
+            <div><strong>Weekly time:</strong> ~5 hrs/week</div>
+            <div><strong>Modules:</strong> 8 modules + Live</div>
           </div>
         </div>
 
-        <!-- 5 Phases -->
-        <div style="padding:0 20px 16px; display:flex; flex-direction:column; gap:10px;">
-          <div class="roadmap-phase-card">
-            <div class="phase-number-badge">01</div>
+        <!-- Career Reassurance Note -->
+        <div style="padding:0 20px 12px;">
+          <div class="supportive-callout">
+            <span style="font-size:18px;">💡</span>
             <div>
-              <div style="font-size:11.5px; font-weight:800; color:var(--primary-600); text-transform:uppercase;">Weeks 1–2 · Refresh</div>
-              <div style="font-size:14px; font-weight:800; color:var(--color-black);">UX Fundamentals & Modern Tooling</div>
-              <div style="font-size:12px; color:var(--neutral-600); margin-top:2px;">Design systems refresh, component tokens, layout grids.</div>
-            </div>
-          </div>
-
-          <div class="roadmap-phase-card">
-            <div class="phase-number-badge">02</div>
-            <div>
-              <div style="font-size:11.5px; font-weight:800; color:var(--primary-600); text-transform:uppercase;">Weeks 3–4 · Build</div>
-              <div style="font-size:14px; font-weight:800; color:var(--color-black);">User Research & Product Thinking</div>
-              <div style="font-size:12px; color:var(--neutral-600); margin-top:2px;">Interview synthesis, affinity mapping, metric trade-offs.</div>
-            </div>
-          </div>
-
-          <div class="roadmap-phase-card">
-            <div class="phase-number-badge">03</div>
-            <div>
-              <div style="font-size:11.5px; font-weight:800; color:var(--primary-600); text-transform:uppercase;">Weeks 5–6 · Create</div>
-              <div style="font-size:14px; font-weight:800; color:var(--color-black);">2 Portfolio Case Studies</div>
-              <div style="font-size:12px; color:var(--neutral-600); margin-top:2px;">End-to-end projects packaged for recruiter review.</div>
-            </div>
-          </div>
-
-          <div class="roadmap-phase-card">
-            <div class="phase-number-badge">04</div>
-            <div>
-              <div style="font-size:11.5px; font-weight:800; color:var(--primary-600); text-transform:uppercase;">Week 7 · Prepare</div>
-              <div style="font-size:14px; font-weight:800; color:var(--color-black);">Resume & Interview Rehearsal</div>
-              <div style="font-size:12px; color:var(--neutral-600); margin-top:2px;">Career break narrative, STAR responses, live mock session.</div>
-            </div>
-          </div>
-
-          <div class="roadmap-phase-card">
-            <div class="phase-number-badge">05</div>
-            <div>
-              <div style="font-size:11.5px; font-weight:800; color:var(--primary-600); text-transform:uppercase;">Week 8 · Launch</div>
-              <div style="font-size:14px; font-weight:800; color:var(--color-black);">Opportunity Search & Referrals</div>
-              <div style="font-size:12px; color:var(--neutral-600); margin-top:2px;">Target role discovery and mentor intro requests.</div>
+              <strong>Career Reassurance:</strong> Your existing experience doesn't disappear during a career break. Marketing is a growing digital path with ample work-from-home opportunities across businesses.
             </div>
           </div>
         </div>
 
-        <div style="padding:0 20px 24px;">
-          <button class="btn-primary" onclick="goToScreen('s-programme-recommendation')">Explore Recommended Programme →</button>
+        <!-- Programme Visual Roadmap -->
+        <div class="section-header">
+          <h3 class="section-title">8-Week Programme Roadmap</h3>
         </div>
-      </section>
-
-      <!-- =====================================================================
-           16. PROGRAMME RECOMMENDATION
-           ===================================================================== -->
-      <section class="screen-view" id="s-programme-recommendation">
-        <div class="step-header">
-          <div class="mentra-logo"><span>Mentra</span></div>
-          <h2 class="page-headline">Recommended for You</h2>
-          <p class="page-subtext">Matched directly to your assessment responses and timeline.</p>
+        <div style="padding:0 20px 14px; display:flex; flex-direction:column; gap:8px; font-size:12px;">
+          <div class="category-card" style="padding:10px 12px;"><strong>WEEK 1:</strong> Digital Marketing Foundations</div>
+          <div class="category-card" style="padding:10px 12px;"><strong>WEEK 2:</strong> Social Media Strategy & Content</div>
+          <div class="category-card" style="padding:10px 12px;"><strong>WEEK 3:</strong> SEO Basics & Search Intent</div>
+          <div class="category-card" style="padding:10px 12px;"><strong>WEEK 4:</strong> Content Marketing & Copywriting</div>
+          <div class="category-card" style="padding:10px 12px;"><strong>WEEK 5:</strong> Paid Advertising (Meta & Google Ads)</div>
+          <div class="category-card" style="padding:10px 12px;"><strong>WEEK 6:</strong> Analytics & Performance Reporting</div>
+          <div class="category-card" style="padding:10px 12px;"><strong>WEEK 7:</strong> Portfolio / Practical Brand Project</div>
+          <div class="category-card" style="padding:10px 12px;"><strong>WEEK 8:</strong> Resume + Interview + Career Launch</div>
         </div>
 
-        <!-- Top Recommendation Hero Card -->
-        <div class="prog-card best-match">
-          <div class="prog-top-row">
-            <span style="font-size:11.5px; font-weight:800; color:var(--primary-700); text-transform:uppercase;">Top Recommendation</span>
-            <span class="match-tag">92% fit</span>
-          </div>
-          <div class="prog-title" id="recProgTitle">PRODUCT DESIGN CAREER ACCELERATOR</div>
-          <div class="prog-meta-strip">
-            <span>⏱ 8 weeks</span>
-            <span>⚡ ~5 hrs/wk</span>
-            <span>📦 8 modules</span>
-            <span>🎥 4 live sessions</span>
-          </div>
-          <p style="font-size:13px; color:var(--neutral-700); line-height:1.45;">
-            Master product thinking, user research synthesis, and ship 2 hiring-ready portfolio case studies.
-          </p>
+        <!-- What You Get (10 points) -->
+        <div class="section-header">
+          <h3 class="section-title">What you get</h3>
+        </div>
+        <div style="padding:0 20px 14px; display:grid; grid-template-columns:1fr 1fr; gap:6px; font-size:11.5px; color:var(--neutral-800);">
+          <div>✓ Video lessons</div>
+          <div>✓ PDF notes</div>
+          <div>✓ Practical assignments</div>
+          <div>✓ Live doubt sessions</div>
+          <div>✓ Mentor support</div>
+          <div>✓ Community access</div>
+          <div>✓ Career guidance</div>
+          <div>✓ Resume preparation</div>
+          <div>✓ Interview prep</div>
+          <div>✓ Progress tracking</div>
+        </div>
 
-          <!-- Why We Recommend This Checklist -->
-          <div class="prog-why-box">
-            <strong style="color:var(--color-black); margin-bottom:2px;">Why we recommend this:</strong>
-            <div id="recWhyList" style="display:flex; flex-direction:column; gap:4px;">
-              <div class="prog-why-item">✓ Matches your 3 years of experience</div>
-              <div class="prog-why-item">✓ Builds on your existing UI and prototyping skills</div>
-              <div class="prog-why-item">✓ Directly addresses your portfolio gap with guided case studies</div>
-              <div class="prog-why-item">✓ Fits your 5-hour weekly availability</div>
-              <div class="prog-why-item">✓ Supports your goal to transition in 3 months</div>
+        <!-- Free Value Options Before Payment -->
+        <div style="padding:0 20px 24px; display:flex; flex-direction:column; gap:10px;">
+          <div style="background:var(--primary-25); border:1.5px solid var(--primary-200); border-radius:var(--radius-lg); padding:16px;">
+            <div style="display:flex; justify-content:space-between; align-items:center;">
+              <strong style="color:var(--primary-800); font-size:14.5px;">Try it before you commit</strong>
+              <span class="chip chip-success" style="font-size:10px;">Free 2 Days</span>
             </div>
+            <p style="font-size:12px; color:var(--neutral-700); margin-top:4px;">
+              Access first module, sample video lesson, roadmap, and one practical exercise for free.
+            </p>
+            <button class="btn-primary" style="height:42px; margin-top:10px;" onclick="startFree2DayTrial()">
+              Start 2 Days Free →
+            </button>
+            <button class="btn-outline" style="height:38px; margin-top:6px;" onclick="openCounsellorModal()">
+              Book a Free Career Guidance Call
+            </button>
           </div>
-        </div>
 
-        <div style="padding:0 20px 24px;">
-          <button class="btn-primary" onclick="goToScreen('s-value-first-trial')">See Value & Free Experience Options →</button>
-        </div>
-      </section>
-
-      <!-- =====================================================================
-           17. GIVE VALUE BEFORE PAYMENT (Free Trial & Mentor Call Options)
-           ===================================================================== -->
-      <section class="screen-view" id="s-value-first-trial">
-        <div class="step-header">
-          <div class="mentra-logo"><span>Mentra</span></div>
-          <div class="chip chip-success" style="align-self:flex-start;">Value First Experience</div>
-          <h2 class="page-headline">Experience Mentra before you decide.</h2>
-          <p class="page-subtext">No immediate paywall. Build confidence in the methodology first.</p>
-        </div>
-
-        <!-- Option 1: 2-Day Free Experience (Featured) -->
-        <div class="value-option-card featured" onclick="startFreeTrial()">
-          <div style="display:flex; justify-content:space-between; align-items:center;">
-            <strong style="font-size:15px; color:var(--primary-800);">Start 2 Days Free</strong>
-            <span class="chip chip-primary" style="font-size:10.5px;">Instant Access</span>
-          </div>
-          <p style="font-size:12.5px; color:var(--neutral-700); line-height:1.4;">
-            Experience the first learning module, access your career readiness assessment, and explore your roadmap.
-          </p>
-          <div style="font-size:11.5px; color:var(--success-700); font-weight:700;">
-            ✓ Free 2 days · No payment required today
-          </div>
-          <button class="btn-primary" style="height:42px; margin-top:6px;">Start 2-Day Free Experience →</button>
-        </div>
-
-        <!-- Option 2: 15-Minute Free Mentor Call -->
-        <div class="value-option-card" onclick="bookFreeMentorCall()">
-          <div style="display:flex; justify-content:space-between; align-items:center;">
-            <strong style="font-size:15px; color:var(--color-black);">Book a Free 15-Min Mentor Call</strong>
-            <span class="chip chip-neutral" style="font-size:10.5px;">1-on-1 Guidance</span>
-          </div>
-          <p style="font-size:12.5px; color:var(--neutral-600); line-height:1.4;">
-            Discuss your career break and transition strategy with a practicing design lead.
-          </p>
-          <button class="btn-outline" style="height:38px; margin-top:4px;">Schedule Free 15-Min Call</button>
-        </div>
-
-        <!-- Full Programme Enrolment Option -->
-        <div style="padding:10px 20px 20px; text-align:center;">
-          <button class="btn-ghost" style="color:var(--primary-700); font-size:13px;" onclick="enrollInProgramme()">
-            Or Enrol in Full Programme (All 8 Modules & Career Support) →
+          <button class="btn-ghost" style="color:var(--primary-700); font-size:12.5px;" onclick="openPurchaseModal()">
+            Or Enrol in Full Programme (₹4,999 / Complete Track) →
           </button>
         </div>
       </section>
 
       <!-- =====================================================================
-           18. LEARNING DASHBOARD (Primary App Screen)
+           PART 5 — COURSE LEARNING EXPERIENCE (LMS DASHBOARD)
            ===================================================================== -->
-      <section class="screen-view" id="s-home">
-        <!-- Top Header -->
+      <section class="screen-view" id="s-learn-dashboard">
+        <!-- Dashboard Header -->
         <div style="padding:14px 20px 8px; display:flex; justify-content:space-between; align-items:center;">
           <div>
-            <div style="font-size:12px; font-weight:700; color:var(--neutral-500);">Good morning,</div>
-            <h2 style="font-size:22px; font-weight:800; color:var(--color-black);">Arka 👋</h2>
+            <div style="font-size:12px; font-weight:700; color:var(--neutral-500);">Welcome to class,</div>
+            <h2 style="font-size:22px; font-weight:800; color:var(--color-black);">Good morning, Minakshi 👋</h2>
           </div>
-          <div style="display:flex; align-items:center; gap:8px;">
-            <button class="btn-ghost" onclick="toggleSimulateInactivity()" style="font-size:11px; border:1px solid var(--neutral-200); border-radius:6px; padding:4px 8px;">
-              ⚡ Sim Inactive
-            </button>
-            <div style="width:36px; height:36px; border-radius:50%; background:var(--primary-100); color:var(--primary-700); font-weight:800; display:flex; align-items:center; justify-content:center; font-size:14px;">
-              A
-            </div>
+          <div style="width:34px; height:34px; border-radius:50%; background:var(--primary-100); color:var(--primary-700); font-weight:800; display:flex; align-items:center; justify-content:center; font-size:13px;">
+            M
           </div>
         </div>
 
-        <!-- RE-ENGAGEMENT INACTIVITY BANNER (Shown if inactive) -->
-        <div class="re-engagement-banner" id="inactivityBanner" style="display:none; margin:0 20px 14px; background:var(--neutral-50); border:1.5px solid var(--primary-200); border-radius:var(--radius-lg); padding:16px;">
-          <div style="font-size:14px; font-weight:800; color:var(--primary-700); margin-bottom:4px;">
-            👋 Welcome back, Arka.
+        <!-- Current Programme Hero -->
+        <div style="margin:0 20px 14px; background:linear-gradient(135deg, #5757E8 0%, #4640DE 55%, #352DB0 100%); border-radius:var(--radius-xl); padding:16px 18px; color:white;">
+          <div style="font-size:11px; font-weight:800; opacity:0.85; text-transform:uppercase;">Enrolled Programme</div>
+          <div style="font-size:16px; font-weight:800; margin:4px 0 8px;">Digital Marketing Career Restart</div>
+          <div style="height:6px; background:rgba(255,255,255,0.25); border-radius:3px; overflow:hidden; margin-bottom:6px;">
+            <div style="width:42%; height:100%; background:white; border-radius:3px;" id="dashProgFill"></div>
           </div>
-          <p style="font-size:13px; color:var(--neutral-700); line-height:1.45;">
-            You've been away for 5 days. You have 3 unfinished tasks waiting. Let's get you back on track without feeling overwhelmed.
-          </p>
-          <div style="display:flex; gap:8px; margin-top:10px;">
-            <button class="btn-primary" style="height:38px; font-size:12.5px; flex:1;" onclick="openCatchUpModal()">Condensed Catch-Up (25m)</button>
-            <button class="btn-outline" style="height:38px; font-size:12.5px; flex:1;" onclick="goToScreen('s-learn')">Review My Plan</button>
-          </div>
-        </div>
-
-        <!-- MISSED DEADLINE BANNER -->
-        <div class="missed-deadline-banner" id="missedDeadlineBanner" style="margin:0 20px 14px; background:var(--warning-50); border:1.5px solid var(--warning-300); border-radius:var(--radius-lg); padding:14px;">
-          <div style="display:flex; justify-content:space-between; align-items:center;">
-            <strong style="color:var(--warning-700); font-size:13.5px;">Plans changed?</strong>
-            <span style="font-size:10.5px; background:var(--warning-100); color:var(--warning-800); padding:2px 6px; border-radius:4px; font-weight:700;">Missed Task</span>
-          </div>
-          <p style="font-size:12.5px; color:var(--neutral-700); margin-top:4px;">
-            You missed yesterday's task, but your 5-day streak is safe.
-          </p>
-          <div style="display:flex; gap:6px; margin-top:8px;">
-            <button class="btn-secondary" style="height:34px; font-size:11.5px; flex:1;" onclick="openCatchUpModal()">Catch up today</button>
-            <button class="btn-outline" style="height:34px; font-size:11.5px; flex:1;" onclick="openRescheduleModal()">Move to tomorrow</button>
-          </div>
-        </div>
-
-        <!-- CURRENT PROGRAMME HERO (42% Complete) -->
-        <div class="current-prog-hero" onclick="goToScreen('s-learn')">
-          <div style="font-size:11px; font-weight:800; opacity:0.85; text-transform:uppercase; letter-spacing:0.04em;">Enrolled Programme</div>
-          <div style="font-size:17px; font-weight:800; margin:4px 0 10px;" id="dashProgTitle">Product Design Career Accelerator</div>
-          <div style="height:8px; background:rgba(255,255,255,0.25); border-radius:4px; overflow:hidden; margin-bottom:8px;">
-            <div style="width:42%; height:100%; background:white; border-radius:4px;" id="dashProgFill"></div>
-          </div>
-          <div style="display:flex; justify-content:space-between; font-size:12px; opacity:0.95;">
+          <div style="display:flex; justify-content:space-between; font-size:11.5px; opacity:0.95;">
             <span id="dashProgPct">42% complete</span>
-            <span>Module 03 of 08</span>
+            <span>Module 2 of 8</span>
           </div>
         </div>
 
-        <!-- PROMINENT VIDEO PLAYER (Continue Learning) -->
+        <!-- Prominent Video Player Hero (Continue Learning) -->
         <div class="video-player-container">
           <div class="video-screen-mock">
-            <span class="chip chip-primary" style="position:absolute; top:12px; left:12px; background:rgba(0,0,0,0.6); color:white; border:none; font-size:11px;">
-              Module 03 · Video Lesson
+            <span class="chip chip-primary" style="position:absolute; top:10px; left:10px; background:rgba(0,0,0,0.6); color:white; border:none; font-size:10px;">
+              Module 2 · Current Lesson
             </span>
             <button class="video-play-btn-large" id="videoPlayBtnLarge" onclick="toggleVideoPlay()">▶</button>
             <div style="font-size:13px; font-weight:700; margin-top:8px; text-shadow:0 2px 4px rgba(0,0,0,0.8);">
-              Conducting Effective User Interviews
+              Social Media Fundamentals & Strategy
             </div>
           </div>
           <div class="video-controls-bar">
             <div class="video-seek-track" onclick="showToast('⏩ Seek position updated')">
               <div class="video-seek-fill"></div>
-              <div class="video-seek-handle"></div>
             </div>
             <div class="video-controls-row">
               <div style="display:flex; align-items:center; gap:8px;">
                 <button class="btn-ghost" style="color:white; padding:0;" id="videoControlPlayBtn" onclick="toggleVideoPlay()">Play</button>
                 <span>02:22 / 12:00</span>
               </div>
-              <button class="btn-ghost" style="color:var(--primary-300); padding:0; font-size:11.5px;" onclick="goToScreen('s-video-lesson')">
-                Open Full Player ↗
+              <button class="btn-ghost" style="color:var(--primary-300); padding:0; font-size:11px;" onclick="goToScreen('s-video-lesson')">
+                Full Player ↗
               </button>
             </div>
           </div>
         </div>
 
-        <!-- YOUR NEXT ACTION (Highest Priority) -->
-        <div class="next-action-card" id="nextActionCard">
-          <div class="next-action-eyebrow">
-            <span>⚡ Next Action</span>
-            <span style="color:var(--error-600); font-weight:800;">Due Today</span>
+        <!-- Next Action Card -->
+        <div style="margin:0 20px 14px; background:var(--warning-50); border:1.5px solid var(--warning-400); border-radius:var(--radius-lg); padding:14px;">
+          <div style="display:flex; justify-content:space-between; align-items:center;">
+            <span style="font-size:10.5px; font-weight:800; color:var(--warning-800); text-transform:uppercase;">⚡ Next Action</span>
+            <span style="font-size:10.5px; color:var(--error-600); font-weight:800;">Due Today</span>
           </div>
-          <div class="next-action-title" id="nextActionTitle">Complete your portfolio case study synthesis</div>
-          <div style="font-size:12.5px; color:var(--neutral-700);">
-            Estimated 30 min · Module 03: User Research
+          <div style="font-size:14.5px; font-weight:800; color:var(--color-black); margin-top:2px;" id="nextActionTitle">
+            Submit Social Media 1-Week Content Calendar
           </div>
-          <button class="btn-primary" style="height:42px; margin-top:6px;" id="nextActionBtn" onclick="goToScreen('s-assignment-detail')">
-            Start Assignment →
+          <button class="btn-primary" style="height:38px; font-size:12.5px; margin-top:8px;" id="nextActionBtn" onclick="goToScreen('s-assignment')">
+            Open Assignment Workbench →
           </button>
         </div>
 
-        <!-- COURSE MODULES SUMMARY LIST -->
+        <!-- Course Modules List -->
         <div class="section-header">
-          <h3 class="section-title">Course Modules</h3>
-          <span class="section-link" onclick="goToScreen('s-learn')">View all (8)</span>
+          <h3 class="section-title">Course modules</h3>
         </div>
-
         <div style="padding:0 20px 14px; display:flex; flex-direction:column; gap:8px;">
           <div class="category-card" style="padding:10px 14px; border-left:4px solid var(--success-500);" onclick="goToScreen('s-module-detail')">
             <div style="display:flex; justify-content:space-between;">
-              <span style="font-weight:800; font-size:13.5px;">Module 01: Design Foundations</span>
-              <span style="color:var(--success-600); font-weight:800; font-size:11.5px;">✓ Complete</span>
-            </div>
-          </div>
-          <div class="category-card" style="padding:10px 14px; border-left:4px solid var(--success-500);" onclick="goToScreen('s-module-detail')">
-            <div style="display:flex; justify-content:space-between;">
-              <span style="font-weight:800; font-size:13.5px;">Module 02: UX Strategy & Scoping</span>
-              <span style="color:var(--success-600); font-weight:800; font-size:11.5px;">✓ Complete</span>
+              <span style="font-weight:800; font-size:13px;">Module 1: Digital Marketing Foundations</span>
+              <span style="color:var(--success-600); font-weight:800; font-size:11px;">✓ Complete</span>
             </div>
           </div>
           <div class="category-card" style="padding:10px 14px; border-left:4px solid var(--primary-600); background:var(--primary-25);" onclick="goToScreen('s-module-detail')">
             <div style="display:flex; justify-content:space-between;">
-              <span style="font-weight:800; font-size:13.5px; color:var(--primary-800);">Module 03: User Research & Synthesis</span>
-              <span class="chip chip-primary" style="font-size:10.5px; padding:2px 6px;">● In Progress</span>
+              <span style="font-weight:800; font-size:13px; color:var(--primary-800);">Module 2: Social Media Marketing</span>
+              <span class="chip chip-primary" style="font-size:10px; padding:2px 6px;">● In Progress</span>
             </div>
-            <div style="font-size:11.5px; color:var(--neutral-600); margin-top:2px;">2 of 4 lessons finished</div>
           </div>
-          <div class="category-card" style="padding:10px 14px; opacity:0.75;">
+          <div class="category-card" style="padding:10px 14px; opacity:0.85;" onclick="goToScreen('s-module-detail')">
             <div style="display:flex; justify-content:space-between;">
-              <span style="font-weight:700; font-size:13.5px;">Module 04: Interaction & Prototyping</span>
-              <span style="color:var(--neutral-400); font-size:11.5px;">🔒 Locked</span>
+              <span style="font-weight:700; font-size:13px;">Module 3: SEO Basics & Search Intent</span>
+              <span style="color:var(--neutral-500); font-size:11px;">Upcoming</span>
+            </div>
+          </div>
+          <div class="category-card" style="padding:10px 14px; opacity:0.7;">
+            <div style="display:flex; justify-content:space-between;">
+              <span style="font-weight:700; font-size:13px;">Module 4: Content Marketing & Copy</span>
+              <span style="color:var(--neutral-400); font-size:11px;">🔒 Locked</span>
             </div>
           </div>
         </div>
 
-        <!-- UPCOMING LIVE SESSION -->
+        <!-- Upcoming Live Class & Pending Assignment -->
         <div class="section-header">
-          <h3 class="section-title">Upcoming Live Session</h3>
+          <h3 class="section-title">Live Class & Tasks</h3>
         </div>
-        <div class="live-session-card">
-          <div style="display:flex; justify-content:space-between; align-items:flex-start;">
-            <div>
-              <span class="chip chip-primary" style="padding:2px 8px; font-size:11px;">Thursday · 7:00 PM</span>
-              <h4 style="font-size:15px; font-weight:800; color:var(--color-black); margin-top:4px;">Portfolio Review Workshop</h4>
+        <div style="padding:0 20px 24px; display:flex; flex-direction:column; gap:10px;">
+          <div class="category-card" onclick="goToScreen('s-live-class')">
+            <div style="display:flex; justify-content:space-between;">
+              <span class="chip chip-primary" style="font-size:10px;">Thursday · 7:00 PM</span>
+              <span style="font-size:11px; font-weight:700; color:var(--neutral-500);">45 min</span>
             </div>
-            <span style="font-size:11px; font-weight:700; color:var(--neutral-500);">45 min</span>
+            <div style="font-size:14px; font-weight:800; color:var(--color-black); margin-top:2px;">Live Doubt Clearing Class</div>
+            <div style="font-size:11.5px; color:var(--neutral-600);">Bring your questions from Module 2 with instructor.</div>
           </div>
-          <div style="font-size:12.5px; color:var(--neutral-600);">
-            Instructor: <strong>Sarah Johnson</strong> (Staff Designer @ Linear)
-          </div>
-          <div style="display:flex; gap:8px; margin-top:4px;">
-            <button class="btn-primary" style="height:36px; font-size:12px; flex:1;" onclick="goToScreen('s-live-session')">Join Live Room →</button>
-            <button class="btn-outline" style="height:36px; font-size:12px; flex:1;" onclick="showToast('📅 Added to Calendar: Thursday 7:00 PM')">Add to Calendar</button>
-          </div>
-        </div>
-
-        <!-- PENDING ASSIGNMENT -->
-        <div class="section-header">
-          <h3 class="section-title">Pending Assignment</h3>
-        </div>
-        <div class="assignment-card" onclick="goToScreen('s-assignment-detail')">
-          <div style="display:flex; justify-content:space-between; align-items:flex-start;">
-            <div>
-              <div style="font-size:14px; font-weight:800; color:var(--color-black);">Portfolio Case Study Synthesis</div>
-              <div style="font-size:12px; color:var(--neutral-500); margin-top:2px;">Due: Friday · Est 45 min</div>
-            </div>
-            <span class="chip chip-warning" id="dashAssignmentBadge">In Progress</span>
-          </div>
-        </div>
-
-        <!-- Quick 100% Readiness Simulator Link -->
-        <div style="padding:0 20px 20px;">
-          <button class="btn-outline" style="border-style:dashed; color:var(--primary-600);" onclick="simulateFullReadiness()">
-            🎯 Simulate 100% Career Ready & What's Next Hub
-          </button>
         </div>
       </section>
 
       <!-- =====================================================================
-           19. DEDICATED FULL VIDEO LESSON PLAYER SCREEN
+           PART 6 — MODULE DETAIL
+           ===================================================================== -->
+      <section class="screen-view" id="s-module-detail">
+        <div class="step-header">
+          <button class="btn-ghost" style="align-self:flex-start; padding-left:0;" onclick="goToScreen('s-learn-dashboard')">‹ Back to LMS</button>
+          <div class="chip chip-primary" style="align-self:flex-start;">Module 2</div>
+          <h2 class="page-headline">Social Media Marketing</h2>
+          <p class="page-subtext">Learn organic content pillars, scheduling cadences, and engagement protocols.</p>
+        </div>
+
+        <div style="padding:0 20px 14px;">
+          <div style="background:var(--neutral-50); border:1px solid var(--neutral-200); border-radius:var(--radius-md); padding:10px 12px; font-size:12px; color:var(--neutral-700);">
+            <strong>Progress:</strong> 2 of 5 items completed · 1 practical assignment
+          </div>
+        </div>
+
+        <!-- Module Content Types: Video, PDF, Notes, Resources, Q&A, Live Class -->
+        <div style="padding:0 20px 20px; display:flex; flex-direction:column; gap:8px;">
+          <!-- 1. Video -->
+          <div class="category-card" onclick="goToScreen('s-video-lesson')">
+            <div style="display:flex; justify-content:space-between; align-items:center;">
+              <span style="font-weight:800; font-size:13px;">🎥 VIDEO: Social Media Strategy</span>
+              <span class="chip chip-primary" style="font-size:10px;">12 min</span>
+            </div>
+          </div>
+
+          <!-- 2. PDF Lesson -->
+          <div class="category-card" onclick="goToScreen('s-pdf-lesson')">
+            <div style="display:flex; justify-content:space-between; align-items:center;">
+              <span style="font-weight:800; font-size:13px;">📄 PDF NOTES: Content Pillar Guide</span>
+              <span class="chip chip-neutral" style="font-size:10px;">8 pages</span>
+            </div>
+          </div>
+
+          <!-- 3. Notes -->
+          <div class="category-card" onclick="showToast('📥 Downloaded: Module2_Summary_Notes.pdf')">
+            <div style="display:flex; justify-content:space-between; align-items:center;">
+              <span style="font-weight:800; font-size:13px;">📝 NOTES: Downloadable Cheat Sheet</span>
+              <span style="font-size:11px; color:var(--primary-600); font-weight:700;">Download ↓</span>
+            </div>
+          </div>
+
+          <!-- 4. Resources -->
+          <div class="category-card" onclick="showToast('🔗 Notion Template Opened in New Tab')">
+            <div style="display:flex; justify-content:space-between; align-items:center;">
+              <span style="font-weight:800; font-size:13px;">🧰 RESOURCES: 1-Week Calendar Template</span>
+              <span style="font-size:11px; color:var(--primary-600); font-weight:700;">Notion URL ↗</span>
+            </div>
+          </div>
+
+          <!-- 5. Assignment -->
+          <div class="category-card" onclick="goToScreen('s-assignment')">
+            <div style="display:flex; justify-content:space-between; align-items:center;">
+              <span style="font-weight:800; font-size:13px;">📝 ASSIGNMENT: Build 1-Week Schedule</span>
+              <span class="chip chip-warning" style="font-size:10px;">Due Today</span>
+            </div>
+          </div>
+
+          <!-- 6. Q&A -->
+          <div class="category-card" onclick="showToast('💬 Q&A Board: 14 questions answered by mentors')">
+            <div style="display:flex; justify-content:space-between; align-items:center;">
+              <span style="font-weight:800; font-size:13px;">❓ Q&A: Ask Questions & Read Answers</span>
+              <span style="font-size:11px; color:var(--neutral-500);">14 threads</span>
+            </div>
+          </div>
+
+          <!-- 7. Live Class -->
+          <div class="category-card" onclick="goToScreen('s-live-class')">
+            <div style="display:flex; justify-content:space-between; align-items:center;">
+              <span style="font-weight:800; font-size:13px;">🔴 LIVE CLASS: Thursday Doubt Clearing</span>
+              <span class="chip chip-primary" style="font-size:10px;">7:00 PM</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- =====================================================================
+           VIDEO LESSON SCREEN
            ===================================================================== -->
       <section class="screen-view" id="s-video-lesson">
         <div class="step-header">
-          <button class="btn-ghost" style="align-self:flex-start; padding-left:0;" onclick="goToScreen('s-home')">‹ Back to Dashboard</button>
-          <div class="chip chip-primary" style="align-self:flex-start;">Module 03 · Lesson 01 (Video)</div>
-          <h2 class="page-headline">Conducting Effective User Interviews</h2>
-          <p class="page-subtext">Learn interview scoping, non-leading questions, and note-taking frameworks.</p>
+          <button class="btn-ghost" style="align-self:flex-start; padding-left:0;" onclick="goToScreen('s-module-detail')">‹ Back to Module</button>
+          <h2 class="page-headline">Social Media Strategy</h2>
+          <p class="page-subtext">Module 2 · Lesson 1 · 12 minutes</p>
         </div>
 
-        <!-- Video Player Viewport -->
         <div class="video-player-container">
           <div class="video-screen-mock" style="height:200px;">
             <button class="video-play-btn-large" onclick="toggleVideoPlay()">▶</button>
-            <div style="font-size:12px; margin-top:8px; opacity:0.85;">12:00 min duration</div>
           </div>
           <div class="video-controls-bar">
-            <div class="video-seek-track" onclick="showToast('⏩ Scrubbed')">
-              <div class="video-seek-fill" style="width:65%;"></div>
-            </div>
+            <div class="video-seek-track"><div class="video-seek-fill" style="width:65%;"></div></div>
             <div class="video-controls-row">
               <span>07:48 / 12:00</span>
-              <div style="display:flex; gap:6px;">
-                <span class="chip chip-neutral speed-pill" style="font-size:10px; cursor:pointer;" onclick="setVideoSpeed(1)">1x</span>
-                <span class="chip chip-neutral speed-pill" style="font-size:10px; cursor:pointer;" onclick="setVideoSpeed(1.25)">1.25x</span>
-                <span class="chip chip-neutral speed-pill" style="font-size:10px; cursor:pointer;" onclick="setVideoSpeed(1.5)">1.5x</span>
-              </div>
+              <button class="btn-ghost" style="color:white; padding:0;" onclick="showToast('⚡ Speed: 1.25x')">1.25x</button>
             </div>
           </div>
         </div>
 
-        <!-- Lesson Learning Objectives -->
         <div style="padding:0 20px 14px;">
-          <div class="category-card" style="padding:14px; font-size:12.5px; line-height:1.5;">
-            <strong style="color:var(--color-black); font-size:13.5px; margin-bottom:4px;">Key Objectives:</strong>
-            <div>1. Formulating open-ended prompts without bias</div>
-            <div>2. Capturing user emotional friction points</div>
-            <div>3. Mapping responses into synthesis clusters</div>
+          <div class="category-card" style="padding:12px; font-size:12px; line-height:1.45;">
+            <strong>Learning Objectives:</strong>
+            <div>1. Structuring consistent posting pillars</div>
+            <div>2. Crafting visual hooks for small business clients</div>
+            <div>3. Measuring engagement without expensive tools</div>
           </div>
         </div>
 
@@ -1178,241 +1117,178 @@
       </section>
 
       <!-- =====================================================================
-           20. MODULE DETAIL SCREEN
-           ===================================================================== -->
-      <section class="screen-view" id="s-module-detail">
-        <div class="step-header">
-          <button class="btn-ghost" style="align-self:flex-start; padding-left:0;" onclick="goToScreen('s-home')">‹ Back to Dashboard</button>
-          <div class="chip chip-primary" style="align-self:flex-start;">Module 03</div>
-          <h2 class="page-headline">User Research & Synthesis</h2>
-          <p class="page-subtext">2 of 4 lessons completed · Estimated 1h 15m remaining</p>
-        </div>
-
-        <div style="padding:0 20px 20px; display:flex; flex-direction:column; gap:10px;">
-          <!-- Lesson 1: Video -->
-          <div class="category-card" style="border-left:4px solid var(--success-500);" onclick="goToScreen('s-video-lesson')">
-            <div style="display:flex; justify-content:space-between; align-items:center;">
-              <span style="font-weight:800; font-size:13.5px;">Lesson 01: Introduction to User Interviews</span>
-              <span style="color:var(--success-600); font-weight:800; font-size:11.5px;">✓ Complete</span>
-            </div>
-            <div style="font-size:12px; color:var(--neutral-500);">🎥 VIDEO · 12 min</div>
-          </div>
-
-          <!-- Lesson 2: PDF -->
-          <div class="category-card" style="border-left:4px solid var(--primary-600); background:var(--primary-25);" onclick="goToScreen('s-pdf-lesson')">
-            <div style="display:flex; justify-content:space-between; align-items:center;">
-              <span style="font-weight:800; font-size:13.5px; color:var(--primary-800);">Lesson 02: Synthesis Framework Guide</span>
-              <span class="chip chip-primary" style="font-size:10.5px; padding:2px 6px;">In Progress</span>
-            </div>
-            <div style="font-size:12px; color:var(--neutral-600);">📄 PDF DOCUMENT · 15 min (Page 3 of 8)</div>
-          </div>
-
-          <!-- Lesson 3: Video -->
-          <div class="category-card" onclick="goToScreen('s-video-lesson')">
-            <div style="display:flex; justify-content:space-between; align-items:center;">
-              <span style="font-weight:800; font-size:13.5px;">Lesson 03: Advanced Qualitative Coding</span>
-              <span style="color:var(--neutral-400); font-size:11.5px;">Not started</span>
-            </div>
-            <div style="font-size:12px; color:var(--neutral-500);">🎥 VIDEO · 18 min</div>
-          </div>
-
-          <!-- Lesson 4: Assignment -->
-          <div class="category-card" onclick="goToScreen('s-assignment-detail')">
-            <div style="display:flex; justify-content:space-between; align-items:center;">
-              <span style="font-weight:800; font-size:13.5px;">Lesson 04: Case Study Synthesis Workbench</span>
-              <span class="chip chip-warning" style="font-size:10.5px; padding:2px 6px;">Assignment</span>
-            </div>
-            <div style="font-size:12px; color:var(--neutral-500);">📝 ASSIGNMENT · 30 min</div>
-          </div>
-        </div>
-      </section>
-
-      <!-- =====================================================================
-           21. PDF LESSON SCREEN (Simulated PDF Viewer)
+           PDF LESSON SCREEN
            ===================================================================== -->
       <section class="screen-view" id="s-pdf-lesson">
         <div class="step-header">
           <button class="btn-ghost" style="align-self:flex-start; padding-left:0;" onclick="goToScreen('s-module-detail')">‹ Back to Module</button>
-          <div class="chip chip-primary" style="align-self:flex-start;">Module 03 · Lesson 02 (PDF Resource)</div>
-          <h2 class="page-headline">Research Synthesis Framework Guide</h2>
+          <h2 class="page-headline">Content Pillar Guide (PDF)</h2>
         </div>
 
-        <div class="pdf-reader-frame">
-          <div class="pdf-toolbar">
+        <div style="margin:0 20px 14px; background:#F8FAFC; border:1px solid var(--neutral-200); border-radius:var(--radius-lg); padding:16px;">
+          <div style="display:flex; justify-content:space-between; align-items:center; border-bottom:1px solid var(--neutral-200); padding-bottom:8px; font-size:12px;">
             <span id="pdfPageNum" style="font-weight:700;">Page 3 of 8</span>
             <div style="display:flex; gap:6px;">
               <button class="rev-pill-btn" onclick="prevPdfPage()">‹ Prev</button>
               <button class="rev-pill-btn" onclick="nextPdfPage()">Next ›</button>
             </div>
           </div>
-          <div class="pdf-page-sheet" id="pdfContentSheet">
-            <h3 style="font-size:15px; font-weight:800; margin-bottom:8px;">3. Identifying the Primary Friction Point</h3>
-            <p style="margin-bottom:8px;">Focus on drop-off moments where user expectations diverge from system state feedback.</p>
-            <div style="background:var(--neutral-50); border:1px solid var(--neutral-200); border-radius:6px; padding:10px; font-size:11.5px; font-family:var(--font-mono); margin:8px 0;">
-              [User Quote #4]: "I couldn't tell if my upload went through or if it was still loading in the background."
-            </div>
-            <p>Group similar statements under the 'Feedback Ambiguity' theme to justify adding explicit status banners in your redesign.</p>
+          <div id="pdfContentSheet" style="background:white; border:1px solid var(--neutral-200); border-radius:6px; padding:14px; margin-top:10px; min-height:200px; font-size:12px; line-height:1.5;">
+            <h3 style="font-size:14px; font-weight:800; margin-bottom:6px;">3. Crafting the Weekly Schedule</h3>
+            <p>How to organize visual assets, captions, and publishing cadences using Notion or Google Sheets.</p>
           </div>
         </div>
 
         <div style="padding:0 20px 24px; margin-top:auto;">
-          <button class="btn-primary" onclick="completePdfLesson()">Mark PDF as Read & Complete →</button>
+          <button class="btn-primary" onclick="completePdfLesson()">Mark Complete & Back to Module →</button>
         </div>
       </section>
 
       <!-- =====================================================================
-           22. ASSIGNMENT WORKBENCH & SUBMISSION
+           PART 7 — ASSIGNMENTS
            ===================================================================== -->
-      <section class="screen-view" id="s-assignment-detail">
+      <section class="screen-view" id="s-assignment">
         <div class="step-header">
-          <button class="btn-ghost" style="align-self:flex-start; padding-left:0;" onclick="goToScreen('s-home')">‹ Back to Dashboard</button>
+          <button class="btn-ghost" style="align-self:flex-start; padding-left:0;" onclick="goToScreen('s-learn-dashboard')">‹ Back to LMS</button>
           <div style="display:flex; justify-content:space-between; align-items:center;">
             <span class="chip chip-warning" id="assignDetailBadge">In Progress</span>
-            <span style="font-size:12px; font-weight:700; color:var(--neutral-500);">Est: 30 min</span>
+            <span style="font-size:11.5px; font-weight:700; color:var(--neutral-500);">Est: 30 min</span>
           </div>
-          <h2 class="page-headline">Portfolio Case Study: User Research Synthesis</h2>
-          <p class="page-subtext">Synthesize user transcripts into 3 core theme clusters for your portfolio.</p>
+          <h2 class="page-headline">Social Media 1-Week Calendar</h2>
+          <p class="page-subtext">Draft 5 scheduled posts with caption hooks and graphic ideas.</p>
         </div>
 
-        <div style="padding:0 20px 14px; display:flex; flex-direction:column; gap:10px; font-size:12.5px; color:var(--neutral-700); line-height:1.45;">
-          <div style="background:var(--neutral-50); border:1px solid var(--neutral-200); border-radius:var(--radius-md); padding:12px;">
-            <strong>Deliverable Requirements:</strong>
-            <div style="margin-top:4px;">1. Affinity diagram grouping 5 interview quotes</div>
-            <div>2. Core user friction point definition</div>
-            <div>3. One "How Might We" opportunity statement</div>
-          </div>
-        </div>
-
-        <!-- File Upload Simulator -->
         <div style="padding:0 20px 10px;">
           <div style="border:2px dashed var(--primary-300); background:var(--primary-25); border-radius:var(--radius-md); padding:16px; text-align:center; cursor:pointer;" onclick="simulateAssignmentFile()">
             <div style="font-size:24px;">📄</div>
             <div style="font-weight:700; font-size:13px; color:var(--primary-700); margin-top:2px;" id="fileUploadPrompt">
-              Tap to attach Portfolio_CaseStudy_Synthesis.pdf
+              Tap to attach SocialMedia_Strategy.pdf
             </div>
-            <div style="font-size:11px; color:var(--neutral-500);">PDF, Figma URL, or Notion link · Max 25MB</div>
+            <div style="font-size:11px; color:var(--neutral-500);">PDF, Notion URL, or Figma link</div>
           </div>
         </div>
 
-        <!-- Link & Notes Input -->
         <div style="padding:0 20px 14px; display:flex; flex-direction:column; gap:8px;">
-          <input type="text" class="input-custom-box" value="https://figma.com/@arka/case-study-synthesis" placeholder="Optional Figma / Notion Link">
-          <textarea class="input-custom-box" rows="2" placeholder="Submission reflection notes for Sarah (mentor)...">Synthesized 5 user interviews on onboarding drop-off.</textarea>
+          <input type="text" class="input-custom-box" value="https://notion.so/minakshi-social-strategy" placeholder="Optional Link URL">
+          <textarea class="input-custom-box" rows="2" placeholder="Notes for counsellor review...">Drafted 5 content pillars for local brand campaign.</textarea>
         </div>
 
         <div style="padding:0 20px 24px; margin-top:auto;">
-          <button class="btn-primary" onclick="submitAssignmentWork()">Submit Work for Review →</button>
+          <button class="btn-primary" onclick="submitAssignmentWork()">Submit Assignment for Review →</button>
         </div>
       </section>
 
       <!-- =====================================================================
-           23. LIVE SESSION DETAIL & VIRTUAL ROOM
+           LIVE CLASS DETAIL
            ===================================================================== -->
-      <section class="screen-view" id="s-live-session">
+      <section class="screen-view" id="s-live-class">
         <div class="step-header">
-          <button class="btn-ghost" style="align-self:flex-start; padding-left:0;" onclick="goToScreen('s-home')">‹ Back to Dashboard</button>
-          <div class="chip chip-primary" style="align-self:flex-start;">Live Cohort Workshop</div>
-          <h2 class="page-headline">Portfolio Review Workshop</h2>
-          <p class="page-subtext">Live critique and structure walkthrough for transitioning designers.</p>
+          <button class="btn-ghost" style="align-self:flex-start; padding-left:0;" onclick="goToScreen('s-learn-dashboard')">‹ Back</button>
+          <div class="chip chip-primary" style="align-self:flex-start;">Live Doubt Clearing</div>
+          <h2 class="page-headline">Thursday Doubt Clearing Session</h2>
+          <p class="page-subtext">Bring your questions from Module 2.</p>
         </div>
 
         <div style="padding:0 20px 14px;">
-          <div style="background:var(--neutral-50); border:1px solid var(--neutral-200); border-radius:var(--radius-md); padding:14px; font-size:12.5px; line-height:1.5; color:var(--neutral-700);">
-            📅 <strong>Thursday, 7:00 PM – 7:45 PM</strong> (45 min)<br>
-            👤 <strong>Host:</strong> Sarah Johnson (Staff Product Designer @ Linear)<br>
-            👥 <strong>Attendees:</strong> 24 Cohort Peers Joined<br>
-            📋 <strong>Agenda:</strong> Case study storytelling, avoiding common portfolio traps, presenting technical trade-offs.
-          </div>
-        </div>
-
-        <!-- Simulated Live Chat Stream -->
-        <div style="padding:0 20px 14px;">
-          <div style="border:1px solid var(--neutral-200); border-radius:var(--radius-md); background:#FAFAFA; height:120px; overflow-y:auto; padding:10px; font-size:11.5px; display:flex; flex-direction:column; gap:6px;" id="liveChatStream">
-            <div><strong>Sarah (Host):</strong> Welcome everyone! Feel free to post your portfolio questions here.</div>
-            <div><strong>Priya:</strong> Excited for the case study structure teardown!</div>
-          </div>
-          <div style="display:flex; gap:6px; margin-top:6px;">
-            <input type="text" class="input-custom-box" id="liveChatInput" placeholder="Ask Sarah a question..." style="height:38px; font-size:12px;">
-            <button class="btn-primary" style="width:70px; height:38px; font-size:12px;" onclick="sendLiveChat()">Send</button>
+          <div style="background:var(--neutral-50); border:1px solid var(--neutral-200); border-radius:var(--radius-md); padding:14px; font-size:12.5px; line-height:1.5;">
+            📅 <strong>Thursday · 7:00 PM – 7:45 PM</strong> (45 minutes)<br>
+            👤 <strong>Host:</strong> Sarah Johnson (Career Lead)<br>
+            💬 <strong>Format:</strong> Interactive live screen share + Q&A
           </div>
         </div>
 
         <div style="padding:0 20px 24px; margin-top:auto;">
-          <button class="btn-primary" onclick="joinLiveRoom()">Enter Live Video Room (Zoom / WebRTC) →</button>
+          <button class="btn-primary" onclick="showToast('🎥 Joining Live Room with 18 cohort peers...')">Join Class Room →</button>
         </div>
       </section>
 
       <!-- =====================================================================
-           24. LEARNING PLAN TAB
+           PART 8 — GAMIFICATION & LEADERBOARD
            ===================================================================== -->
-      <section class="screen-view" id="s-learn">
+      <section class="screen-view" id="s-leaderboard">
         <div class="step-header">
           <div class="mentra-logo"><span>Mentra</span></div>
-          <h2 class="page-headline">Learning Plan</h2>
-          <p class="page-subtext">Product Design Career Accelerator · 8 Modules</p>
+          <h2 class="page-headline">Learning leaderboard</h2>
+          <p class="page-subtext">Celebrate progress with fellow comeback learners.</p>
         </div>
 
-        <div style="padding:0 20px 20px; display:flex; flex-direction:column; gap:10px;">
-          <!-- Module 1 -->
-          <div class="category-card" style="border-left:4px solid var(--success-500);" onclick="goToScreen('s-module-detail')">
-            <div style="display:flex; justify-content:space-between; align-items:center;">
-              <span style="font-weight:800; font-size:13.5px;">Week 1: Design Foundations</span>
-              <span style="color:var(--success-600); font-weight:800; font-size:11.5px;">✓ Complete</span>
+        <!-- Badges Grid -->
+        <div class="section-header"><h3 class="section-title">Earned Badges</h3></div>
+        <div class="badge-grid">
+          <div class="badge-box"><div class="badge-icon">🌟</div><div class="badge-title">First Lesson</div></div>
+          <div class="badge-box"><div class="badge-icon">🔥</div><div class="badge-title">7-Day Streak</div></div>
+          <div class="badge-box"><div class="badge-icon">📦</div><div class="badge-title">Module Master</div></div>
+          <div class="badge-box"><div class="badge-icon">📝</div><div class="badge-title">Assignment Pro</div></div>
+        </div>
+
+        <!-- Leaderboard List -->
+        <div class="section-header"><h3 class="section-title">Top Learners This Week</h3></div>
+        <div class="leaderboard-list">
+          <div class="leaderboard-item">
+            <div style="display:flex; align-items:center; gap:10px;">
+              <strong style="font-size:14px; color:var(--primary-600);">1</strong>
+              <div>
+                <div style="font-weight:800; font-size:13.5px;">Priya Sharma</div>
+                <div style="font-size:11px; color:var(--neutral-500);">3 modules · 8-day streak</div>
+              </div>
             </div>
-            <div style="font-size:12px; color:var(--neutral-500);">Typography, layout systems, component tokens</div>
+            <span class="chip chip-primary" style="font-size:11px;">1,240 pts</span>
           </div>
 
-          <!-- Module 2 -->
-          <div class="category-card" style="border-left:4px solid var(--success-500);" onclick="goToScreen('s-module-detail')">
-            <div style="display:flex; justify-content:space-between; align-items:center;">
-              <span style="font-weight:800; font-size:13.5px;">Week 2: UX Strategy & Scoping</span>
-              <span style="color:var(--success-600); font-weight:800; font-size:11.5px;">✓ Complete</span>
+          <div class="leaderboard-item current-user">
+            <div style="display:flex; align-items:center; gap:10px;">
+              <strong style="font-size:14px; color:var(--primary-600);">2</strong>
+              <div>
+                <div style="font-weight:800; font-size:13.5px;">Minakshi (You) ⭐</div>
+                <div style="font-size:11px; color:var(--neutral-500);">2 modules · 5-day streak</div>
+              </div>
             </div>
-            <div style="font-size:12px; color:var(--neutral-500);">Business metrics, problem definition, user personas</div>
+            <span class="chip chip-success" style="font-size:11px;">1,180 pts</span>
           </div>
 
-          <!-- Module 3 (Current) -->
-          <div class="category-card" style="border-left:4px solid var(--primary-600); background:var(--primary-25);" onclick="goToScreen('s-module-detail')">
-            <div style="display:flex; justify-content:space-between; align-items:center;">
-              <span style="font-weight:800; font-size:13.5px; color:var(--primary-800);">Week 3: User Research (Current)</span>
-              <span class="chip chip-primary" style="padding:2px 8px; font-size:10.5px;">In Progress</span>
+          <div class="leaderboard-item">
+            <div style="display:flex; align-items:center; gap:10px;">
+              <strong style="font-size:14px; color:var(--neutral-400);">3</strong>
+              <div>
+                <div style="font-weight:800; font-size:13.5px;">Ananya Roy</div>
+                <div style="font-size:11px; color:var(--neutral-500);">2 modules · 4-day streak</div>
+              </div>
             </div>
-            <div style="font-size:12px; color:var(--neutral-700); margin-top:2px;">
-              Includes: Portfolio Synthesis Assignment & Live Review Workshop
-            </div>
-          </div>
-
-          <!-- Module 4 -->
-          <div class="category-card">
-            <div style="display:flex; justify-content:space-between; align-items:center;">
-              <span style="font-weight:800; font-size:13.5px;">Week 4: Interaction Design & State</span>
-              <span style="color:var(--neutral-400); font-size:11.5px; font-weight:700;">🔒 Next</span>
-            </div>
-            <div style="font-size:12px; color:var(--neutral-500);">Micro-interactions, state transitions, usability testing</div>
-          </div>
-
-          <!-- Module 5 -->
-          <div class="category-card">
-            <div style="display:flex; justify-content:space-between; align-items:center;">
-              <span style="font-weight:800; font-size:13.5px;">Week 5: Design Systems at Scale</span>
-              <span style="color:var(--neutral-400); font-size:11.5px; font-weight:700;">🔒 Locked</span>
-            </div>
-            <div style="font-size:12px; color:var(--neutral-500);">Figma variables, design tokens, developer handoff</div>
-          </div>
-
-          <!-- Module 6 -->
-          <div class="category-card">
-            <div style="display:flex; justify-content:space-between; align-items:center;">
-              <span style="font-weight:800; font-size:13.5px;">Week 6: Portfolio Case Study Packaging</span>
-              <span style="color:var(--neutral-400); font-size:11.5px; font-weight:700;">🔒 Locked</span>
-            </div>
-            <div style="font-size:12px; color:var(--neutral-500);">2 full case studies formatted for hiring managers</div>
+            <span class="chip chip-neutral" style="font-size:11px;">1,050 pts</span>
           </div>
         </div>
       </section>
 
       <!-- =====================================================================
-           25. CAREER PROGRESS SCREEN (Readiness, Rings & Breakdown)
+           PART 9 — COMMUNITY
+           ===================================================================== -->
+      <section class="screen-view" id="s-community">
+        <div class="step-header">
+          <div style="display:flex; justify-content:space-between; align-items:center;">
+            <div class="mentra-logo"><span>Mentra</span></div>
+            <button class="btn-primary" style="width:auto; height:34px; padding:0 12px; font-size:11.5px;" onclick="openModal('modalCreatePost')">
+              + Post
+            </button>
+          </div>
+          <h2 class="page-headline">Community</h2>
+          <p class="page-subtext">Connect, celebrate wins, and ask fellow learners.</p>
+        </div>
+
+        <!-- Community Filter Pills -->
+        <div class="category-filter-scroller">
+          <button class="cat-tab-pill comm-cat-pill active" onclick="filterCommunityCategory('All', this)">All</button>
+          <button class="cat-tab-pill comm-cat-pill" onclick="filterCommunityCategory('Wins', this)">Wins</button>
+          <button class="cat-tab-pill comm-cat-pill" onclick="filterCommunityCategory('Career Restart', this)">Career Restart</button>
+          <button class="cat-tab-pill comm-cat-pill" onclick="filterCommunityCategory('Job Search', this)">Job Search</button>
+        </div>
+
+        <div class="community-feed" id="communityFeedContainer">
+          <!-- Rendered dynamically -->
+        </div>
+      </section>
+
+      <!-- =====================================================================
+           PART 10 & 11 — CAREER PROGRESS & READINESS
            ===================================================================== -->
       <section class="screen-view" id="s-progress">
         <div class="step-header">
@@ -1421,71 +1297,48 @@
           <p class="page-subtext">Track your skills and progress toward becoming career-ready.</p>
         </div>
 
-        <!-- 3 Progress Rings -->
-        <div class="ring-row">
-          <div class="ring-card" onclick="openModal('modalExplainableReadiness')">
-            <div class="ring-circle" style="background:conic-gradient(var(--primary-600) 0% 72%, var(--neutral-200) 72% 100%);">
-              <div class="ring-circle-inner" id="progRingReadiness">72%</div>
-            </div>
-            <div class="ring-label">Career Readiness ⓘ</div>
+        <!-- Progress Metrics -->
+        <div style="padding:0 20px 14px; display:grid; grid-template-columns:1fr 1fr; gap:8px;">
+          <div class="category-card" onclick="openModal('modalExplainableReadiness')">
+            <div style="font-size:11px; font-weight:800; color:var(--primary-600);">CAREER READINESS</div>
+            <div style="font-size:22px; font-weight:800; color:var(--color-black); margin-top:2px;">62%</div>
+            <div style="font-size:11px; color:var(--neutral-500);">Tap for full breakdown ⓘ</div>
           </div>
-
-          <div class="ring-card" onclick="goToScreen('s-learn')">
-            <div class="ring-circle" style="background:conic-gradient(var(--success-500) 0% 42%, var(--neutral-200) 42% 100%);">
-              <div class="ring-circle-inner" id="progRingProgramme">42%</div>
-            </div>
-            <div class="ring-label">Programme Progress</div>
+          <div class="category-card">
+            <div style="font-size:11px; font-weight:800; color:var(--success-700);">PROGRAMME PROGRESS</div>
+            <div style="font-size:22px; font-weight:800; color:var(--color-black); margin-top:2px;">42%</div>
+            <div style="font-size:11px; color:var(--neutral-500);">Module 2 of 8</div>
           </div>
-
-          <div class="ring-card" onclick="openModal('modalExplainableReadiness')">
-            <div class="ring-circle" style="background:conic-gradient(var(--warning-500) 0% 82%, var(--neutral-200) 82% 100%);">
-              <div class="ring-circle-inner">82%</div>
-            </div>
-            <div class="ring-label">Profile Complete</div>
+          <div class="category-card">
+            <div style="font-size:11px; font-weight:800; color:var(--neutral-700);">SKILLS VERIFIED</div>
+            <div style="font-size:22px; font-weight:800; color:var(--color-black); margin-top:2px;">6 / 12</div>
+            <div style="font-size:11px; color:var(--neutral-500);">50% verified</div>
           </div>
-        </div>
-
-        <!-- Verified Skills Checklist -->
-        <div class="section-header">
-          <h3 class="section-title">Verified Skills Matrix</h3>
-        </div>
-        <div style="padding:0 20px 14px; display:flex; flex-direction:column; gap:8px;">
-          <div class="category-card" style="padding:10px 14px; flex-direction:row; justify-content:space-between; align-items:center;">
-            <span style="font-weight:700; font-size:13px;">User Research & Synthesis</span>
-            <span style="color:var(--success-600); font-weight:800; font-size:12px;">✓ Verified</span>
-          </div>
-          <div class="category-card" style="padding:10px 14px; flex-direction:row; justify-content:space-between; align-items:center;">
-            <span style="font-weight:700; font-size:13px;">Wireframing & Layout Grids</span>
-            <span style="color:var(--success-600); font-weight:800; font-size:12px;">✓ Verified</span>
-          </div>
-          <div class="category-card" style="padding:10px 14px; flex-direction:row; justify-content:space-between; align-items:center;">
-            <span style="font-weight:700; font-size:13px;">Interaction Prototyping</span>
-            <span style="color:var(--primary-600); font-weight:800; font-size:12px;">60%</span>
-          </div>
-          <div class="category-card" style="padding:10px 14px; flex-direction:row; justify-content:space-between; align-items:center;">
-            <span style="font-weight:700; font-size:13px;">Portfolio Case Studies</span>
-            <span style="color:var(--warning-600); font-weight:800; font-size:12px;">40% (In Progress)</span>
+          <div class="category-card">
+            <div style="font-size:11px; font-weight:800; color:var(--neutral-700);">ASSIGNMENTS</div>
+            <div style="font-size:22px; font-weight:800; color:var(--color-black); margin-top:2px;">4 / 8</div>
+            <div style="font-size:11px; color:var(--neutral-500);">18 learning hours</div>
           </div>
         </div>
 
         <div style="padding:0 20px 24px;">
           <button class="btn-primary" onclick="openModal('modalExplainableReadiness')">
-            View Full Readiness Breakdown (72%) →
+            View Full Readiness Breakdown →
           </button>
         </div>
       </section>
 
       <!-- =====================================================================
-           26. 100% READINESS CELEBRATION
+           PART 14 — 100% READINESS & WHAT'S NEXT
            ===================================================================== -->
       <section class="screen-view" id="s-celebration" style="text-align:center; padding:32px 24px; justify-content:center; align-items:center;">
         <div style="width:96px; height:96px; border-radius:50%; background:var(--success-50); border:3px solid var(--success-200); display:flex; align-items:center; justify-content:center; margin-bottom:24px;">
           <span style="font-size:48px;">🏆</span>
         </div>
         <div style="font-size:13px; font-weight:800; color:var(--success-600); text-transform:uppercase; letter-spacing:0.06em;">100% Career Ready</div>
-        <h2 class="page-headline" style="font-size:28px; margin-top:6px;">You're ready.</h2>
+        <h2 class="page-headline" style="font-size:28px; margin-top:6px;">You're ready!</h2>
         <p class="page-subtext" style="max-width:280px; margin-top:10px;">
-          You've completed your learning and preparation roadmap. Now it's time to take your next career step.
+          You've completed your learning and preparation milestones. Now take your next career action.
         </p>
 
         <div style="width:100%; margin-top:36px;">
@@ -1493,183 +1346,133 @@
         </div>
       </section>
 
-      <!-- =====================================================================
-           27. "WHAT'S NEXT?" ACTION HUB (3 Core Options)
-           ===================================================================== -->
+      <!-- WHAT'S NEXT ACTION HUB -->
       <section class="screen-view" id="s-whats-next">
         <div class="step-header">
           <div class="mentra-logo"><span>Mentra</span></div>
-          <div class="chip chip-success" style="align-self:flex-start;">100% Career Ready Achieved</div>
           <h2 class="page-headline">What's next?</h2>
           <p class="page-subtext">You're ready. Choose how you want to move forward.</p>
         </div>
 
         <div style="padding:0 20px 24px; display:flex; flex-direction:column; gap:12px;">
-          <!-- Option 1: Resume Help -->
-          <div class="category-card" style="padding:16px; border:1.5px solid var(--primary-200);" onclick="goToScreen('s-resume-help')">
+          <div class="category-card" onclick="goToScreen('s-resume-help')">
             <div style="font-size:11px; font-weight:800; color:var(--primary-600); text-transform:uppercase;">1. Resume Help</div>
             <div style="font-size:16px; font-weight:800; color:var(--color-black); margin-top:2px;">Polish your resume & ATS</div>
-            <p style="font-size:12.5px; color:var(--neutral-600); margin-top:4px;">Frame your 8-month career break and format for Product Design roles.</p>
-            <button class="btn-secondary" style="height:38px; margin-top:10px;">Improve Resume →</button>
+            <p style="font-size:12px; color:var(--neutral-600); margin-top:4px;">Frame your 2–5 year career break and highlight modern digital tools.</p>
+            <button class="btn-secondary" style="height:38px; margin-top:8px;">Improve Resume →</button>
           </div>
 
-          <!-- Option 2: Mock Interview -->
-          <div class="category-card" style="padding:16px; border:1.5px solid var(--cyan-200);" onclick="goToScreen('s-mock-interview')">
+          <div class="category-card" onclick="goToScreen('s-mock-interview')">
             <div style="font-size:11px; font-weight:800; color:var(--cyan-700); text-transform:uppercase;">2. Mock Interview</div>
             <div style="font-size:16px; font-weight:800; color:var(--color-black); margin-top:2px;">Practice a mock interview</div>
-            <p style="font-size:12.5px; color:var(--neutral-600); margin-top:4px;">Rehearse real behavioral and craft questions with STAR framework tips.</p>
-            <button class="btn-secondary" style="height:38px; margin-top:10px; background:var(--cyan-50); color:var(--cyan-800); border-color:var(--cyan-200);">Start Mock Interview →</button>
+            <p style="font-size:12px; color:var(--neutral-600); margin-top:4px;">Rehearse real questions with STAR framework tips.</p>
+            <button class="btn-secondary" style="height:38px; margin-top:8px;">Start Mock Interview →</button>
           </div>
 
-          <!-- Option 3: Opportunities / Referral -->
-          <div class="category-card" style="padding:16px; border:1.5px solid var(--success-200);" onclick="goToScreen('s-referrals')">
+          <div class="category-card" onclick="goToScreen('s-referrals')">
             <div style="font-size:11px; font-weight:800; color:var(--success-700); text-transform:uppercase;">3. Referral & Opportunities</div>
             <div style="font-size:16px; font-weight:800; color:var(--color-black); margin-top:2px;">Explore matched opportunities</div>
-            <p style="font-size:12.5px; color:var(--neutral-600); margin-top:4px;">Discover verified openings and request intros from mentor alumni.</p>
-            <button class="btn-secondary" style="height:38px; margin-top:10px; background:var(--success-50); color:var(--success-800); border-color:var(--success-200);">Explore Opportunities →</button>
+            <p style="font-size:12px; color:var(--neutral-600); margin-top:4px;">Discover verified work-from-home openings with mentor referrals.</p>
+            <button class="btn-secondary" style="height:38px; margin-top:8px;">Explore Opportunities →</button>
           </div>
         </div>
       </section>
 
-      <!-- =====================================================================
-           28. RESUME HELP SCREEN
-           ===================================================================== -->
+      <!-- RESUME HELP SCREEN -->
       <section class="screen-view" id="s-resume-help">
         <div class="step-header">
           <button class="btn-ghost" style="align-self:flex-start; padding-left:0;" onclick="goToScreen('s-whats-next')">‹ Back to What's Next</button>
-          <h2 class="page-headline">Resume & ATS Readiness</h2>
-          <p class="page-subtext">Product Designer ATS Checklist & Career Break Narrative</p>
+          <h2 class="page-headline">Resume & Career Break Help</h2>
         </div>
-
         <div style="padding:0 20px 14px;">
-          <!-- Career Break Framing Playbook -->
-          <div style="background:var(--primary-25); border:1.5px solid var(--primary-200); border-radius:var(--radius-md); padding:14px; font-size:12.5px; line-height:1.45;">
-            <strong style="color:var(--primary-800); font-size:13px;">💡 How to Frame Your 8-Month Career Break:</strong>
-            <div style="margin-top:6px; color:var(--neutral-800); font-style:italic;">
-              "Took an intentional 8-month sabbatical to upskill in modern Product Design systems, user research methodologies, and complete end-to-end case study deliverables through Mentra."
+          <div style="background:var(--primary-25); border:1.5px solid var(--primary-200); border-radius:var(--radius-md); padding:14px; font-size:12px; line-height:1.45;">
+            <strong style="color:var(--primary-800);">💡 How to Frame Your 2–5 Year Break:</strong>
+            <div style="margin-top:4px; font-style:italic;">
+              "Dedicated 3 years to family relocation, followed by intentional structured upskilling in modern Digital Marketing and social campaign management through Mentra."
             </div>
           </div>
         </div>
-
-        <div style="padding:0 20px 20px; display:flex; flex-direction:column; gap:8px;">
-          <div class="option-card selected"><span class="option-title">✓ ATS Formatting & Structure</span><div class="check-box">✓</div></div>
-          <div class="option-card selected"><span class="option-title">✓ 3 Yrs Experience Highlights</span><div class="check-box">✓</div></div>
-          <div class="option-card selected"><span class="option-title">✓ Core Skills (Figma, Tokens, Research)</span><div class="check-box">✓</div></div>
-          <div class="option-card selected"><span class="option-title">✓ Measurable Outcome Metrics</span><div class="check-box">✓</div></div>
-        </div>
-
         <div style="padding:0 20px 24px;">
-          <button class="btn-primary" onclick="showToast('📄 Application-ready Resume PDF exported!')">Download Ready Resume PDF →</button>
+          <button class="btn-primary" onclick="showToast('📄 Application-ready Resume PDF downloaded!')">Download Ready Resume PDF →</button>
         </div>
       </section>
 
-      <!-- =====================================================================
-           29. MOCK INTERVIEW SCREEN
-           ===================================================================== -->
+      <!-- MOCK INTERVIEW SCREEN -->
       <section class="screen-view" id="s-mock-interview">
         <div class="step-header">
           <button class="btn-ghost" style="align-self:flex-start; padding-left:0;" onclick="goToScreen('s-whats-next')">‹ Back to What's Next</button>
           <div class="chip chip-primary" style="align-self:flex-start;" id="interviewQNum">Question 1 of 3</div>
           <h2 class="page-headline">Mock Interview Practice</h2>
-          <p class="page-subtext">Structured question rehearsal with STAR method guidance.</p>
         </div>
-
         <div style="padding:0 20px 14px;">
           <div style="background:var(--neutral-50); border:1.5px solid var(--primary-200); border-radius:var(--radius-lg); padding:16px;">
             <div style="font-size:11px; font-weight:800; color:var(--primary-600); text-transform:uppercase;" id="interviewQType">
-              Behavioral & Career Transition
+              Career Break & Motivation
             </div>
             <h4 style="font-size:15px; font-weight:800; color:var(--color-black); margin-top:6px;" id="interviewQText">
-              "Tell me about how you handled your 8-month career break and what motivated your transition to Product Design."
+              "Walk me through your career break and what inspired your comeback to Digital Marketing."
             </h4>
-            
             <div style="background:white; border:1px solid var(--neutral-200); border-radius:var(--radius-sm); padding:10px; margin-top:12px; font-size:12px; color:var(--neutral-700);">
-              <strong>Mentor Response Tip:</strong> <span id="interviewQTip">Focus on proactive learning, skill refresh, and intentional focus on user-centric product craft.</span>
+              <strong>Mentor Response Tip:</strong> <span id="interviewQTip">Focus on proactive upskilling, personal growth, and practical project application through Mentra.</span>
             </div>
-
-            <!-- Record Audio Simulator -->
-            <div style="margin-top:14px; display:flex; flex-direction:column; gap:8px;">
+            <div style="margin-top:14px;">
               <button class="btn-primary" id="recordAudioBtn" style="height:42px; font-size:13px;" onclick="toggleInterviewRecording()">
                 🎙️ Record Practice Answer
               </button>
-              <span id="recordStatusBadge" style="display:none; text-align:center; font-size:11.5px; color:var(--error-600); font-weight:700;">
+              <span id="recordStatusBadge" style="display:none; text-align:center; font-size:11px; color:var(--error-600); font-weight:700; display:block; margin-top:6px;">
                 ● Recording practice response (0:14)...
               </span>
             </div>
           </div>
         </div>
-
         <div style="padding:0 20px 24px; display:flex; gap:10px;">
           <button class="btn-outline" style="flex:1;" onclick="prevInterviewQ()">‹ Previous</button>
           <button class="btn-primary" style="flex:1;" onclick="nextInterviewQ()">Next Question ›</button>
         </div>
       </section>
 
-      <!-- =====================================================================
-           30. OPPORTUNITIES & REFERRAL BOARD
-           ===================================================================== -->
+      <!-- OPPORTUNITIES SCREEN -->
       <section class="screen-view" id="s-referrals">
         <div class="step-header">
           <button class="btn-ghost" style="align-self:flex-start; padding-left:0;" onclick="goToScreen('s-whats-next')">‹ Back to What's Next</button>
           <h2 class="page-headline">Find Opportunities</h2>
-          <p class="page-subtext">Matched Product Designer openings with mentor referral intros.</p>
         </div>
-
         <div style="padding:0 20px 20px; display:flex; flex-direction:column; gap:12px;">
-          <div class="category-card" style="padding:16px;">
-            <div style="display:flex; justify-content:space-between;">
-              <span style="font-weight:800; font-size:15px;">Figma · Product Designer</span>
-              <span class="match-tag" style="padding:2px 8px; font-size:10.5px;">98% Match</span>
-            </div>
-            <div style="font-size:12px; color:var(--neutral-500); margin-top:2px;">Remote / Hybrid · 3+ yrs experience</div>
-            <div style="font-size:11.5px; color:var(--neutral-600); margin-top:4px;">Salary benchmark: ₹18L – ₹24L / yr</div>
-            <button class="btn-primary" style="height:36px; font-size:12px; margin-top:10px;" onclick="showToast('🤝 Referral request submitted to Mentra mentor network!')">
+          <div class="category-card" style="padding:14px;">
+            <div style="font-weight:800; font-size:15px;">Remote Campaign Associate · Meesho</div>
+            <div style="font-size:12px; color:var(--neutral-500); margin-top:2px;">Work from home · ₹35k–₹45k / mo</div>
+            <button class="btn-primary" style="height:36px; font-size:12px; margin-top:8px;" onclick="showToast('🤝 Referral request sent to Mentra mentor network!')">
               Request Mentor Referral →
             </button>
           </div>
-
-          <div class="category-card" style="padding:16px;">
-            <div style="display:flex; justify-content:space-between;">
-              <span style="font-weight:800; font-size:15px;">Linear · Product Designer</span>
-              <span class="match-tag" style="padding:2px 8px; font-size:10.5px;">95% Match</span>
-            </div>
-            <div style="font-size:12px; color:var(--neutral-500); margin-top:2px;">Remote · 3+ yrs experience</div>
-            <div style="font-size:11.5px; color:var(--neutral-600); margin-top:4px;">Salary benchmark: ₹20L – ₹28L / yr</div>
-            <button class="btn-primary" style="height:36px; font-size:12px; margin-top:10px;" onclick="showToast('🤝 Referral request submitted!')">
+          <div class="category-card" style="padding:14px;">
+            <div style="font-weight:800; font-size:15px;">Social Media Specialist · Nykaa</div>
+            <div style="font-size:12px; color:var(--neutral-500); margin-top:2px;">Hybrid / Flexible · ₹40k–₹55k / mo</div>
+            <button class="btn-primary" style="height:36px; font-size:12px; margin-top:8px;" onclick="showToast('🤝 Referral request sent!')">
               Request Mentor Referral →
             </button>
           </div>
         </div>
       </section>
 
-      <!-- =====================================================================
-           31. PROFILE & SETTINGS TAB
-           ===================================================================== -->
+      <!-- PROFILE & SETTINGS TAB -->
       <section class="screen-view" id="s-profile">
         <div class="step-header">
           <div class="mentra-logo"><span>Mentra</span></div>
           <h2 class="page-headline">Profile & Settings</h2>
         </div>
-
         <div style="padding:0 20px 20px; display:flex; flex-direction:column; gap:12px;">
           <div style="background:var(--neutral-50); border:1px solid var(--neutral-200); border-radius:var(--radius-lg); padding:16px; display:flex; align-items:center; gap:14px;">
             <div style="width:52px; height:52px; border-radius:50%; background:var(--primary-600); color:white; font-weight:800; font-size:20px; display:flex; align-items:center; justify-content:center;">
-              A
+              M
             </div>
             <div>
-              <div style="font-size:17px; font-weight:800; color:var(--color-black);">Arka</div>
-              <div style="font-size:13px; color:var(--neutral-600);">Restarting into Product Design · 3 yrs exp</div>
-              <div style="font-size:12px; font-weight:700; color:var(--primary-600); margin-top:2px;">Programme: Accelerator (42%)</div>
+              <div style="font-size:17px; font-weight:800; color:var(--color-black);">Minakshi</div>
+              <div style="font-size:12.5px; color:var(--neutral-600);">Restarting into Digital Marketing · 2–5 yrs break</div>
             </div>
           </div>
-
-          <div class="category-card">
-            <div style="font-weight:700; font-size:14px; margin-bottom:2px;">Weekly Commitment</div>
-            <div style="font-size:13px; color:var(--neutral-600);">4–6 hours per week · 5-day streak 🔥</div>
-          </div>
-
-          <button class="btn-outline" style="color:var(--error-600); border-color:var(--error-200); margin-top:10px;" onclick="resetAllProgress()">
-            Reset Onboarding & Progress
+          <button class="btn-outline" style="color:var(--error-600); border-color:var(--error-200);" onclick="resetAllProgress()">
+            Reset Discovery Quiz & Progress
           </button>
         </div>
       </section>
@@ -1677,7 +1480,7 @@
     </div>
 
     <!-- =========================================================================
-         PERSISTENT BOTTOM NAVIGATION (Home, Learn, Progress, Profile)
+         PERSISTENT BOTTOM NAVIGATION (5 Tabs: Home, Learn, Community, Progress, Profile)
          ========================================================================= -->
     <nav class="bottom-nav-bar" id="appBottomNav" aria-label="Main Navigation">
       <button class="nav-tab-item active" id="tab-home" onclick="goToScreen('s-home')">
@@ -1685,9 +1488,14 @@
         <span class="nav-tab-label">Home</span>
       </button>
 
-      <button class="nav-tab-item" id="tab-learn" onclick="goToScreen('s-learn')">
+      <button class="nav-tab-item" id="tab-learn" onclick="goToScreen('s-learn-dashboard')">
         <svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
         <span class="nav-tab-label">Learn</span>
+      </button>
+
+      <button class="nav-tab-item" id="tab-community" onclick="goToScreen('s-community')">
+        <svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+        <span class="nav-tab-label">Community</span>
       </button>
 
       <button class="nav-tab-item" id="tab-progress" onclick="goToScreen('s-progress')">
@@ -1705,95 +1513,91 @@
     <div class="phone-home-indicator"></div>
 
     <!-- =========================================================================
-         BOTTOM SHEETS & MODALS (Explainable Readiness, Catchup, Reschedule, Mentor)
+         MODALS (Readiness Breakdown, Counsellor Call, Purchase, Catch-Up)
          ========================================================================= -->
-    <!-- 1. Explainable Readiness Modal -->
+    <!-- 1. Explainable Readiness Breakdown Modal -->
     <div class="modal-backdrop" id="modalExplainableReadiness" onclick="closeAllModals(event)">
       <div class="bottom-sheet" onclick="event.stopPropagation()">
         <div class="sheet-handle"></div>
         <div style="display:flex; justify-content:space-between; align-items:center;">
-          <h3 style="font-size:17px; font-weight:800;">How Your <span id="sheetScoreNum">72%</span> Readiness is Calculated</h3>
+          <h3 style="font-size:17px; font-weight:800;">What's driving your <span id="sheetScoreNum">62%</span> readiness?</h3>
           <button class="btn-ghost" onclick="closeModal('modalExplainableReadiness')">✕</button>
         </div>
-        <p style="font-size:12.5px; color:var(--neutral-600);">
-          Your readiness is driven by verified coursework, portfolio milestones, and interview rehearsals:
+        <p style="font-size:12px; color:var(--neutral-600);">
+          Your readiness score reflects verified skills, coursework, resume strength, and interview confidence:
         </p>
 
         <div style="display:flex; flex-direction:column; gap:8px;">
           <div style="background:var(--neutral-50); border-radius:10px; padding:10px 12px;">
             <div style="display:flex; justify-content:space-between; font-weight:800; font-size:13px;">
-              <span>Resume & Career Break Story</span><span style="color:var(--primary-600);">90%</span>
+              <span>Resume & Break Framing</span><span style="color:var(--primary-600);">75%</span>
             </div>
-            <p style="font-size:11.5px; color:var(--neutral-600); margin-top:2px;">✓ Complete structure and experience highlights.</p>
+            <p style="font-size:11.5px; color:var(--neutral-600); margin-top:2px;">✓ Prior teaching experience and relocation story structured.</p>
           </div>
 
           <div style="background:var(--neutral-50); border-radius:10px; padding:10px 12px;">
             <div style="display:flex; justify-content:space-between; font-weight:800; font-size:13px;">
-              <span>Portfolio Case Studies</span><span style="color:var(--warning-600);">75%</span>
+              <span>Portfolio & Practical Tasks</span><span style="color:var(--warning-600);">60%</span>
             </div>
-            <p style="font-size:11.5px; color:var(--neutral-600); margin-top:2px;">1 case study completed, 1 synthesis pending.</p>
-            <button class="btn-secondary" style="height:32px; font-size:11px; margin-top:6px;" onclick="closeModal('modalExplainableReadiness'); goToScreen('s-assignment-detail')">Submit Assignment (+8%) →</button>
+            <p style="font-size:11.5px; color:var(--neutral-600); margin-top:2px;">1 social calendar assignment pending submission.</p>
+            <button class="btn-secondary" style="height:32px; font-size:11px; margin-top:6px;" onclick="closeModal('modalExplainableReadiness'); goToScreen('s-assignment')">Submit Assignment (+8%) →</button>
           </div>
 
           <div style="background:var(--neutral-50); border-radius:10px; padding:10px 12px;">
             <div style="display:flex; justify-content:space-between; font-weight:800; font-size:13px;">
-              <span>Interview Rehearsals</span><span style="color:var(--primary-600);">60%</span>
+              <span>Digital Tools & Skills</span><span style="color:var(--primary-600);">55%</span>
             </div>
-            <p style="font-size:11.5px; color:var(--neutral-600); margin-top:2px;">1 of 3 practice sessions completed.</p>
-            <button class="btn-secondary" style="height:32px; font-size:11px; margin-top:6px;" onclick="closeModal('modalExplainableReadiness'); goToScreen('s-mock-interview')">Practice Interview →</button>
+            <p style="font-size:11.5px; color:var(--neutral-600); margin-top:2px;">Module 2 Social Media in progress.</p>
           </div>
         </div>
       </div>
     </div>
 
-    <!-- 2. Catch-Up Modal -->
+    <!-- 2. Free Counsellor Call Modal -->
+    <div class="modal-backdrop" id="modalCounsellorCall" onclick="closeAllModals(event)">
+      <div class="bottom-sheet" onclick="event.stopPropagation()">
+        <div class="sheet-handle"></div>
+        <h3 style="font-size:17px; font-weight:800;">Book a Free Career Guidance Call</h3>
+        <p style="font-size:12px; color:var(--neutral-600);">1-on-1 confidential call with a Mentra Career Restart Advisor.</p>
+        <div class="option-card selected"><span class="option-title">Friday · 4:00 PM – 4:15 PM</span><div class="radio-circle">✓</div></div>
+        <button class="btn-primary" onclick="confirmCounsellorCall()">Confirm Free Call Booking ✓</button>
+      </div>
+    </div>
+
+    <!-- 3. Purchase / Enrolment Modal -->
+    <div class="modal-backdrop" id="modalPurchase" onclick="closeAllModals(event)">
+      <div class="bottom-sheet" onclick="event.stopPropagation()">
+        <div class="sheet-handle"></div>
+        <h3 style="font-size:17px; font-weight:800;">Enrol in Digital Marketing Career Restart</h3>
+        <div style="font-size:22px; font-weight:800; color:var(--primary-700);">₹4,999 <span style="font-size:13px; font-weight:600; color:var(--neutral-500);">/ Lifetime access</span></div>
+        <p style="font-size:12px; color:var(--neutral-600);">Includes all 8 modules, mentor support, live classes & placement support.</p>
+        <button class="btn-primary" onclick="confirmPurchase()">Start Programme →</button>
+      </div>
+    </div>
+
+    <!-- 4. Catch-Up Modal -->
     <div class="modal-backdrop" id="modalCatchUp" onclick="closeAllModals(event)">
       <div class="bottom-sheet" onclick="event.stopPropagation()">
         <div class="sheet-handle"></div>
-        <h3 style="font-size:17px; font-weight:800;">Let's make a smaller plan.</h3>
-        <p style="font-size:12.5px; color:var(--neutral-600);">
-          We reduced your 60 min session to <strong>25 min</strong> so you can easily catch up without guilt.
-        </p>
-
-        <div style="background:var(--neutral-50); border-radius:10px; padding:12px; display:flex; flex-direction:column; gap:4px; font-size:12px;">
-          <div>• Resume review — 10 min</div>
-          <div>• Synthesis update — 10 min</div>
-          <div>• Interview rehearsal — 5 min</div>
-        </div>
-
-        <button class="btn-primary" onclick="confirmCatchUp()">Start Catch-Up (25 min) →</button>
+        <h3 style="font-size:17px; font-weight:800;">Condensed Catch-Up Plan</h3>
+        <p style="font-size:12px; color:var(--neutral-600);">We condensed your session to <strong>25 min</strong> so you can easily catch up.</p>
+        <button class="btn-primary" onclick="confirmCatchUp()">Start 25-Min Catch-Up →</button>
       </div>
     </div>
 
-    <!-- 3. Reschedule Modal -->
-    <div class="modal-backdrop" id="modalReschedule" onclick="closeAllModals(event)">
+    <!-- 5. Create Community Post Modal -->
+    <div class="modal-backdrop" id="modalCreatePost" onclick="closeAllModals(event)">
       <div class="bottom-sheet" onclick="event.stopPropagation()">
         <div class="sheet-handle"></div>
-        <h3 style="font-size:17px; font-weight:800;">Reschedule Missed Task</h3>
-        <p style="font-size:12.5px; color:var(--neutral-600);">Move this task without losing your 5-day streak.</p>
-
-        <div style="display:flex; flex-direction:column; gap:8px;">
-          <div class="option-card selected" onclick="selectSingleOptionCard(this)"><span class="option-title">Tomorrow morning</span><div class="radio-circle">✓</div></div>
-          <div class="option-card" onclick="selectSingleOptionCard(this)"><span class="option-title">This weekend</span><div class="radio-circle">✓</div></div>
-        </div>
-
-        <button class="btn-primary" onclick="confirmReschedule()">Confirm New Date ✓</button>
-      </div>
-    </div>
-
-    <!-- 4. Mentor Call Booking Modal -->
-    <div class="modal-backdrop" id="modalMentorCall" onclick="closeAllModals(event)">
-      <div class="bottom-sheet" onclick="event.stopPropagation()">
-        <div class="sheet-handle"></div>
-        <h3 style="font-size:17px; font-weight:800;">Book 15-Min Free Mentor Call</h3>
-        <p style="font-size:12.5px; color:var(--neutral-600);">Select a slot with <strong>Sarah Johnson</strong> (Staff Product Designer @ Linear).</p>
-
-        <div style="display:flex; flex-direction:column; gap:8px;">
-          <div class="option-card selected" onclick="selectSingleOptionCard(this)"><span class="option-title">Friday · 4:00 PM – 4:15 PM</span><div class="radio-circle">✓</div></div>
-          <div class="option-card" onclick="selectSingleOptionCard(this)"><span class="option-title">Saturday · 11:00 AM – 11:15 AM</span><div class="radio-circle">✓</div></div>
-        </div>
-
-        <button class="btn-primary" onclick="confirmMentorCallBooking()">Confirm Free Mentor Call ✓</button>
+        <h3 style="font-size:17px; font-weight:800;">Create Community Post</h3>
+        <select class="input-custom-box" id="newPostCategory" style="margin-bottom:8px;">
+          <option value="Wins">Celebrate a Win 🎉</option>
+          <option value="Career Restart">Career Restart Question 💭</option>
+          <option value="Job Search">Job Search & WFH Tips 💼</option>
+          <option value="General">General Discussion ☕</option>
+        </select>
+        <textarea class="input-custom-box" id="newPostContent" rows="3" placeholder="Share your progress or ask a question to fellow learners..."></textarea>
+        <button class="btn-primary" style="margin-top:10px;" onclick="submitNewCommunityPost()">Publish Post →</button>
       </div>
     </div>
 
