@@ -73,8 +73,8 @@ const appState = {
     posts: [
       {
         id: 1,
-        author: 'Priya Sharma',
-        role: 'Marketing Cohort · Restarting after 3 yrs',
+        author: 'Rohan Verma',
+        role: 'Marketing Cohort · Restarting after 3 yrs paternity/caregiving',
         category: 'Wins',
         content: 'Completed my first portfolio project on Canva & Meta Ads today! Feeling my confidence coming back after 3 years away.',
         likes: 24,
@@ -84,8 +84,8 @@ const appState = {
       },
       {
         id: 2,
-        author: 'Ananya Roy',
-        role: 'Career Restart · HR Track',
+        author: 'Priya Sharma',
+        role: 'Career Restart · HR Track · Relocation gap',
         category: 'Career Restart',
         content: 'How did you all frame a 4-year relocation gap in your introductory pitch? Need some reassurance before mock interviews.',
         likes: 18,
@@ -95,14 +95,25 @@ const appState = {
       },
       {
         id: 3,
-        author: 'Sneha Patel',
-        role: 'Data Track · Homemaker to Tech',
+        author: 'Arjun Mehta',
+        role: 'Data Track · Sabbatical & Career Switch',
         category: 'Job Search',
         content: 'Attended the Thursday live doubt-clearing session. The mentor breakdown on spreadsheet formulas made things so clear!',
         likes: 15,
         liked: false,
         commentsCount: 4,
         time: '1d ago'
+      },
+      {
+        id: 4,
+        author: 'Sneha Patel',
+        role: 'Operations & VA Track · Career Comeback',
+        category: 'Wins',
+        content: 'Got my first client interview through the mentor referral network this morning. Keep pushing everyone!',
+        likes: 29,
+        liked: false,
+        commentsCount: 8,
+        time: '2d ago'
       }
     ]
   },
