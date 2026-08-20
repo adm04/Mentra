@@ -291,91 +291,21 @@ body {
 }
 
 /* ==========================================================================
-   PHONE MOCKUP CONTAINER (390px iPhone Mobile Frame)
+   APP CONTAINER (390px Mobile Viewport)
    ========================================================================== */
 .phone-container {
   width: 390px;
   max-width: 100%;
   background: var(--color-white);
-  border-radius: var(--radius-phone);
-  border: 10px solid var(--color-dark);
+  border-radius: var(--radius-xl);
+  border: 1px solid var(--neutral-300);
   overflow: hidden;
-  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.35);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
   position: relative;
   display: flex;
   flex-direction: column;
   min-height: 844px;
   height: 844px;
-}
-
-/* Status Bar & Dynamic Island */
-.phone-notch-bar {
-  height: 40px;
-  background: var(--color-white);
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 0 22px;
-  position: relative;
-  z-index: 100;
-  user-select: none;
-  flex-shrink: 0;
-  border-bottom: 1px solid rgba(0,0,0,0.03);
-}
-
-.status-time {
-  font-weight: 800;
-  font-size: 14px;
-  color: var(--color-black);
-}
-
-.dynamic-island-pill {
-  width: 96px;
-  height: 22px;
-  background: var(--color-black);
-  border-radius: 12px;
-  position: absolute;
-  left: 50%;
-  top: 8px;
-  transform: translateX(-50%);
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
-  padding-right: 8px;
-}
-
-.island-camera-dot {
-  width: 8px;
-  height: 8px;
-  background: #111d2e;
-  border-radius: 50%;
-}
-
-.status-icons {
-  display: flex;
-  align-items: center;
-  gap: 6px;
-  color: var(--color-black);
-}
-
-.status-icons svg {
-  width: 15px;
-  height: 15px;
-  fill: currentColor;
-}
-
-/* Home Indicator Bar */
-.phone-home-indicator {
-  position: absolute;
-  bottom: 8px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 134px;
-  height: 5px;
-  background: var(--color-black);
-  border-radius: 3px;
-  z-index: 90;
-  pointer-events: none;
 }
 
 /* Screen Wrapper */
