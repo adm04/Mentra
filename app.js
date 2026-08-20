@@ -1,6 +1,7 @@
 /**
  * MENTRA — CAREER RESTART & LEARNING MOBILE APPLICATION
  * Application State, 7-Step Quiz Logic, Personalized Dashboard, LMS & Community
+ * Tailwind Heroicons System Integration (No emojis)
  */
 
 // Application State
@@ -285,7 +286,7 @@ function startQuizProcessing() {
 
   setTimeout(() => {
     goToScreen('s-home');
-    showToast('✨ Your personalized comeback dashboard is ready!');
+    showToast('Your personalized comeback dashboard is ready');
   }, 2000);
 }
 
@@ -387,7 +388,8 @@ function renderStrengths(u) {
 
   list.innerHTML = strengths.map(s => `
     <div style="display:flex; align-items:center; gap:8px; font-size:12.5px; color:var(--success-700); font-weight:700;">
-      <span>✓</span> <span>${s}</span>
+      <svg class="h-icon h-icon-sm" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" /></svg>
+      <span>${s}</span>
     </div>
   `).join('');
 }
@@ -408,7 +410,8 @@ function renderFocusAreas(u) {
 
   list.innerHTML = focus.map(f => `
     <div style="display:flex; align-items:center; gap:8px; font-size:12.5px; color:var(--primary-700); font-weight:700;">
-      <span>★</span> <span>${f}</span>
+      <svg class="h-icon h-icon-sm" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M11.48 3.499a.562.562 0 0 1 1.04 0l2.125 5.111a.563.563 0 0 0 .475.345l5.518.442c.499.04.701.663.321.988l-4.204 3.602a.563.563 0 0 0-.182.557l1.285 5.385a.562.562 0 0 1-.84.61l-4.725-2.885a.562.562 0 0 0-.586 0L6.982 20.54a.562.562 0 0 1-.84-.61l1.285-5.386a.562.562 0 0 0-.182-.557l-4.204-3.602a.562.562 0 0 1 .321-.988l5.518-.442a.563.563 0 0 0 .475-.345L11.48 3.5Z" /></svg>
+      <span>${f}</span>
     </div>
   `).join('');
 }
@@ -512,7 +515,7 @@ function filterProgrammes(cat, pillEl) {
       </div>
       <div style="font-size:15px; font-weight:800; color:var(--color-black); margin-top:4px;">${p.title}</div>
       <div style="font-size:12px; color:var(--neutral-600); margin-top:2px;">${p.format} · ${p.level}</div>
-      <div style="font-size:11.5px; color:var(--success-700); font-weight:700; margin-top:4px;">🎯 Outcome: ${p.outcome}</div>
+      <div style="font-size:11.5px; color:var(--success-700); font-weight:700; margin-top:4px;">Outcome: ${p.outcome}</div>
       <button class="btn-primary" style="height:36px; font-size:12px; margin-top:8px;">View Programme →</button>
     </div>
   `).join('');
@@ -540,7 +543,7 @@ function viewProgrammeDetails(progId) {
 function startFree2DayTrial() {
   appState.enrolled = true;
   goToScreen('s-learn-dashboard');
-  showToast('🎉 Free 2-Day Access Activated! Module 1 and Career Roadmap unlocked.');
+  showToast('Free 2-Day Access Activated. Module 1 and Career Roadmap unlocked.');
 }
 
 function openCounsellorModal() {
@@ -549,7 +552,7 @@ function openCounsellorModal() {
 
 function confirmCounsellorCall() {
   closeModal('modalCounsellorCall');
-  showToast('📅 Free Career Guidance Call booked with a Mentra Advisor for Friday 4:00 PM!');
+  showToast('Free Career Guidance Call booked with a Mentra Advisor for Friday 4:00 PM.');
 }
 
 function openPurchaseModal() {
@@ -570,14 +573,12 @@ function confirmPurchase() {
 
 function toggleVideoPlay() {
   appState.videoLesson.isPlaying = !appState.videoLesson.isPlaying;
-  const playBtn = document.getElementById('videoPlayBtnLarge');
   const barPlayBtn = document.getElementById('videoControlPlayBtn');
 
-  if (playBtn) playBtn.textContent = appState.videoLesson.isPlaying ? '❚❚' : '▶';
   if (barPlayBtn) barPlayBtn.textContent = appState.videoLesson.isPlaying ? 'Pause' : 'Play';
   
   if (appState.videoLesson.isPlaying) {
-    showToast('▶ Playing: Module 2 — Social Media Fundamentals');
+    showToast('Playing: Module 2 — Social Media Fundamentals');
   }
 }
 
@@ -588,7 +589,7 @@ function completeVideoLesson() {
   
   updateUIElements();
   goToScreen('s-module-detail');
-  showToast('✓ Video Lesson completed! Module progress updated.');
+  showToast('Video Lesson completed. Module progress updated.');
 }
 
 function nextPdfPage() {
@@ -633,7 +634,7 @@ function completePdfLesson() {
   
   updateUIElements();
   goToScreen('s-module-detail');
-  showToast('✓ PDF Reading completed! Career readiness increased.');
+  showToast('PDF Reading completed. Career readiness increased.');
 }
 
 /**
@@ -646,10 +647,10 @@ function simulateAssignmentFile() {
   appState.assignment.fileAttached = true;
   const prompt = document.getElementById('fileUploadPrompt');
   if (prompt) {
-    prompt.innerHTML = '✓ Attached: <strong>SocialMedia_Strategy_Draft_Minakshi.pdf</strong> (1.9 MB)';
+    prompt.innerHTML = 'Attached: <strong>SocialMedia_Strategy_Draft_Minakshi.pdf</strong> (1.9 MB)';
     prompt.style.color = 'var(--success-700)';
   }
-  showToast('📄 Document attached: SocialMedia_Strategy_Draft_Minakshi.pdf');
+  showToast('Document attached: SocialMedia_Strategy_Draft_Minakshi.pdf');
 }
 
 function submitAssignmentWork() {
@@ -673,12 +674,12 @@ function submitAssignmentWork() {
 
   updateUIElements();
   goToScreen('s-learn-dashboard');
-  showToast('✅ Assignment Submitted! Status updated to "Under Review". Career readiness increased to 70%!');
+  showToast('Assignment Submitted. Status updated to Under Review.');
 }
 
 /**
  * -----------------------------------------------------------------------------
- * COMMUNITY FEED (Create Post, Like, Filter)
+ * COMMUNITY FEED (Heroicons SVG integration)
  * -----------------------------------------------------------------------------
  */
 
@@ -711,14 +712,16 @@ function renderCommunityPosts() {
       </div>
       <p style="font-size:12.5px; color:var(--neutral-800); line-height:1.45;">${post.content}</p>
       <div class="post-actions">
-        <button class="post-act-btn" onclick="toggleLikePost(${post.id})">
-          <span>${post.liked ? '❤️' : '🤍'}</span> <span>${post.likes}</span>
+        <button class="post-act-btn ${post.liked ? 'liked' : ''}" onclick="toggleLikePost(${post.id})">
+          <svg class="h-icon h-icon-sm" fill="${post.liked ? 'currentColor' : 'none'}" viewBox="0 0 24 24" stroke-width="1.8" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12Z" /></svg>
+          <span>${post.likes}</span>
         </button>
-        <button class="post-act-btn" onclick="showToast('💬 Comments opened')">
-          <span>💬</span> <span>${post.commentsCount} comments</span>
+        <button class="post-act-btn" onclick="showToast('Comments thread opened')">
+          <svg class="h-icon h-icon-sm" fill="none" viewBox="0 0 24 24" stroke-width="1.8" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M8.625 12a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Zm0 0H8.25m4.125 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Zm0 0H12m4.125 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Zm0 0h-.375M21 12c0 4.556-4.03 8.25-9 8.25a9.764 9.764 0 0 1-2.555-.337A5.972 5.972 0 0 1 5.41 20.97a.75.75 0 0 1-.744-.658.75.75 0 0 1 .05-.417l.803-1.606A8.09 8.09 0 0 1 3 12c0-4.556 4.03-8.25 9-8.25s9 3.694 9 8.25Z" /></svg>
+          <span>${post.commentsCount} comments</span>
         </button>
-        <button class="post-act-btn" style="margin-left:auto;" onclick="showToast('🔖 Post saved to your bookmarks')">
-          <span>🔖</span>
+        <button class="post-act-btn" style="margin-left:auto;" onclick="showToast('Post saved to your bookmarks')">
+          <svg class="h-icon h-icon-sm" fill="none" viewBox="0 0 24 24" stroke-width="1.8" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M17.593 3.322c1.1.128 1.907 1.077 1.907 2.185V21L12 17.25 4.5 21V5.507c0-1.108.806-2.057 1.907-2.185a48.507 48.507 0 0 1 11.186 0Z" /></svg>
         </button>
       </div>
     </div>
@@ -753,7 +756,7 @@ function submitNewCommunityPost() {
     textarea.value = '';
     closeModal('modalCreatePost');
     renderCommunityPosts();
-    showToast('🎉 Post published to community feed!');
+    showToast('Post published to community feed.');
   }
 }
 
@@ -781,14 +784,14 @@ function toggleInterviewRecording() {
   const status = document.getElementById('recordStatusBadge');
 
   if (btn) {
-    btn.textContent = appState.mockInterview.isRecording ? '⏹ Stop & Analyze Answer' : '🎙️ Record Practice Answer';
+    btn.textContent = appState.mockInterview.isRecording ? 'Stop & Analyze Answer' : 'Record Practice Answer';
     btn.style.background = appState.mockInterview.isRecording ? 'var(--error-600)' : 'var(--primary-600)';
   }
   if (status) {
-    status.style.display = appState.mockInterview.isRecording ? 'inline-block' : 'none';
+    status.style.display = appState.mockInterview.isRecording ? 'block' : 'none';
   }
   if (!appState.mockInterview.isRecording) {
-    showToast('✓ Answer captured. Mentor framework verified structure & clarity.');
+    showToast('Answer captured. Mentor framework verified structure & clarity.');
   }
 }
 
@@ -812,7 +815,7 @@ function toggleSimulateInactivity() {
   if (banner) {
     banner.style.display = appState.inactivitySimulated ? 'block' : 'none';
   }
-  showToast(appState.inactivitySimulated ? '⚡ Inactivity mode simulated (5 days away)' : 'Active mode restored');
+  showToast(appState.inactivitySimulated ? 'Inactivity mode simulated (5 days away)' : 'Active mode restored');
 }
 
 function openCatchUpModal() {
@@ -823,7 +826,7 @@ function confirmCatchUp() {
   closeModal('modalCatchUp');
   document.getElementById('missedDeadlineBanner')?.style.setProperty('display', 'none');
   document.getElementById('inactivityBanner')?.style.setProperty('display', 'none');
-  showToast('🚀 Condensed Catch-Up Mode Activated: 25 mins session configured.');
+  showToast('Condensed Catch-Up Mode Activated: 25 mins session configured.');
 }
 
 function openRescheduleModal() {
@@ -833,7 +836,7 @@ function openRescheduleModal() {
 function confirmReschedule() {
   closeModal('modalReschedule');
   document.getElementById('missedDeadlineBanner')?.style.setProperty('display', 'none');
-  showToast('📅 Task rescheduled for tomorrow. Your streak remains protected!');
+  showToast('Task rescheduled for tomorrow. Your streak remains protected.');
 }
 
 function simulateFullReadiness() {
@@ -851,7 +854,7 @@ function simulateFullReadiness() {
   };
   updateUIElements();
   goToScreen('s-celebration');
-  showToast('🏆 100% Career Ready achieved! All requirements verified.');
+  showToast('100% Career Ready achieved. All requirements verified.');
 }
 
 function resetAllProgress() {
@@ -862,7 +865,7 @@ function resetAllProgress() {
   appState.assignment.fileAttached = false;
   appState.inactivitySimulated = false;
   goToScreen('s-splash');
-  showToast('🔄 App reset to initial onboarding state.');
+  showToast('App reset to initial onboarding state.');
 }
 
 /**

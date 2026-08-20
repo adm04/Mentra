@@ -17,9 +17,8 @@
        ========================================================================= -->
   <header class="reviewer-toolbar">
     <div class="brand-badge">
-      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-        <path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1-2.5-2.5Z"/>
-        <polyline points="10 2 10 10 13 7 16 10 16 2"/>
+      <svg class="h-icon" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M12 6.042A8.967 8.967 0 0 0 6 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 0 1 6 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 0 1 6-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0 0 18 18a8.967 8.967 0 0 0-6 2.292m0-14.25v14.25" />
       </svg>
       <span>Mentra</span>
     </div>
@@ -54,9 +53,9 @@
 
     <!-- State Simulation Actions -->
     <div class="reviewer-actions">
-      <button class="rev-pill-btn" onclick="toggleSimulateInactivity()">⚡ Inactivity</button>
-      <button class="rev-pill-btn" onclick="simulateFullReadiness()">🎯 100% Ready</button>
-      <button class="rev-pill-btn" onclick="resetAllProgress()">🔄 Reset</button>
+      <button class="rev-pill-btn" onclick="toggleSimulateInactivity()">Inactivity</button>
+      <button class="rev-pill-btn" onclick="simulateFullReadiness()">100% Ready</button>
+      <button class="rev-pill-btn" onclick="resetAllProgress()">Reset</button>
     </div>
   </header>
 
@@ -93,7 +92,7 @@
         </div>
         <h1 style="font-size:36px; font-weight:800; letter-spacing:-0.03em;">Mentra</h1>
         <p style="font-size:14.5px; opacity:0.9; margin-top:6px; max-width:270px; line-height:1.4;">
-          Career Restart & Guided Learning for Women & Professionals
+          Career Restart & Guided Learning Platform
         </p>
 
         <!-- Persona Callout -->
@@ -125,32 +124,55 @@
 
         <div class="options-list">
           <div class="option-card selected" onclick="selectQuizSituation(this, 'On a career break')">
-            <div>
-              <div class="option-title">1. On a career break 🌿</div>
-              <div class="option-desc">"Worked before, paused for life"</div>
+            <div class="option-main">
+              <div class="h-icon-box primary">
+                <svg class="h-icon" fill="none" viewBox="0 0 24 24" stroke-width="1.8" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" /></svg>
+              </div>
+              <div>
+                <div class="option-title">1. On a career break</div>
+                <div class="option-desc">"Worked before, paused for life"</div>
+              </div>
             </div>
-            <div class="radio-circle">✓</div>
+            <div class="radio-circle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5"/></svg></div>
           </div>
+
           <div class="option-card" onclick="selectQuizSituation(this, 'Homemaker / never worked')">
-            <div>
-              <div class="option-title">2. Homemaker / never worked 🏠</div>
-              <div class="option-desc">"Managing home, want to start earning"</div>
+            <div class="option-main">
+              <div class="h-icon-box">
+                <svg class="h-icon" fill="none" viewBox="0 0 24 24" stroke-width="1.8" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="m2.25 12 8.954-8.955c.44-.439 1.152-.439 1.591 0L21.75 12M4.5 9.75v10.125c0 .621.504 1.125 1.125 1.125H9.75v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21h4.125c.621 0 1.125-.504 1.125-1.125V9.75M8.25 21h8.25" /></svg>
+              </div>
+              <div>
+                <div class="option-title">2. Homemaker / never worked</div>
+                <div class="option-desc">"Managing home, want to start earning"</div>
+              </div>
             </div>
-            <div class="radio-circle">✓</div>
+            <div class="radio-circle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5"/></svg></div>
           </div>
+
           <div class="option-card" onclick="selectQuizSituation(this, 'Working but want change')">
-            <div>
-              <div class="option-title">3. Working but want change 💼</div>
-              <div class="option-desc">"Employed, looking for something better"</div>
+            <div class="option-main">
+              <div class="h-icon-box">
+                <svg class="h-icon" fill="none" viewBox="0 0 24 24" stroke-width="1.8" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M20.25 14.15v4.25c0 1.094-.787 2.036-1.872 2.18-2.087.277-4.216.42-6.378.42s-4.291-.143-6.378-.42c-1.085-.144-1.872-1.086-1.872-2.18v-4.25m16.5 0a2.18 2.18 0 0 0 .75-1.661V8.706c0-1.081-.768-2.015-1.837-2.175a48.114 48.114 0 0 0-3.413-.387m4.5 8.006c-.194.165-.42.295-.673.38A23.978 23.978 0 0 1 12 15.75c-2.648 0-5.195-.429-7.577-1.22a2.016 2.016 0 0 1-.673-.38m0 0A2.18 2.18 0 0 1 3 12.489V8.706c0-1.081.768-2.015 1.837-2.175a48.111 48.111 0 0 1 3.413-.387m7.5 0V5.25A2.25 2.25 0 0 0 13.5 3h-3a2.25 2.25 0 0 0-2.25 2.25v.894m7.5 0a48.667 48.667 0 0 0-7.5 0M12 12.75h.008v.008H12v-.008Z" /></svg>
+              </div>
+              <div>
+                <div class="option-title">3. Working but want change</div>
+                <div class="option-desc">"Employed, looking for something better"</div>
+              </div>
             </div>
-            <div class="radio-circle">✓</div>
+            <div class="radio-circle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5"/></svg></div>
           </div>
+
           <div class="option-card" onclick="selectQuizSituation(this, 'Just exploring')">
-            <div>
-              <div class="option-title">4. Just exploring 🧭</div>
-              <div class="option-desc">"Not sure yet, need clarity"</div>
+            <div class="option-main">
+              <div class="h-icon-box">
+                <svg class="h-icon" fill="none" viewBox="0 0 24 24" stroke-width="1.8" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="m15.75 15.75-2.489-2.489m0 0a3.375 3.375 0 1 0-4.773-4.773 3.375 3.375 0 0 0 4.774 4.774ZM21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" /></svg>
+              </div>
+              <div>
+                <div class="option-title">4. Just exploring</div>
+                <div class="option-desc">"Not sure yet, need clarity"</div>
+              </div>
             </div>
-            <div class="radio-circle">✓</div>
+            <div class="radio-circle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5"/></svg></div>
           </div>
         </div>
 
@@ -160,19 +182,19 @@
           <div class="options-list" style="padding:0; gap:6px;">
             <div class="option-card" onclick="selectQuizBreakDuration(this, 'Less than 2 years')">
               <span class="option-title">Less than 2 years</span>
-              <div class="radio-circle">✓</div>
+              <div class="radio-circle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5"/></svg></div>
             </div>
             <div class="option-card selected" onclick="selectQuizBreakDuration(this, '2–5 years')">
               <span class="option-title">2–5 years</span>
-              <div class="radio-circle">✓</div>
+              <div class="radio-circle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5"/></svg></div>
             </div>
             <div class="option-card" onclick="selectQuizBreakDuration(this, '5–10 years')">
               <span class="option-title">5–10 years</span>
-              <div class="radio-circle">✓</div>
+              <div class="radio-circle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5"/></svg></div>
             </div>
             <div class="option-card" onclick="selectQuizBreakDuration(this, '10+ years')">
               <span class="option-title">10+ years</span>
-              <div class="radio-circle">✓</div>
+              <div class="radio-circle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5"/></svg></div>
             </div>
           </div>
         </div>
@@ -204,28 +226,63 @@
         </div>
         <div class="options-list">
           <div class="option-card selected" onclick="selectQuizBreakReason(this, 'Marriage / relocation')">
-            <span class="option-title">Marriage / relocation 💍</span>
-            <div class="radio-circle">✓</div>
+            <div class="option-main">
+              <div class="h-icon-box primary">
+                <svg class="h-icon" fill="none" viewBox="0 0 24 24" stroke-width="1.8" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" /><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z" /></svg>
+              </div>
+              <span class="option-title">Marriage / relocation</span>
+            </div>
+            <div class="radio-circle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5"/></svg></div>
           </div>
+
           <div class="option-card" onclick="selectQuizBreakReason(this, 'Children & family care')">
-            <span class="option-title">Children & family care 👶</span>
-            <div class="radio-circle">✓</div>
+            <div class="option-main">
+              <div class="h-icon-box">
+                <svg class="h-icon" fill="none" viewBox="0 0 24 24" stroke-width="1.8" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M15 19.128a9.38 9.38 0 0 0 2.625.372 9.337 9.337 0 0 0 4.121-.952 4.125 4.125 0 0 0-7.533-2.493M15 19.128v-.003c0-1.113-.285-2.16-.786-3.07M15 19.128v.106A12.318 12.318 0 0 1 8.624 21c-2.331 0-4.512-.645-6.374-1.766l-.001-.109a6.375 6.375 0 0 1 11.964-3.07M12 6.375a3.375 3.375 0 1 1-6.75 0 3.375 3.375 0 0 1 6.75 0Zm8.25 2.25a2.625 2.625 0 1 1-5.25 0 2.625 2.625 0 0 1 5.25 0Z" /></svg>
+              </div>
+              <span class="option-title">Children & family care</span>
+            </div>
+            <div class="radio-circle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5"/></svg></div>
           </div>
+
           <div class="option-card" onclick="selectQuizBreakReason(this, 'Health or personal reasons')">
-            <span class="option-title">Health or personal reasons 🏥</span>
-            <div class="radio-circle">✓</div>
+            <div class="option-main">
+              <div class="h-icon-box">
+                <svg class="h-icon" fill="none" viewBox="0 0 24 24" stroke-width="1.8" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12Z" /></svg>
+              </div>
+              <span class="option-title">Health or personal reasons</span>
+            </div>
+            <div class="radio-circle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5"/></svg></div>
           </div>
+
           <div class="option-card" onclick="selectQuizBreakReason(this, 'No right opportunity')">
-            <span class="option-title">No right opportunity ⏳</span>
-            <div class="radio-circle">✓</div>
+            <div class="option-main">
+              <div class="h-icon-box">
+                <svg class="h-icon" fill="none" viewBox="0 0 24 24" stroke-width="1.8" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" /></svg>
+              </div>
+              <span class="option-title">No right opportunity</span>
+            </div>
+            <div class="radio-circle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5"/></svg></div>
           </div>
+
           <div class="option-card" onclick="selectQuizBreakReason(this, 'Lost confidence / direction')">
-            <span class="option-title">Lost confidence / direction 💭</span>
-            <div class="radio-circle">✓</div>
+            <div class="option-main">
+              <div class="h-icon-box">
+                <svg class="h-icon" fill="none" viewBox="0 0 24 24" stroke-width="1.8" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M12 18v-5.25m0 0a6.01 6.01 0 0 0 1.5-.189m-1.5.189a6.01 6.01 0 0 1-1.5-.189m3.75 7.478a12.06 12.06 0 0 1-4.5 0m3.75 2.383a14.406 14.406 0 0 1-3 0M14.25 18v-.192c0-.983.658-1.823 1.508-2.316a7.5 7.5 0 1 0-7.516 0c.85.493 1.508 1.333 1.508 2.316V18" /></svg>
+              </div>
+              <span class="option-title">Lost confidence / direction</span>
+            </div>
+            <div class="radio-circle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5"/></svg></div>
           </div>
+
           <div class="option-card" onclick="selectQuizBreakReason(this, 'Other / multiple reasons')">
-            <span class="option-title">Other / multiple reasons ✨</span>
-            <div class="radio-circle">✓</div>
+            <div class="option-main">
+              <div class="h-icon-box">
+                <svg class="h-icon" fill="none" viewBox="0 0 24 24" stroke-width="1.8" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M9.813 15.904 9 18.75l-.813-2.846a4.5 4.5 0 0 0-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 0 0 3.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 0 0 3.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 0 0-3.09 3.09ZM18.259 8.715 18 9.75l-.259-1.035a3.375 3.375 0 0 0-2.455-2.456L14.25 6l1.036-.259a3.375 3.375 0 0 0 2.455-2.456L18 2.25l.259 1.035a3.375 3.375 0 0 0 2.456 2.456L21.75 6l-1.035.259a3.375 3.375 0 0 0-2.456 2.456ZM16.894 20.567 16.5 21.75l-.394-1.183a2.25 2.25 0 0 0-1.423-1.423L13.5 18.75l1.183-.394a2.25 2.25 0 0 0 1.423-1.423l.394-1.183.394 1.183a2.25 2.25 0 0 0 1.423 1.423l1.183.394-1.183.394a2.25 2.25 0 0 0-1.423 1.423Z" /></svg>
+              </div>
+              <span class="option-title">Other / multiple reasons</span>
+            </div>
+            <div class="radio-circle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5"/></svg></div>
           </div>
         </div>
 
@@ -234,28 +291,28 @@
         </div>
         <div class="options-list">
           <div class="option-card" onclick="selectQuizPreviousWork(this, 'Admin / office / coordination')">
-            <span class="option-title">Admin / office / coordination 📋</span>
-            <div class="radio-circle">✓</div>
+            <span class="option-title">Admin / office / coordination</span>
+            <div class="radio-circle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5"/></svg></div>
           </div>
           <div class="option-card selected" onclick="selectQuizPreviousWork(this, 'Teaching / training')">
-            <span class="option-title">Teaching / training 👩‍🏫</span>
-            <div class="radio-circle">✓</div>
+            <span class="option-title">Teaching / training</span>
+            <div class="radio-circle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5"/></svg></div>
           </div>
           <div class="option-card" onclick="selectQuizPreviousWork(this, 'Sales / customer-facing')">
-            <span class="option-title">Sales / customer-facing 🤝</span>
-            <div class="radio-circle">✓</div>
+            <span class="option-title">Sales / customer-facing</span>
+            <div class="radio-circle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5"/></svg></div>
           </div>
           <div class="option-card" onclick="selectQuizPreviousWork(this, 'IT / technical')">
-            <span class="option-title">IT / technical 💻</span>
-            <div class="radio-circle">✓</div>
+            <span class="option-title">IT / technical</span>
+            <div class="radio-circle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5"/></svg></div>
           </div>
           <div class="option-card" onclick="selectQuizPreviousWork(this, 'Content / creative')">
-            <span class="option-title">Content / creative 🎨</span>
-            <div class="radio-circle">✓</div>
+            <span class="option-title">Content / creative</span>
+            <div class="radio-circle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5"/></svg></div>
           </div>
           <div class="option-card" onclick="selectQuizPreviousWork(this, 'No formal work experience')">
-            <span class="option-title">No formal work experience 🌱</span>
-            <div class="radio-circle">✓</div>
+            <span class="option-title">No formal work experience</span>
+            <div class="radio-circle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5"/></svg></div>
           </div>
         </div>
 
@@ -283,20 +340,20 @@
 
         <div class="options-list">
           <div class="option-card" onclick="selectQuizRoleClarity(this, 'Yes, I have clarity')">
-            <span class="option-title">Yes, I have clarity 🎯</span>
-            <div class="radio-circle">✓</div>
+            <span class="option-title">Yes, I have clarity</span>
+            <div class="radio-circle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5"/></svg></div>
           </div>
           <div class="option-card" onclick="selectQuizRoleClarity(this, 'I have some idea')">
-            <span class="option-title">I have some idea 💡</span>
-            <div class="radio-circle">✓</div>
+            <span class="option-title">I have some idea</span>
+            <div class="radio-circle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5"/></svg></div>
           </div>
           <div class="option-card selected" onclick="selectQuizRoleClarity(this, 'I am confused')">
-            <span class="option-title">I am confused ❓</span>
-            <div class="radio-circle">✓</div>
+            <span class="option-title">I am confused</span>
+            <div class="radio-circle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5"/></svg></div>
           </div>
           <div class="option-card" onclick="selectQuizRoleClarity(this, 'I don\'t know at all')">
-            <span class="option-title">I don't know at all 🧭</span>
-            <div class="radio-circle">✓</div>
+            <span class="option-title">I don't know at all</span>
+            <div class="radio-circle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5"/></svg></div>
           </div>
         </div>
 
@@ -305,45 +362,78 @@
         </div>
         <div class="options-list">
           <div class="option-card" onclick="selectQuizWorkInterest(this, 'Organising & supporting others')">
-            <div>
-              <div class="option-title">1. Organising & supporting others 📁</div>
-              <div class="option-desc">"VA, admin, operations"</div>
+            <div class="option-main">
+              <div class="h-icon-box">
+                <svg class="h-icon" fill="none" viewBox="0 0 24 24" stroke-width="1.8" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 12.75V12A2.25 2.25 0 0 1 4.5 9.75h15A2.25 2.25 0 0 1 21.75 12v.75m-8.69-6.44-2.12-2.12a1.5 1.5 0 0 0-1.061-.44H4.5A2.25 2.25 0 0 0 2.25 6v12a2.25 2.25 0 0 0 2.25 2.25h15A2.25 2.25 0 0 0 21.75 18V9a2.25 2.25 0 0 0-2.25-2.25h-5.379a1.5 1.5 0 0 1-1.06-.44Z" /></svg>
+              </div>
+              <div>
+                <div class="option-title">1. Organising & supporting others</div>
+                <div class="option-desc">"VA, admin, operations"</div>
+              </div>
             </div>
-            <div class="radio-circle">✓</div>
+            <div class="radio-circle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5"/></svg></div>
           </div>
+
           <div class="option-card" onclick="selectQuizWorkInterest(this, 'Content & social media')">
-            <div>
-              <div class="option-title">2. Content & social media 📱</div>
-              <div class="option-desc">"Creative, visual, community"</div>
+            <div class="option-main">
+              <div class="h-icon-box">
+                <svg class="h-icon" fill="none" viewBox="0 0 24 24" stroke-width="1.8" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M10.5 1.5H8.25A2.25 2.25 0 0 0 6 3.75v16.5a2.25 2.25 0 0 0 2.25 2.25h7.5A2.25 2.25 0 0 0 18 20.25V3.75a2.25 2.25 0 0 0-2.25-2.25H13.5m-3 0V3h3V1.5m-3 0h3m-3 18.75h3" /></svg>
+              </div>
+              <div>
+                <div class="option-title">2. Content & social media</div>
+                <div class="option-desc">"Creative, visual, community"</div>
+              </div>
             </div>
-            <div class="radio-circle">✓</div>
+            <div class="radio-circle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5"/></svg></div>
           </div>
+
           <div class="option-card selected" onclick="selectQuizWorkInterest(this, 'Marketing & growth')">
-            <div>
-              <div class="option-title">3. Marketing & growth 📈</div>
-              <div class="option-desc">"Campaigns, SEO, ads"</div>
+            <div class="option-main">
+              <div class="h-icon-box primary">
+                <svg class="h-icon" fill="none" viewBox="0 0 24 24" stroke-width="1.8" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 18 9 11.25l4.306 4.306a11.95 11.95 0 0 1 5.814-5.518l2.74-1.22m0 0-5.94-2.281m5.94 2.28-2.28 5.941" /></svg>
+              </div>
+              <div>
+                <div class="option-title">3. Marketing & growth</div>
+                <div class="option-desc">"Campaigns, SEO, ads"</div>
+              </div>
             </div>
-            <div class="radio-circle">✓</div>
+            <div class="radio-circle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5"/></svg></div>
           </div>
+
           <div class="option-card" onclick="selectQuizWorkInterest(this, 'People & HR')">
-            <div>
-              <div class="option-title">4. People & HR 👥</div>
-              <div class="option-desc">"Recruitment, coordination"</div>
+            <div class="option-main">
+              <div class="h-icon-box">
+                <svg class="h-icon" fill="none" viewBox="0 0 24 24" stroke-width="1.8" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M18 18.72a9.094 9.094 0 0 0 3.741-.479 3 3 0 0 0-4.682-2.72m.94 3.198.001.031c0 .225-.012.447-.037.666A11.944 11.944 0 0 1 12 21c-2.17 0-4.207-.576-5.963-1.584A6.062 6.062 0 0 1 6 18.719m12 0a5.971 5.971 0 0 0-.941-3.197m0 0A5.995 5.995 0 0 0 12 12.75a5.995 5.995 0 0 0-5.058 2.772m0 0a3 3 0 0 0-4.681 2.72 8.986 8.986 0 0 0 3.74.477m.94-3.197a5.971 5.971 0 0 0-.94 3.197M15 6.75a3 3 0 1 1-6 0 3 3 0 0 1 6 0Zm6 3a2.25 2.25 0 1 1-4.5 0 2.25 2.25 0 0 1 4.5 0Zm-13.5 0a2.25 2.25 0 1 1-4.5 0 2.25 2.25 0 0 1 4.5 0Z" /></svg>
+              </div>
+              <div>
+                <div class="option-title">4. People & HR</div>
+                <div class="option-desc">"Recruitment, coordination"</div>
+              </div>
             </div>
-            <div class="radio-circle">✓</div>
+            <div class="radio-circle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5"/></svg></div>
           </div>
+
           <div class="option-card" onclick="selectQuizWorkInterest(this, 'Numbers & reports')">
-            <div>
-              <div class="option-title">5. Numbers & reports 📊</div>
-              <div class="option-desc">"Data, analytics, spreadsheets"</div>
+            <div class="option-main">
+              <div class="h-icon-box">
+                <svg class="h-icon" fill="none" viewBox="0 0 24 24" stroke-width="1.8" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M3 13.125C3 12.504 3.504 12 4.125 12h2.25c.621 0 1.125.504 1.125 1.125v6.75C7.5 20.496 6.996 21 6.375 21h-2.25A1.125 1.125 0 0 1 3 19.875v-6.75ZM9.75 8.625c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125v11.25c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 0 1-1.125-1.125V8.625ZM16.5 4.125c0-.621.504-1.125 1.125-1.125h2.25C20.496 3 21 3.504 21 4.125v15.75c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 0 1-1.125-1.125V4.125Z" /></svg>
+              </div>
+              <div>
+                <div class="option-title">5. Numbers & reports</div>
+                <div class="option-desc">"Data, analytics, spreadsheets"</div>
+              </div>
             </div>
-            <div class="radio-circle">✓</div>
+            <div class="radio-circle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5"/></svg></div>
           </div>
+
           <div class="option-card" onclick="selectQuizWorkInterest(this, 'Not sure — help me decide')">
-            <div>
-              <div class="option-title">6. Not sure — help me decide 🤔</div>
+            <div class="option-main">
+              <div class="h-icon-box">
+                <svg class="h-icon" fill="none" viewBox="0 0 24 24" stroke-width="1.8" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M9.879 7.519c1.171-1.025 3.071-1.025 4.242 0 1.172 1.025 1.172 2.687 0 3.712-.203.179-.43.326-.67.442-.745.361-1.45.999-1.45 1.827v.75M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Zm-9 5.25h.008v.008H12v-.008Z" /></svg>
+              </div>
+              <div class="option-title">6. Not sure — help me decide</div>
             </div>
-            <div class="radio-circle">✓</div>
+            <div class="radio-circle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5"/></svg></div>
           </div>
         </div>
 
@@ -373,16 +463,16 @@
         </div>
         <div class="options-list">
           <div class="option-card selected" onclick="selectQuizConfidence(this, 'Low — I doubt myself a lot')">
-            <span class="option-title">Low — I doubt myself a lot 😟</span>
-            <div class="radio-circle">✓</div>
+            <span class="option-title">Low — I doubt myself a lot</span>
+            <div class="radio-circle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5"/></svg></div>
           </div>
           <div class="option-card" onclick="selectQuizConfidence(this, 'Medium — hopeful but nervous')">
-            <span class="option-title">Medium — hopeful but nervous 😐</span>
-            <div class="radio-circle">✓</div>
+            <span class="option-title">Medium — hopeful but nervous</span>
+            <div class="radio-circle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5"/></svg></div>
           </div>
           <div class="option-card" onclick="selectQuizConfidence(this, 'High — ready to take action')">
-            <span class="option-title">High — ready to take action 🚀</span>
-            <div class="radio-circle">✓</div>
+            <span class="option-title">High — ready to take action</span>
+            <div class="radio-circle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5"/></svg></div>
           </div>
         </div>
 
@@ -392,19 +482,19 @@
         <div class="options-list">
           <div class="option-card" onclick="selectQuizTechComfort(this, 'Beginner — need hand-holding')">
             <span class="option-title">Beginner — need hand-holding</span>
-            <div class="radio-circle">✓</div>
+            <div class="radio-circle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5"/></svg></div>
           </div>
           <div class="option-card selected" onclick="selectQuizTechComfort(this, 'Basic — email, WhatsApp, browsing')">
             <span class="option-title">Basic — email, WhatsApp, browsing</span>
-            <div class="radio-circle">✓</div>
+            <div class="radio-circle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5"/></svg></div>
           </div>
           <div class="option-card" onclick="selectQuizTechComfort(this, 'Comfortable — can learn new tools')">
             <span class="option-title">Comfortable — can learn new tools</span>
-            <div class="radio-circle">✓</div>
+            <div class="radio-circle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5"/></svg></div>
           </div>
           <div class="option-card" onclick="selectQuizTechComfort(this, 'Confident — already use many apps')">
             <span class="option-title">Confident — already use many apps</span>
-            <div class="radio-circle">✓</div>
+            <div class="radio-circle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5"/></svg></div>
           </div>
         </div>
 
@@ -414,15 +504,15 @@
         <div class="options-list">
           <div class="option-card" onclick="selectQuizEnglishComfort(this, 'Basic — simple conversations')">
             <span class="option-title">Basic — simple conversations</span>
-            <div class="radio-circle">✓</div>
+            <div class="radio-circle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5"/></svg></div>
           </div>
           <div class="option-card selected" onclick="selectQuizEnglishComfort(this, 'Intermediate — can write emails')">
             <span class="option-title">Intermediate — can write emails</span>
-            <div class="radio-circle">✓</div>
+            <div class="radio-circle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5"/></svg></div>
           </div>
           <div class="option-card" onclick="selectQuizEnglishComfort(this, 'Fluent — comfortable in meetings')">
             <span class="option-title">Fluent — comfortable in meetings</span>
-            <div class="radio-circle">✓</div>
+            <div class="radio-circle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5"/></svg></div>
           </div>
         </div>
 
@@ -452,20 +542,20 @@
         </div>
         <div class="options-list">
           <div class="option-card" onclick="selectQuizTimeCommitment(this, '~1 hour daily')">
-            <span class="option-title">~1 hour daily ⏰</span>
-            <div class="radio-circle">✓</div>
+            <span class="option-title">~1 hour daily</span>
+            <div class="radio-circle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5"/></svg></div>
           </div>
           <div class="option-card selected" onclick="selectQuizTimeCommitment(this, 'Most days, flexible hours')">
-            <span class="option-title">Most days, flexible hours ⭐</span>
-            <div class="radio-circle">✓</div>
+            <span class="option-title">Most days, flexible hours</span>
+            <div class="radio-circle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5"/></svg></div>
           </div>
           <div class="option-card" onclick="selectQuizTimeCommitment(this, 'A few days a week')">
-            <span class="option-title">A few days a week 🗓️</span>
-            <div class="radio-circle">✓</div>
+            <span class="option-title">A few days a week</span>
+            <div class="radio-circle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5"/></svg></div>
           </div>
           <div class="option-card" onclick="selectQuizTimeCommitment(this, 'Not sure yet')">
-            <span class="option-title">Not sure yet 🧭</span>
-            <div class="radio-circle">✓</div>
+            <span class="option-title">Not sure yet</span>
+            <div class="radio-circle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5"/></svg></div>
           </div>
         </div>
 
@@ -474,24 +564,24 @@
         </div>
         <div class="options-list">
           <div class="option-card" onclick="selectQuizEarningTimeline(this, 'Within 2 weeks')">
-            <span class="option-title">Within 2 weeks ⚡</span>
-            <div class="radio-circle">✓</div>
+            <span class="option-title">Within 2 weeks</span>
+            <div class="radio-circle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5"/></svg></div>
           </div>
           <div class="option-card" onclick="selectQuizEarningTimeline(this, 'Within a month')">
-            <span class="option-title">Within a month 🗓️</span>
-            <div class="radio-circle">✓</div>
+            <span class="option-title">Within a month</span>
+            <div class="radio-circle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5"/></svg></div>
           </div>
           <div class="option-card selected" onclick="selectQuizEarningTimeline(this, 'In 1–3 months')">
-            <span class="option-title">In 1–3 months 🎯</span>
-            <div class="radio-circle">✓</div>
+            <span class="option-title">In 1–3 months</span>
+            <div class="radio-circle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5"/></svg></div>
           </div>
           <div class="option-card" onclick="selectQuizEarningTimeline(this, 'In 3–6 months')">
-            <span class="option-title">In 3–6 months 🌱</span>
-            <div class="radio-circle">✓</div>
+            <span class="option-title">In 3–6 months</span>
+            <div class="radio-circle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5"/></svg></div>
           </div>
           <div class="option-card" onclick="selectQuizEarningTimeline(this, 'No fixed timeline')">
             <span class="option-title">No fixed timeline</span>
-            <div class="radio-circle">✓</div>
+            <div class="radio-circle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5"/></svg></div>
           </div>
         </div>
 
@@ -500,20 +590,20 @@
         </div>
         <div class="options-list">
           <div class="option-card selected" onclick="selectQuizPrimaryGoal(this, 'Work from home')">
-            <span class="option-title">Work from home 🏡</span>
-            <div class="radio-circle">✓</div>
+            <span class="option-title">Work from home</span>
+            <div class="radio-circle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5"/></svg></div>
           </div>
           <div class="option-card" onclick="selectQuizPrimaryGoal(this, 'Financial independence')">
-            <span class="option-title">Financial independence 💰</span>
-            <div class="radio-circle">✓</div>
+            <span class="option-title">Financial independence</span>
+            <div class="radio-circle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5"/></svg></div>
           </div>
           <div class="option-card" onclick="selectQuizPrimaryGoal(this, 'Rebuild confidence & identity')">
-            <span class="option-title">Rebuild confidence & identity ✨</span>
-            <div class="radio-circle">✓</div>
+            <span class="option-title">Rebuild confidence & identity</span>
+            <div class="radio-circle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5"/></svg></div>
           </div>
           <div class="option-card" onclick="selectQuizPrimaryGoal(this, 'Proper career restart with placement')">
-            <span class="option-title">Proper career restart with placement 🚀</span>
-            <div class="radio-circle">✓</div>
+            <span class="option-title">Proper career restart with placement</span>
+            <div class="radio-circle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5"/></svg></div>
           </div>
         </div>
 
@@ -544,20 +634,20 @@
         </div>
         <div class="options-list">
           <div class="option-card" onclick="selectQuizFamilySupport(this, 'Yes — fully supportive')">
-            <span class="option-title">Yes — fully supportive 👨‍👩‍👧</span>
-            <div class="radio-circle">✓</div>
+            <span class="option-title">Yes — fully supportive</span>
+            <div class="radio-circle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5"/></svg></div>
           </div>
           <div class="option-card selected" onclick="selectQuizFamilySupport(this, 'Somewhat — mixed feelings')">
-            <span class="option-title">Somewhat — mixed feelings 🤔</span>
-            <div class="radio-circle">✓</div>
+            <span class="option-title">Somewhat — mixed feelings</span>
+            <div class="radio-circle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5"/></svg></div>
           </div>
           <div class="option-card" onclick="selectQuizFamilySupport(this, 'No — doing this on my own')">
-            <span class="option-title">No — doing this on my own 💪</span>
-            <div class="radio-circle">✓</div>
+            <span class="option-title">No — doing this on my own</span>
+            <div class="radio-circle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5"/></svg></div>
           </div>
           <div class="option-card" onclick="selectQuizFamilySupport(this, 'Prefer not to say')">
             <span class="option-title">Prefer not to say</span>
-            <div class="radio-circle">✓</div>
+            <div class="radio-circle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5"/></svg></div>
           </div>
         </div>
 
@@ -575,17 +665,29 @@
            PART 1 — ONBOARDING QUIZ (SCREEN 7: PROCESSING / TRANSITION)
            ===================================================================== -->
       <section class="screen-view" id="s-quiz-7-processing" style="justify-content:center; align-items:center; text-align:center; padding:32px 24px;">
-        <div style="width:72px; height:72px; border-radius:50%; background:var(--primary-50); border:3px solid var(--primary-200); display:flex; align-items:center; justify-content:center; margin-bottom:24px;">
-          <span style="font-size:32px;">🔄</span>
+        <div style="width:72px; height:72px; border-radius:50%; background:var(--primary-50); border:3px solid var(--primary-200); display:flex; align-items:center; justify-content:center; margin-bottom:24px; color:var(--primary-600);">
+          <svg class="h-icon h-icon-lg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M16.023 9.348h4.992v-.001M2.985 19.644v-4.992m0 0h4.992m-4.993 0 3.181 3.183a8.25 8.25 0 0 0 13.803-3.7M4.031 9.865a8.25 8.25 0 0 1 13.803-3.7l3.181 3.182m0-4.991v4.99" /></svg>
         </div>
         <h2 class="page-headline" style="font-size:22px;">Building your career clarity plan...</h2>
         <p class="page-subtext" style="max-width:280px; margin-top:6px;">Personalizing your dashboard based on your 7 answers.</p>
 
         <div style="margin-top:28px; width:100%; display:flex; flex-direction:column; gap:10px; text-align:left; font-size:13px; color:var(--neutral-700);">
-          <div id="procStep1" style="opacity:0.3; transition:opacity 0.3s;">✓ Looking at your experience & career break</div>
-          <div id="procStep2" style="opacity:0.3; transition:opacity 0.3s;">✓ Understanding your goals & time commitment</div>
-          <div id="procStep3" style="opacity:0.3; transition:opacity 0.3s;">✓ Finding suitable career paths & recommended roles</div>
-          <div id="procStep4" style="opacity:0.3; transition:opacity 0.3s;">✓ Building your restart roadmap</div>
+          <div id="procStep1" style="opacity:0.3; transition:opacity 0.3s; display:flex; align-items:center; gap:8px;">
+            <svg class="h-icon h-icon-sm" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="var(--success-600)"><path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" /></svg>
+            <span>Looking at your experience & career break</span>
+          </div>
+          <div id="procStep2" style="opacity:0.3; transition:opacity 0.3s; display:flex; align-items:center; gap:8px;">
+            <svg class="h-icon h-icon-sm" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="var(--success-600)"><path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" /></svg>
+            <span>Understanding your goals & time commitment</span>
+          </div>
+          <div id="procStep3" style="opacity:0.3; transition:opacity 0.3s; display:flex; align-items:center; gap:8px;">
+            <svg class="h-icon h-icon-sm" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="var(--success-600)"><path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" /></svg>
+            <span>Finding suitable career paths & recommended roles</span>
+          </div>
+          <div id="procStep4" style="opacity:0.3; transition:opacity 0.3s; display:flex; align-items:center; gap:8px;">
+            <svg class="h-icon h-icon-sm" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="var(--success-600)"><path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" /></svg>
+            <span>Building your restart roadmap</span>
+          </div>
         </div>
       </section>
 
@@ -653,7 +755,9 @@
                   <span id="dashReadinessPct">62%</span> <span style="font-size:13px; font-weight:700; color:var(--warning-700);">(Almost ready)</span>
                 </div>
               </div>
-              <span style="font-size:24px;">📊</span>
+              <div class="h-icon-box primary">
+                <svg class="h-icon" fill="none" viewBox="0 0 24 24" stroke-width="1.8" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M3 13.125C3 12.504 3.504 12 4.125 12h2.25c.621 0 1.125.504 1.125 1.125v6.75C7.5 20.496 6.996 21 6.375 21h-2.25A1.125 1.125 0 0 1 3 19.875v-6.75ZM9.75 8.625c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125v11.25c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 0 1-1.125-1.125V8.625ZM16.5 4.125c0-.621.504-1.125 1.125-1.125h2.25C20.496 3 21 3.504 21 4.125v15.75c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 0 1-1.125-1.125V4.125Z" /></svg>
+              </div>
             </div>
             <p style="font-size:12px; color:var(--neutral-600); margin-top:4px;">
               "You have a clear goal of working from home and some family support, which can help you stay motivated and focused."
@@ -715,7 +819,7 @@
         </div>
         <div style="padding:0 20px 14px;">
           <div class="category-card" id="strengthsList" style="display:flex; flex-direction:column; gap:6px;">
-            <!-- Rendered dynamically -->
+            <!-- Rendered dynamically via app.js with Heroicons SVGs -->
           </div>
         </div>
 
@@ -725,7 +829,7 @@
         </div>
         <div style="padding:0 20px 14px;">
           <div class="category-card" id="focusAreasList" style="display:flex; flex-direction:column; gap:6px;">
-            <!-- Rendered dynamically -->
+            <!-- Rendered dynamically via app.js with Heroicons SVGs -->
           </div>
         </div>
 
@@ -765,8 +869,14 @@
               Not sure what to do next? Speak 1-on-1 with an experienced counsellor.
             </p>
             <div style="display:flex; flex-direction:column; gap:6px; margin-top:10px;">
-              <button class="btn-primary" style="height:38px; font-size:12.5px;" onclick="openCounsellorModal()">Talk to a counsellor (Free Call)</button>
-              <button class="btn-outline" style="height:38px; font-size:12.5px;" onclick="showToast('💬 WhatsApp Chat opening with Mentra Advisor...')">Chat on WhatsApp 💬</button>
+              <button class="btn-primary" style="height:38px; font-size:12.5px;" onclick="openCounsellorModal()">
+                <svg class="h-icon h-icon-sm" fill="none" viewBox="0 0 24 24" stroke-width="1.8" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 0 0 2.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 0 1-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 0 0-1.091-.852H4.5A2.25 2.25 0 0 0 2.25 4.5v2.25Z" /></svg>
+                <span>Talk to a counsellor (Free Call)</span>
+              </button>
+              <button class="btn-outline" style="height:38px; font-size:12.5px;" onclick="showToast('WhatsApp Chat opening with Mentra Advisor...')">
+                <svg class="h-icon h-icon-sm" fill="none" viewBox="0 0 24 24" stroke-width="1.8" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M8.625 12a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Zm0 0H8.25m4.125 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Zm0 0H12m4.125 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Zm0 0h-.375M21 12c0 4.556-4.03 8.25-9 8.25a9.764 9.764 0 0 1-2.555-.337A5.972 5.972 0 0 1 5.41 20.97a.75.75 0 0 1-.744-.658.75.75 0 0 1 .05-.417l.803-1.606A8.09 8.09 0 0 1 3 12c0-4.556 4.03-8.25 9-8.25s9 3.694 9 8.25Z" /></svg>
+                <span>Chat on WhatsApp</span>
+              </button>
             </div>
           </div>
         </div>
@@ -823,7 +933,9 @@
         <!-- Career Reassurance Note -->
         <div style="padding:0 20px 12px;">
           <div class="supportive-callout">
-            <span style="font-size:18px;">💡</span>
+            <div class="h-icon-box primary">
+              <svg class="h-icon" fill="none" viewBox="0 0 24 24" stroke-width="1.8" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M12 18v-5.25m0 0a6.01 6.01 0 0 0 1.5-.189m-1.5.189a6.01 6.01 0 0 1-1.5-.189m3.75 7.478a12.06 12.06 0 0 1-4.5 0m3.75 2.383a14.406 14.406 0 0 1-3 0M14.25 18v-.192c0-.983.658-1.823 1.508-2.316a7.5 7.5 0 1 0-7.516 0c.85.493 1.508 1.333 1.508 2.316V18" /></svg>
+            </div>
             <div>
               <strong>Career Reassurance:</strong> Your existing experience doesn't disappear during a career break. Marketing is a growing digital path with ample work-from-home opportunities across businesses.
             </div>
@@ -894,7 +1006,7 @@
         <div style="padding:14px 20px 8px; display:flex; justify-content:space-between; align-items:center;">
           <div>
             <div style="font-size:12px; font-weight:700; color:var(--neutral-500);">Welcome to class,</div>
-            <h2 style="font-size:22px; font-weight:800; color:var(--color-black);">Good morning, Minakshi 👋</h2>
+            <h2 style="font-size:22px; font-weight:800; color:var(--color-black);">Good morning, Minakshi</h2>
           </div>
           <div style="width:34px; height:34px; border-radius:50%; background:var(--primary-100); color:var(--primary-700); font-weight:800; display:flex; align-items:center; justify-content:center; font-size:13px;">
             M
@@ -920,13 +1032,15 @@
             <span class="chip chip-primary" style="position:absolute; top:10px; left:10px; background:rgba(0,0,0,0.6); color:white; border:none; font-size:10px;">
               Module 2 · Current Lesson
             </span>
-            <button class="video-play-btn-large" id="videoPlayBtnLarge" onclick="toggleVideoPlay()">▶</button>
+            <button class="video-play-btn-large" id="videoPlayBtnLarge" onclick="toggleVideoPlay()">
+              <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+            </button>
             <div style="font-size:13px; font-weight:700; margin-top:8px; text-shadow:0 2px 4px rgba(0,0,0,0.8);">
               Social Media Fundamentals & Strategy
             </div>
           </div>
           <div class="video-controls-bar">
-            <div class="video-seek-track" onclick="showToast('⏩ Seek position updated')">
+            <div class="video-seek-track" onclick="showToast('Seek position updated')">
               <div class="video-seek-fill"></div>
             </div>
             <div class="video-controls-row">
@@ -944,7 +1058,7 @@
         <!-- Next Action Card -->
         <div style="margin:0 20px 14px; background:var(--warning-50); border:1.5px solid var(--warning-400); border-radius:var(--radius-lg); padding:14px;">
           <div style="display:flex; justify-content:space-between; align-items:center;">
-            <span style="font-size:10.5px; font-weight:800; color:var(--warning-800); text-transform:uppercase;">⚡ Next Action</span>
+            <span style="font-size:10.5px; font-weight:800; color:var(--warning-800); text-transform:uppercase;">Next Action</span>
             <span style="font-size:10.5px; color:var(--error-600); font-weight:800;">Due Today</span>
           </div>
           <div style="font-size:14.5px; font-weight:800; color:var(--color-black); margin-top:2px;" id="nextActionTitle">
@@ -963,13 +1077,13 @@
           <div class="category-card" style="padding:10px 14px; border-left:4px solid var(--success-500);" onclick="goToScreen('s-module-detail')">
             <div style="display:flex; justify-content:space-between;">
               <span style="font-weight:800; font-size:13px;">Module 1: Digital Marketing Foundations</span>
-              <span style="color:var(--success-600); font-weight:800; font-size:11px;">✓ Complete</span>
+              <span style="color:var(--success-600); font-weight:800; font-size:11px;">Complete</span>
             </div>
           </div>
           <div class="category-card" style="padding:10px 14px; border-left:4px solid var(--primary-600); background:var(--primary-25);" onclick="goToScreen('s-module-detail')">
             <div style="display:flex; justify-content:space-between;">
               <span style="font-weight:800; font-size:13px; color:var(--primary-800);">Module 2: Social Media Marketing</span>
-              <span class="chip chip-primary" style="font-size:10px; padding:2px 6px;">● In Progress</span>
+              <span class="chip chip-primary" style="font-size:10px; padding:2px 6px;">In Progress</span>
             </div>
           </div>
           <div class="category-card" style="padding:10px 14px; opacity:0.85;" onclick="goToScreen('s-module-detail')">
@@ -981,7 +1095,7 @@
           <div class="category-card" style="padding:10px 14px; opacity:0.7;">
             <div style="display:flex; justify-content:space-between;">
               <span style="font-weight:700; font-size:13px;">Module 4: Content Marketing & Copy</span>
-              <span style="color:var(--neutral-400); font-size:11px;">🔒 Locked</span>
+              <span style="color:var(--neutral-400); font-size:11px;">Locked</span>
             </div>
           </div>
         </div>
@@ -1024,7 +1138,10 @@
           <!-- 1. Video -->
           <div class="category-card" onclick="goToScreen('s-video-lesson')">
             <div style="display:flex; justify-content:space-between; align-items:center;">
-              <span style="font-weight:800; font-size:13px;">🎥 VIDEO: Social Media Strategy</span>
+              <div style="display:flex; align-items:center; gap:8px;">
+                <svg class="h-icon" fill="none" viewBox="0 0 24 24" stroke-width="1.8" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="m15.75 10.5 4.72-4.72a.75.75 0 0 1 1.28.53v11.38a.75.75 0 0 1-1.28.53l-4.72-4.72M4.5 18.75h9a2.25 2.25 0 0 0 2.25-2.25v-9a2.25 2.25 0 0 0-2.25-2.25h-9A2.25 2.25 0 0 0 2.25 7.5v9a2.25 2.25 0 0 0 2.25 2.25Z" /></svg>
+                <span style="font-weight:800; font-size:13px;">VIDEO: Social Media Strategy</span>
+              </div>
               <span class="chip chip-primary" style="font-size:10px;">12 min</span>
             </div>
           </div>
@@ -1032,23 +1149,32 @@
           <!-- 2. PDF Lesson -->
           <div class="category-card" onclick="goToScreen('s-pdf-lesson')">
             <div style="display:flex; justify-content:space-between; align-items:center;">
-              <span style="font-weight:800; font-size:13px;">📄 PDF NOTES: Content Pillar Guide</span>
+              <div style="display:flex; align-items:center; gap:8px;">
+                <svg class="h-icon" fill="none" viewBox="0 0 24 24" stroke-width="1.8" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 14.25v-2.625a3.375 3.375 0 0 0-3.375-3.375h-1.5A1.125 1.125 0 0 1 13.5 7.125v-1.5a3.375 3.375 0 0 0-3.375-3.375H8.25m0 12.75h7.5m-7.5 3H12M10.5 2.25H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 0 0-9-9Z" /></svg>
+                <span style="font-weight:800; font-size:13px;">PDF NOTES: Content Pillar Guide</span>
+              </div>
               <span class="chip chip-neutral" style="font-size:10px;">8 pages</span>
             </div>
           </div>
 
           <!-- 3. Notes -->
-          <div class="category-card" onclick="showToast('📥 Downloaded: Module2_Summary_Notes.pdf')">
+          <div class="category-card" onclick="showToast('Downloaded: Module2_Summary_Notes.pdf')">
             <div style="display:flex; justify-content:space-between; align-items:center;">
-              <span style="font-weight:800; font-size:13px;">📝 NOTES: Downloadable Cheat Sheet</span>
+              <div style="display:flex; align-items:center; gap:8px;">
+                <svg class="h-icon" fill="none" viewBox="0 0 24 24" stroke-width="1.8" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25H12" /></svg>
+                <span style="font-weight:800; font-size:13px;">NOTES: Downloadable Cheat Sheet</span>
+              </div>
               <span style="font-size:11px; color:var(--primary-600); font-weight:700;">Download ↓</span>
             </div>
           </div>
 
           <!-- 4. Resources -->
-          <div class="category-card" onclick="showToast('🔗 Notion Template Opened in New Tab')">
+          <div class="category-card" onclick="showToast('Notion Template Opened in New Tab')">
             <div style="display:flex; justify-content:space-between; align-items:center;">
-              <span style="font-weight:800; font-size:13px;">🧰 RESOURCES: 1-Week Calendar Template</span>
+              <div style="display:flex; align-items:center; gap:8px;">
+                <svg class="h-icon" fill="none" viewBox="0 0 24 24" stroke-width="1.8" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M13.19 8.688a4.5 4.5 0 0 1 1.242 7.244l-4.5 4.5a4.5 4.5 0 0 1-6.364-6.364l1.757-1.757m13.35-.622 1.757-1.757a4.5 4.5 0 0 0-6.364-6.364l-4.5 4.5a4.5 4.5 0 0 0 1.242 7.244" /></svg>
+                <span style="font-weight:800; font-size:13px;">RESOURCES: 1-Week Calendar Template</span>
+              </div>
               <span style="font-size:11px; color:var(--primary-600); font-weight:700;">Notion URL ↗</span>
             </div>
           </div>
@@ -1056,15 +1182,21 @@
           <!-- 5. Assignment -->
           <div class="category-card" onclick="goToScreen('s-assignment')">
             <div style="display:flex; justify-content:space-between; align-items:center;">
-              <span style="font-weight:800; font-size:13px;">📝 ASSIGNMENT: Build 1-Week Schedule</span>
+              <div style="display:flex; align-items:center; gap:8px;">
+                <svg class="h-icon" fill="none" viewBox="0 0 24 24" stroke-width="1.8" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="m16.862 4.487 1.687-1.688a1.875 1.875 0 1 1 2.652 2.652L10.582 16.07a4.5 4.5 0 0 1-1.897 1.13L6 18l.8-2.685a4.5 4.5 0 0 1 1.13-1.897l8.932-8.931Zm0 0L19.5 7.125M18 14v4.75A2.25 2.25 0 0 1 15.75 21H5.25A2.25 2.25 0 0 1 3 18.75V8.25A2.25 2.25 0 0 1 5.25 6H10" /></svg>
+                <span style="font-weight:800; font-size:13px;">ASSIGNMENT: Build 1-Week Schedule</span>
+              </div>
               <span class="chip chip-warning" style="font-size:10px;">Due Today</span>
             </div>
           </div>
 
           <!-- 6. Q&A -->
-          <div class="category-card" onclick="showToast('💬 Q&A Board: 14 questions answered by mentors')">
+          <div class="category-card" onclick="showToast('Q&A Board: 14 questions answered by mentors')">
             <div style="display:flex; justify-content:space-between; align-items:center;">
-              <span style="font-weight:800; font-size:13px;">❓ Q&A: Ask Questions & Read Answers</span>
+              <div style="display:flex; align-items:center; gap:8px;">
+                <svg class="h-icon" fill="none" viewBox="0 0 24 24" stroke-width="1.8" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M8.625 12a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Zm0 0H8.25m4.125 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Zm0 0H12m4.125 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Zm0 0h-.375M21 12c0 4.556-4.03 8.25-9 8.25a9.764 9.764 0 0 1-2.555-.337A5.972 5.972 0 0 1 5.41 20.97a.75.75 0 0 1-.744-.658.75.75 0 0 1 .05-.417l.803-1.606A8.09 8.09 0 0 1 3 12c0-4.556 4.03-8.25 9-8.25s9 3.694 9 8.25Z" /></svg>
+                <span style="font-weight:800; font-size:13px;">Q&A: Ask Questions & Read Answers</span>
+              </div>
               <span style="font-size:11px; color:var(--neutral-500);">14 threads</span>
             </div>
           </div>
@@ -1072,7 +1204,10 @@
           <!-- 7. Live Class -->
           <div class="category-card" onclick="goToScreen('s-live-class')">
             <div style="display:flex; justify-content:space-between; align-items:center;">
-              <span style="font-weight:800; font-size:13px;">🔴 LIVE CLASS: Thursday Doubt Clearing</span>
+              <div style="display:flex; align-items:center; gap:8px;">
+                <svg class="h-icon" fill="none" viewBox="0 0 24 24" stroke-width="1.8" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="m15.75 10.5 4.72-4.72a.75.75 0 0 1 1.28.53v11.38a.75.75 0 0 1-1.28.53l-4.72-4.72M4.5 18.75h9a2.25 2.25 0 0 0 2.25-2.25v-9a2.25 2.25 0 0 0-2.25-2.25h-9A2.25 2.25 0 0 0 2.25 7.5v9a2.25 2.25 0 0 0 2.25 2.25Z" /></svg>
+                <span style="font-weight:800; font-size:13px;">LIVE CLASS: Thursday Doubt Clearing</span>
+              </div>
               <span class="chip chip-primary" style="font-size:10px;">7:00 PM</span>
             </div>
           </div>
@@ -1091,13 +1226,15 @@
 
         <div class="video-player-container">
           <div class="video-screen-mock" style="height:200px;">
-            <button class="video-play-btn-large" onclick="toggleVideoPlay()">▶</button>
+            <button class="video-play-btn-large" onclick="toggleVideoPlay()">
+              <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+            </button>
           </div>
           <div class="video-controls-bar">
             <div class="video-seek-track"><div class="video-seek-fill" style="width:65%;"></div></div>
             <div class="video-controls-row">
               <span>07:48 / 12:00</span>
-              <button class="btn-ghost" style="color:white; padding:0;" onclick="showToast('⚡ Speed: 1.25x')">1.25x</button>
+              <button class="btn-ghost" style="color:white; padding:0;" onclick="showToast('Speed: 1.25x')">1.25x</button>
             </div>
           </div>
         </div>
@@ -1160,8 +1297,10 @@
 
         <div style="padding:0 20px 10px;">
           <div style="border:2px dashed var(--primary-300); background:var(--primary-25); border-radius:var(--radius-md); padding:16px; text-align:center; cursor:pointer;" onclick="simulateAssignmentFile()">
-            <div style="font-size:24px;">📄</div>
-            <div style="font-weight:700; font-size:13px; color:var(--primary-700); margin-top:2px;" id="fileUploadPrompt">
+            <div class="h-icon-box primary" style="margin:0 auto 6px;">
+              <svg class="h-icon h-icon-md" fill="none" viewBox="0 0 24 24" stroke-width="1.8" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 14.25v-2.625a3.375 3.375 0 0 0-3.375-3.375h-1.5A1.125 1.125 0 0 1 13.5 7.125v-1.5a3.375 3.375 0 0 0-3.375-3.375H8.25m0 12.75h7.5m-7.5 3H12M10.5 2.25H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 0 0-9-9Z" /></svg>
+            </div>
+            <div style="font-weight:700; font-size:13px; color:var(--primary-700);" id="fileUploadPrompt">
               Tap to attach SocialMedia_Strategy.pdf
             </div>
             <div style="font-size:11px; color:var(--neutral-500);">PDF, Notion URL, or Figma link</div>
@@ -1198,7 +1337,7 @@
         </div>
 
         <div style="padding:0 20px 24px; margin-top:auto;">
-          <button class="btn-primary" onclick="showToast('🎥 Joining Live Room with 18 cohort peers...')">Join Class Room →</button>
+          <button class="btn-primary" onclick="showToast('Joining Live Room with 18 cohort peers...')">Join Class Room →</button>
         </div>
       </section>
 
@@ -1215,10 +1354,22 @@
         <!-- Badges Grid -->
         <div class="section-header"><h3 class="section-title">Earned Badges</h3></div>
         <div class="badge-grid">
-          <div class="badge-box"><div class="badge-icon">🌟</div><div class="badge-title">First Lesson</div></div>
-          <div class="badge-box"><div class="badge-icon">🔥</div><div class="badge-title">7-Day Streak</div></div>
-          <div class="badge-box"><div class="badge-icon">📦</div><div class="badge-title">Module Master</div></div>
-          <div class="badge-box"><div class="badge-icon">📝</div><div class="badge-title">Assignment Pro</div></div>
+          <div class="badge-box">
+            <svg class="badge-icon-svg" fill="none" viewBox="0 0 24 24" stroke-width="1.8" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6.042A8.967 8.967 0 0 0 6 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 0 1 6 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 0 1 6-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0 0 18 18a8.967 8.967 0 0 0-6 2.292m0-14.25v14.25" /></svg>
+            <div class="badge-title">First Lesson</div>
+          </div>
+          <div class="badge-box">
+            <svg class="badge-icon-svg" fill="none" viewBox="0 0 24 24" stroke-width="1.8" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="m3.75 13.5 10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75Z" /></svg>
+            <div class="badge-title">7-Day Streak</div>
+          </div>
+          <div class="badge-box">
+            <svg class="badge-icon-svg" fill="none" viewBox="0 0 24 24" stroke-width="1.8" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="m21 7.5-9-5.25L3 7.5m18 0-9 5.25m9-5.25v9l-9 5.25M3 7.5l9 5.25M3 7.5v9l9 5.25m0-9v9" /></svg>
+            <div class="badge-title">Module Master</div>
+          </div>
+          <div class="badge-box">
+            <svg class="badge-icon-svg" fill="none" viewBox="0 0 24 24" stroke-width="1.8" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75 11.25 15 15 9.75M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" /></svg>
+            <div class="badge-title">Assignment Pro</div>
+          </div>
         </div>
 
         <!-- Leaderboard List -->
@@ -1239,7 +1390,7 @@
             <div style="display:flex; align-items:center; gap:10px;">
               <strong style="font-size:14px; color:var(--primary-600);">2</strong>
               <div>
-                <div style="font-weight:800; font-size:13.5px;">Minakshi (You) ⭐</div>
+                <div style="font-weight:800; font-size:13.5px;">Minakshi (You)</div>
                 <div style="font-size:11px; color:var(--neutral-500);">2 modules · 5-day streak</div>
               </div>
             </div>
@@ -1332,8 +1483,8 @@
            PART 14 — 100% READINESS & WHAT'S NEXT
            ===================================================================== -->
       <section class="screen-view" id="s-celebration" style="text-align:center; padding:32px 24px; justify-content:center; align-items:center;">
-        <div style="width:96px; height:96px; border-radius:50%; background:var(--success-50); border:3px solid var(--success-200); display:flex; align-items:center; justify-content:center; margin-bottom:24px;">
-          <span style="font-size:48px;">🏆</span>
+        <div style="width:96px; height:96px; border-radius:50%; background:var(--success-50); border:3px solid var(--success-200); display:flex; align-items:center; justify-content:center; margin-bottom:24px; color:var(--success-600);">
+          <svg class="h-icon h-icon-xl" fill="none" viewBox="0 0 24 24" stroke-width="1.8" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M16.5 18.75h-9m9 0a3 3 0 0 1 3 3h-15a3 3 0 0 1 3-3m9 0v-3.375c0-.621-.504-1.125-1.125-1.125h-.871M7.5 18.75v-3.375c0-.621.504-1.125 1.125-1.125h.872m5.003 0H9.497m5.003 0A23.896 23.896 0 0 0 18 12.016V6.75A2.25 2.25 0 0 0 15.75 4.5h-7.5A2.25 2.25 0 0 0 6 6.75v5.266c0 2.222.613 4.301 1.497 6.096m8.006-13.612A4.5 4.5 0 0 1 20.25 6.75v1.5a4.5 4.5 0 0 1-4.5 4.5M6 4.5A4.5 4.5 0 0 0 1.5 6.75v1.5a4.5 4.5 0 0 0 4.5 4.5" /></svg>
         </div>
         <div style="font-size:13px; font-weight:800; color:var(--success-600); text-transform:uppercase; letter-spacing:0.06em;">100% Career Ready</div>
         <h2 class="page-headline" style="font-size:28px; margin-top:6px;">You're ready!</h2>
@@ -1386,14 +1537,14 @@
         </div>
         <div style="padding:0 20px 14px;">
           <div style="background:var(--primary-25); border:1.5px solid var(--primary-200); border-radius:var(--radius-md); padding:14px; font-size:12px; line-height:1.45;">
-            <strong style="color:var(--primary-800);">💡 How to Frame Your 2–5 Year Break:</strong>
+            <strong style="color:var(--primary-800);">How to Frame Your 2–5 Year Break:</strong>
             <div style="margin-top:4px; font-style:italic;">
               "Dedicated 3 years to family relocation, followed by intentional structured upskilling in modern Digital Marketing and social campaign management through Mentra."
             </div>
           </div>
         </div>
         <div style="padding:0 20px 24px;">
-          <button class="btn-primary" onclick="showToast('📄 Application-ready Resume PDF downloaded!')">Download Ready Resume PDF →</button>
+          <button class="btn-primary" onclick="showToast('Application-ready Resume PDF downloaded')">Download Ready Resume PDF →</button>
         </div>
       </section>
 
@@ -1417,10 +1568,10 @@
             </div>
             <div style="margin-top:14px;">
               <button class="btn-primary" id="recordAudioBtn" style="height:42px; font-size:13px;" onclick="toggleInterviewRecording()">
-                🎙️ Record Practice Answer
+                Record Practice Answer
               </button>
               <span id="recordStatusBadge" style="display:none; text-align:center; font-size:11px; color:var(--error-600); font-weight:700; display:block; margin-top:6px;">
-                ● Recording practice response (0:14)...
+                Recording practice response (0:14)...
               </span>
             </div>
           </div>
@@ -1441,14 +1592,14 @@
           <div class="category-card" style="padding:14px;">
             <div style="font-weight:800; font-size:15px;">Remote Campaign Associate · Meesho</div>
             <div style="font-size:12px; color:var(--neutral-500); margin-top:2px;">Work from home · ₹35k–₹45k / mo</div>
-            <button class="btn-primary" style="height:36px; font-size:12px; margin-top:8px;" onclick="showToast('🤝 Referral request sent to Mentra mentor network!')">
+            <button class="btn-primary" style="height:36px; font-size:12px; margin-top:8px;" onclick="showToast('Referral request sent to Mentra mentor network')">
               Request Mentor Referral →
             </button>
           </div>
           <div class="category-card" style="padding:14px;">
             <div style="font-weight:800; font-size:15px;">Social Media Specialist · Nykaa</div>
             <div style="font-size:12px; color:var(--neutral-500); margin-top:2px;">Hybrid / Flexible · ₹40k–₹55k / mo</div>
-            <button class="btn-primary" style="height:36px; font-size:12px; margin-top:8px;" onclick="showToast('🤝 Referral request sent!')">
+            <button class="btn-primary" style="height:36px; font-size:12px; margin-top:8px;" onclick="showToast('Referral request sent')">
               Request Mentor Referral →
             </button>
           </div>
@@ -1484,27 +1635,27 @@
          ========================================================================= -->
     <nav class="bottom-nav-bar" id="appBottomNav" aria-label="Main Navigation">
       <button class="nav-tab-item active" id="tab-home" onclick="goToScreen('s-home')">
-        <svg viewBox="0 0 24 24"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+        <svg fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="m2.25 12 8.954-8.955c.44-.439 1.152-.439 1.591 0L21.75 12M4.5 9.75v10.125c0 .621.504 1.125 1.125 1.125H9.75v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21h4.125c.621 0 1.125-.504 1.125-1.125V9.75M8.25 21h8.25" /></svg>
         <span class="nav-tab-label">Home</span>
       </button>
 
       <button class="nav-tab-item" id="tab-learn" onclick="goToScreen('s-learn-dashboard')">
-        <svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+        <svg fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M4.26 10.147a60.438 60.438 0 0 1-.491 6.347A48.62 48.62 0 0 1 12 20.904a48.62 48.62 0 0 1 8.232-4.41 60.46 60.46 0 0 1-.491-6.347m-15.482 0a50.636 50.636 0 0 0-2.658-.813A59.906 59.906 0 0 1 12 3.493a59.903 59.903 0 0 1 10.399 5.84c-.896.248-1.783.52-2.658.814m-15.482 0A50.717 50.717 0 0 1 12 13.489a50.702 50.702 0 0 1 7.74-3.342M6.75 15a.75.75 0 1 0 0-1.5.75.75 0 0 0 0 1.5Zm0 0v-3.675A55.378 55.378 0 0 1 12 8.443m-7.007 11.55A5.981 5.981 0 0 0 6.75 15.75v-1.5" /></svg>
         <span class="nav-tab-label">Learn</span>
       </button>
 
       <button class="nav-tab-item" id="tab-community" onclick="goToScreen('s-community')">
-        <svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+        <svg fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M18 18.72a9.094 9.094 0 0 0 3.741-.479 3 3 0 0 0-4.682-2.72m.94 3.198.001.031c0 .225-.012.447-.037.666A11.944 11.944 0 0 1 12 21c-2.17 0-4.207-.576-5.963-1.584A6.062 6.062 0 0 1 6 18.719m12 0a5.971 5.971 0 0 0-.941-3.197m0 0A5.995 5.995 0 0 0 12 12.75a5.995 5.995 0 0 0-5.058 2.772m0 0a3 3 0 0 0-4.681 2.72 8.986 8.986 0 0 0 3.74.477m.94-3.197a5.971 5.971 0 0 0-.94 3.197M15 6.75a3 3 0 1 1-6 0 3 3 0 0 1 6 0Zm6 3a2.25 2.25 0 1 1-4.5 0 2.25 2.25 0 0 1 4.5 0Zm-13.5 0a2.25 2.25 0 1 1-4.5 0 2.25 2.25 0 0 1 4.5 0Z" /></svg>
         <span class="nav-tab-label">Community</span>
       </button>
 
       <button class="nav-tab-item" id="tab-progress" onclick="goToScreen('s-progress')">
-        <svg viewBox="0 0 24 24"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
+        <svg fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M3 13.125C3 12.504 3.504 12 4.125 12h2.25c.621 0 1.125.504 1.125 1.125v6.75C7.5 20.496 6.996 21 6.375 21h-2.25A1.125 1.125 0 0 1 3 19.875v-6.75ZM9.75 8.625c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125v11.25c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 0 1-1.125-1.125V8.625ZM16.5 4.125c0-.621.504-1.125 1.125-1.125h2.25C20.496 3 21 3.504 21 4.125v15.75c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 0 1-1.125-1.125V4.125Z" /></svg>
         <span class="nav-tab-label">Progress</span>
       </button>
 
       <button class="nav-tab-item" id="tab-profile" onclick="goToScreen('s-profile')">
-        <svg viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+        <svg fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M15.75 6a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0ZM4.501 20.118a7.5 7.5 0 0 1 14.998 0A17.933 17.933 0 0 1 12 21.75c-2.676 0-5.216-.584-7.499-1.632Z" /></svg>
         <span class="nav-tab-label">Profile</span>
       </button>
     </nav>
@@ -1532,7 +1683,7 @@
             <div style="display:flex; justify-content:space-between; font-weight:800; font-size:13px;">
               <span>Resume & Break Framing</span><span style="color:var(--primary-600);">75%</span>
             </div>
-            <p style="font-size:11.5px; color:var(--neutral-600); margin-top:2px;">✓ Prior teaching experience and relocation story structured.</p>
+            <p style="font-size:11.5px; color:var(--neutral-600); margin-top:2px;">Prior teaching experience and relocation story structured.</p>
           </div>
 
           <div style="background:var(--neutral-50); border-radius:10px; padding:10px 12px;">
@@ -1559,8 +1710,11 @@
         <div class="sheet-handle"></div>
         <h3 style="font-size:17px; font-weight:800;">Book a Free Career Guidance Call</h3>
         <p style="font-size:12px; color:var(--neutral-600);">1-on-1 confidential call with a Mentra Career Restart Advisor.</p>
-        <div class="option-card selected"><span class="option-title">Friday · 4:00 PM – 4:15 PM</span><div class="radio-circle">✓</div></div>
-        <button class="btn-primary" onclick="confirmCounsellorCall()">Confirm Free Call Booking ✓</button>
+        <div class="option-card selected">
+          <span class="option-title">Friday · 4:00 PM – 4:15 PM</span>
+          <div class="radio-circle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5"/></svg></div>
+        </div>
+        <button class="btn-primary" onclick="confirmCounsellorCall()">Confirm Free Call Booking →</button>
       </div>
     </div>
 
@@ -1591,10 +1745,10 @@
         <div class="sheet-handle"></div>
         <h3 style="font-size:17px; font-weight:800;">Create Community Post</h3>
         <select class="input-custom-box" id="newPostCategory" style="margin-bottom:8px;">
-          <option value="Wins">Celebrate a Win 🎉</option>
-          <option value="Career Restart">Career Restart Question 💭</option>
-          <option value="Job Search">Job Search & WFH Tips 💼</option>
-          <option value="General">General Discussion ☕</option>
+          <option value="Wins">Celebrate a Win</option>
+          <option value="Career Restart">Career Restart Question</option>
+          <option value="Job Search">Job Search & WFH Tips</option>
+          <option value="General">General Discussion</option>
         </select>
         <textarea class="input-custom-box" id="newPostContent" rows="3" placeholder="Share your progress or ask a question to fellow learners..."></textarea>
         <button class="btn-primary" style="margin-top:10px;" onclick="submitNewCommunityPost()">Publish Post →</button>
