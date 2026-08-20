@@ -1,0 +1,131 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 390 844" width="390" height="844">
+    
+  <defs>
+    <linearGradient id="brandGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FA4D87" />
+      <stop offset="100%" stop-color="#7C3AED" />
+    </linearGradient>
+    <linearGradient id="podiumGold" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#FDE68A" />
+      <stop offset="100%" stop-color="#F59E0B" />
+    </linearGradient>
+    <linearGradient id="podiumSilver" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#E2E8F0" />
+      <stop offset="100%" stop-color="#94A3B8" />
+    </linearGradient>
+    <linearGradient id="podiumBronze" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#FFEDD5" />
+      <stop offset="100%" stop-color="#FB923C" />
+    </linearGradient>
+    <linearGradient id="chartGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#8B5CF6" stop-opacity="0.3" />
+      <stop offset="100%" stop-color="#8B5CF6" stop-opacity="0" />
+    </linearGradient>
+    <filter id="dropShadow" x="-10%" y="-10%" width="130%" height="130%">
+      <feDropShadow dx="0" dy="8" stdDeviation="12" flood-opacity="0.12" />
+    </filter>
+  </defs>
+
+    
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&amp;display=swap');
+    text { font-family: 'Manrope', -apple-system, BlinkMacSystemFont, sans-serif; }
+    .bold { font-weight: 800; }
+    .semibold { font-weight: 700; }
+    .medium { font-weight: 600; }
+    .regular { font-weight: 400; }
+  </style>
+
+    <!-- Background Viewport -->
+    <rect width="390" height="844" rx="32" fill="#FFFFFF" stroke="#E5E7EB" stroke-width="2"/>
+
+    <!-- Screen Header -->
+    <g transform="translate(20, 24)">
+      <g transform="translate(0, 0) scale(0.35)">
+        <path d="M 22 15 C 22 10 26 6 31 6 L 45 6 C 50 6 54 10 54 15 L 54 48 C 54 62 43 73 29 73 L 15 73 C 10 73 6 69 6 64 L 6 50 C 6 45 10 41 15 41 L 22 41 Z" fill="url(#brandGrad)"/>
+        <path d="M 68 8 C 68 6 70 5 72 6 L 93 27 C 95 29 95 32 93 34 L 72 55 C 70 56 68 55 68 53 L 68 40 C 68 37 66 35 63 35 L 55 35 C 53 35 52 33 52 31 L 52 29 C 52 27 53 25 55 25 L 63 25 C 66 25 68 23 68 20 Z" fill="#8B5CF6"/>
+        <rect x="62" y="60" width="32" height="15" rx="7.5" fill="#FA4D87"/>
+      </g>
+      <text x="44" y="22" fill="#181D27" class="bold" font-size="16">SHE STARTS</text>
+      
+      <!-- Hamburger Menu Button -->
+      <rect x="314" y="0" width="36" height="36" rx="8" fill="#F4F5F7" stroke="#E5E7EB"/>
+      <path d="M 323 13 H 341 M 323 18 H 341 M 323 23 H 341" stroke="#374151" stroke-width="2" stroke-linecap="round"/>
+    </g>
+
+    <!-- Header Titles -->
+    <text x="20" y="90" fill="#181D27" class="bold" font-size="20">Cohort Live Rooms</text>
+    <text x="20" y="108" fill="#7C3AED" class="bold" font-size="13">Open group discussions & career desks</text>
+
+    <!-- Dynamic Body Content -->
+    
+  <!-- Topic Switcher Pills -->
+  <g transform="translate(20, 126)">
+    <rect x="0" y="0" width="140" height="30" rx="15" fill="#7C3AED"/>
+    <text x="70" y="19" fill="#FFFFFF" class="bold" font-size="11" text-anchor="middle">#career-comebacks</text>
+
+    <rect x="148" y="0" width="125" height="30" rx="15" fill="#F4F5F7"/>
+    <text x="210" y="19" fill="#4B5563" class="bold" font-size="11" text-anchor="middle">#digital-marketing</text>
+  </g>
+
+  <!-- Chat Messages Stream -->
+  <g transform="translate(20, 172)">
+    <!-- Msg 1 (Peer) -->
+    <g transform="translate(0, 0)">
+      <circle cx="16" cy="16" r="16" fill="#E0E7FF"/>
+      <text x="16" y="21" fill="#4338CA" class="bold" font-size="12" text-anchor="middle">R</text>
+      <rect x="42" y="0" width="280" height="66" rx="14" fill="#F3F4F6"/>
+      <text x="54" y="18" fill="#181D27" class="bold" font-size="11.5">Rohan Verma · 10:14 AM</text>
+      <text x="54" y="36" fill="#374151" class="regular" font-size="11.5">Took me 3 weeks to overcome fear of</text>
+      <text x="54" y="52" fill="#374151" class="regular" font-size="11.5">spreadsheets. Now on Module 2!</text>
+    </g>
+
+    <!-- Msg 2 (User John Doe) -->
+    <g transform="translate(28, 80)">
+      <rect x="0" y="0" width="280" height="66" rx="14" fill="url(#brandGrad)"/>
+      <text x="14" y="18" fill="#FFFFFF" class="bold" font-size="11.5">John Doe (You) · 10:24 AM</text>
+      <text x="14" y="36" fill="#FFFFFF" class="medium" font-size="11.5">Has anyone finished the social media</text>
+      <text x="14" y="52" fill="#FFFFFF" class="medium" font-size="11.5">campaign matrix? Super fun!</text>
+    </g>
+
+    <!-- Msg 3 (Advisor) -->
+    <g transform="translate(0, 160)">
+      <circle cx="16" cy="16" r="16" fill="#FEF3C7"/>
+      <text x="16" y="21" fill="#B45309" class="bold" font-size="12" text-anchor="middle">D</text>
+      <rect x="42" y="0" width="280" height="66" rx="14" fill="#FFFBEB" stroke="#FDE68A"/>
+      <text x="54" y="18" fill="#B45309" class="bold" font-size="11.5">Mentor Divya (Senior Lead) · 10:30 AM</text>
+      <text x="54" y="36" fill="#78350F" class="regular" font-size="11.5">Great progress team! Recruiters love</text>
+      <text x="54" y="52" fill="#78350F" class="regular" font-size="11.5">seeing realistic case studies.</text>
+    </g>
+  </g>
+
+  <!-- Input Dock -->
+  <g transform="translate(20, 715)">
+    <rect width="350" height="46" rx="23" fill="#F4F5F7" stroke="#E5E7EB"/>
+    <text x="20" y="28" fill="#9CA3AF" class="regular" font-size="12">Type a message to cohort...</text>
+    <circle cx="325" cy="23" r="16" fill="url(#brandGrad)"/>
+    <path d="M 320 23 L 327 23 M 324 19 L 328 23 L 324 27" stroke="#FFFFFF" stroke-width="2" fill="none" stroke-linecap="round"/>
+  </g>
+
+
+    <!-- Bottom Navigation Bar -->
+    <g transform="translate(0, 774)">
+      <rect width="390" height="70" fill="#FFFFFF" stroke="#E5E7EB" stroke-width="1"/>
+      <g transform="translate(48, 14)">
+        <path d="M -8 8 L -8 -1 L 0 -7 L 8 -1 L 8 8 L 3 8 L 3 2 L -3 2 L -3 8 Z" fill="#FA4D87"/>
+        <text x="0" y="24" fill="#FA4D87" class="bold" font-size="10" text-anchor="middle">Home</text>
+      </g>
+      <g transform="translate(144, 14)">
+        <path d="M 0 -8 L 10 -2 L 0 4 L -10 -2 Z M -8 1 L -8 6 Q 0 10 8 6 L 8 1" stroke="#6B7280" stroke-width="1.8" fill="none" stroke-linecap="round"/>
+        <text x="0" y="24" fill="#6B7280" class="medium" font-size="10" text-anchor="middle">Learn</text>
+      </g>
+      <g transform="translate(240, 14)">
+        <path d="M -6 -7 H 6 V 1 C 6 4 3 6 0 6 C -3 6 -6 4 -6 1 Z M -6 -3 H -9 C -9 2 -6 3 -6 3 M 6 -3 H 9 C 9 2 6 3 6 3 M 0 6 V 9 M -4 9 H 4" stroke="#6B7280" stroke-width="1.8" fill="none" stroke-linecap="round"/>
+        <text x="0" y="24" fill="#6B7280" class="medium" font-size="10" text-anchor="middle">Rankings</text>
+      </g>
+      <g transform="translate(336, 14)">
+        <path d="M -6 6 C -6 3 -3 1 0 1 C 3 1 6 3 6 6 M 0 -2 A 3 3 0 1 0 0 -8 A 3 3 0 0 0 0 -2" stroke="#6B7280" stroke-width="1.8" fill="none" stroke-linecap="round"/>
+        <text x="0" y="24" fill="#6B7280" class="medium" font-size="10" text-anchor="middle">Community</text>
+      </g>
+    </g>
+  </svg>

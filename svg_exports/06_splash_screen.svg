@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 390 844" width="390" height="844">
+  
+  <defs>
+    <linearGradient id="brandGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FA4D87" />
+      <stop offset="100%" stop-color="#7C3AED" />
+    </linearGradient>
+    <linearGradient id="podiumGold" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#FDE68A" />
+      <stop offset="100%" stop-color="#F59E0B" />
+    </linearGradient>
+    <linearGradient id="podiumSilver" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#E2E8F0" />
+      <stop offset="100%" stop-color="#94A3B8" />
+    </linearGradient>
+    <linearGradient id="podiumBronze" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#FFEDD5" />
+      <stop offset="100%" stop-color="#FB923C" />
+    </linearGradient>
+    <linearGradient id="chartGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#8B5CF6" stop-opacity="0.3" />
+      <stop offset="100%" stop-color="#8B5CF6" stop-opacity="0" />
+    </linearGradient>
+    <filter id="dropShadow" x="-10%" y="-10%" width="130%" height="130%">
+      <feDropShadow dx="0" dy="8" stdDeviation="12" flood-opacity="0.12" />
+    </filter>
+  </defs>
+
+  
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&amp;display=swap');
+    text { font-family: 'Manrope', -apple-system, BlinkMacSystemFont, sans-serif; }
+    .bold { font-weight: 800; }
+    .semibold { font-weight: 700; }
+    .medium { font-weight: 600; }
+    .regular { font-weight: 400; }
+  </style>
+
+  <rect width="390" height="844" rx="32" fill="#FAF5FF" stroke="#E5E7EB" stroke-width="2"/>
+  
+  <g transform="translate(195, 280)">
+    <rect x="-80" y="-80" width="160" height="160" rx="36" fill="#FFFFFF" filter="url(#dropShadow)" stroke="#F3E8FF" stroke-width="2"/>
+    <g transform="translate(-45, -45) scale(1.1)">
+      <path d="M 22 15 C 22 10 26 6 31 6 L 45 6 C 50 6 54 10 54 15 L 54 48 C 54 62 43 73 29 73 L 15 73 C 10 73 6 69 6 64 L 6 50 C 6 45 10 41 15 41 L 22 41 Z" fill="url(#brandGrad)"/>
+      <path d="M 68 8 C 68 6 70 5 72 6 L 93 27 C 95 29 95 32 93 34 L 72 55 C 70 56 68 55 68 53 L 68 40 C 68 37 66 35 63 35 L 55 35 C 53 35 52 33 52 31 L 52 29 C 52 27 53 25 55 25 L 63 25 C 66 25 68 23 68 20 Z" fill="#8B5CF6"/>
+      <rect x="62" y="60" width="32" height="15" rx="7.5" fill="#FA4D87"/>
+    </g>
+  </g>
+
+  <text x="195" y="420" fill="#181D27" class="bold" font-size="28" text-anchor="middle" letter-spacing="1">SHE STARTS</text>
+  <text x="195" y="445" fill="#7C3AED" class="bold" font-size="13" text-anchor="middle">CAREER RESTART &amp; GUIDED LEARNING</text>
+  <text x="195" y="475" fill="#4B5563" class="regular" font-size="13.5" text-anchor="middle">Your comeback begins with one clear step.</text>
+
+  <g transform="translate(30, 710)">
+    <rect width="330" height="52" rx="26" fill="url(#brandGrad)" filter="url(#dropShadow)"/>
+    <text x="165" y="32" fill="#FFFFFF" class="bold" font-size="15" text-anchor="middle">Get Started →</text>
+  </g>
+</svg>

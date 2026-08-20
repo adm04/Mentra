@@ -1,0 +1,65 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 390 70" width="390" height="70">
+  
+  <defs>
+    <linearGradient id="brandGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FA4D87" />
+      <stop offset="100%" stop-color="#7C3AED" />
+    </linearGradient>
+    <linearGradient id="podiumGold" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#FDE68A" />
+      <stop offset="100%" stop-color="#F59E0B" />
+    </linearGradient>
+    <linearGradient id="podiumSilver" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#E2E8F0" />
+      <stop offset="100%" stop-color="#94A3B8" />
+    </linearGradient>
+    <linearGradient id="podiumBronze" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#FFEDD5" />
+      <stop offset="100%" stop-color="#FB923C" />
+    </linearGradient>
+    <linearGradient id="chartGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#8B5CF6" stop-opacity="0.3" />
+      <stop offset="100%" stop-color="#8B5CF6" stop-opacity="0" />
+    </linearGradient>
+    <filter id="dropShadow" x="-10%" y="-10%" width="130%" height="130%">
+      <feDropShadow dx="0" dy="8" stdDeviation="12" flood-opacity="0.12" />
+    </filter>
+  </defs>
+
+  
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&amp;display=swap');
+    text { font-family: 'Manrope', -apple-system, BlinkMacSystemFont, sans-serif; }
+    .bold { font-weight: 800; }
+    .semibold { font-weight: 700; }
+    .medium { font-weight: 600; }
+    .regular { font-weight: 400; }
+  </style>
+
+  <rect width="390" height="70" fill="#FFFFFF" stroke="#E5E7EB" stroke-width="1"/>
+
+  <!-- Tab 1: Home (Active) -->
+  <g transform="translate(48, 14)">
+    <rect x="-24" y="-4" width="48" height="48" rx="12" fill="#FDF2F8"/>
+    <path d="M -8 8 L -8 -1 L 0 -7 L 8 -1 L 8 8 L 3 8 L 3 2 L -3 2 L -3 8 Z" fill="#FA4D87"/>
+    <text x="0" y="24" fill="#FA4D87" class="bold" font-size="10" text-anchor="middle">Home</text>
+  </g>
+
+  <!-- Tab 2: Learn -->
+  <g transform="translate(144, 14)">
+    <path d="M 0 -8 L 10 -2 L 0 4 L -10 -2 Z M -8 1 L -8 6 Q 0 10 8 6 L 8 1" stroke="#6B7280" stroke-width="1.8" fill="none" stroke-linecap="round"/>
+    <text x="0" y="24" fill="#6B7280" class="medium" font-size="10" text-anchor="middle">Learn</text>
+  </g>
+
+  <!-- Tab 3: Leaderboard -->
+  <g transform="translate(240, 14)">
+    <path d="M -6 -7 H 6 V 1 C 6 4 3 6 0 6 C -3 6 -6 4 -6 1 Z M -6 -3 H -9 C -9 2 -6 3 -6 3 M 6 -3 H 9 C 9 2 6 3 6 3 M 0 6 V 9 M -4 9 H 4" stroke="#6B7280" stroke-width="1.8" fill="none" stroke-linecap="round"/>
+    <text x="0" y="24" fill="#6B7280" class="medium" font-size="10" text-anchor="middle">Rankings</text>
+  </g>
+
+  <!-- Tab 4: Community -->
+  <g transform="translate(336, 14)">
+    <path d="M -6 6 C -6 3 -3 1 0 1 C 3 1 6 3 6 6 M 0 -2 A 3 3 0 1 0 0 -8 A 3 3 0 0 0 0 -2" stroke="#6B7280" stroke-width="1.8" fill="none" stroke-linecap="round"/>
+    <text x="0" y="24" fill="#6B7280" class="medium" font-size="10" text-anchor="middle">Community</text>
+  </g>
+</svg>
