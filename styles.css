@@ -18,18 +18,24 @@
   --font-family: 'Manrope', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   --font-mono: 'JetBrains Mono', monospace;
 
-  /* Primary Brand Color: Indigo (#4C4FE0) */
-  --primary-25: #F6F8FF;
-  --primary-50: #EEF2FF;
-  --primary-100: #E0E7FF;
-  --primary-200: #C7D2FE;
-  --primary-300: #A5B4FC;
-  --primary-400: #818CF8;
-  --primary-500: #6366F1;
-  --primary-600: #4C4FE0;
-  --primary-700: #3730A3;
-  --primary-800: #2B2580;
-  --primary-900: #1E1B4B;
+  /* Primary Brand Colors: SheStarts Gradient (Pink #FA4D87 to Purple #7C3AED) */
+  --primary-25: #FDF2F8;
+  --primary-50: #FAF5FF;
+  --primary-100: #F3E8FF;
+  --primary-200: #E9D5FF;
+  --primary-300: #D8B4FE;
+  --primary-400: #C084FC;
+  --primary-500: #FA4D87;
+  --primary-600: #8B5CF6;
+  --primary-700: #7C3AED;
+  --primary-800: #6D28D9;
+  --primary-900: #4C1D95;
+
+  /* Gradient Tokens */
+  --brand-pink: #FA4D87;
+  --brand-purple: #8B5CF6;
+  --brand-gradient: linear-gradient(135deg, #FA4D87 0%, #8B5CF6 100%);
+  --brand-gradient-vertical: linear-gradient(180deg, #FA4D87 0%, #7C3AED 100%);
 
   /* Secondary: Cyan & Teal */
   --cyan-50: #ECFDFF;
@@ -413,15 +419,31 @@ body {
   align-items: center;
   gap: 8px;
   font-weight: 800;
-  font-size: 22px;
-  color: var(--primary-600);
-  letter-spacing: -0.02em;
+  font-size: 18px;
+  color: var(--color-black);
+  letter-spacing: -0.03em;
+}
+
+.mentra-logo::before {
+  content: '';
+  width: 22px;
+  height: 22px;
+  display: inline-block;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100' fill='none'%3E%3Cdefs%3E%3ClinearGradient id='g1' x1='0' y1='0' x2='0' y2='1'%3E%3Cstop offset='0%25' stop-color='%23FA4D87'/%3E%3Cstop offset='100%25' stop-color='%237C3AED'/%3E%3C/linearGradient%3E%3ClinearGradient id='g2' x1='0' y1='1' x2='1' y2='0'%3E%3Cstop offset='0%25' stop-color='%23C084FC'/%3E%3Cstop offset='100%25' stop-color='%23FA4D87'/%3E%3C/linearGradient%3E%3ClinearGradient id='g3' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0%25' stop-color='%23A855F7'/%3E%3Cstop offset='100%25' stop-color='%237C3AED'/%3E%3C/linearGradient%3E%3C/defs%3E%3Cpath d='M12 10C12 4.48 16.48 0 22 0H42C47.52 0 52 4.48 52 10V52H22C9.85 52 0 61.85 0 74V74C0 88.36 11.64 100 26 100H42C47.52 100 52 95.52 52 90V52H12V10Z' fill='url(%23g1)'/%3E%3Cpath d='M54 44L84 14M84 14H58M84 14V40' stroke='url(%23g2)' stroke-width='12' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M52 52H76C89.25 52 100 62.75 100 76V76C100 89.25 89.25 100 76 100H52V52Z' fill='url(%23g3)'/%3E%3C/svg%3E") center/contain no-repeat;
+  flex-shrink: 0;
+}
+
+.shestarts-logo-svg {
+  width: 24px;
+  height: 24px;
+  flex-shrink: 0;
+  display: inline-block;
 }
 
 .btn-primary {
   width: 100%;
   height: 50px;
-  background: var(--primary-600);
+  background: linear-gradient(135deg, #FA4D87 0%, #7C3AED 100%);
   color: var(--color-white);
   font-family: var(--font-family);
   font-size: 15px;
@@ -433,14 +455,15 @@ body {
   align-items: center;
   justify-content: center;
   gap: 8px;
-  box-shadow: var(--shadow-primary);
+  box-shadow: 0 8px 22px rgba(250, 77, 135, 0.32);
   transition: all 0.15s ease;
   user-select: none;
 }
 
 .btn-primary:hover {
-  background: var(--primary-700);
+  background: linear-gradient(135deg, #F43F7A 0%, #6D28D9 100%);
   transform: translateY(-1px);
+  box-shadow: 0 10px 26px rgba(250, 77, 135, 0.4);
 }
 
 .btn-primary:active {
