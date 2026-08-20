@@ -186,9 +186,9 @@ function goToScreen(screenId) {
     btn.classList.toggle('active', attr.includes(`'${screenId}'`));
   });
 
-  // Persistent bottom navigation visibility (Home, Learn, Community, Progress, Profile)
+  // Persistent bottom navigation visibility (Home, Learn, Leaderboard, Community, Progress, Profile)
   const bottomNav = document.getElementById('appBottomNav');
-  const mainTabs = ['s-home', 's-learn-dashboard', 's-community', 's-progress', 's-profile'];
+  const mainTabs = ['s-home', 's-learn-dashboard', 's-leaderboard', 's-community', 's-progress', 's-profile'];
   if (bottomNav) {
     bottomNav.style.display = mainTabs.includes(screenId) ? 'flex' : 'none';
   }
@@ -197,6 +197,7 @@ function goToScreen(screenId) {
   document.querySelectorAll('.nav-tab-item').forEach(tab => tab.classList.remove('active'));
   if (screenId === 's-home') document.getElementById('tab-home')?.classList.add('active');
   if (screenId === 's-learn-dashboard') document.getElementById('tab-learn')?.classList.add('active');
+  if (screenId === 's-leaderboard') document.getElementById('tab-leaderboard')?.classList.add('active');
   if (screenId === 's-community') document.getElementById('tab-community')?.classList.add('active');
   if (screenId === 's-progress') document.getElementById('tab-progress')?.classList.add('active');
   if (screenId === 's-profile') document.getElementById('tab-profile')?.classList.add('active');

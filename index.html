@@ -11,7 +11,7 @@
   <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
   <meta http-equiv="Pragma" content="no-cache">
   <meta http-equiv="Expires" content="0">
-  <link rel="stylesheet" href="styles.css?v=20260820.8">
+  <link rel="stylesheet" href="styles.css?v=20260820.9">
 </head>
 <body>
 
@@ -912,6 +912,24 @@
             <p style="font-size:12px; color:var(--neutral-600); margin-top:4px;">
               Strong transferable foundation with clear remote work focus. Ready for practical skill building.
             </p>
+          </div>
+        </div>
+
+        <!-- COHORT LEADERBOARD TEASER -->
+        <div style="padding:0 20px 14px;">
+          <div class="category-card" style="border:1.5px solid var(--primary-200); background:linear-gradient(135deg, var(--primary-25) 0%, white 100%); cursor:pointer;" onclick="goToScreen('s-leaderboard')">
+            <div style="display:flex; justify-content:space-between; align-items:center;">
+              <div style="display:flex; align-items:center; gap:10px;">
+                <div class="h-icon-box primary" style="background:linear-gradient(135deg, #FA4D87 0%, #7C3AED 100%); color:white;">
+                  <svg class="h-icon" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M16.5 18.75h-9m9 0a3 3 0 0 1 3 3h-15a3 3 0 0 1 3-3m9 0v-3.375c0-.621-.504-1.125-1.125-1.125h-.871M7.5 18.75v-3.375c0-.621.504-1.125 1.125-1.125h.872m5.003 0H9.497m5.003 0A23.896 23.896 0 0 0 18 12.016V6.75A2.25 2.25 0 0 0 15.75 4.5h-7.5A2.25 2.25 0 0 0 6 6.75v5.266c0 2.222.613 4.301 1.497 6.096m8.006-13.612A4.5 4.5 0 0 1 20.25 6.75v1.5a4.5 4.5 0 0 1-4.5 4.5M6 4.5A4.5 4.5 0 0 0 1.5 6.75v1.5a4.5 4.5 0 0 0 4.5 4.5" /></svg>
+                </div>
+                <div>
+                  <div style="font-size:11px; font-weight:800; color:var(--primary-600); text-transform:uppercase;">Cohort Leaderboard · Rank #2</div>
+                  <div style="font-size:14.5px; font-weight:800; color:var(--color-black);">1,180 XP · 5-Day Streak 🔥</div>
+                </div>
+              </div>
+              <span class="chip chip-primary" style="font-size:10.5px;">View Arena →</span>
+            </div>
           </div>
         </div>
 
@@ -1936,7 +1954,7 @@
     </div>
 
     <!-- =========================================================================
-         PERSISTENT BOTTOM NAVIGATION (5 Tabs: Home, Learn, Community, Progress, Profile)
+         PERSISTENT BOTTOM NAVIGATION (Tabs: Home, Learn, Leaderboard, Community, Progress, Profile)
          ========================================================================= -->
     <nav class="bottom-nav-bar" id="appBottomNav" style="display:none;" aria-label="Main Navigation">
       <button class="nav-tab-item active" id="tab-home" onclick="goToScreen('s-home')">
@@ -1947,6 +1965,11 @@
       <button class="nav-tab-item" id="tab-learn" onclick="goToScreen('s-learn-dashboard')">
         <svg fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M4.26 10.147a60.438 60.438 0 0 1-.491 6.347A48.62 48.62 0 0 1 12 20.904a48.62 48.62 0 0 1 8.232-4.41 60.46 60.46 0 0 1-.491-6.347m-15.482 0a50.636 50.636 0 0 0-2.658-.813A59.906 59.906 0 0 1 12 3.493a59.903 59.903 0 0 1 10.399 5.84c-.896.248-1.783.52-2.658.814m-15.482 0A50.717 50.717 0 0 1 12 13.489a50.702 50.702 0 0 1 7.74-3.342M6.75 15a.75.75 0 1 0 0-1.5.75.75 0 0 0 0 1.5Zm0 0v-3.675A55.378 55.378 0 0 1 12 8.443m-7.007 11.55A5.981 5.981 0 0 0 6.75 15.75v-1.5" /></svg>
         <span class="nav-tab-label">Learn</span>
+      </button>
+
+      <button class="nav-tab-item" id="tab-leaderboard" onclick="goToScreen('s-leaderboard')">
+        <svg fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M16.5 18.75h-9m9 0a3 3 0 0 1 3 3h-15a3 3 0 0 1 3-3m9 0v-3.375c0-.621-.504-1.125-1.125-1.125h-.871M7.5 18.75v-3.375c0-.621.504-1.125 1.125-1.125h.872m5.003 0H9.497m5.003 0A23.896 23.896 0 0 0 18 12.016V6.75A2.25 2.25 0 0 0 15.75 4.5h-7.5A2.25 2.25 0 0 0 6 6.75v5.266c0 2.222.613 4.301 1.497 6.096m8.006-13.612A4.5 4.5 0 0 1 20.25 6.75v1.5a4.5 4.5 0 0 1-4.5 4.5M6 4.5A4.5 4.5 0 0 0 1.5 6.75v1.5a4.5 4.5 0 0 0 4.5 4.5" /></svg>
+        <span class="nav-tab-label">Leaderboard</span>
       </button>
 
       <button class="nav-tab-item" id="tab-community" onclick="goToScreen('s-community')">
@@ -2072,6 +2095,6 @@
 
   </main>
 
-  <script src="app.js?v=20260820.8"></script>
+  <script src="app.js?v=20260820.9"></script>
 </body>
 </html>
