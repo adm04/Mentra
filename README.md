@@ -1,4 +1,4 @@
-# SHE STARTS 🚀
+# Mentra 🚀
 ### *Career Restart & Guided Learning Platform for Returning Professionals*
 
 [![Live Demo](https://img.shields.io/badge/Live%20Demo-GitHub%20Pages-FA4D87?style=for-the-badge&logo=github)](https://adm04.github.io/Mentra/)
